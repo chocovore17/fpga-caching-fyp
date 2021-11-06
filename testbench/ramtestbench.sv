@@ -24,7 +24,7 @@ module test;
     
   initial begin
     // Dump waves
-    $dumpfile("dump.vcd");
+    $dumpfile("ramtestbenchdump.vcd");
     $dumpvars(1, test);
     
     clk_write = 0;
