@@ -24,3 +24,7 @@ Other (TODO)
 3. Write top level to put together modules 
 4. Write & check memory 
 5. Put modules in classes 
+
+
+*Useful links + bibiography*: 
+https://www.edaplayground.com/playgrounds?searchString=&language=SystemVerilog%2FVerilog&simulator=&methodologies=&_libraries=on&_svx=on&_easierUVM=on&curated=true&_curated=on
