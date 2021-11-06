@@ -1,7 +1,7 @@
 
-module risk_check_top(order_id, amount);
+module risk_check(client_id, amount);
    output bool check;
-   input  order_id; // cache lne 
+   input  client_id; // cache lne 
    input  amount; // pounds
    
    wire[32:0]   accumulated;
@@ -10,14 +10,14 @@ module risk_check_top(order_id, amount);
    wire[32:0]   tocheck;
    wire   w1 ; //store the result for now
 
-    always @(order_id,amount)
+    always @(client_id,amount)
     begin
       //1: read memory for max, accumulated, reduced 
       //    TODO
       //2: future trade  =accumulated - reduced + future amount
       k  <=  accumulated + amount + (~reduced + 1);
       //3: compare max, future traded   SLT(max, actual)
-      SLT(futuretraded, max, w1); // returns 0 for max > future traded, 1 otherwse
+      SLT(max, futuretraded, w1); // returns 1 for max > future traded (pass),  0 otherwse
       check <= w1 // can we do this, w1 is 1 or 0
     end 
 

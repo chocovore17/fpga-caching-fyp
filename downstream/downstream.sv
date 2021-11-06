@@ -1,11 +1,7 @@
 /*
  * Finite state machine.
- * If input 'a' is asserted, the state machine
- * moves IDLE->STATE_1->FINAL and remains in FINAL.
- * If 'a' is not asserted, FSM returns to idle.
- * Output 'out1' asserts when state machine is in
- * STATE_1. 'out2' asserts when state machine is in
- * FINAL state.
+ * IDLE -> STATE_UPDATE_MEM when ack goes high 
+ * STATE_UPDATE_MEM -> IDLE when memwr goes low 
  */ 
 module downstream_processor(clk, ack, memwr, out);
   input  clk;
@@ -29,17 +25,21 @@ module downstream_processor(clk, ack, memwr, out);
       IDLE:
         if (ack) begin
           state <= STATE_UPDATE_MEM;
+          ack <= 1'b0 //is it how to reset ack
         end else begin
           state <= IDLE;
         end
       STATE_UPDATE_MEM:
         if (memwr) begin
           state <= IDLE;
+          memwr <= 1'b0 //is it how to reset memwr
         end else begin
           state <= STATE_UPDATE_MEM;
         end
       default:
         state <= IDLE;
+        ack <= 1'b0 //is it how to reset ack
+        memwr <= 1'b0 //is it how to reset memwr
     endcase
   end
 
