@@ -3,17 +3,17 @@ module test;
 
   reg        clk_write;
   reg  [4:0] address_write;
-  reg  [7:0] data_write;
+  reg  [31:0] data_write;
   reg        write_enable;
   reg        clk_read;
   reg  [4:0] address_read;
-  wire [7:0] data_read;
+  wire [31:0] data_read;
   
   // Instantiate design under test
-  // D_WIDTH = 8
+  // D_WIDTH = 32
   // A_WIDTH = 5
   // A_MAX = 2^A_WIDTH = 32
-  ram #(8, 5, 32) RAM (
+  ram #(32, 5, 32) RAM (
     .clk_write(clk_write),
     .address_write(address_write),
     .data_write(data_write),
@@ -24,7 +24,7 @@ module test;
     
   initial begin
     // Dump waves
-    $dumpfile("ramtestbenchdump.vcd");
+    $dumpfile("../outputs/Module/ramtestbenchdump.vcd");
     $dumpvars(1, test);
     
     clk_write = 0;
@@ -40,7 +40,7 @@ module test;
     
     $display("Write new data.");
     write_enable = 1;
-    data_write = 8'hC5;
+    data_write = 32'h000000C5;
     toggle_clk_write;
     write_enable = 0;
     

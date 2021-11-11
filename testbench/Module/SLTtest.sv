@@ -12,7 +12,7 @@ module test;
   
   initial begin
     // Dump waves
-    $dumpfile("SLTtest.vcd");
+    $dumpfile("../outputs/Module/SLTtest.vcd");
     $dumpvars(1, test);
 
     A = 0;

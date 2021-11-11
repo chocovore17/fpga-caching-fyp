@@ -20,7 +20,7 @@ Final year project to speedup orders send and cancels on fpgas
 
 Other (TODO)
 1. Write functional coverage plan 
-2. Test modules 
+2. Write upstream and upstream top 
 3. Write top level to put together modules 
 4. Write & check memory 
 5. Put modules in classes 

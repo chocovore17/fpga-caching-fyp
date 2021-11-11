@@ -12,7 +12,7 @@ module test;
   
   initial begin
     // Dump waves
-    $dumpfile("upstream.vcd");
+    $dumpfile("../outputs/Module/upstream.vcd");
     $dumpvars(1, test);
 
     clk = 0;
