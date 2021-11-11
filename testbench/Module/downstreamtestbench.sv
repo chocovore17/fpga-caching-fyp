@@ -5,10 +5,10 @@ module test;
   wire out;
   
   // Instantiate device under test
-  fsm DOWNSTREAMPROCESSOR(.clk(clk),
+  downstream_processor DOWNSTREAMPROCESSOR(.clk(clk),
           .ack(ack),
           .memwr(memwr),
-          .out(out);
+          .out(out));
   
   initial begin
     // Dump waves
@@ -29,11 +29,11 @@ module test;
 
     memwr  = 1;
     toggle_clk;
-    $display("IDLE  out: %0h", out, " memwr is 1, ack 1");
+    $display("IDLE  out: %0h", out, " memwr is %0h", memwr, ", ack %0h", ack);
     
     ack = 0;
     toggle_clk;
-    $display("IDLE  out: %0h", out, " ack back to 0");
+    $display("IDLE  out: %0h", out, " memwr is %0h", memwr, ", ack %0h", ack);
   end
   
   task toggle_clk;

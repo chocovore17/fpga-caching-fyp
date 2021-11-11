@@ -1,12 +1,14 @@
 /* 
  * Random Access Memory (RAM) with
  * 1 read port and 1 write port (for now )
+ address_write = clientID 
+ data_write = value of accumulated cancelled order (32 bits)
  */
 module ram (clk_write, address_write,
   data_write, write_enable,
   clk_read, address_read, data_read);
   
-  parameter D_WIDTH = 16;
+  parameter D_WIDTH = 32;
   parameter A_WIDTH = 4;
   parameter A_MAX = 16; // 2^A_WIDTH
 

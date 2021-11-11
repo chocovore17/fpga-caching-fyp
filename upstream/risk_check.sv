@@ -6,7 +6,7 @@ module risk_check(client_id, amount);
    
    wire[32:0]   accumulated;
    wire[32:0]   reduced;
-   wire[32:0] max
+   wire[32:0] max;
    wire[32:0]   tocheck;
    wire   w1 ; //store the result for now
 
@@ -18,7 +18,7 @@ module risk_check(client_id, amount);
       k  <=  accumulated + amount + (~reduced + 1);
       //3: compare max, future traded   SLT(max, actual)
       SLT(max, futuretraded, w1); // returns 1 for max > future traded (pass),  0 otherwse
-      check <= w1 // can we do this, w1 is 1 or 0
+      check <= w1; // can we do this, w1 is 1 or 0
     end 
 
 endmodule // returns 1 - fails  or 0 - pass
