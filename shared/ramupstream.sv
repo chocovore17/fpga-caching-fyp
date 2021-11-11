@@ -8,45 +8,45 @@
 module ram (clk_write, address_write,
   data_write, write_enable, change_max,
   clk_read, address_read, accumulated_orders, max_to_trade);
-  parameter D_WIDTH = 64; // total length 
-  parameter D1_WIDTH = 32; // max allowed to trade per client 
-  parameter D2_WIDTH = 32; // Current accumulated orders 
-  parameter A_WIDTH = 5;
-  parameter A_MAX = 32; // 2^A_WIDTH
+  parameter D_WIDTH = 32; // max allowed to trade per client (first 32) // Current accumulated orders (last 32)
+  parameter A_WIDTH = 10;
+  parameter A_MAX = 1024; // 2^A_WIDTH
 
   // Write port
   input                clk_write;
   input                change_max; // flag to toggle changing the cache line - write to d1 or d2 
   input  [A_WIDTH-1:0] address_write;
-  input  [D1_WIDTH-1:0] data_write;
+  input  [D_WIDTH-1:0] data_write;
   input                write_enable;
 
   // Read port
   input                clk_read;
   input  [A_WIDTH-1:0] address_read;
-  output [D1_WIDTH-1:0] accumulated_orders;
-  output [D1_WIDTH-1:0] max_to_trade;
+  output [D_WIDTH-1:0] accumulated_orders;
+  output [D_WIDTH-1:0] max_to_trade;
   
-  reg    [D1_WIDTH-1:0] accumulated_orders;
-  reg    [D1_WIDTH-1:0] max_to_trade;
+  reg    [D_WIDTH-1:0] accumulated_orders;
+  reg    [D_WIDTH-1:0] max_to_trade;
 
   // Memory as multi-dimensional array
   reg [D_WIDTH-1:0] memory [A_MAX-1:0];
 
   // Write data to memory
   always @(posedge clk_write) begin
-    if (write_enable) and change_max begin
-      memory[address_write + 32'h7FFFFFFF] <= data_write ; // if change max, update + 32 bits
-    end 
-    if (write_enable) and not change_max begin and data_write <= 8'h7FFFFFFF begin // check for overflow 
-      memory[address_write] <= data_write; // if change max, RHS updated (indexed)
-    end 
+    if (write_enable) begin
+      if(change_max) begin
+        memory[address_write + 10'b1111100000] <= data_write ; // if change max, update + 32 bits
+      end
+      else begin// check for overflow 
+        memory[address_write] <= data_write; // if change max, RHS updated (indexed)
+      end 
+    end
   end
 
   // Read data from memory
   always @(posedge clk_read) begin
     accumulated_orders <= memory[address_read];
-    max_to_trade <= memory[address_read + 32'h7FFFFFFF];
+    max_to_trade <= memory[address_read + 10'b1111100000];
   end
 
 endmodule

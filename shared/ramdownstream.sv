@@ -9,8 +9,8 @@ module ram (clk_write, address_write,
   clk_read, address_read, data_read);
   
   parameter D_WIDTH = 32;
-  parameter A_WIDTH = 4;
-  parameter A_MAX = 16; // 2^A_WIDTH
+  parameter A_WIDTH = 5;
+  parameter A_MAX = 32; // 2^A_WIDTH
 
   // Write port
   input                clk_write;
