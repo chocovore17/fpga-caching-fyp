@@ -2,9 +2,9 @@
 module test;
 
   reg        clk_write;
-  reg  [4:0] address_write;
+  reg  [4:0] downstream_address_write;
   reg  [31:0] data_write;
-  reg        write_enable;
+  reg        downstream_write_enable;
   reg        clk_read;
   reg  [4:0] address_read;
   wire [31:0] data_read;
@@ -13,25 +13,25 @@ module test;
   // D_WIDTH = 32
   // A_WIDTH = 5
   // A_MAX = 2^A_WIDTH = 32
-  ram #(32, 5, 32) RAM (
+  ramdownstream #(32, 5, 32) RAM (
     .clk_write(clk_write),
-    .address_write(address_write),
+    .downstream_address_write(downstream_address_write),
     .data_write(data_write),
-    .write_enable(write_enable),
+    .downstream_write_enable(downstream_write_enable),
     .clk_read(clk_read),
     .address_read(address_read),
     .data_read(data_read));
     
   initial begin
     // Dump waves
-    $dumpfile("../outputs/Module/ramtestbenchdump.vcd");
+    $dumpfile("../testbench/outputs/Module/ramtestbenchdump.vcd");
     $dumpvars(1, test);
     
     clk_write = 0;
     clk_read = 0;
-    write_enable = 0;
+    downstream_write_enable = 0;
     address_read = 5'h1B;
-    address_write = address_read;
+    downstream_address_write = address_read;
 
     $display("Read initial data.");
     toggle_clk_read;
@@ -39,10 +39,10 @@ module test;
       address_read, data_read);
     
     $display("Write new data.");
-    write_enable = 1;
+    downstream_write_enable = 1;
     data_write = 32'h000000C5;
     toggle_clk_write;
-    write_enable = 0;
+    downstream_write_enable = 0;
     
     $display("Read new data.");
     toggle_clk_read;

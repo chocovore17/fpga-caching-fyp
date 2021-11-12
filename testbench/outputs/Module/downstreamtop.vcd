@@ -1,5 +1,5 @@
 $date
-	Fri Nov 12 13:55:41 2021
+	Fri Nov 12 16:04:49 2021
 $end
 $version
 	Icarus Verilog
@@ -8,26 +8,17 @@ $timescale
 	1s
 $end
 $scope module downtoptesttest $end
-$var wire 32 ! total_cancel [31:0] $end
-$var wire 32 " cancelled_orders [31:0] $end
-$var reg 1 # ack $end
-$var reg 32 $ amount [31:0] $end
-$var reg 5 % client_id [4:0] $end
-$var reg 1 & clk $end
+$var wire 32 ! cancelled_orders [31:0] $end
+$var reg 1 " ack $end
+$var reg 32 # amount [31:0] $end
+$var reg 5 $ client_id [4:0] $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-x&
-b11011 %
-bx $
-0#
-bx "
+b11011 $
+b11000101 #
+0"
 bx !
 $end
 #20
-b11000101 $
-1#
-#80
-0#
-#100

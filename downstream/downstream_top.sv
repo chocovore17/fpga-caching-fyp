@@ -6,15 +6,15 @@
  `include "../shared/ramdownstream.sv"
  `include "downstream.sv"
 
-module downstream_top(clk, ack, client_id, amount, cancelled_orders, total_cancel /*to display testing*/);
-  input  clk; // for now use same clock to read and write, just not at same time
+module downstream_top(ack, client_id, amount, cancelled_orders /*to display testing*/);
+  reg  clk; // for now use same clock to read and write, just not at same time
   input[4:0]  client_id;
   input[31:0] amount;
-  output [31:0] cancelled_orders, total_cancel;
+  output [31:0] cancelled_orders;
   
   input ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
   reg update_memory; //RAM inputs, state machine output by default 0
-  reg [31:0] cancelled_orders, total_cancel; // RAM data OUTPUTS
+  reg [31:0] total_cancel; // RAM data OUTPUTS
   reg memwr; // RAM bool output & State machine input
 
 
@@ -35,9 +35,17 @@ module downstream_top(clk, ack, client_id, amount, cancelled_orders, total_cance
           .memwr(memwr),
           .out(update_memory));
 
-  // always @(posedge clk)
-  // begin
-  assign total_cancel = amount+cancelled_orders;
-  // end
+  always @(client_id) begin
+      total_cancel <= amount+cancelled_orders;
+      toggle_clk;
+  end 
+
+  
+  task toggle_clk;
+    begin
+      #10 clk = ~clk;
+      #10 clk = ~clk;
+    end
+  endtask
 
 endmodule
