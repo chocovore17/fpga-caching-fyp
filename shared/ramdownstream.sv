@@ -32,11 +32,13 @@ module ramdownstream (clk_write, downstream_address_write,
 
   // Write data to memory
   always @(posedge clk_write) begin
-    memwr<=1'b0;
     if (downstream_write_enable) begin
       memory[downstream_address_write] <= data_write;
       memwr <= 1'b1;
     end
+    else begin 
+          memwr<=1'b0;
+    end 
   end
 
   // Read data from memory
