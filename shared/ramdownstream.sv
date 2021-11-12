@@ -1,12 +1,12 @@
 /* 
  * Random Access Memory (RAM) with
  * 1 read port and 1 write port (for now )
- address_write = clientID 
+ downstream_address_write = clientID 
  data_write = value of accumulated cancelled order (32 bits)
  */
-module ram (clk_write, address_write,
-  data_write, write_enable,
-  clk_read, address_read, data_read);
+module ramdownstream (clk_write, downstream_address_write,
+  data_write, downstream_write_enable,
+  clk_read, address_read, data_read, memwr);
   
   parameter D_WIDTH = 32;
   parameter A_WIDTH = 5;
@@ -14,15 +14,17 @@ module ram (clk_write, address_write,
 
   // Write port
   input                clk_write;
-  input  [A_WIDTH-1:0] address_write;
+  input  [A_WIDTH-1:0] downstream_address_write;
   input  [D_WIDTH-1:0] data_write;
-  input                write_enable;
+  input                downstream_write_enable;
 
   // Read port
   input                clk_read;
   input  [A_WIDTH-1:0] address_read;
   output [D_WIDTH-1:0] data_read;
+  output               memwr; //ensures it's written
   
+  reg                 memwr;
   reg    [D_WIDTH-1:0] data_read;
   
   // Memory as multi-dimensional array
@@ -30,8 +32,10 @@ module ram (clk_write, address_write,
 
   // Write data to memory
   always @(posedge clk_write) begin
-    if (write_enable) begin
-      memory[address_write] <= data_write;
+    memwr<=1'b0;
+    if (downstream_write_enable) begin
+      memory[downstream_address_write] <= data_write;
+      memwr <= 1'b1;
     end
   end
 

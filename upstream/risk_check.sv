@@ -1,24 +1,20 @@
+ `include "SLT.sv"
 
-module risk_check(client_id, amount);
-   output bool check;
-   input  client_id; // cache lne 
-   input  amount; // pounds
+
+module risk_check(accumulated_orders, max_to_trade, cancelled_orders,  amount, check);
+   output check;
+   input[31:0]  accumulated_orders, max_to_trade, cancelled_orders, amount;
    
-   wire[32:0]   accumulated;
-   wire[32:0]   reduced;
-   wire[32:0] max;
-   wire[32:0]   tocheck;
    wire   w1 ; //store the result for now
 
-    always @(client_id,amount)
-    begin
-      //1: read memory for max, accumulated, reduced 
-      //    TODO
-      //2: future trade  =accumulated - reduced + future amount
-      k  <=  accumulated + amount + (~reduced + 1);
-      //3: compare max, future traded   SLT(max, actual)
-      SLT(max, futuretraded, w1); // returns 1 for max > future traded (pass),  0 otherwse
-      check <= w1; // can we do this, w1 is 1 or 0
-    end 
+    // 1: : future trade  =accumulated - reduced + future amount
+    // futuretraded =  accumulated_orders + amount + (~cancelled_orders + 1);
+    //2: compare max, future traded   SLT(max, actual)
+    SLT SLT(.A(max_to_trade),
+        .B(accumulated_orders + amount + (~cancelled_orders + 1)),
+        .Result(w1));
+    //3: assign to result 
 
-endmodule // returns 1 - fails  or 0 - pass
+    assign check = w1; 
+
+  endmodule // returns 1 - fails  or 0 - pass
