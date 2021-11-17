@@ -36,9 +36,6 @@ module downstream_processor(clk, ack, memwr, out);
       default:
         state <= IDLE;
     endcase
-    // assign ack = 1'b0; //is it how to reset ack
-    // assign memwr = 1'b0; //is it how to reset memwr
-
   end
 
 endmodule

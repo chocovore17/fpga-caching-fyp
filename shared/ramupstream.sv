@@ -33,6 +33,13 @@ module ramupstream (clk_write, address_write,
   // Memory as multi-dimensional array
   reg [D_WIDTH-1:0] memory [A_MAX-1:0];
 
+  // initialise memory
+  integer i;
+  initial begin
+    for (i=0;i<A_MAX;i=i+1)
+      memory[i] = 32'b0;
+  end
+
   // Write data to memory
   always @(posedge clk_write) begin
     memwr<=1'b0;

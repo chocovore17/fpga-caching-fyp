@@ -30,9 +30,16 @@ module ramdownstream (clk_write, downstream_address_write,
   // Memory as multi-dimensional array
   reg [D_WIDTH-1:0] memory [A_MAX-1:0];
 
+  // initialise memory
+  integer i;
+  initial begin
+    for (i=0;i<A_MAX;i=i+1)
+      memory[i] = 32'b0;
+  end
+
   // Write data to memory
   always @(posedge clk_write) begin
-    if (downstream_write_enable) begin
+    if (downstream_write_enable==1'b1) begin
       memory[downstream_address_write] <= data_write;
       memwr <= 1'b1;
     end
