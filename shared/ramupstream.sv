@@ -54,7 +54,7 @@ module ramupstream (clk_write, address_write,
       end
       else begin// check for overflow 
         // UPDATE 16 LSB 
-        memory[address_write][15:0] <= data_write[15:0] + memory[address_write][15:0]; // if change max, RHS updated (indexed)
+        memory[address_write][15:0] <= data_write[15:0]; // + memory[address_write][15:0]; // if change max, RHS updated (indexed)
         memwr <= 1'b1;
       end 
     end
