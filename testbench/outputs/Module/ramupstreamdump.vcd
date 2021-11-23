@@ -1,5 +1,5 @@
 $date
-	Thu Nov 11 16:20:59 2021
+	Tue Nov 23 14:37:56 2021
 $end
 $version
 	Icarus Verilog
@@ -10,8 +10,8 @@ $end
 $scope module test $end
 $var wire 32 ! max_to_trade [31:0] $end
 $var wire 32 " accumulated_orders [31:0] $end
-$var reg 10 # address_read [9:0] $end
-$var reg 10 $ address_write [9:0] $end
+$var reg 5 # address_read [4:0] $end
+$var reg 5 $ address_write [4:0] $end
 $var reg 1 % change_max $end
 $var reg 1 & clk_read $end
 $var reg 1 ' clk_write $end
@@ -32,9 +32,11 @@ bx "
 bx !
 $end
 #10
+b0 !
+b0 "
 1&
 #20
-b10111000101 (
+b1000 (
 1)
 0&
 #30
@@ -43,7 +45,7 @@ b10111000101 (
 0)
 0'
 #50
-b10111000101 "
+b1000 "
 1&
 #60
 b10110100011 (
@@ -53,10 +55,23 @@ b10110100011 (
 #70
 1'
 #80
+0%
 0)
 0'
 #90
 b10110100011 !
 1&
 #100
+b11 (
+1)
+0&
+#110
+1'
+#120
+0)
+0'
+#130
+b1011 "
+1&
+#140
 0&

@@ -2,8 +2,8 @@
 module downtoptesttest;
   reg clk, memwr, downenable;
   reg[4:0] client_id;
-  reg[31:0] amount;
-  wire[31:0] cancelled_orders;
+  reg[15:0] amount;
+  wire[15:0] cancelled_orders;
   
 
   // Instantiate device under test
@@ -22,7 +22,7 @@ module downtoptesttest;
     //  initialise empty memory everywhere:
   
     clk = 0;
-    amount = 32'h00000001;
+    amount = 16'h0001;
     client_id = 5'h01;
     toggle_clk;
 
@@ -33,7 +33,7 @@ module downtoptesttest;
 
     $display("Write new data.");
     client_id = 5'h1B;
-    amount = 32'h000000C5;
+    amount = 16'h00C5;
     toggle_clk;
     toggle_clk;
     $display("wait for state machine");
@@ -42,7 +42,7 @@ module downtoptesttest;
     toggle_clk;
     
     $display("Write new data.");
-    amount = 32'h000005C5;
+    amount = 16'h05C5;
     toggle_clk;
       
     $display("Read new data.");

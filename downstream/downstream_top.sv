@@ -10,8 +10,8 @@
 module downstream_top( clk, client_id, amount, cancelled_orders, memwr /*to display testing*/);
   input[4:0]  client_id;
   input clk;
-  input[31:0] amount;
-  output [31:0] cancelled_orders;
+  input[15:0] amount;
+  output [15:0] cancelled_orders;
   
   reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
   reg update_memory; //RAM inputs, state machine output by default 0
@@ -19,10 +19,10 @@ module downstream_top( clk, client_id, amount, cancelled_orders, memwr /*to disp
 
 
   // instantiate downstream ram (should it be done here? )
-  ramdownstream #(32, 5, 32) RAMDOWNSTREAM (
+  ramdownstream #(16, 5, 32) RAMDOWNSTREAM (
     .clk_write(clk),                            // input 
     .downstream_address_write(client_id),       // input 
-    .data_write(amount+cancelled_orders),       // input[31:0]  // check that it doesn't mix for client with pipeline 
+    .data_write(amount+cancelled_orders),       // input[15:0]  // check that it doesn't mix for client with pipeline 
     .downstream_write_enable(update_memory),// input 
     .clk_read(clk),                             // input 
     .address_read(client_id),                   // input [4:0]

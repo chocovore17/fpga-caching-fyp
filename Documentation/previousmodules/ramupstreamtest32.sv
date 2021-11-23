@@ -3,19 +3,19 @@ module test;
 
   reg        clk_write;
   reg        change_max;
-  reg  [4:0] address_write;
+  reg  [9:0] address_write;
   reg  [31:0] data_write;
   reg        write_enable;
   reg        clk_read;
-  reg  [4:0] address_read;
+  reg  [9:0] address_read;
   wire [31:0] accumulated_orders;
   wire [31:0] max_to_trade;
   
   // Instantiate design under test
   // D_WIDTH = 32
-  // A_WIDTH = 5
-  // A_MAX = 2^A_WIDTH = 524
-  ramupstream #(32, 5, 32) RAMUPSTREAM (
+  // A_WIDTH = 10
+  // A_MAX = 2^A_WIDTH = 1024
+  ram #(32, 10, 1024) RAM (
     .clk_write(clk_write),
     .change_max(change_max),
     .address_write(address_write),
@@ -28,14 +28,14 @@ module test;
     
   initial begin
     // Dump waves
-    $dumpfile("../testbench/outputs/Module/ramupstreamdump.vcd");
+    $dumpfile("../outputs/Module/ramupstreamdump.vcd");
     $dumpvars(1, test);
     
     clk_write = 0;
     clk_read = 0;
     write_enable = 0;
     change_max = 0;
-    address_read = 5'h1B;
+    address_read = 10'h01B;
     address_write = address_read;
 
     $display("Read initial data.");
@@ -45,7 +45,7 @@ module test;
     
     $display("Write new data to accumulated.");
     write_enable = 1;
-    data_write = 32'h08;
+    data_write = 32'h00005C5;
     toggle_clk_write;
     write_enable = 0;
     
@@ -57,27 +57,14 @@ module test;
     $display("Write new data to max to trade.");
     write_enable = 1;
     change_max = 1;
-    data_write = 32'h05A3;
+    data_write = 32'h00005A3;
     toggle_clk_write;
     write_enable = 0;
-    change_max = 0;
     
     $display("Read new data.");
     toggle_clk_read;
     $display("data[%0h]: %0h, %0h",
       address_read, accumulated_orders,max_to_trade);
-
-
-    $display("Write new data to accumulated.");
-    write_enable = 1;
-    data_write = 32'h03;
-    toggle_clk_write;
-    write_enable = 0;
-    
-    $display("Read new data.");
-    toggle_clk_read;
-    $display("data[%0h]: %0h, %0h",
-      address_read, accumulated_orders, max_to_trade);
   end
   
   task toggle_clk_write;

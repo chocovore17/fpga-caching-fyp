@@ -9,8 +9,8 @@ module ramupstream (clk_write, address_write,
   data_write, write_enable, change_max,
   clk_read, address_read, accumulated_orders, max_to_trade, memwr);
   parameter D_WIDTH = 32; // max allowed to trade per client (first 32) // Current accumulated orders (last 32)
-  parameter A_WIDTH = 5;
-  parameter A_MAX = 32; // 2^A_WIDTH
+  parameter A_WIDTH = 10;
+  parameter A_MAX = 1024; // 2^A_WIDTH
 
   // Write port
   input                clk_write;
@@ -28,7 +28,6 @@ module ramupstream (clk_write, address_write,
   
   reg    [D_WIDTH-1:0] accumulated_orders;
   reg    [D_WIDTH-1:0] max_to_trade;
-  reg    [D_WIDTH-1:0] accumulated_read;
   reg                  memwr;
 
   // Memory as multi-dimensional array
@@ -46,15 +45,11 @@ module ramupstream (clk_write, address_write,
     memwr<=1'b0;
     if (write_enable) begin
       if(change_max) begin
-        // UPDATE 16 MSB
-        // read 16 LSB for current max and shift max 16bits to left 
-        //  mem value = new max << 16 + existing mem && (16 bit lsb filte
-        memory[address_write][31:16] <= data_write;// if change max, update + 32 bits
+        memory[address_write + 10'b1111100000] <= data_write ; // if change max, update + 32 bits
         memwr <= 1'b1;
       end
       else begin// check for overflow 
-        // UPDATE 16 LSB 
-        memory[address_write][15:0] <= data_write[15:0] + memory[address_write][15:0]; // if change max, RHS updated (indexed)
+        memory[address_write] <= data_write; // if change max, RHS updated (indexed)
         memwr <= 1'b1;
       end 
     end
@@ -62,8 +57,8 @@ module ramupstream (clk_write, address_write,
 
   // Read data from memory
   always @(posedge clk_read) begin
-    accumulated_orders <= memory[address_read][15:0]; // LSB
-    max_to_trade <= memory[address_read][31:16]; // MSB
+    accumulated_orders <= memory[address_read];
+    max_to_trade <= memory[address_read + 10'b1111100000];
   end
 
 endmodule

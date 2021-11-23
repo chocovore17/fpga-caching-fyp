@@ -5,7 +5,7 @@ module get_Cxl(client_id, amount, ack, clk);
 
   input  clk; // for now use same clock to read and write, just not at same time
   input[4:0]  client_id;
-  input[31:0] amount;
+  input[15:0] amount;
   output ack;
   reg[4:0] past_client;
   reg[31:0] past_amount;
