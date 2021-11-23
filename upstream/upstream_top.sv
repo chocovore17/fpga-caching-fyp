@@ -8,18 +8,20 @@
  `include "upstream.sv"
  `include "SLT.sv"
 
-module upstream_processor_top(clk, client_id, amount, new_order, new_max);
+module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
   input[4:0]  client_id;
   input[31:0] amount;
+  output thenewmax;
   
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
   reg [9:0] upstreamclient_id; //RAM inputs
   reg       check_risk, send_order, update_max; // state machine outputs
-  wire [31:0] cancelled_orders, max_to_trade, accumulated_orders; // RAM data OUTPUTS
+  wire [31:0] cancelled_orders; // RAM data OUTPUTS
+  output [31:0] accumulated_orders, max_to_trade;
   reg memwr, nocare; // RAM bool output & State machine input, don't care about downstream
-
+  assign thenewmax = update_max;
   // instantiate upstream ram (should it be done here? )
   ramupstream #(32, 10, 1024) RAMUPSTREAM (
     .clk_write(clk),

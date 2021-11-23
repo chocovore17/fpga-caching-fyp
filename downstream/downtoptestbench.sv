@@ -6,17 +6,6 @@ module downtoptesttest;
   wire[31:0] cancelled_orders;
   
 
-  // instantiate downstream ram (should it be done here? )
-  // ramdownstream #(32, 5, 32) RAMDOWNSTREAM (
-  //   .clk_write(clk),                            // input 
-  //   .downstream_address_write(client_id),       // input 
-  //   .data_write(amount),       // input[31:0]  // check that it doesn't mix for client with pipeline 
-  //   .downstream_write_enable(downenable),// input 
-  //   .clk_read(clk),                             // input 
-  //   .address_read(client_id),                   // input [4:0]
-  //   .memwr(memwr),                              // output 
-  //   .data_read(amount));              // output[31:0]
-
   // Instantiate device under test
   downstream_top DOWNSTREAMTOP(
           .clk(clk),
