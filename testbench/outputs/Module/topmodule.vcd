@@ -1,0 +1,64 @@
+$date
+	Thu Nov 25 16:23:42 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module toptest $end
+$var wire 16 ! cancelled_orders [15:0] $end
+$var wire 32 " accumulated_orders [31:0] $end
+$var reg 1 # clk $end
+$var reg 32 $ cpu_amount [31:0] $end
+$var reg 5 % cpu_client_id [4:0] $end
+$var reg 1 & cpu_go $end
+$var reg 1 ' cpu_new_max $end
+$var reg 16 ( exchange_amount [15:0] $end
+$var reg 5 ) exchange_client_id [4:0] $end
+$var reg 1 * exchange_go $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+b11011 )
+b10 (
+1'
+0&
+b11011 %
+b11 $
+0#
+bx "
+bx !
+$end
+#10
+b0 !
+b0 "
+1#
+#20
+0'
+1&
+0#
+#30
+1#
+#40
+0#
+#50
+1#
+#60
+b0 %
+0&
+0#
+#70
+1#
+#80
+1*
+0#
+#90
+b11 !
+b11 "
+1#
+#100
+0#

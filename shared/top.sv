@@ -22,7 +22,7 @@ module top( clk, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchange_client
 //   DOWNSTREAM
   reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
   reg update_memory; //RAM inputs, state machine output by default 0
-  output memwr; // RAM bool output & State machine input
+  reg memwr; // RAM bool output & State machine input
   reg[15:0] amount;
   reg[4:0] client_id;
 
@@ -31,7 +31,8 @@ module top( clk, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchange_client
   reg upstream_enable ; //RAM inputs
   reg       check_risk, send_order, update_max; // state machine outputs
   wire [15:0] cancelled_orders; // RAM data OUTPUTS
-  output [31:0] accumulated_orders, max_to_trade;
+  output [31:0] accumulated_orders;
+  reg[31:0] max_to_trade;
   reg memwr_up, memwr_down ; // RAM bool output & State machine input, for both downstream and upstream 
 
   // instantiate downstream ram 
