@@ -1,0 +1,10 @@
+AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/driver_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/environment_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/interface_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/scoreboard_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/tb_top_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/tests_AHBGPIO.sv
+AHB_peripherals_files/tbench/unit_level/AHBGPIO/transaction_AHBGPIO.sv
