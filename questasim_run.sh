@@ -7,24 +7,24 @@ vlib work
 
 if [  -z $1 ] 
 then 
-vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/tbench/unit_level/downstream/tb_top_downstream.sv testbench/rtl/AHB_7SEG/downstream.sv
+vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv code/downstream/downstream_top.sv
 
 vopt -work work tb_top_downstream  -o seg_work_opt
 
-vsim seg_work_opt -c -logfile testbench/tbench/tbenchoutputs/7seg/AHB_7SEG_sim.txt  -do "run -all; quit"
+vsim seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_sim.txt  -do "run -all; quit"
 
 
 else 
 # run converage check on questasim
 rm -r covhtmlreport/
-rm testbench/tbench/tbenchoutputs/7seg/7seg_cov_report.txt
-vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps testbench/tbench/unit_level/downstream/tb_top_downstream.sv testbench/rtl/AHB_7SEG/downstream.sv
+rm testbench/outputs/downstream/DOWNSTREAM_cov_report.txt
+vlog -work work +acc=blnr +cover -noincr -timescale 1ns/1ps  testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv code/downstream/downstream_top.sv
 vopt -work work tb_top_downstream  -o seg_work_opt
-vsim -coverage seg_work_opt -c -logfile testbench/tbench/tbenchoutputs/7seg/AHB_7SEG_cov_sim.txt -do "run -all;  coverage report -file testbench/tbench/tbenchoutputs/7seg/7seg_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/tbench/tbenchoutputs/7seg/downstream.ucdb; quit"
+vsim -coverage seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_sim.txt -do "run -all;  coverage report -file testbench/outputs/downstream/DOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/downstream/downstream.ucdb; quit"
 
 # vsim -coverage seg_work_opt -gui 
 
-vcover report -details -html testbench/tbench/tbenchoutputs/7seg/downstream.ucdb
+vcover report -details -html codeAlltestbench/outputs/downstream/downstream.ucdb
 
 # firefox covhtmlreport/index.html
 fi
