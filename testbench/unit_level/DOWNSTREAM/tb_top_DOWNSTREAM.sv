@@ -9,12 +9,12 @@ module tb_top_DOWNSTREAM;
     dwnstrmproc_if intf(clk);
 
     // Instantiate device under test
-    DOWNSTREAM DWNSTRM_PROC(
+    downstream_top DOWNSTREAM(
         .clk(clk),
         .client_id(intf.client_id),
         .amount(intf.amount),
         .cancelled_orders(intf.cancelled_orders),
-        .memwr(intf.memwr),
+        .memwr(intf.memwr)
 	);
     tests test;
 
@@ -28,21 +28,6 @@ module tb_top_DOWNSTREAM;
             bins valid_data = {[0:3000]};
             // bins reserve = default;
         }
-        // digit_dot: coverpoint intf.HWDATA[7]{
-        //     bins dot = {1'b0,1'b1};
-        // }
-        // ahb_trans: coverpoint intf.HTRANS[1]{
-        //     bins htrans_en = {1'b0,1'b1};
-        // }
-        // ahb_hwrite: coverpoint intf.HWRITE{
-        //     bins hwrite = {1'b0,1'b1};
-        // }
-        // ahb_hsel: coverpoint intf.HSEL{
-        //     bins hselect = {1'b0,1'b1};
-        // }
-        // ahb_hready: coverpoint intf.HREADY{
-        //     bins hready = {1'b0,1'b1};
-        // }
     endgroup
 
     //functional coverage point to check range of output signal from DUT
@@ -83,7 +68,7 @@ module tb_top_DOWNSTREAM;
     end
 
     initial begin 
-        $dumpfile("../../testbench/tbenchoutputs/downstream/downstreamdump.vcd"); 
+        $dumpfile("testbench/tbenchoutputs/downstream/downstreamdump.vcd"); 
         $dumpvars; //specify vcd wave dump location
     end
 endmodule

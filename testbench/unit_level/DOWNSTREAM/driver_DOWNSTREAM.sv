@@ -5,14 +5,14 @@ class driver;
     virtual dwnstrmproc_if.DRIVER dwnstrm_if; //interface modport in driver class
     mailbox gen2driver; // mailbox to hold package/transaction from genrator
     //used to count the number of transactions
-    int no_transactions;
+    int no_orders;
 
     //event
     event drv_done; // driver finish transfering transactions to DUT interface
 
     //constructor
     function new(virtual dwnstrmproc_if.DRIVER dwnstrm_if, mailbox gen2driver);
-        no_transactions = 0;
+        no_orders = 0;
         //getting the interface
         this.dwnstrm_if = dwnstrm_if;
         //getting the mailbox handles from  environment 
@@ -35,14 +35,14 @@ class driver;
             transaction trans;
             gen2driver.get(trans); // driver receive transaction from generator
             // trans.print("DRIVER"); // print transaction information
-            // $display("T=%0t, [DRIVER-TRANSFER: %0d] ---------",$time,no_transactions);
+            // $display("T=%0t, [DRIVER-TRANSFER: %0d] ---------",$time,no_orders);
             
             @(posedge dwnstrm_if.clk);
             `DRIV_IF.client_id <= trans.client_id;
             `DRIV_IF.amount <= trans.amount;
             //current iteration of stimulus sent done
             @(posedge dwnstrm_if.clk);
-            no_transactions++;
+            no_orders++;
             -> drv_done;
             
         end

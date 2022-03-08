@@ -5,7 +5,7 @@ analyze -sv ..\..\..\code\downstream\downstream_top.sv
 elaborate -bbox_mul 64 -top DOWNSTREAM
 
 # Setup global clocks and resets
-clock HCLK
+clock clk
 reset -expression !(HRESETn)
 
 # Setup task

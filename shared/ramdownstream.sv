@@ -39,6 +39,10 @@ module ramdownstream (clk_write, downstream_address_write,
 
   // Write data to memory
   always @(posedge clk_write) begin
+    
+    // Add HW delay : 4 clock cycles for writing
+    for (i=0; i<4; i=i+1)
+      @(posedge clk_read) ; 
     if (downstream_write_enable==1'b1) begin
       memory[downstream_address_write] <= data_write; //+memory[downstream_address_write];
       memwr <= 1'b1;
@@ -51,6 +55,10 @@ module ramdownstream (clk_write, downstream_address_write,
   // Read data from memory
   always @(posedge clk_read) begin
     data_read <= memory[address_read];
+    
+    // Add HW delay : 4 clock cycles for writing
+    for (i=0; i<6; i=i+1)
+      @(posedge clk_read) ; 
   end
 
 endmodule

@@ -3,7 +3,8 @@
  compile with the following flags in icarus verilog:  -Wall -g2012 bc inputs/outputs fed back
  */ 
 
- `include "../shared/ramdownstream.sv"
+//  `include "../shared/ramdownstream.sv"
+ `include "shared/ramdownstream.sv"
  `include "downstream.sv"
  `include "get_cxl.sv"
 

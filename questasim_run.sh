@@ -9,7 +9,7 @@ if [  -z $1 ]
 then 
 vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv code/downstream/downstream_top.sv
 
-vopt -work work tb_top_downstream  -o seg_work_opt
+vopt -work work tb_top_DOWNSTREAM  -o seg_work_opt
 
 vsim seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_sim.txt  -do "run -all; quit"
 
@@ -24,7 +24,7 @@ vsim -coverage seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_
 
 # vsim -coverage seg_work_opt -gui 
 
-vcover report -details -html codeAlltestbench/outputs/downstream/downstream.ucdb
+vcover report -details -html codeAll testbench/outputs/downstream/downstream.ucdb
 
 # firefox covhtmlreport/index.html
 fi

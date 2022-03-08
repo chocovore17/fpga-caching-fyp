@@ -16,8 +16,12 @@ class monitor;
         $display("T=%0t, [MONITOR] starting ---------",$time);
         forever begin
              @(posedge dwnstrm_if.clk);
-            //  if(`MON_IF.HSEL)begin //valid slave select signal
+             if(1'b1==1'b1)begin // change to add reset, if not reset 
                 transaction trans = new();
+                $display("client ID");
+                $display( `MON_IF.client_id );
+                $display( `MON_IF.amount );
+                $display( `MON_IF.memwr );
                 trans.client_id = `MON_IF.client_id;
                 trans.amount = `MON_IF.amount;
                 trans.cancelled_orders = `MON_IF.cancelled_orders;
@@ -26,7 +30,7 @@ class monitor;
                 // trans.print("MONITOR");
                 mon2scb.put(trans);
                 -> mon_done;
-            //  end
+             end
         end
     endtask
 

@@ -3,7 +3,7 @@
 interface dwnstrmproc_if (input logic clk);
 
     logic [4:0]  client_id;
-    logic [15:0] amount
+    logic [15:0] amount;
     
     // output from DUT
     logic [15:0] cancelled_orders;
