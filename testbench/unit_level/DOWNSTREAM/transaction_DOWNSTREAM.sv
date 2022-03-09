@@ -25,7 +25,7 @@ class transaction;
     endfunction;
 
     //displaying output collected from DUT 
-    function void print_memwr(string tag= "");
+    function void print_downstream(string tag= "");
         $display("T=%0t [%s] output transaction information: ", $time, tag);
         $display("cancelled_orders = 0x%0h memwr = 0b%0b ",cancelled_orders,memwr);
     endfunction;

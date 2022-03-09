@@ -13,7 +13,8 @@ module downstream_top( clk, client_id, amount, cancelled_orders, memwr /*to disp
   input clk;
   input[15:0] amount;
   output [15:0] cancelled_orders;
-  
+  reg old_client;
+  reg old_amount;
   reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
   reg update_memory; //RAM inputs, state machine output by default 0
   output memwr; // RAM bool output & State machine input
@@ -38,14 +39,16 @@ module downstream_top( clk, client_id, amount, cancelled_orders, memwr /*to disp
           .out(update_memory)); //output for state machine
 
 
-  get_Cxl get_Cxl(.clk(clk), //input
-          .client_id(client_id),  // input [4:0]
-          .amount(amount),  // input[31:0]
-          .ack(ack));       //output 
+  // get_Cxl get_Cxl(.clk(clk), //input
+  //         .client_id(client_id),  // input [4:0]
+  //         .amount(amount),  // input[31:0]
+  //         .ack(ack));       //output 
 
-  // always @(posedge clk)
-  // begin 
-  //   ack = ack;
-  //   memwr = memwr; 
-  // end 
+  always @(client_id, amount)
+  begin 
+    if (old_amount!= amount ||old_client!=client_id) ack <= 1'b1;
+    old_amount = amount;
+    old_client = client_id; 
+  
+  end 
 endmodule

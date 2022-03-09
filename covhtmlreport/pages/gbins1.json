@@ -1,0 +1,8 @@
+var g_data = {
+c14:[4,'valid_address_selection',[],,'13',2,1,'\\/tb_top_DOWNSTREAM/cov_input ','9','/tb_top_DOWNSTREAM',[[],[0,'1','173',,'valid_addr_1']],[]],
+c15:[4,'valid_numerical_range',[],,'13',2,1,'\\/tb_top_DOWNSTREAM/cov_input ','9','/tb_top_DOWNSTREAM',[[],[0,'1','201',,'valid_data']],[]],
+c20:[4,'seven_segment',[],,'19',2,1,'\\/tb_top_DOWNSTREAM/cov_output ','9','/tb_top_DOWNSTREAM',[[],[0,'1','194',,'valid_cancel']],[]],
+c21:[4,'seg_dp',[],,'19',2,1,'\\/tb_top_DOWNSTREAM/cov_output ','9','/tb_top_DOWNSTREAM',[[],[0,'1','199',,'digital_point']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

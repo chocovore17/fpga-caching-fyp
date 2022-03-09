@@ -19,7 +19,7 @@ module downstream_processor(clk, ack, memwr, out);
   // State machine output
   assign out = (state == STATE_UPDATE_MEM);  
   // State transitions
-  always @(posedge clk) begin
+  always @(posedge clk, ack, memwr) begin
     case (state)
       IDLE:
         if (ack) begin

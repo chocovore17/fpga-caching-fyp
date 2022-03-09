@@ -12,7 +12,8 @@ class scoreboard;
         forever begin
             transaction trans;
             mon2scb.get(trans);
-            // trans.print_seg("SCOREBOARD");
+            trans.print("SCOREBOARD");
+            trans.print_downstream("SCOREBOARD");
             @(mon_done);
         end
     endtask
