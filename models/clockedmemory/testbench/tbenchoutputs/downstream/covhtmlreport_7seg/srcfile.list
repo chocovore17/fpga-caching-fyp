@@ -1,0 +1,10 @@
+AHB_peripherals_files/rtl/AHB_7SEG/AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/driver_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/environment_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/generator_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/interface_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/monitor_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/scoreboard_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tb_top_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tests_AHB7SEGDEC.sv
+AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/transaction_AHB7SEGDEC.sv

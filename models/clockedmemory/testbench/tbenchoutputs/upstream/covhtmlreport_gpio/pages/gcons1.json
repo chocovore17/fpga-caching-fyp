@@ -1,0 +1,7 @@
+var g_db_data = [
+{dummy:0},
+{name:'cg_input',f:1,type:6,id:8,tb:'11',h:'11',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_AHBGPIO',parent:'6'},
+{name:'cg_output',f:1,type:6,id:26,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_AHBGPIO',parent:'6'},
+{name:'cg_input',f:1,type:6,id:8,tb:'11',h:'11',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_AHBGPIO',parent:'6'},
+{name:'cg_output',f:1,type:6,id:26,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_AHBGPIO',parent:'6'}];
+processConsCovergroupsData(g_db_data);
