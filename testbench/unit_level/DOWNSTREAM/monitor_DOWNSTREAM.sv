@@ -22,7 +22,7 @@ class monitor;
                 trans.client_id = `MON_IF.client_id;
                 trans.amount = `MON_IF.amount;
                 trans.cancelled_orders = `MON_IF.cancelled_orders;
-                trans.memwr = `MON_IF.memwr;
+                // trans.memwr = `MON_IF.memwr;
                 @(posedge dwnstrm_if.slowclk);
                 // trans.print("MONITOR");
                 mon2scb.put(trans);

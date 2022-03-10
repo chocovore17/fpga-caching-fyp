@@ -16,7 +16,7 @@ class transaction;
     }
     
     logic [15:0] cancelled_orders;
-    logic memwr;
+    // logic memwr;
 
     //displaying randomized values of items 
     function void print(string tag= "");
@@ -27,7 +27,7 @@ class transaction;
     //displaying output collected from DUT 
     function void print_downstream(string tag= "");
         $display("T=%0t [%s] output transaction information: ", $time, tag);
-        $display("cancelled_orders = 0x%0h memwr = 0b%0b ",cancelled_orders,memwr);
+        $display("cancelled_orders = 0x%0h  ",cancelled_orders);
     endfunction;
 
 endclass

@@ -7,7 +7,7 @@ vlib work
 
 if [  -z $1 ] 
 then 
-vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv shared/top.sv
+vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv code/shared/top.sv
 vopt -work work tb_top_UPDOWNSTREAM  -o seg_work_opt
 vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt  -do "run -all; quit"
 
@@ -16,7 +16,7 @@ else
 # run converage check on questasim
 rm -r covhtmlreport/
 rm testbench/outputs/top/UPDOWNSTREAM_cov_report.txt
-vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv shared/top.sv
+vlog -work work +acc=blnr -noincr -timescale 1ns/1ps testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv code/shared/top.sv
 vopt -work work tb_top_UPDOWNSTREAM  -o seg_work_opt
 vsim -coverage seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt  -do "run -all; coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/upstream/upstream.ucdb; quit"
 

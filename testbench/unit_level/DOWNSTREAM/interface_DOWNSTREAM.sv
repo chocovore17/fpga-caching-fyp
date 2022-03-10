@@ -7,7 +7,7 @@ interface dwnstrmproc_if (input logic clk, input logic slowclk);
     
     // output from DUT
     logic [15:0] cancelled_orders;
-    logic memwr; // RAM bool output & State machine input
+    // logic memwr; // RAM bool output & State machine input
 
     //clocking block for driver
     clocking driver_cb @(posedge slowclk);
@@ -22,7 +22,7 @@ interface dwnstrmproc_if (input logic clk, input logic slowclk);
         input client_id;
         input amount;
         input cancelled_orders;
-        input memwr;
+        // input memwr;
     endclocking;
 
     //modport from driver, which specified clock block and data direction

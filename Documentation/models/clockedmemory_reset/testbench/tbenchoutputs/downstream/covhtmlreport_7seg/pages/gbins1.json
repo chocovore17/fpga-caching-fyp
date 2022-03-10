@@ -1,0 +1,18 @@
+var g_data = {
+c18:[4,'reset_check',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200002',,'reset_trigger']],[]],
+c19:[4,'valid_address_selection',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','40051',,'valid_addr_1'],[0,'1','40256',,'valid_addr_2'],[0,'1','39820',,'valid_addr_3'],[0,'1','39824',,'valid_addr_4']],[]],
+c20:[4,'valid_numerical_range',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'valid_data']],[]],
+c21:[4,'digit_dot',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'dot']],[]],
+c22:[4,'ahb_trans',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'htrans_en']],[]],
+c23:[4,'ahb_hwrite',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'hwrite']],[]],
+c24:[4,'ahb_hsel',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'hselect']],[]],
+c25:[4,'ahb_hready',[],,'17',2,1,'\\/tb_top_AHB7SEGDEC/cov_input ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200001',,'hready']],[]],
+c32:[4,'ahb_rdata',[],,'31',2,1,'\\/tb_top_AHB7SEGDEC/cov_output ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','99859',,'valid_digit_range'],[0,'1','6297',,'digit_0'],[0,'1','6085',,'digit_1'],[0,'1','6188',,'digit_2'],[0,'1','6171',,'digit_3'],[0,'1','6326',,'digit_4'],[0,'1','6245',,'digit_5'],[0,'1','6416',,'digit_6'],[0,'1','6310',,'digit_7'],[0,'1','6186',,'digit_8']
+,[0,'1','6288',,'digit_9'],[0,'1','6408',,'digit_a'],[0,'1','6102',,'digit_b'],[0,'1','6352',,'digit_c'],[0,'1','6074',,'digit_d'],[0,'1','6243',,'digit_e'],[0,'1','6168',,'digit_f']],[]],
+c33:[4,'seven_segment',[],,'31',2,1,'\\/tb_top_AHB7SEGDEC/cov_output ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','12367',,'seg_0'],[0,'1','12201',,'seg_1'],[0,'1','12603',,'seg_2'],[0,'1','12795',,'seg_3'],[0,'1','12564',,'seg_4'],[0,'1','12218',,'seg_5'],[0,'1','12577',,'seg_6'],[0,'1','13057',,'seg_7'],[0,'1','12544',,'seg_8'],[0,'1','12037',,'seg_9']
+,[0,'1','12634',,'seg_a'],[0,'1','12731',,'seg_b'],[0,'1','12487',,'seg_c'],[0,'1','12725',,'seg_d'],[0,'1','12654',,'seg_e'],[0,'1','11808',,'seg_f'],[1,'--','0',1,'seg_reseve']],[]],
+c34:[4,'seg_an',[],,'31',2,1,'\\/tb_top_AHB7SEGDEC/cov_output ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','32770',,'ring_1'],[0,'1','65536',,'ring_2'],[0,'1','65536',,'ring_3'],[0,'1','36160',,'ring_4'],[1,'--','0',1,'seg_an_reserve']],[]],
+c35:[4,'seg_dp',[],,'31',2,1,'\\/tb_top_AHB7SEGDEC/cov_output ','6','/tb_top_AHB7SEGDEC',[[],[0,'1','200002',,'digital_point']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

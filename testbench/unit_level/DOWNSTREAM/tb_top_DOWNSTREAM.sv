@@ -15,8 +15,8 @@ module tb_top_DOWNSTREAM;
         .clk(clk),
         .client_id(intf.client_id),
         .amount(intf.amount),
-        .cancelled_orders(intf.cancelled_orders),
-        .memwr(intf.memwr)
+        .cancelled_orders(intf.cancelled_orders)
+        // .memwr(intf.memwr)
 	);
     tests test;
 
@@ -37,9 +37,9 @@ module tb_top_DOWNSTREAM;
         seven_segment: coverpoint intf.cancelled_orders{
             bins valid_cancel = {[0:3000]};
         }
-        seg_dp: coverpoint intf.memwr{
-            bins digital_point = {1'b0,1'b1};
-        }
+        // seg_dp: coverpoint intf.memwr{
+        //     bins digital_point = {1'b0,1'b1};
+        // }
 
     endgroup
 

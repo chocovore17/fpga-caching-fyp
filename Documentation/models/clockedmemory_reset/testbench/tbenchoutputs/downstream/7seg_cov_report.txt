@@ -1,0 +1,86 @@
+Coverage Report Summary Data by file
+
+=================================================================================
+=== File: AHB_peripherals_files/rtl/AHB_7SEG/AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           50        46         4     92.00
+    Branches                       119       108        11     90.75
+    FEC Condition Terms             59        45        14     76.27
+    Toggle Bins                    728       307       421     42.17
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/driver_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           27        27         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/environment_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           21        21         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/generator_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           18        10         8     55.55
+    Branches                         4         1         3     25.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/interface_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           15        15         0    100.00
+    Toggle Bins                    234        57       177     24.35
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/monitor_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           22        22         0    100.00
+    Branches                         2         2         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/scoreboard_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            5         5         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tb_top_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           15        15         0    100.00
+    Toggle Bins                      2         2         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tests_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/transaction_AHB7SEGDEC.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         0         3      0.00
+
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+
+TOTAL ASSERTION COVERAGE: 70.00%  ASSERTIONS: 10
+
+Total Coverage By File (code coverage only, filtered view): 73.66%
+
