@@ -3,9 +3,10 @@
  * IDLE -> STATE_UPDATE_MEM when ack goes high 
  * STATE_UPDATE_MEM -> IDLE when memwr goes low 
  */ 
-module downstream_processor(clk, ack, memwr, out);
+module downstream_processor(clk, ack, memwr, HRESETn, out);
   input  clk;
   input ack; // how to ensure it will go back to 0?
+  input HRESETn;
   input memwr; // how to ensure it will go back to 0?
   output out;
   
@@ -36,6 +37,9 @@ module downstream_processor(clk, ack, memwr, out);
       default:
         state <= IDLE;
     endcase
+    if (!HRESETn) begin
+      state <= IDLE;
+    end
   end
 
 endmodule
