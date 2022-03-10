@@ -61,9 +61,9 @@ module ramupstream (clk_write, address_write,
   end
 
   // Read data from memory
-  always @(posedge clk_read) begin
-    accumulated_orders <= memory[address_read][15:0]; // LSB
-    max_to_trade <= memory[address_read][31:16]; // MSB
-  end
+  // always @(posedge clk_read) begin
+  assign accumulated_orders = memory[address_read][15:0]; // LSB
+  assign max_to_trade = memory[address_read][31:16]; // MSB
+  // end
 
 endmodule

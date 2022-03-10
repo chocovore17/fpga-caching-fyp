@@ -44,7 +44,7 @@ class driver;
             // trans.print("DRIVER"); // print transaction information
             // $display("T=%0t, [DRIVER-TRANSFER: %0d] ---------",$time,no_transactions);
             
-            @(posedge up_if.clk);
+            @(posedge up_if.slowclk);
             `DRIV_IF.client_id <= trans.client_id;
             `DRIV_IF.amount <= trans.amount;
             `DRIV_IF.new_order <= trans.new_order;
@@ -55,7 +55,7 @@ class driver;
             // `DRIV_IF.GPIOIN <= trans.GPIOIN;
 
             //current iteration of stimulus sent done
-            @(posedge up_if.clk);
+            @(posedge up_if.slowclk);
             no_transactions++;
             -> drv_done;
             

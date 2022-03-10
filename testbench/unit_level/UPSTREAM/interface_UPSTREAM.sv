@@ -1,6 +1,6 @@
 
 // interface of GPIO input/ouput signal
-interface upstream_if (input logic clk);
+interface upstream_if (input logic clk, input logic slowclk);
 
     // inputs
     logic new_max;
@@ -15,7 +15,7 @@ interface upstream_if (input logic clk);
 
 
     //clocking block for driver
-    clocking driver_cb @(posedge clk);
+    clocking driver_cb @(posedge slowclk);
         //we don't introudce default input/output clock skew in clocking block
         output new_order;
         output new_max;
@@ -24,7 +24,7 @@ interface upstream_if (input logic clk);
     endclocking;
 
     //clocking block for monitor
-    clocking monitor_cb @(posedge clk);
+    clocking monitor_cb @(posedge slowclk);
         //we don't introudce default input/output clock skew in clocking block
         input new_order;
         input new_max;
@@ -37,11 +37,11 @@ interface upstream_if (input logic clk);
 
     //modport from driver, which specified clock block and data direction
     modport DRIVER(clocking driver_cb,
-                input clk);
+                input clk, input slowclk);
 
     //modport from monitor, which specified clock block and data direction
     modport MONITOR(clocking monitor_cb,
-                input clk);
+                input clk, input slowclk);
 
 
 

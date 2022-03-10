@@ -15,7 +15,7 @@ class monitor;
     task main;
         $display("T=%0t, [MONITOR] starting ---------",$time);
         forever begin
-             @(posedge up_if.clk);
+             @(posedge up_if.slowclk);
              if(1'b1==1'b1)begin //valid slave select signal
                 // I/O transactions 
                 transaction trans = new();
@@ -29,7 +29,7 @@ class monitor;
                 trans.max_to_trade = `MON_IF.max_to_trade;
                 trans.thenewmax = `MON_IF.thenewmax;
 
-                @(posedge up_if.clk);
+                @(posedge up_if.slowclk);
                 // trans.print("MONITOR");
                 mon2scb.put(trans);
                 -> mon_done;

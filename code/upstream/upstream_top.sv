@@ -14,9 +14,11 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   input[31:0] amount;
   output thenewmax;
   
+  reg old_client;
+  reg old_amount;
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
-  reg [9:0] upstreamclient_id; //RAM inputs
+  // reg [9:0] upstreamclient_id; //RAM inputs
   reg       check_risk, send_order, update_max; // state machine outputs
   wire [31:0] cancelled_orders; // RAM data OUTPUTS
   output [31:0] accumulated_orders, max_to_trade;
@@ -26,11 +28,11 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   ramupstream #(32, 10, 1024) RAMUPSTREAM (
     .clk_write(clk),
     .change_max(update_max),
-    .address_write(upstreamclient_id),
+    .address_write({5'b0, client_id}),
     .data_write(amount),
     .write_enable((update_max) || (send_order)),
     .clk_read(clk),
-    .address_read(upstreamclient_id),
+    .address_read({5'b0, client_id}),
     .accumulated_orders(accumulated_orders),
     .max_to_trade(max_to_trade),
     .memwr(memwr));                             // output 
@@ -46,10 +48,10 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     .memwr(nocare),                              // output 
     .data_read(cancelled_orders));              // output[31:0]
 
-    // outputs the risk check value
-    SLT SLT(.A(max_to_trade),
-        .B(accumulated_orders + amount + (~cancelled_orders + 1)),
-        .Result(pass_checks));
+    // // outputs the risk check value
+    // SLT SLT(.A(max_to_trade),
+    //     .B(accumulated_orders + amount + (~cancelled_orders + 1)),
+    //     .Result(pass_checks));
 
   //instantiate upstream state machine to know current state 
     upstream_processor UPSTREAMPROCESSOR(.clk(clk),
@@ -61,6 +63,18 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
           .send_order(send_order),
           .update_max(update_max));
 
+  always @(client_id, amount)
+  begin 
+    if (old_amount!= amount ||old_client!=client_id);
+    old_amount = amount;
+    old_client = client_id;
+    pass_checks <= max_to_trade<(accumulated_orders + amount + (~cancelled_orders + 1)) ? 1 : 0 ;
+    // $display(pass_checks); 
+    // $display(accumulated_orders);
+    // $display(client_id);
+    // // $display(amount); // + amount + (~cancelled_orders + 1)));
+  
+  end 
   // always @(client_id,amount)
   // begin
 

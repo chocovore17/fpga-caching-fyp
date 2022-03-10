@@ -18,9 +18,9 @@ class transaction;
     // constraint c_write{
     //     new_max == 1'b1;//always enable ahb write in CRT
     // }
-    // constraint c_sel{
-    //     new_order == 1'b1;//always enable ahb slave select in CRT
-    // }
+    constraint c_sel{
+        new_order == ~new_max;//always enable ahb slave select in CRT
+    }
     // constraint c_ready{
     //     HREADY == 1'b1;//always enable ahb write in CRT
     // }
@@ -33,14 +33,14 @@ class transaction;
 
     //displaying randomized values of items 
     function void print(string tag= "");
-        $display("T=%0t [%s] transaction information: client_id = 0x%0h amount = 0x%0h new_max = 0x%0h ",$time, tag, client_id,amount,new_max);
+        $display("T=%0t [%s] transaction information: client_id = 0x%0h amount = 0x%0h new_max = 0x%0h new_order = 0x%0h ",$time, tag, client_id,amount,new_max, new_order);
         // $display("DLS_ERROR = 0b%0b",DLS_ERROR);
     endfunction;
 
     //displaying output collected from DUT 
     function void print_upstream(string tag= "");
         $display("T=%0t [%s] upstream transaction information: ", $time, tag);
-        $display("accumulated_orders = 0x%0h max_to_trade = 0b%0b thenewmax = 0b%0b ",accumulated_orders, max_to_trade, thenewmax);
+        $display("accumulated_orders = 0x%0h max_to_trade = 0b%0h thenewmax = 0b%0h ",accumulated_orders, max_to_trade, thenewmax);
     endfunction;
 
 endclass

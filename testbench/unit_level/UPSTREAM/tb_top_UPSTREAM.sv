@@ -4,9 +4,9 @@
 module tb_top_UPSTREAM;
     //clock and reset signal declaration
     bit clk;
-
+    bit slowclk;
     //creatinng instance of 7seg interface, inorder to connect DUT and testcase
-    upstream_if intf(clk);
+    upstream_if intf(clk, slowclk);
 
     // Instantiate device under test
     upstream_processor_top UPSTREAM(
@@ -24,7 +24,7 @@ module tb_top_UPSTREAM;
     tests test;
 
     //functional coverage point to check range of input signal to DUT
-    covergroup cg_input  @(posedge intf.clk);
+    covergroup cg_input  @(posedge intf.slowclk);
         // reset_check: coverpoint intf.HRESETn{
         //     bins reset_trigger = {1'b0, 1'b1};
         // }
@@ -34,11 +34,11 @@ module tb_top_UPSTREAM;
         // valid_numerical_data: coverpoint intf.amount{
         //     bins dot = {16'h0001,16'h0000};
         // }
-        upstream_not_max: coverpoint intf.new_order{
-            bins not_max = {1'b0,~intf.new_max};
-        }
+        // upstream_not_max: coverpoint intf.new_order{
+        //     bins not_max = {1'b1}; //for now, extra test
+        // }
         upstream_new_maxcheck: coverpoint intf.new_max{
-            bins new_maxcheck = {1'b0,~intf.new_order};
+            bins new_maxcheck = {1'b0,1'b1};
         }
         // upstream_hsel: coverpoint intf.HSEL{
         //     bins hselect = {1'b0,1'b1};
@@ -50,7 +50,7 @@ module tb_top_UPSTREAM;
     endgroup
 
     //functional coverage point to check range of output signal from DUT
-    covergroup cg_output @(posedge intf.clk);
+    covergroup cg_output @(posedge intf.slowclk);
         upstream_rdata: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
             bins upstream_rdata =  {[0:64]};
         }
@@ -66,7 +66,12 @@ module tb_top_UPSTREAM;
     //clock generation
     initial begin
         clk = 1'b0;
-        forever #5 clk = !clk;
+        slowclk = 1'b0;
+        forever begin
+            #2 clk = ~clk;
+            #10 slowclk = ~slowclk;
+        // forever #5 clk = !clk;
+        end
     end
 
     initial begin

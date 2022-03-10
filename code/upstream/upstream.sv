@@ -25,14 +25,16 @@ module upstream_processor(clk, risk_ok, new_order, new_max, memwr, check_risk, s
     // STATE_RISKCHECK_NEWMAX  = 6'b100000, //shouldn't be possible, will add if find a way for speedup
 
   // State machine output
-  assign check_risk = ((state == STATE_RISKCHECK)||(state == STATE_RISKCHK_SENDORDER));  //||(state == STATE_RISKCHECK_NEWMAX) 
-  assign send_order = ((state == STATE_SENDORDER)||(state == STATE_RISKCHK_SENDORDER));  
-  assign update_max = ((state == STATE_NEWMAX)||(state == new_max));   //override if need to update maximum
+  // assign check_risk = ((state == STATE_RISKCHECK)||(state == STATE_RISKCHK_SENDORDER));  //||(state == STATE_RISKCHECK_NEWMAX) 
+  // assign send_order = ((state == STATE_SENDORDER)||(state == STATE_RISKCHK_SENDORDER));  
+  assign check_risk = (state == STATE_RISKCHECK); //||(state == STATE_RISKCHECK_NEWMAX) 
+  assign send_order = (state == STATE_SENDORDER);
+  assign update_max = (state == STATE_NEWMAX);   //override if need to update maximum
   
   // State transitions
   // QUESTION - policy about new max - should we have an @always if new_max that has priority ?
   // for improvement: add state sendorder_newmax
-  always @(posedge clk) begin
+  always @(posedge clk, risk_ok, new_max, new_order, memwr) begin
     case (state)
       IDLE:
         if ((new_order==1'b0)&&(new_max==1'b1)) begin
@@ -79,22 +81,22 @@ module upstream_processor(clk, risk_ok, new_order, new_max, memwr, check_risk, s
         end
 
 
-      STATE_RISKCHK_SENDORDER: //might get stuck at this phase if send lots of orders fast ?
-        if ((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b1)&&(risk_ok==1'b0)) begin //wrote order to memory, fails risk check, want to update max
-          state <= STATE_NEWMAX;
-        end else if ((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin //wrote order to memory, fails risk check
-          state <= IDLE;
-        end else if((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b1)) begin //wrote order to memory, passes risk check
-          state <= STATE_SENDORDER;
-        end else if((memwr==1'b0)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin // did not write order to memory, fail risk check
-          state <= STATE_SENDORDER;
-        end else if((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b1)&&(risk_ok==1'b0)) begin // wrote order to memory, fail risk check, new max 
-          state <= STATE_NEWMAX;
-        end else if((memwr==1'b1)&&(new_order==1'b1)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin // wrote order to memory, fails risk check, new order 
-          state <= STATE_RISKCHECK;
-        end else begin
-          state <= STATE_RISKCHK_SENDORDER;// did not write order to memory, passes risk check => discard order, 
-        end
+      // STATE_RISKCHK_SENDORDER: //might get stuck at this phase if send lots of orders fast ?
+      //   if ((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b1)&&(risk_ok==1'b0)) begin //wrote order to memory, fails risk check, want to update max
+      //     state <= STATE_NEWMAX;
+      //   end else if ((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin //wrote order to memory, fails risk check
+      //     state <= IDLE;
+      //   end else if((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b1)) begin //wrote order to memory, passes risk check
+      //     state <= STATE_SENDORDER;
+      //   end else if((memwr==1'b0)&&(new_order==1'b0)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin // did not write order to memory, fail risk check
+      //     state <= STATE_SENDORDER;
+      //   end else if((memwr==1'b1)&&(new_order==1'b0)&&(new_max==1'b1)&&(risk_ok==1'b0)) begin // wrote order to memory, fail risk check, new max 
+      //     state <= STATE_NEWMAX;
+      //   end else if((memwr==1'b1)&&(new_order==1'b1)&&(new_max==1'b0)&&(risk_ok==1'b0)) begin // wrote order to memory, fails risk check, new order 
+      //     state <= STATE_RISKCHECK;
+      //   end else begin
+      //     state <= STATE_RISKCHK_SENDORDER;// did not write order to memory, passes risk check => discard order, 
+      //   end
 
       default:
         state <= IDLE;
