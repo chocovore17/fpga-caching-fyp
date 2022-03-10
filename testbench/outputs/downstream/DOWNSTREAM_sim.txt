@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 17:40:53 on Mar 09,2022
+# Start time: 08:15:37 on Mar 10,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -25,318 +25,318 @@
 # run -all
 # --------- [DRIVER] Reset Started ---------
 # --------- [DRIVER] Reset Ended ---------
-# T=5000 [Generator] starting
+# T=2000 [Generator] starting
 # repeat count = 100
-# T=5000, [DRIVER] starting ---------
-# T=5000, [MONITOR] starting ---------
-# T=5000, [SCOREBOARD] starting ---------
-# T=25000 [SCOREBOARD] transaction information: client_id = 0xx amount = 0xx 
-# T=25000 [SCOREBOARD] output transaction information: 
+# T=2000, [DRIVER] starting ---------
+# T=2000, [MONITOR] starting ---------
+# T=2000, [SCOREBOARD] starting ---------
+# T=36000 [SCOREBOARD] transaction information: client_id = 0xx amount = 0xx 
+# T=36000 [SCOREBOARD] output transaction information: 
 # cancelled_orders = 0xx memwr = 0bx 
-# T=45000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xe7 
-# T=45000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x0 memwr = 0b0 
-# T=65000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x42 
-# T=65000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x0 memwr = 0b0 
-# T=85000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x38 
-# T=85000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xe7 memwr = 0b0 
-# T=105000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x5b 
-# T=105000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x11f memwr = 0b0 
-# T=125000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x79 
-# T=125000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x0 memwr = 0b0 
-# T=145000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x48 
-# T=145000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x17a memwr = 0b0 
-# T=165000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x4 
-# T=165000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x79 memwr = 0b0 
-# T=185000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x8c 
-# T=185000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x1c2 memwr = 0b0 
-# T=205000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xb9 
-# T=205000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x24e memwr = 0b0 
-# T=225000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x20 
-# T=225000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x0 memwr = 0b0 
-# T=245000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf9 
-# T=245000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x307 memwr = 0b0 
-# T=265000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xa3 
-# T=265000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x400 memwr = 0b0 
-# T=285000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x82 
-# T=285000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x42 memwr = 0b0 
-# T=305000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x43 
-# T=305000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x20 memwr = 0b0 
-# T=325000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xde 
-# T=325000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x7d memwr = 0b0 
-# T=345000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xff 
-# T=345000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x0 memwr = 0b0 
-# T=365000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xb4 
-# T=365000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x63 memwr = 0b0 
-# T=385000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x9c 
-# T=385000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x15b memwr = 0b0 
-# T=405000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x63 
-# T=405000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x1f7 memwr = 0b0 
-# T=425000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xf 
-# T=425000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xff memwr = 0b0 
-# T=445000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xa1 
-# T=445000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x4a3 memwr = 0b0 
-# T=465000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xac 
-# T=465000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x10e memwr = 0b0 
-# T=485000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x5c 
-# T=485000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x1ba memwr = 0b0 
-# T=505000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x5a 
-# T=505000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x544 memwr = 0b0 
-# T=525000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x74 
-# T=525000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xc4 memwr = 0b0 
-# T=545000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x76 
-# T=545000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x59e memwr = 0b0 
-# T=565000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xab 
-# T=565000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x25a memwr = 0b0 
-# T=585000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xad 
-# T=585000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x216 memwr = 0b0 
-# T=605000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x29 
-# T=605000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x614 memwr = 0b0 
-# T=625000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x21 
-# T=625000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x63d memwr = 0b0 
-# T=645000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xc2 
-# T=645000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x305 memwr = 0b0 
-# T=665000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf9 
-# T=665000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x65e memwr = 0b0 
-# T=685000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x53 
-# T=685000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x2c3 memwr = 0b0 
-# T=705000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xae 
-# T=705000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x117 memwr = 0b0 
-# T=725000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xcf 
-# T=725000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x3c7 memwr = 0b0 
-# T=745000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xf 
-# T=745000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x316 memwr = 0b0 
-# T=765000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xdb 
-# T=765000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x1c5 memwr = 0b0 
-# T=785000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x73 
-# T=785000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x138 memwr = 0b0 
-# T=805000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x66 
-# T=805000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x325 memwr = 0b0 
-# T=825000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xad 
-# T=825000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x757 memwr = 0b0 
-# T=845000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x50 
-# T=845000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x804 memwr = 0b0 
-# T=865000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd4 
-# T=865000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x1ab memwr = 0b0 
-# T=885000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xa6 
-# T=885000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x2a0 memwr = 0b0 
-# T=905000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x3 
-# T=905000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x27f memwr = 0b0 
-# T=925000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x36 
-# T=925000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x282 memwr = 0b0 
-# T=945000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x77 
-# T=945000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x346 memwr = 0b0 
-# T=965000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xda 
-# T=965000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x854 memwr = 0b0 
-# T=985000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xb 
-# T=985000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x496 memwr = 0b0 
-# T=1005000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x4b 
-# T=1005000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x3bd memwr = 0b0 
-# T=1025000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xf1 
-# T=1025000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x408 memwr = 0b0 
-# T=1045000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x9d 
-# T=1045000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x4f9 memwr = 0b0 
-# T=1065000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x39 
-# T=1065000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x92e memwr = 0b0 
-# T=1085000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xda 
-# T=1085000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x4a1 memwr = 0b0 
-# T=1105000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x5f 
-# T=1105000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x57b memwr = 0b0 
-# T=1125000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xcc 
-# T=1125000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x2b8 memwr = 0b0 
-# T=1145000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xc9 
-# T=1145000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x384 memwr = 0b0 
-# T=1165000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xd4 
-# T=1165000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x5da memwr = 0b0 
-# T=1185000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x8f 
-# T=1185000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x6ae memwr = 0b0 
-# T=1205000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xec 
-# T=1205000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x596 memwr = 0b0 
-# T=1225000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x8b 
-# T=1225000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x44d memwr = 0b0 
-# T=1245000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x8e 
-# T=1245000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x73d memwr = 0b0 
-# T=1265000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x61 
-# T=1265000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x682 memwr = 0b0 
-# T=1285000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd0 
-# T=1285000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x4d8 memwr = 0b0 
-# T=1305000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x19 
-# T=1305000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x967 memwr = 0b0 
-# T=1325000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf0 
-# T=1325000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x980 memwr = 0b0 
-# T=1345000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x92 
-# T=1345000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x38b memwr = 0b0 
-# T=1365000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x8d 
-# T=1365000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x6e3 memwr = 0b0 
-# T=1385000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xb4 
-# T=1385000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x7cb memwr = 0b0 
-# T=1405000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x73 
-# T=1405000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x5a8 memwr = 0b0 
-# T=1425000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xaf 
-# T=1425000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x61b memwr = 0b0 
-# T=1445000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x83 
-# T=1445000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xa70 memwr = 0b0 
-# T=1465000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xef 
-# T=1465000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x770 memwr = 0b0 
-# T=1485000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x8d 
-# T=1485000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x41d memwr = 0b0 
-# T=1505000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x2 
-# T=1505000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x87f memwr = 0b0 
-# T=1525000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x85 
-# T=1525000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x85f memwr = 0b0 
-# T=1545000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xa 
-# T=1545000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x8e4 memwr = 0b0 
-# T=1565000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x85 
-# T=1565000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x4aa memwr = 0b0 
-# T=1585000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xc7 
-# T=1585000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x52f memwr = 0b0 
-# T=1605000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x7b 
-# T=1605000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x8ee memwr = 0b0 
-# T=1625000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x71 
-# T=1625000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x881 memwr = 0b0 
-# T=1645000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xfc 
-# T=1645000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x6ca memwr = 0b0 
-# T=1665000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x8f 
-# T=1665000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xaf3 memwr = 0b0 
-# T=1685000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x28 
-# T=1685000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x969 memwr = 0b0 
-# T=1705000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xbb 
-# T=1705000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x991 memwr = 0b0 
-# T=1725000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x2 
-# T=1725000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xb82 memwr = 0b0 
-# T=1745000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x51 
-# T=1745000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x7c6 memwr = 0b0 
-# T=1765000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x5d 
-# T=1765000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x8f2 memwr = 0b0 
-# T=1785000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xa7 
-# T=1785000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x5f6 memwr = 0b0 
-# T=1805000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xcd 
-# T=1805000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xb84 memwr = 0b0 
-# T=1825000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x8c 
-# T=1825000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xa4c memwr = 0b0 
-# T=1845000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd 
-# T=1845000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x817 memwr = 0b0 
-# T=1865000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x96 
-# T=1865000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xc51 memwr = 0b0 
-# T=1885000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xeb 
-# T=1885000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x94f memwr = 0b0 
-# T=1905000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x26 
-# T=1905000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x69d memwr = 0b0 
-# T=1925000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xb5 
-# T=1925000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xad8 memwr = 0b0 
-# T=1945000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x5d 
-# T=1945000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x824 memwr = 0b0 
-# T=1965000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x25 
-# T=1965000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xb8d memwr = 0b0 
-# T=1985000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xaa 
-# T=1985000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0x881 memwr = 0b0 
-# T=2005000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x90 
-# T=2005000 [SCOREBOARD] output transaction information: 
-# cancelled_orders = 0xa3a memwr = 0b0 
-# T=2005000 [Generator] Done generation
+# T=84000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xe7 
+# T=84000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xe7 memwr = 0b1 
+# T=132000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x42 
+# T=132000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x42 memwr = 0b1 
+# T=180000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x38 
+# T=180000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x11f memwr = 0b1 
+# T=228000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x5b 
+# T=228000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x17a memwr = 0b1 
+# T=276000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x79 
+# T=276000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x79 memwr = 0b1 
+# T=324000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x48 
+# T=324000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x1c2 memwr = 0b1 
+# T=372000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x4 
+# T=372000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x7d memwr = 0b1 
+# T=420000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x8c 
+# T=420000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x24e memwr = 0b1 
+# T=468000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xb9 
+# T=468000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x307 memwr = 0b1 
+# T=516000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x20 
+# T=516000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x20 memwr = 0b1 
+# T=564000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf9 
+# T=564000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x400 memwr = 0b1 
+# T=612000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xa3 
+# T=612000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x4a3 memwr = 0b1 
+# T=660000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x82 
+# T=660000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xc4 memwr = 0b1 
+# T=708000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x43 
+# T=708000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x63 memwr = 0b1 
+# T=756000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xde 
+# T=756000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x15b memwr = 0b1 
+# T=804000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xff 
+# T=804000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xff memwr = 0b1 
+# T=852000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xb4 
+# T=852000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x117 memwr = 0b1 
+# T=900000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x9c 
+# T=900000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x1f7 memwr = 0b1 
+# T=948000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x63 
+# T=948000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x25a memwr = 0b1 
+# T=996000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xf 
+# T=996000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x10e memwr = 0b1 
+# T=1044000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xa1 
+# T=1044000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x544 memwr = 0b1 
+# T=1092000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xac 
+# T=1092000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x1ba memwr = 0b1 
+# T=1140000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x5c 
+# T=1140000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x216 memwr = 0b1 
+# T=1188000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x5a 
+# T=1188000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x59e memwr = 0b1 
+# T=1236000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x74 
+# T=1236000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x138 memwr = 0b1 
+# T=1284000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x76 
+# T=1284000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x614 memwr = 0b1 
+# T=1332000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xab 
+# T=1332000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x305 memwr = 0b1 
+# T=1380000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xad 
+# T=1380000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x2c3 memwr = 0b1 
+# T=1428000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x29 
+# T=1428000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x63d memwr = 0b1 
+# T=1476000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x21 
+# T=1476000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x65e memwr = 0b1 
+# T=1524000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xc2 
+# T=1524000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x3c7 memwr = 0b1 
+# T=1572000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf9 
+# T=1572000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x757 memwr = 0b1 
+# T=1620000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x53 
+# T=1620000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x316 memwr = 0b1 
+# T=1668000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xae 
+# T=1668000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x1c5 memwr = 0b1 
+# T=1716000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xcf 
+# T=1716000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x496 memwr = 0b1 
+# T=1764000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xf 
+# T=1764000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x325 memwr = 0b1 
+# T=1812000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xdb 
+# T=1812000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x2a0 memwr = 0b1 
+# T=1860000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x73 
+# T=1860000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x1ab memwr = 0b1 
+# T=1908000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x66 
+# T=1908000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x38b memwr = 0b1 
+# T=1956000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xad 
+# T=1956000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x804 memwr = 0b1 
+# T=2004000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x50 
+# T=2004000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x854 memwr = 0b1 
+# T=2052000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd4 
+# T=2052000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x27f memwr = 0b1 
+# T=2100000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xa6 
+# T=2100000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x346 memwr = 0b1 
+# T=2148000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x3 
+# T=2148000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x282 memwr = 0b1 
+# T=2196000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x36 
+# T=2196000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x2b8 memwr = 0b1 
+# T=2244000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x77 
+# T=2244000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x3bd memwr = 0b1 
+# T=2292000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xda 
+# T=2292000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x92e memwr = 0b1 
+# T=2340000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xb 
+# T=2340000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x4a1 memwr = 0b1 
+# T=2388000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x4b 
+# T=2388000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x408 memwr = 0b1 
+# T=2436000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xf1 
+# T=2436000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x4f9 memwr = 0b1 
+# T=2484000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x9d 
+# T=2484000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x596 memwr = 0b1 
+# T=2532000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x39 
+# T=2532000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x967 memwr = 0b1 
+# T=2580000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xda 
+# T=2580000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x57b memwr = 0b1 
+# T=2628000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x5f 
+# T=2628000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x5da memwr = 0b1 
+# T=2676000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xcc 
+# T=2676000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x384 memwr = 0b1 
+# T=2724000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xc9 
+# T=2724000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x44d memwr = 0b1 
+# T=2772000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xd4 
+# T=2772000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x6ae memwr = 0b1 
+# T=2820000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x8f 
+# T=2820000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x73d memwr = 0b1 
+# T=2868000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xec 
+# T=2868000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x682 memwr = 0b1 
+# T=2916000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x8b 
+# T=2916000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x4d8 memwr = 0b1 
+# T=2964000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x8e 
+# T=2964000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x7cb memwr = 0b1 
+# T=3012000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x61 
+# T=3012000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x6e3 memwr = 0b1 
+# T=3060000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd0 
+# T=3060000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x5a8 memwr = 0b1 
+# T=3108000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x19 
+# T=3108000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x980 memwr = 0b1 
+# T=3156000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xf0 
+# T=3156000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xa70 memwr = 0b1 
+# T=3204000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x92 
+# T=3204000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x41d memwr = 0b1 
+# T=3252000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x8d 
+# T=3252000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x770 memwr = 0b1 
+# T=3300000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xb4 
+# T=3300000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x87f memwr = 0b1 
+# T=3348000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x73 
+# T=3348000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x61b memwr = 0b1 
+# T=3396000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xaf 
+# T=3396000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x6ca memwr = 0b1 
+# T=3444000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x83 
+# T=3444000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xaf3 memwr = 0b1 
+# T=3492000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xef 
+# T=3492000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x85f memwr = 0b1 
+# T=3540000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x8d 
+# T=3540000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x4aa memwr = 0b1 
+# T=3588000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x2 
+# T=3588000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x881 memwr = 0b1 
+# T=3636000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x85 
+# T=3636000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x8e4 memwr = 0b1 
+# T=3684000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xa 
+# T=3684000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x8ee memwr = 0b1 
+# T=3732000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x85 
+# T=3732000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x52f memwr = 0b1 
+# T=3780000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xc7 
+# T=3780000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x5f6 memwr = 0b1 
+# T=3828000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x7b 
+# T=3828000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x969 memwr = 0b1 
+# T=3876000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x71 
+# T=3876000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x8f2 memwr = 0b1 
+# T=3924000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xfc 
+# T=3924000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x7c6 memwr = 0b1 
+# T=3972000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x8f 
+# T=3972000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xb82 memwr = 0b1 
+# T=4020000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x28 
+# T=4020000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x991 memwr = 0b1 
+# T=4068000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xbb 
+# T=4068000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xa4c memwr = 0b1 
+# T=4116000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x2 
+# T=4116000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xb84 memwr = 0b1 
+# T=4164000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x51 
+# T=4164000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x817 memwr = 0b1 
+# T=4212000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x5d 
+# T=4212000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x94f memwr = 0b1 
+# T=4260000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0xa7 
+# T=4260000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x69d memwr = 0b1 
+# T=4308000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0xcd 
+# T=4308000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xc51 memwr = 0b1 
+# T=4356000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x8c 
+# T=4356000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xad8 memwr = 0b1 
+# T=4404000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xd 
+# T=4404000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x824 memwr = 0b1 
+# T=4452000 [SCOREBOARD] transaction information: client_id = 0xc amount = 0x96 
+# T=4452000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xce7 memwr = 0b1 
+# T=4500000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0xeb 
+# T=4500000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xa3a memwr = 0b1 
+# T=4548000 [SCOREBOARD] transaction information: client_id = 0x14 amount = 0x26 
+# T=4548000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x6c3 memwr = 0b1 
+# T=4596000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0xb5 
+# T=4596000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xb8d memwr = 0b1 
+# T=4644000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0x5d 
+# T=4644000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x881 memwr = 0b1 
+# T=4692000 [SCOREBOARD] transaction information: client_id = 0x4 amount = 0x25 
+# T=4692000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xbb2 memwr = 0b1 
+# T=4740000 [SCOREBOARD] transaction information: client_id = 0x8 amount = 0xaa 
+# T=4740000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0x92b memwr = 0b1 
+# T=4788000 [SCOREBOARD] transaction information: client_id = 0x0 amount = 0x90 
+# T=4788000 [SCOREBOARD] output transaction information: 
+# cancelled_orders = 0xaca memwr = 0b1 
+# T=4788000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
-# ** Note: $stop    : testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv(67)
-#    Time: 2025 ns  Iteration: 0  Instance: /tb_top_DOWNSTREAM
-# Break in Module tb_top_DOWNSTREAM at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 67
-# Stopped at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 67
+# ** Note: $stop    : testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv(76)
+#    Time: 4808 ns  Iteration: 0  Instance: /tb_top_DOWNSTREAM
+# Break in Module tb_top_DOWNSTREAM at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 76
+# Stopped at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 76
 #  quit
-# End time: 17:40:54 on Mar 09,2022, Elapsed time: 0:00:01
+# End time: 08:15:37 on Mar 10,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

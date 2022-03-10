@@ -4,9 +4,11 @@
 module tb_top_DOWNSTREAM;
     //clock and reset signal declaration
     bit clk;
+    bit slowclk;
 
-    //creatinng instance of 7seg interface, inorder to connect DUT and testcase
-    dwnstrmproc_if intf(clk);
+    //creatinng instance of downstream interface, inorder to connect DUT and testcase
+    dwnstrmproc_if intf(clk, slowclk);
+    // dwnstrmproc_if intfslow(slowclk);
 
     // Instantiate device under test
     downstream_top DOWNSTREAM(
@@ -19,7 +21,7 @@ module tb_top_DOWNSTREAM;
     tests test;
 
     //functional coverage point to check range of input signal to DUT
-    covergroup cg_input  @(posedge intf.clk);
+    covergroup cg_input  @(posedge intf.slowclk);
     
         valid_address_selection: coverpoint intf.client_id {
             bins valid_addr_1 = {[0:15]};
@@ -31,7 +33,7 @@ module tb_top_DOWNSTREAM;
     endgroup
 
     //functional coverage point to check range of output signal from DUT
-    covergroup cg_output @(posedge intf.clk);
+    covergroup cg_output @(posedge intf.slowclk);
         seven_segment: coverpoint intf.cancelled_orders{
             bins valid_cancel = {[0:3000]};
         }
@@ -47,7 +49,14 @@ module tb_top_DOWNSTREAM;
     //clock generation
     initial begin
         clk = 1'b0;
-        forever #5 clk = !clk;
+        slowclk = 1'b0;
+        
+        forever begin
+            #2 clk = ~clk;
+            #10 slowclk = ~slowclk;
+        end
+        // forever #2 clk = !clk; //period 4
+        // forever #5 slowclk = !slowclk; // period 40
     end
 
     initial begin

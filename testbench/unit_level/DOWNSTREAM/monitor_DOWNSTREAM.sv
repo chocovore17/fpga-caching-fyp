@@ -1,6 +1,7 @@
 `define MON_IF dwnstrm_if.monitor_cb
 class monitor;
     virtual dwnstrmproc_if.MONITOR dwnstrm_if; //interface modport in driver class
+    // virtual dwnstrmproc_ifslow.MONITOR dwnstrm_ifslow; //interface modport in driver class
     mailbox mon2scb; // mailbox to hold package/transaction from monitor to scoreboard
     event mon_done;// event to synchronise monitor and scoreboard
 
@@ -15,14 +16,14 @@ class monitor;
     task main;
         $display("T=%0t, [MONITOR] starting ---------",$time);
         forever begin
-             @(posedge dwnstrm_if.clk);
+             @(posedge dwnstrm_if.slowclk);
              if(1'b1==1'b1)begin // change to add reset, if not reset 
                 transaction trans = new();
                 trans.client_id = `MON_IF.client_id;
                 trans.amount = `MON_IF.amount;
                 trans.cancelled_orders = `MON_IF.cancelled_orders;
                 trans.memwr = `MON_IF.memwr;
-                @(posedge dwnstrm_if.clk);
+                @(posedge dwnstrm_if.slowclk);
                 // trans.print("MONITOR");
                 mon2scb.put(trans);
                 -> mon_done;

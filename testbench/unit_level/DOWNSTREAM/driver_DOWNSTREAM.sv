@@ -36,12 +36,11 @@ class driver;
             gen2driver.get(trans); // driver receive transaction from generator
             // trans.print("DRIVER"); // print transaction information
             // $display("T=%0t, [DRIVER-TRANSFER: %0d] ---------",$time,no_orders);
-            
-            @(posedge dwnstrm_if.clk);
+            @(posedge dwnstrm_if.slowclk);
             `DRIV_IF.client_id <= trans.client_id;
             `DRIV_IF.amount <= trans.amount;
             //current iteration of stimulus sent done
-            @(posedge dwnstrm_if.clk);
+            @(posedge dwnstrm_if.slowclk);
             no_orders++;
             -> drv_done;
             
