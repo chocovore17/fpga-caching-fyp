@@ -20,6 +20,8 @@ module dm_cache_data(input bit clk,
     data_mem[data_req.index] <= data_write;
     end²
     endmodule
+
+    
     /*cache: tag memory, single port, 1024 blocks*/
     module dm_cache_tag(input bit clk, //write clock
     input cache_req_type tag_req, //tag request/command, e.g. RW, valid

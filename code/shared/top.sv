@@ -5,10 +5,6 @@
 
  `include "ramdownstream.sv"
  `include "ramupstream.sv"
-//  `include "code/downstream/downstream.sv"
- 
-//  `include "../downstream/get_cxl.sv"
-
  `include "code/upstream/upstream.sv"
  `include "code/upstream/SLT.sv"
 
@@ -22,9 +18,13 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   input[15:0] exchange_amount;
   output [15:0] cancelled_orders;
   input[31:0] cpu_amount;
-  
-  cache_req_type downdatareq, updatareq;
+  mem_data_type mem_data, mem_dataup;
+  cpu_req_type cpu_reqdown, cpu_requp;
+  mem_req_type mem_req, mem_requp;
+  cpu_result_type cpu_res;
+  cache_req_type  updatareq; //downdatareq,
   cache_data_type downdatawrite, downdataread;
+  assign cancelled_orders = cpu_res.data;
 //   DOWNSTREAM
   reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
   reg update_memory; //RAM inputs, state machine output by default 0
@@ -36,31 +36,52 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
   reg       check_risk, send_order, update_max; // state machine outputs
-  wire [15:0] cancelled_orders; // RAM data OUTPUTS
+  // wire [15:0] cancelled_orders; // RAM data OUTPUTS
   output [31:0] accumulated_orders;
   output[31:0] max_to_trade;
   reg [111:0] toc;
   reg memwr_up; //, memwr_down ; // RAM bool output & State machine input, for both downstream and upstream 
 
   // downstream ram 
-  dm_data_upstream RAMUPSTREAM(
-    .clk(clk),
-    .data_req(updatareq),
-    .change_max(update_max),
-    .data_write({112'b0, cpu_amount}),
-    .accumulated_orders(accumulated_orders),
-    .max_to_trade(max_to_trade)  
-    );
+  // dm_data_upstream RAMUPSTREAM(
+  //   .clk(clk),
+  //   .data_req(updatareq),
+  //   .change_max(update_max),
+  //   .data_write({112'b0, cpu_amount}),
+  //   .accumulated_orders(accumulated_orders),
+  //   .max_to_trade(max_to_trade)  
+  //   );
 
 
   // downstream ram 
-  dm_data_downstream RAMDOWNSTREAM(
-    .clk(clk),
-    .data_req(downdatareq),
-    .data_write({112'b0, exchange_amount}),
-    .data_read({toc,cancelled_orders})
-  );
+  // dm_data_downstream RAMDOWNSTREAM(
+  //   .clk(clk),
+  //   .data_req(downdatareq),
+  //   .data_write({112'b0, exchange_amount}),
+  //   .data_read({toc,cancelled_orders})
+  // );
 
+/*cache finite state machine*/
+  dm_cache_fsm_upstream RAMUPSTREAM(
+      .clk(clk),    
+      .rst(HRESETn),    
+      .cpu_req(cpu_requp),    //CPU request input (CPU->cache)
+      .mem_data(mem_data),     //memory response (memory->cache)
+      .change_max(update_max),
+      .mem_req(mem_requp),     //memory request (cache->memory)
+      .accumulated_orders(accumulated_orders) ,    //cache result (cache->CPU)
+      .max_to_trade(max_to_trade)    //cache result (cache->CPU)
+      );
+
+/*cache finite state machine*/
+  dm_cache_fsm_downstream RAMDOWNSTREAM(
+    .clk(clk),    
+    .rst(HRESETn),    
+    .cpu_req(cpu_reqdown),    //CPU request input (CPU->cache)
+    .mem_data(mem_dataup),     //memory response (memory->cache)
+    .mem_req(mem_req),     //memory request (cache->memory)
+    .cpu_res(cpu_res)     //cache result (cache->CPU)
+    );
   // // instantiate upstream ram 
   // ramupstream #(32, 10, 1024) RAMUPSTREAM (
   //   .clk_write(clk),
@@ -76,7 +97,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
 
     // outputs the risk check value
     SLT SLT(.A(max_to_trade),
-        .B(accumulated_orders + cpu_amount + (~cancelled_orders + 1)),
+        .B(accumulated_orders + cpu_amount + (~cpu_res.data + 1)),
         .Result(pass_checks));
 
   //instantiate upstream state machine to know current state 
@@ -96,17 +117,22 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
     
       if (exchange_go ==1)
         begin 
-            // client_id = exchange_client_id;
-            // amount = exchange_amount;
-            downdatareq.index = exchange_client_id;
-            downdatareq.we =exchange_go;
+          cpu_reqdown.addr   = exchange_client_id;
+          cpu_reqdown.data   = exchange_amount;
+          cpu_reqdown.rw   = exchange_go;
+          cpu_reqdown.valid   = 1;
+          mem_data.data = exchange_amount;
         end
         else  begin  //default should be cpu 
             client_id = cpu_client_id;
-            downdatareq.index = cpu_client_id;            
-            updatareq.index = cpu_client_id;
-            updatareq.we = ~exchange_go;
-            downdatareq.we =0;
+            cpu_reqdown.addr   = cpu_client_id;         
+            // updatareq.index = cpu_client_id;
+            cpu_requp.addr   = cpu_client_id;
+            cpu_requp.data   = cpu_amount;
+            mem_dataup.data = cpu_amount;
+            cpu_requp.rw   =  ~exchange_go;;
+            cpu_requp.valid   = 1;
+            cpu_reqdown.rw   = 0;
         end 
 
   end

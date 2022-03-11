@@ -1,0 +1,55 @@
+$date
+	Wed Nov 17 15:34:29 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module get_cxltest $end
+$var wire 1 ! ack $end
+$var reg 32 " amount [31:0] $end
+$var reg 5 # client_id [4:0] $end
+$var reg 1 $ clk $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+bx #
+bx "
+x!
+$end
+#10
+0!
+1$
+#20
+b11000101 "
+b11011 #
+0$
+#30
+1$
+#40
+0$
+#50
+1$
+#60
+b1000 #
+0$
+#70
+1!
+1$
+#80
+0$
+#90
+0!
+1$
+#100
+b10000011000101 "
+0$
+#110
+1!
+1$
+#120
+0$
