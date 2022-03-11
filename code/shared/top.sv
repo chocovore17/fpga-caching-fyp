@@ -23,7 +23,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   output [15:0] cancelled_orders;
   input[31:0] cpu_amount;
   
-  cache_req_type downdatareq;
+  cache_req_type downdatareq, updatareq;
   cache_data_type downdatawrite, downdataread;
 //   DOWNSTREAM
   reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
@@ -43,6 +43,17 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   reg memwr_up; //, memwr_down ; // RAM bool output & State machine input, for both downstream and upstream 
 
   // downstream ram 
+  dm_data_upstream RAMUPSTREAM(
+    .clk(clk),
+    .data_req(updatareq),
+    .change_max(update_max),
+    .data_write({112'b0, cpu_amount}),
+    .accumulated_orders(accumulated_orders),
+    .max_to_trade(max_to_trade)  
+    );
+
+
+  // downstream ram 
   dm_data_downstream RAMDOWNSTREAM(
     .clk(clk),
     .data_req(downdatareq),
@@ -50,18 +61,18 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
     .data_read({toc,cancelled_orders})
   );
 
-    // instantiate upstream ram 
-  ramupstream #(32, 10, 1024) RAMUPSTREAM (
-    .clk_write(clk),
-    .change_max(update_max),
-    .address_write({5'b0, cpu_client_id}),
-    .data_write(cpu_amount),
-    .write_enable((update_max) || (send_order)),
-    .clk_read(clk),
-    .address_read({5'b0, cpu_client_id}),
-    .accumulated_orders(accumulated_orders),
-    .max_to_trade(max_to_trade),
-    .memwr(memwr_up));                             // output 
+  // // instantiate upstream ram 
+  // ramupstream #(32, 10, 1024) RAMUPSTREAM (
+  //   .clk_write(clk),
+  //   .change_max(update_max),
+  //   .address_write({5'b0, cpu_client_id}),
+  //   .data_write(cpu_amount),
+  //   .write_enable((update_max) || (send_order)),
+  //   .clk_read(clk),
+  //   .address_read({5'b0, cpu_client_id}),
+  //   .accumulated_orders(accumulated_orders),
+  //   .max_to_trade(max_to_trade),
+  //   .memwr(memwr_up));                             // output 
 
     // outputs the risk check value
     SLT SLT(.A(max_to_trade),
@@ -92,7 +103,9 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
         end
         else  begin  //default should be cpu 
             client_id = cpu_client_id;
-            downdatareq.index = cpu_client_id;
+            downdatareq.index = cpu_client_id;            
+            updatareq.index = cpu_client_id;
+            updatareq.we = ~exchange_go;
             downdatareq.we =0;
         end 
 
