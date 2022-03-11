@@ -1,0 +1,7 @@
+var g_data = {
+c14:[4,'upstream_new_maxcheck',[],,'13',2,1,'\\/tb_top_UPSTREAM/cov_input ','9','/tb_top_UPSTREAM',[[],[0,'1','199',,'new_maxcheck']],[]],
+c15:[4,'upstream_maxcheck',[],,'13',2,1,'\\/tb_top_UPSTREAM/cov_input ','9','/tb_top_UPSTREAM',[[],[0,'1','200',,'maxcheck']],[]],
+c19:[4,'upstream_rdata',[],,'18',2,1,'\\/tb_top_UPSTREAM/cov_output ','9','/tb_top_UPSTREAM',[[],[0,'1','199',,'upstream_rdata']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);
