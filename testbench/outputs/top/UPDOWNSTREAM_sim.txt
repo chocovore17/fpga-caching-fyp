@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 15:22:31 on Mar 11,2022
+# Start time: 16:43:27 on Mar 11,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -32,10 +32,6 @@
 # Loading work.updownstream_if(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (16) for port 'exchange_client_id'. The port definition is at: code/shared/top.sv(15).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv Line: 12
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (32) for port 'accumulated_orders'. The port definition is at: code/shared/ramupstream.sv(103).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/RAMUPSTREAM File: code/shared/top.sv Line: 65
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (32) for port 'max_to_trade'. The port definition is at: code/shared/ramupstream.sv(104).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/RAMUPSTREAM File: code/shared/top.sv Line: 65
 # run -all
 # --------- [DRIVER] Reset Started ---------
 # --------- [DRIVER] Reset Ended ---------
@@ -49,301 +45,301 @@
 # accumulated_orders = 0xx cancelled_orders = 0bx  max_to_trade = 0bx  
 # T=154000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xced30551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
 # T=154000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=242000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x8f2cc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
 # T=242000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=330000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0xea3ad6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
 # T=330000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=418000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd77f4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
 # T=418000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=506000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0x5bcee68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
 # T=506000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=594000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf448f0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
 # T=594000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=682000 [SCOREBOARD] transaction information: cpu_client_id = 0x13 cpu_amount = 0x6a84a1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
 # T=682000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=770000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0x1b7a66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
 # T=770000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=858000 [SCOREBOARD] transaction information: cpu_client_id = 0x19 cpu_amount = 0x5a77281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
 # T=858000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=946000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xc068a05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
 # T=946000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b4fc8  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b4fc8  max_to_trade = 0b0  
 # T=1034000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5c41b338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
 # T=1034000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=1122000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xfe56e48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
 # T=1122000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0ba5a5  max_to_trade = 0b0  
 # T=1210000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0xd278cdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
 # T=1210000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0ba5a5  max_to_trade = 0b0  
 # T=1298000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x10974168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
 # T=1298000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9f90  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b9f90  max_to_trade = 0b0  
 # T=1386000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0xdb4a8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
 # T=1386000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0ba5a5  max_to_trade = 0b0  
 # T=1474000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf2ead8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
 # T=1474000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=1562000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0x7319a047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
 # T=1562000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=1650000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x48517d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
 # T=1650000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=1738000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xa3094f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
 # T=1738000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9f90  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa047 cancelled_orders = 0b9f90  max_to_trade = 0be633  
 # T=1826000 [SCOREBOARD] transaction information: cpu_client_id = 0x1e cpu_amount = 0xd53aae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
 # T=1826000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa047 cancelled_orders = 0b0  max_to_trade = 0be633  
 # T=1914000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbac6dac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
 # T=1914000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8a19 cancelled_orders = 0ba5a5  max_to_trade = 0b1b695  
 # T=2002000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x3601d328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
 # T=2002000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8a19 cancelled_orders = 0ba5a5  max_to_trade = 0b1b695  
 # T=2090000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x230e0eb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
 # T=2090000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x64dc cancelled_orders = 0ba5a5  max_to_trade = 0b12c22  
 # T=2178000 [SCOREBOARD] transaction information: cpu_client_id = 0x1b cpu_amount = 0x7a19cd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
 # T=2178000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0ba5a5  max_to_trade = 0bz0000  
+# accumulated_orders = 0x64dc cancelled_orders = 0ba5a5  max_to_trade = 0b12c22  
 # T=2266000 [SCOREBOARD] transaction information: cpu_client_id = 0x1d cpu_amount = 0x46993239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
 # T=2266000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9f90  max_to_trade = 0bz0000  
+# accumulated_orders = 0x3f9f cancelled_orders = 0b9f90  max_to_trade = 0ba1b0  
 # T=2354000 [SCOREBOARD] transaction information: cpu_client_id = 0x17 cpu_amount = 0xc911aa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
 # T=2354000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b75f8  max_to_trade = 0bz0000  
+# accumulated_orders = 0x1a62 cancelled_orders = 0b75f8  max_to_trade = 0b173e  
 # T=2442000 [SCOREBOARD] transaction information: cpu_client_id = 0x16 cpu_amount = 0x1f4bf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
 # T=2442000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b75f8  max_to_trade = 0bz0000  
+# accumulated_orders = 0xf525 cancelled_orders = 0b75f8  max_to_trade = 0b18ccb  
 # T=2530000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xe1c06c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
 # T=2530000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b75f8  max_to_trade = 0bz0000  
+# accumulated_orders = 0xf525 cancelled_orders = 0b75f8  max_to_trade = 0b18ccb  
 # T=2618000 [SCOREBOARD] transaction information: cpu_client_id = 0x18 cpu_amount = 0xab3f08d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
 # T=2618000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xcfe8 cancelled_orders = 0b0  max_to_trade = 0b10259  
 # T=2706000 [SCOREBOARD] transaction information: cpu_client_id = 0x1c cpu_amount = 0xceaa183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
 # T=2706000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xcfe8 cancelled_orders = 0b0  max_to_trade = 0b10259  
 # T=2794000 [SCOREBOARD] transaction information: cpu_client_id = 0x18 cpu_amount = 0x853bf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
 # T=2794000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b3878  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b3878  max_to_trade = 0b0  
 # T=2882000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xf2230076 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
 # T=2882000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=2970000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x702030ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
 # T=2970000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=3058000 [SCOREBOARD] transaction information: cpu_client_id = 0xc cpu_amount = 0x1ea28e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
 # T=3058000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b70f0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x30ac cancelled_orders = 0b70f0  max_to_trade = 0be040  
 # T=3146000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x81d1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
 # T=3146000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b70f0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x30ac cancelled_orders = 0b70f0  max_to_trade = 0be040  
 # T=3234000 [SCOREBOARD] transaction information: cpu_client_id = 0x14 cpu_amount = 0xada65fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
 # T=3234000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=3322000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xd25aa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
 # T=3322000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x0 cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=3410000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa895c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
 # T=3410000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5fd9 cancelled_orders = 0b0  max_to_trade = 0b15b4c  
 # T=3498000 [SCOREBOARD] transaction information: cpu_client_id = 0x14 cpu_amount = 0xa47f87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
 # T=3498000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xbfb2 cancelled_orders = 0b0  max_to_trade = 0bb699  
 # T=3586000 [SCOREBOARD] transaction information: cpu_client_id = 0xf cpu_amount = 0xbd382ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
 # T=3586000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x476b cancelled_orders = 0b0  max_to_trade = 0b1ff98  
 # T=3674000 [SCOREBOARD] transaction information: cpu_client_id = 0x11 cpu_amount = 0x7d41f9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
 # T=3674000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb0d1  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8e0 cancelled_orders = 0bb0d1  max_to_trade = 0bc668  
 # T=3762000 [SCOREBOARD] transaction information: cpu_client_id = 0x1f cpu_amount = 0x543c2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
 # T=3762000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb0d1  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8e0 cancelled_orders = 0bb0d1  max_to_trade = 0bc668  
 # T=3850000 [SCOREBOARD] transaction information: cpu_client_id = 0x15 cpu_amount = 0xe3783628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
 # T=3850000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb0d1  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8e0 cancelled_orders = 0bb0d1  max_to_trade = 0bc668  
 # T=3938000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x5e4ce4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
 # T=3938000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b75f8  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8e0 cancelled_orders = 0b75f8  max_to_trade = 0bc668  
 # T=4026000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x671dbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
 # T=4026000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b70f0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2de cancelled_orders = 0b70f0  max_to_trade = 0b1c0ec  
 # T=4114000 [SCOREBOARD] transaction information: cpu_client_id = 0x15 cpu_amount = 0x19885e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
 # T=4114000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x9e46 cancelled_orders = 0b0  max_to_trade = 0b912f  
 # T=4202000 [SCOREBOARD] transaction information: cpu_client_id = 0x1c cpu_amount = 0x72cfa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
 # T=4202000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x242f cancelled_orders = 0b0  max_to_trade = 0b9460  
 # T=4290000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0xa965afef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
 # T=4290000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9694  max_to_trade = 0bz0000  
+# accumulated_orders = 0xaaac cancelled_orders = 0b9694  max_to_trade = 0b1df9d  
 # T=4378000 [SCOREBOARD] transaction information: cpu_client_id = 0x14 cpu_amount = 0x5a84c01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
 # T=4378000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9694  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5a9c cancelled_orders = 0b9694  max_to_trade = 0b13268  
 # T=4466000 [SCOREBOARD] transaction information: cpu_client_id = 0x19 cpu_amount = 0x42437895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
 # T=4466000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b9694  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5a9c cancelled_orders = 0b9694  max_to_trade = 0b13268  
 # T=4554000 [SCOREBOARD] transaction information: cpu_client_id = 0x1f cpu_amount = 0x61ece414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
 # T=4554000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5a9c cancelled_orders = 0b0  max_to_trade = 0b13268  
 # T=4642000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0x321c4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
 # T=4642000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5a9c cancelled_orders = 0b0  max_to_trade = 0b13268  
 # T=4730000 [SCOREBOARD] transaction information: cpu_client_id = 0x1c cpu_amount = 0xf24996ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
 # T=4730000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b1363  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa8c cancelled_orders = 0b1363  max_to_trade = 0b8534  
 # T=4818000 [SCOREBOARD] transaction information: cpu_client_id = 0x1c cpu_amount = 0xbf62b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
 # T=4818000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b1363  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa8c cancelled_orders = 0b1363  max_to_trade = 0b8534  
 # T=4906000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0x5bea24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
 # T=4906000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b70f0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa8c cancelled_orders = 0b70f0  max_to_trade = 0b8534  
 # T=4994000 [SCOREBOARD] transaction information: cpu_client_id = 0x19 cpu_amount = 0x5a88ed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
 # T=4994000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b70f0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2096 cancelled_orders = 0b70f0  max_to_trade = 0b9df8  
 # T=5082000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfc342f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
 # T=5082000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2096 cancelled_orders = 0b0  max_to_trade = 0b9df8  
 # T=5170000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0xaf3dfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
 # T=5170000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb0d1  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5bc cancelled_orders = 0bb0d1  max_to_trade = 0b181d8  
 # T=5258000 [SCOREBOARD] transaction information: cpu_client_id = 0x1e cpu_amount = 0x1660ae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
 # T=5258000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb0d1  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5bc cancelled_orders = 0bb0d1  max_to_trade = 0b181d8  
 # T=5346000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x7b17f248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
 # T=5346000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b1363  max_to_trade = 0bz0000  
+# accumulated_orders = 0x8560 cancelled_orders = 0b1363  max_to_trade = 0b10203  
 # T=5434000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa06f3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
 # T=5434000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b1363  max_to_trade = 0bz0000  
+# accumulated_orders = 0x77a8 cancelled_orders = 0b1363  max_to_trade = 0b1f832  
 # T=5522000 [SCOREBOARD] transaction information: cpu_client_id = 0x14 cpu_amount = 0xfbb03843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
 # T=5522000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x77a8 cancelled_orders = 0b0  max_to_trade = 0b1f832  
 # T=5610000 [SCOREBOARD] transaction information: cpu_client_id = 0x1c cpu_amount = 0x430627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
 # T=5610000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb47d  max_to_trade = 0bz0000  
+# accumulated_orders = 0x21 cancelled_orders = 0bb47d  max_to_trade = 0b0  
 # T=5698000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0x1f9e822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
 # T=5698000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb47d  max_to_trade = 0bz0000  
+# accumulated_orders = 0x629d cancelled_orders = 0bb47d  max_to_trade = 0b860  
 # T=5786000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0x5c46a449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
 # T=5786000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb47d  max_to_trade = 0bz0000  
+# accumulated_orders = 0xc51a cancelled_orders = 0bb47d  max_to_trade = 0b10c1  
 # T=5874000 [SCOREBOARD] transaction information: cpu_client_id = 0x14 cpu_amount = 0x1c055051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
 # T=5874000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bb47d  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2796 cancelled_orders = 0bb47d  max_to_trade = 0b1922  
 # T=5962000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x604b95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
 # T=5962000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2796 cancelled_orders = 0be1e0  max_to_trade = 0b1922  
 # T=6050000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xf3ab528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
 # T=6050000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x2796 cancelled_orders = 0be1e0  max_to_trade = 0b1922  
 # T=6138000 [SCOREBOARD] transaction information: cpu_client_id = 0x15 cpu_amount = 0x14da52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
 # T=6138000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x217e cancelled_orders = 0b0  max_to_trade = 0ba302  
 # T=6226000 [SCOREBOARD] transaction information: cpu_client_id = 0x1a cpu_amount = 0x8505b6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
 # T=6226000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x217e cancelled_orders = 0b0  max_to_trade = 0ba302  
 # T=6314000 [SCOREBOARD] transaction information: cpu_client_id = 0x17 cpu_amount = 0xcb800683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
 # T=6314000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x745f cancelled_orders = 0b0  max_to_trade = 0bccb6  
 # T=6402000 [SCOREBOARD] transaction information: cpu_client_id = 0xc cpu_amount = 0x2361b248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
 # T=6402000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x180d cancelled_orders = 0b0  max_to_trade = 0b0  
 # T=6490000 [SCOREBOARD] transaction information: cpu_client_id = 0x19 cpu_amount = 0x7f529ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
 # T=6490000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b2d28  max_to_trade = 0bz0000  
+# accumulated_orders = 0x180d cancelled_orders = 0b2d28  max_to_trade = 0b0  
 # T=6578000 [SCOREBOARD] transaction information: cpu_client_id = 0x18 cpu_amount = 0x7490fed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
 # T=6578000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x964 cancelled_orders = 0be1e0  max_to_trade = 0b1df84  
 # T=6666000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x226a8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
 # T=6666000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b26c6  max_to_trade = 0bz0000  
+# accumulated_orders = 0x835 cancelled_orders = 0b26c6  max_to_trade = 0bc8a6  
 # T=6754000 [SCOREBOARD] transaction information: cpu_client_id = 0x11 cpu_amount = 0x48a2e3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
 # T=6754000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b26c6  max_to_trade = 0bz0000  
+# accumulated_orders = 0x835 cancelled_orders = 0b26c6  max_to_trade = 0bc8a6  
 # T=6842000 [SCOREBOARD] transaction information: cpu_client_id = 0xc cpu_amount = 0xd4df81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
 # T=6842000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xca55 cancelled_orders = 0b0  max_to_trade = 0b46c3  
 # T=6930000 [SCOREBOARD] transaction information: cpu_client_id = 0x1b cpu_amount = 0x6d91d302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
 # T=6930000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x835 cancelled_orders = 0be1e0  max_to_trade = 0bc8a6  
 # T=7018000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x38c71c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
 # T=7018000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xdb38 cancelled_orders = 0be1e0  max_to_trade = 0b1a3c9  
 # T=7106000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0xfe2cf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
 # T=7106000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xae3b cancelled_orders = 0be1e0  max_to_trade = 0b7eed  
 # T=7194000 [SCOREBOARD] transaction information: cpu_client_id = 0x16 cpu_amount = 0x6b9e5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
 # T=7194000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0be1e0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xae3b cancelled_orders = 0be1e0  max_to_trade = 0b7eed  
 # T=7282000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0x3b43bf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
 # T=7282000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x813d cancelled_orders = 0b0  max_to_trade = 0b15a11  
 # T=7370000 [SCOREBOARD] transaction information: cpu_client_id = 0xf cpu_amount = 0x22061336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
 # T=7370000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x4c2c cancelled_orders = 0b0  max_to_trade = 0b1f082  
 # T=7458000 [SCOREBOARD] transaction information: cpu_client_id = 0x10 cpu_amount = 0xbd43a50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
 # T=7458000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b26c6  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5f62 cancelled_orders = 0b26c6  max_to_trade = 0b348e  
 # T=7546000 [SCOREBOARD] transaction information: cpu_client_id = 0xb cpu_amount = 0xf06606d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
 # T=7546000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0x5f62 cancelled_orders = 0b0  max_to_trade = 0b348e  
 # T=7634000 [SCOREBOARD] transaction information: cpu_client_id = 0x11 cpu_amount = 0x8b6b74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
 # T=7634000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bd677  max_to_trade = 0bz0000  
+# accumulated_orders = 0x7299 cancelled_orders = 0bd677  max_to_trade = 0b789a  
 # T=7722000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0x3052e97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
 # T=7722000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bf14e  max_to_trade = 0bz0000  
+# accumulated_orders = 0x7299 cancelled_orders = 0bf14e  max_to_trade = 0b789a  
 # T=7810000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1dc7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
 # T=7810000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bc608  max_to_trade = 0bz0000  
+# accumulated_orders = 0xecd0 cancelled_orders = 0bc608  max_to_trade = 0b8179  
 # T=7898000 [SCOREBOARD] transaction information: cpu_client_id = 0xd cpu_amount = 0xcf612f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
 # T=7898000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b90f6  max_to_trade = 0bz0000  
+# accumulated_orders = 0x6c58 cancelled_orders = 0b90f6  max_to_trade = 0b8532  
 # T=7986000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0x58f2cc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
 # T=7986000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b26c6  max_to_trade = 0bz0000  
+# accumulated_orders = 0x3e00 cancelled_orders = 0b26c6  max_to_trade = 0b1cc5a  
 # T=8074000 [SCOREBOARD] transaction information: cpu_client_id = 0xe cpu_amount = 0xfa0268a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
 # T=8074000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b8688  max_to_trade = 0bz0000  
+# accumulated_orders = 0x3e00 cancelled_orders = 0b8688  max_to_trade = 0b1cc5a  
 # T=8162000 [SCOREBOARD] transaction information: cpu_client_id = 0xf cpu_amount = 0xe87c84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
 # T=8162000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b8688  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa4e cancelled_orders = 0b8688  max_to_trade = 0b7e40  
 # T=8250000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x5e1aede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
 # T=8250000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bc608  max_to_trade = 0bz0000  
+# accumulated_orders = 0xd8b0 cancelled_orders = 0bc608  max_to_trade = 0b10a65  
 # T=8338000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0x1015fc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
 # T=8338000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bc608  max_to_trade = 0bz0000  
+# accumulated_orders = 0xc697 cancelled_orders = 0bc608  max_to_trade = 0b1c69b  
 # T=8426000 [SCOREBOARD] transaction information: cpu_client_id = 0x13 cpu_amount = 0xa808c9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
 # T=8426000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b0  max_to_trade = 0bz0000  
+# accumulated_orders = 0xb47d cancelled_orders = 0b0  max_to_trade = 0b82d1  
 # T=8514000 [SCOREBOARD] transaction information: cpu_client_id = 0x12 cpu_amount = 0x7d07e4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
 # T=8514000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b8688  max_to_trade = 0bz0000  
+# accumulated_orders = 0xbc00 cancelled_orders = 0b8688  max_to_trade = 0b1d80b  
 # T=8602000 [SCOREBOARD] transaction information: cpu_client_id = 0x1e cpu_amount = 0x2207c843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
 # T=8602000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b26c6  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa0b5 cancelled_orders = 0b26c6  max_to_trade = 0bd21b  
 # T=8690000 [SCOREBOARD] transaction information: cpu_client_id = 0x18 cpu_amount = 0x631b7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
 # T=8690000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0bf14e  max_to_trade = 0bz0000  
+# accumulated_orders = 0xa0b5 cancelled_orders = 0bf14e  max_to_trade = 0bd21b  
 # T=8778000 [SCOREBOARD] transaction information: cpu_client_id = 0x13 cpu_amount = 0xe7295358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
 # T=8778000 [SCOREBOARD] TOP LEVEL transaction information: 
-# accumulated_orders = 0xz0000 cancelled_orders = 0b8688  max_to_trade = 0bz0000  
+# accumulated_orders = 0x856a cancelled_orders = 0b8688  max_to_trade = 0b1cc2b  
 # T=8778000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
@@ -352,5 +348,5 @@
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 #  quit
-# End time: 15:22:32 on Mar 11,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 3
+# End time: 16:43:28 on Mar 11,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

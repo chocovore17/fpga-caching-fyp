@@ -13,14 +13,17 @@
 module dm_data_upstream(clk,
   data_req,//data request/command, e.g. RW, valid
   data_write, //write port (128-bit line)
-  change_max, 
-  accumulated_orders,
-  max_to_trade ); //read port
-  input  clk, change_max;
+  // change_max, 
+  // accumulated_orders,
+  // max_to_trade ); //read port
+  data_read);
+  input  clk;//, change_max;
   input cache_req_type data_req;//data request/command, e.g. RW, valid
   input cache_data_type data_write; //write port (128-bit line)
-  output[15:0] accumulated_orders; //read port
-  output[15:0] max_to_trade; //read port
+  // output[15:0] accumulated_orders; //read port
+  // output[15:0] max_to_trade; //read port
+  output cache_data_type data_read; //read port
+
 
   cache_data_type memory[0:1023];
 
@@ -29,23 +32,27 @@ module dm_data_upstream(clk,
     memory[i] = '0;
     end
     // Read data from memory
-    assign accumulated_orders = memory[data_req.index][15:0]; // LSB
-    assign max_to_trade = memory[data_req.index][31:16]; // MSB
+    // assign accumulated_orders = memory[data_req.index][15:0]; // LSB
+    // assign max_to_trade = memory[data_req.index][31:16]; // MSB
     // end
+    assign data_read = memory[data_req.index];
+
 
     always @(posedge(clk)) begin
-    if (data_req.we) 
-      if(change_max) begin
-        // UPDATE 16 MSB
-        // read 16 LSB for current max and shift max 16bits to left 
-        memory[data_req.index][31:16] <= data_write;// if change max, update + 32 bits
-        // memwr <= 1'b1;
-      end
-      else begin// check for overflow 
-        // UPDATE 16 LSB 
-        memory[data_req.index][15:0] <= data_write + memory[data_req.index][15:0]; // + memory[address_write][15:0]; // if change max, RHS updated (indexed)
-        // memwr <= 1'b1;
-      end 
+      if (data_req.we)
+      memory[data_req.index] <= data_write+memory[data_req.index];
+    // if (data_req.we) 
+    //   if(change_max) begin
+    //     // UPDATE 16 MSB
+    //     // read 16 LSB for current max and shift max 16bits to left 
+    //     memory[data_req.index][31:16] <= data_write;// if change max, update + 32 bits
+    //     // memwr <= 1'b1;
+    //   end
+    //   else begin// check for overflow 
+    //     // UPDATE 16 LSB 
+    //     memory[data_req.index][15:0] <= data_write + memory[data_req.index][15:0]; // + memory[address_write][15:0]; // if change max, RHS updated (indexed)
+    //     // memwr <= 1'b1;
+    //   end 
     end
 endmodule
 
@@ -54,9 +61,7 @@ endmodule
 module dm_cache_tag_upstream(input bit clk, //write clock
   input cache_req_type tag_req, //tag request/command, e.g. RW, valid
   input cache_tag_type tag_write,//write port
-  input change_max,
-  output[15:0] accumulated_orders, //read port
-  output[15:0] max_to_trade //read port);//read port
+  output cache_tag_type tag_read //read port);//read port
 );
 // output[15:0] accumulated_orders, //read port
 // output[15:0] max_to_trade //read port);//read port
@@ -70,24 +75,16 @@ module dm_cache_tag_upstream(input bit clk, //write clock
   end
   
     // Read data from memory
-  assign accumulated_orders = tag_mem[tag_req.index][15:0]; // LSB
-  assign max_to_trade = tag_mem[tag_req.index][31:16]; // MSB
+  // assign accumulated_orders = tag_mem[tag_req.index][15:0]; // LSB
+  // assign max_to_trade = tag_mem[tag_req.index][19:16]; // MSB
   // end
 
   assign tag_read = tag_mem[tag_req.index];
   always @(posedge(clk)) begin
+
   if (tag_req.we)   
-    if(change_max) begin
-      // UPDATE 16 MSB
-      // read 16 LSB for current max and shift max 16bits to left 
-      tag_mem[tag_req.index][31:16] <= tag_write;// if change max, update + 32 bits
-      // memwr <= 1'b1;
-    end
-    else begin// check for overflow 
-      // UPDATE 16 LSB 
-      tag_mem[tag_req.index][15:0] <= tag_mem[tag_req.index]+tag_write; // + memory[address_write][15:0]; // if change max, RHS updated (indexed)
-      // memwr <= 1'b1;
-    end
+    tag_mem[tag_req.index] <= tag_write;
+
   end
 endmodule
 
@@ -97,20 +94,20 @@ endmodule
 module dm_cache_fsm_upstream(input bit clk, input bit rst,
   input cpu_req_type cpu_req, //CPU request input (CPU->cache)
   input mem_data_type mem_data, //memory response (memory->cache)
-  input change_max,
+  // input change_max,
   output mem_req_type mem_req, //memory request (cache->memory)
-  // output cpu_result_type cpu_res //cache result (cache->CPU)
-  output[15:0] accumulated_orders, //read port
-  output[15:0] max_to_trade //read port);//read port
+  output cpu_result_type cpu_res //cache result (cache->CPU)
+  // output[15:0] accumulated_orders, //read port
+  // output[15:0] max_to_trade //read port);//read port
   );
   
   // output[15:0] accumulated_orders; //read port
   // output[15:0] max_to_trade; //read port);//read port
-  cpu_result_type cpu_res;
+  // cpu_result_type cpu_res;
   
     // Read data from memory
-  assign accumulated_orders = cpu_res.data[15:0]; // LSB
-  assign max_to_trade = cpu_res.data[31:16]; // MSB
+  // assign accumulated_orders = cpu_res.data[15:0]; // LSB
+  // assign max_to_trade = cpu_res.data[31:16]; // MSB
   // end
   // timeunit 1ns;
   // timeprecision 1ps;
