@@ -22,7 +22,8 @@ module tb_top_UPDOWNSTREAM;
         .exchange_go(intf.exchange_go),
         // general outputs 
         .accumulated_orders(intf.accumulated_orders),
-        .cancelled_orders(intf.cancelled_orders)
+        .cancelled_orders(intf.cancelled_orders),
+        .max_to_trade(intf.max_to_trade)
 	);
     tests test;
 
@@ -69,7 +70,7 @@ module tb_top_UPDOWNSTREAM;
         slowclk = 1'b0;
         forever begin
             #2 clk = ~clk;
-            #10 slowclk = ~slowclk;
+            #20 slowclk = ~slowclk;
         // forever #5 clk = !clk;
         end
     end

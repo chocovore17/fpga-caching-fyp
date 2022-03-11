@@ -31,7 +31,7 @@ class monitor;
                 // outputs
                 trans.accumulated_orders = `MON_IF.accumulated_orders;
                 trans.cancelled_orders = `MON_IF.cancelled_orders;
-
+                trans.max_to_trade  = `MON_IF.max_to_trade;
                 @(posedge updown_if.slowclk);
                 // trans.print("MONITOR");
                 mon2scb.put(trans);

@@ -15,6 +15,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
     
     // output from Upstream processor top
     logic [31:0] accumulated_orders;
+    logic [31:0] max_to_trade;
     logic [15:0] cancelled_orders;
 
 
@@ -44,6 +45,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
         input exchange_go;
         input accumulated_orders;
         input cancelled_orders;
+        input max_to_trade;
     endclocking;
 
     //modport from driver, which specified clock block and data direction

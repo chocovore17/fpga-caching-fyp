@@ -28,9 +28,9 @@ class transaction;
     // }
     
     logic [31:0] accumulated_orders;
+    logic [31:0] max_to_trade;
     logic [15:0] cancelled_orders;
 
-    logic thenewmax;
     //upstream outputs
 
     //displaying randomized values of items 
@@ -42,7 +42,7 @@ class transaction;
     //displaying output collected from DUT 
     function void print_upstream(string tag= "");
         $display("T=%0t [%s] TOP LEVEL transaction information: ", $time, tag);
-        $display("accumulated_orders = 0x%0h cancelled_orders = 0b%0h thenewmax = 0b%0h ",accumulated_orders, cancelled_orders, thenewmax);
+        $display("accumulated_orders = 0x%0h cancelled_orders = 0b%0h  max_to_trade = 0b%0h  ",accumulated_orders, cancelled_orders,max_to_trade);
     endfunction;
 
 endclass
