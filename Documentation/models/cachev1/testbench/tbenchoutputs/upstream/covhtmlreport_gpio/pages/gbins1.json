@@ -1,0 +1,14 @@
+var g_data = {
+c18:[4,'reset_check',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200002',,'reset_trigger']],[]],
+c19:[4,'valid_address_selection',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','49965',,'valid_addr_1'],[0,'1','50026',,'valid_addr_2'],[0,'1','50036',,'valid_addr_3'],[0,'1','49974',,'valid_addr_4']],[]],
+c20:[4,'ahb_gpioin_valid',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','1',,'valid_data']],[]],
+c21:[4,'valid_numerical_data',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200001',,'dot']],[]],
+c22:[4,'ahb_trans',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200001',,'htrans_en']],[]],
+c23:[4,'ahb_hwrite',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200001',,'hwrite']],[]],
+c24:[4,'ahb_hsel',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200001',,'hselect']],[]],
+c25:[4,'ahb_paritysel',[],,'17',2,1,'\\/tb_top_AHBGPIO/cov_input ','6','/tb_top_AHBGPIO',[[],[0,'1','200001',,'paritysel']],[]],
+c30:[4,'ahb_rdata',[],,'29',2,1,'\\/tb_top_AHBGPIO/cov_output ','6','/tb_top_AHBGPIO',[[],[0,'1','130258',,'valid_digit_range']],[]],
+c31:[4,'gpio_parity',[],,'29',2,1,'\\/tb_top_AHBGPIO/cov_output ','6','/tb_top_AHBGPIO',[[],[0,'1','200002',,'digital_point']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

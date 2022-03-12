@@ -1,0 +1,88 @@
+var g_data = {
+b5:[{dummy:0},
+{anchor:'cvg180',items:[{z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',h:'95580',c:'g'}
+,{cr:'c',t:'A',z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',h:'48257',c:'g'}
+]},
+{anchor:'cvg181',items:[{z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',h:'85914',c:'g'}
+,{cr:'c',t:'T',z:'    else if ((last_HADDR[7:0] == gpio_dir_addr) & last_HSEL & last_HWRITE...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'113',h:'9844',c:'g'}
+,{cr:'c',t:'A',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',h:'53369',c:'g'}
+]},
+{anchor:'cvg182',items:[{z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',c:'Y',p:'75.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',h:'85915',c:'g'}
+,{cr:'m',t:'T',z:'    else if ((gpio_dir == 16\'h0001) & (last_HADDR[7:0] == gpio_data_addr)...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'125',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'    else if ((gpio_dir == 16\'h0001) & (last_HADDR[7:0] == gpio_data_addr)...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'127',h:'437',c:'g'}
+,{cr:'c',t:'A',z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',h:'62873',c:'g'}
+]},
+{anchor:'cvg183',items:[{z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'135',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'135',h:'74955',c:'g'}
+,{cr:'c',t:'E',z:'    else begin',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'140',h:'98330',c:'g'}
+]},
+{anchor:'cvg184',items:[{z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',c:'R',p:'40.00'}
+,{cr:'m',t:'I',z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'    else if (~PARITYSEL & (gpio_dir == 16\'h0000)) // even',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'146',h:'92513',c:'g'}
+,{cr:'c',t:'T',z:'    else if ( ~PARITYSEL & (gpio_dir == 16\'h0001)) //GPIOIN should be eve...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'151',h:'5817',c:'g'}
+,{cr:'m',t:'T',z:'    else if (PARITYSEL & (gpio_dir == 16\'h0001)) //GPIOIN should be even',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'156',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',h:'0',c:'r'}
+]}],
+b179:[{dummy:0},
+{anchor:'cvg180',items:[{z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',h:'95580',c:'g'}
+,{cr:'c',t:'A',z:'    if(HREADY)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'91',h:'48257',c:'g'}
+]},
+{anchor:'cvg181',items:[{z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',h:'85914',c:'g'}
+,{cr:'c',t:'T',z:'    else if ((last_HADDR[7:0] == gpio_dir_addr) & last_HSEL & last_HWRITE...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'113',h:'9844',c:'g'}
+,{cr:'c',t:'A',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'109',h:'53369',c:'g'}
+]},
+{anchor:'cvg182',items:[{z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',c:'Y',p:'75.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',h:'85915',c:'g'}
+,{cr:'m',t:'T',z:'    else if ((gpio_dir == 16\'h0001) & (last_HADDR[7:0] == gpio_data_addr)...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'125',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'    else if ((gpio_dir == 16\'h0001) & (last_HADDR[7:0] == gpio_data_addr)...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'127',h:'437',c:'g'}
+,{cr:'c',t:'A',z:'    if(!HRESETn) // reset',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'120',h:'62873',c:'g'}
+]},
+{anchor:'cvg183',items:[{z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'135',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(!HRESETn)',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'135',h:'74955',c:'g'}
+,{cr:'c',t:'E',z:'    else begin',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'140',h:'98330',c:'g'}
+]},
+{anchor:'cvg184',items:[{z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',c:'R',p:'40.00'}
+,{cr:'m',t:'I',z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'    else if (~PARITYSEL & (gpio_dir == 16\'h0000)) // even',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'146',h:'92513',c:'g'}
+,{cr:'c',t:'T',z:'    else if ( ~PARITYSEL & (gpio_dir == 16\'h0001)) //GPIOIN should be eve...',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'151',h:'5817',c:'g'}
+,{cr:'m',t:'T',z:'    else if (PARITYSEL & (gpio_dir == 16\'h0001)) //GPIOIN should be even',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'156',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    if (PARITYSEL & (gpio_dir == 16\'h0000)) // odd ',f:'AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv',l:'141',h:'0',c:'r'}
+]}],
+b504:[{dummy:0},
+{anchor:'cvg505',items:[{z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',h:'100000',c:'g'}
+]}],
+b506:[{dummy:0},
+{anchor:'cvg507',items:[{z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',h:'0',c:'r'}
+]}],
+b514:[{dummy:0},
+{anchor:'cvg515',items:[{z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',h:'100000',c:'g'}
+,{cr:'c',t:'A',z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',h:'2',c:'g'}
+]}],
+b534:[{dummy:0},
+{anchor:'cvg535',items:[{z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'          if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization fail...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'31',h:'100000',c:'g'}
+]}],
+b536:[{dummy:0},
+{anchor:'cvg537',items:[{z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'        if( !trans.randomize() ) $fatal(&#34;Gen:: trans randomization failed...',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv',l:'42',h:'0',c:'r'}
+]}],
+b544:[{dummy:0},
+{anchor:'cvg545',items:[{z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',h:'100000',c:'g'}
+,{cr:'c',t:'A',z:'             if(`MON_IF.HSEL)begin //valid slave select signal',f:'AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv',l:'19',h:'2',c:'g'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);

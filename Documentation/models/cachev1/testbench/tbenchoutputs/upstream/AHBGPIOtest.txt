@@ -1,0 +1,78 @@
+Initial outputs
+ GPIOOUT: xxxxx, HRDATA[15:0]: xxxx PARITYERR: x , HREADYOUT: 1, PARITYSEL: 1 1
+
+
+
+
+ ODD PARITY
+hreset outputs
+ GPIOOUT: 10000, HRDATA[15:0]: 0 PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 1 1
+
+
+set sel and hwrite high 1
+ GPIOOUT: 10000, HRDATA[15:0]: 4f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 1 1
+
+
+
+
+EVEN PARITY
+Initial outputs
+ GPIOOUT: 10000, HRDATA[15:0]: 4f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+hreset outputs
+ GPIOOUT: 0, HRDATA[15:0]: 0 PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+set sel and hwrite high 1
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+set sel and hwrite high 2
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+set sel and hwrite high 3
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+should be back to idle
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+
+
+INJECTING PARITY BIT ERROR
+Initial outputs
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+hreset outputs
+ GPIOOUT: 0, HRDATA[15:0]: 0 PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+parity bit when paritybit fault high
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 1 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+should be back to idle
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+
+
+INJECTING DATA BIT ERROR
+Initial outputs
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+hreset outputs
+ GPIOOUT: 0, HRDATA[15:0]: 0 PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+parity bit when datafault is high
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 1 , HREADYOUT: 1, PARITYSEL: 0 0
+
+
+should be back to idle
+ GPIOOUT: 0, HRDATA[15:0]: 3f PARITYERR: 0 , HREADYOUT: 1, PARITYSEL: 0 0

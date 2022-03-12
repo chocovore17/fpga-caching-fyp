@@ -1,0 +1,86 @@
+Coverage Report Summary Data by file
+
+=================================================================================
+=== File: AHB_peripherals_files/rtl/AHB_GPIO/AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           24        19         5     79.16
+    Branches                        16        12         4     75.00
+    FEC Condition Terms             24         6        18     25.00
+    Toggle Bins                    556       136       420     24.46
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/driver_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           30        30         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/environment_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           21        21         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/generator_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           18        10         8     55.55
+    Branches                         4         1         3     25.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/interface_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           15        15         0    100.00
+    Toggle Bins                    280        88       192     31.42
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/monitor_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           21        21         0    100.00
+    Branches                         2         2         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/scoreboard_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            5         5         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/tb_top_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                           15        15         0    100.00
+    Toggle Bins                      2         2         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/tests_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         3         0    100.00
+
+=================================================================================
+=== File: AHB_peripherals_files/tbench/unit_level/AHBGPIO/transaction_AHBGPIO.sv
+=================================================================================
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Stmts                            3         0         3      0.00
+
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 2
+
+TOTAL ASSERTION COVERAGE: 75.00%  ASSERTIONS: 8
+
+Total Coverage By File (code coverage only, filtered view): 52.45%
+

@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 14:04:47 on Mar 11,2022
+# Start time: 09:00:31 on Mar 12,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -353,5 +353,5 @@
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 #  quit
-# End time: 14:04:48 on Mar 11,2022, Elapsed time: 0:00:01
+# End time: 09:00:31 on Mar 12,2022, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 4
