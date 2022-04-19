@@ -15,8 +15,6 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   input[15:0] amount;
   output thenewmax;
   reg HRESETn;
-  reg old_client;
-  reg old_amount;
   reg[31:0] correct_amount;
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
@@ -45,16 +43,6 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     );
 
     
-// module dm_data_upstream(clk,
-//   data_req,//data request/command, e.g. RW, valid
-//   data_write, //write port (128-bit line)
-//   data_read);
-//   input  clk;//, change_max;
-//   input cache_req_type data_req;//data request/command, e.g. RW, valid
-//   input cache_data_type data_write; //write port (128-bit line)
-//   output cache_data_type data_read; //read port
-
-    
   dm_data_downstream RAMDOWNSTREAM(
     .clk(clk),    
     .data_req(mem_reqdown),    //CPU request input (CPU->cache)
@@ -75,20 +63,14 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
 
   always @(client_id, amount) begin
   begin 
-    if (old_amount!= amount ||old_client!=client_id);  
     mem_requp.index = client_id[9:0];
-      if ((new_max) & (new_max>(mem_dataup)) ) begin// update max, shift amount 16 bits to left
-        // case where new max is lower then current trade
+      if ((new_max) & (new_max>(mem_dataup)) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
-      pass_checks <= correct_amount>(accumulated_orders + amount - cancelled_orders );
-    end
     else
       correct_amount = amount;
       // no need for an else, amount is less then 16
 
     mem_dataup_wr = correct_amount;
-    old_amount = amount;
-    old_client = client_id;
     pass_checks <= max_to_trade>(accumulated_orders + amount - cancelled_orders);
     mem_requp.we = pass_checks;
   end 

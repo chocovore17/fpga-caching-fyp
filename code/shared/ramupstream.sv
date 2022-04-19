@@ -39,15 +39,15 @@ module dm_data_upstream(clk,
           memory[data_req.index][15:0] <=  memory[data_req.index][15:0] + data_write[15:0]; //+memory[data_req.index];
         end
       end
-    // SVA to check if gpio_out during reset
-        trade_risk_check_mem: assert property (
-          @(posedge clk) // throws an error if the trade is unsafe
-            `SAFE_MEM == 1'b1
-            )
-          else begin 
-            $error ("The trade is not safe for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.index, memory[data_req.index][31:16], memory[data_req.index][15:0]);
-            $displayb(" %0h,  %p",data_write, memory[data_req.index]);
-          end //
+    // // SVA to check if gpio_out during reset
+    //     trade_risk_check_mem: assert property (
+    //       @(posedge clk) // throws an error if the trade is unsafe
+    //         `SAFE_MEM == 1'b1
+    //         )
+    //       else begin 
+    //         $error ("The trade is not safe for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.index, memory[data_req.index][31:16], memory[data_req.index][15:0]);
+    //         $displayb(" %0h,  %p",data_write, memory[data_req.index]);
+    //       end //
 endmodule
 
 
