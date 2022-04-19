@@ -6,9 +6,10 @@
  data_write = maximum allowed to trade (32 bits) if 'change_max' = true,  accumulated_orders = value of accumulated sent order (32 bits) otherwise
  */
 
- 
  `include "code/shared/cache_def.sv"
+
  import cache_def::*;
+ `define SAFE_MEM ((data_read>>16) > data_read[15:0]) 
 
 module dm_data_upstream(clk,
   data_req,//data request/command, e.g. RW, valid
@@ -20,33 +21,33 @@ module dm_data_upstream(clk,
   output cache_data_type data_read; //read port
 
 
-  cache_data_type memory[0:1023];
+  cache_data_type memory[0:512];
 
   initial begin
-    for (int i=0; i<1024; i++)
-    memory[i] = 8'hfefe0000; //'0;
-    // memory[i+1] = 8'hfff8f0db;
-
+      $display("Loading rom.");
+      $readmemh("code/shared/rom_trade.mem", memory);
+      // $displayb("%p", memory);
     end
     assign data_read = memory[data_req.index];
 
 
     always @(posedge(clk)) begin
       if (data_req.we)
-      memory[data_req.index] <= data_write; //+memory[data_req.index];
-    // if (data_req.we) 
-    //   if(change_max) begin
-    //     // UPDATE 16 MSB
-    //     // read 16 LSB for current max and shift max 16bits to left 
-    //     memory[data_req.index][31:16] <= data_write;// if change max, update + 32 bits
-    //     // memwr <= 1'b1;
-    //   end
-    //   else begin// check for overflow 
-    //     // UPDATE 16 LSB 
-    //     memory[data_req.index][15:0] <= data_write + memory[data_req.index][15:0]; // + memory[address_write][15:0]; // if change max, RHS updated (indexed)
-    //     // memwr <= 1'b1;
-    //   end 
-    end
+        if (data_write[31:16] > 2'b01) 
+          memory[data_req.index] <= {data_write[31:15],memory[data_req.index][15:0] }; //+memory[data_req.index]; 
+        else begin
+          memory[data_req.index][15:0] <=  memory[data_req.index][15:0] + data_write[15:0]; //+memory[data_req.index];
+        end
+      end
+    // SVA to check if gpio_out during reset
+        trade_risk_check_mem: assert property (
+          @(posedge clk) // throws an error if the trade is unsafe
+            `SAFE_MEM == 1'b1
+            )
+          else begin 
+            $error ("The trade is not safe for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.index, memory[data_req.index][31:16], memory[data_req.index][15:0]);
+            $displayb(" %0h,  %p",data_write, memory[data_req.index]);
+          end //
 endmodule
 
 
@@ -56,9 +57,6 @@ module dm_cache_tag_upstream(input bit clk, //write clock
   input cache_tag_type tag_write,//write port
   output cache_tag_type tag_read //read port);//read port
 );
-// output[15:0] accumulated_orders, //read port
-// output[15:0] max_to_trade //read port);//read port
-
   // timeunit 1ns; timeprecision 1ps;
   cache_tag_type tag_mem[0:1023];
   initial begin
@@ -66,10 +64,6 @@ module dm_cache_tag_upstream(input bit clk, //write clock
   tag_mem[i] = '0;
   end
   
-    // Read data from memory
-  // assign accumulated_orders = tag_mem[tag_req.index][15:0]; // LSB
-  // assign max_to_trade = tag_mem[tag_req.index][19:16]; // MSB
-  // end
 
   assign tag_read = tag_mem[tag_req.index];
   always @(posedge(clk)) begin
@@ -89,20 +83,8 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   // input change_max,
   output mem_req_type mem_req, //memory request (cache->memory)
   output cpu_result_type cpu_res //cache result (cache->CPU)
-  // output[15:0] accumulated_orders, //read port
-  // output[15:0] max_to_trade //read port);//read port
   );
   
-  // output[15:0] accumulated_orders; //read port
-  // output[15:0] max_to_trade; //read port);//read port
-  // cpu_result_type cpu_res;
-  
-    // Read data from memory
-  // assign accumulated_orders = cpu_res.data[15:0]; // LSB
-  // assign max_to_trade = cpu_res.data[31:16]; // MSB
-  // end
-  // timeunit 1ns;
-  // timeprecision 1ps;
   /*write clock*/
   typedef enum {idle, compare_tag, allocate, write_back} cache_state_type;
   /*FSM state register*/
@@ -239,7 +221,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   endcase
  end
  always_ff @(posedge(clk)) begin
-  $display(mem_data.data);
+  // $display(mem_data.data);
   if (rst)
   rstate <= idle; //reset to idle state
   else

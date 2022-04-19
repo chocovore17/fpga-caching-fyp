@@ -11,14 +11,14 @@
  `include "code/shared/cache_def.sv"
  import cache_def::*;
 
+//  `define SAFE (max_to_trade >  (accumulated_orders+ (~cpu_res.data + 1)) ) 
 
 module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchange_client_id, exchange_amount, exchange_go, /*to display testing*/ cancelled_orders, accumulated_orders , max_to_trade);
   input[4:0]  cpu_client_id, exchange_client_id;
   input clk, cpu_go, HRESETn, exchange_go, cpu_new_max;
   input[15:0] exchange_amount;
   output [15:0] cancelled_orders;
-  // wire [15:0] cancelled_orders; // RAM data OUTPUTS
-  output [31:0] accumulated_orders;
+  output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   input[31:0] cpu_amount;
   mem_data_type mem_data, mem_dataup;
@@ -85,28 +85,40 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
     
       if (exchange_go ==1)
         begin 
-          cpu_reqdown.addr   = exchange_client_id;
+          cpu_reqdown.addr   = {11'b1, exchange_client_id};
           cpu_reqdown.data   = exchange_amount;
           cpu_reqdown.rw   = exchange_go;
           cpu_reqdown.valid   = 1;
           mem_data.data = exchange_amount;
         end
         else  begin  //default should be cpu 
-          if (cpu_new_max) // update max
-            updated_up_client_id = cpu_client_id*2+1;
-          else  begin // new order 
-            updated_up_client_id = cpu_client_id*2;
+          if (cpu_new_max) // update max, shift amount 16 bits to left
+            correct_amount = cpu_amount << 16;
+          else
+            correct_amount = cpu_amount;
           end
 
             cpu_reqdown.addr   = updated_up_client_id;         
             // updatareq.index = cpu_client_id;
             cpu_requp.addr   = updated_up_client_id;
-            cpu_requp.data   = cpu_amount;
-            mem_dataup.data = cpu_amount;
+            cpu_requp.data   = correct_amount;
+            mem_dataup.data = correct_amount;
             cpu_requp.rw   =  ~exchange_go;;
             cpu_requp.valid   = 1;
             cpu_reqdown.rw   = 0;
         end 
+        
+    // ____________________________________________ CHECKS ALWAYS SAFE TO TRADE _________________________________________//
+
+  // // SVA to check if gpio_out during reset
+  //   trade_risk_check: assert property (
+  //     @(posedge clk) // throws an error if the trade is unsafe
+  //     `SAFE == 1'b1
+  //       )
+  //     else begin
+  //       $error ("The trade is not safe for client %0b; max to trade: %0b, accumulated amount: %0b, cancelled: %0b, pass check %0b", cpu_client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
+  //     end //
+         
 
   end
 

@@ -3,55 +3,65 @@
  compile with the following flags in icarus verilog:  -Wall -g2012 bc inputs/outputs fed back
  */ 
 
- `include "shared/ramdownstream.sv"
- `include "shared/ramupstream.sv"
+ `include "code/shared/ramdownstream.sv"
+ `include "code/shared/ramupstream.sv"
  `include "upstream.sv"
  `include "SLT.sv"
+//  `include "code/shared/rom_trade.mem"
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
   input[4:0]  client_id;
-  input[31:0] amount;
+  input[15:0] amount;
   output thenewmax;
-  
+  reg HRESETn;
   reg old_client;
   reg old_amount;
+  reg[31:0] correct_amount;
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
-  // reg [9:0] upstreamclient_id; //RAM inputs
+  
+  cache_data_type mem_dataup_wr, mem_dataup, mem_datadown, mem_datadown_wr;
+  cache_req_type mem_requp, mem_reqdown;
+
   reg       check_risk, send_order, update_max; // state machine outputs
   wire [31:0] cancelled_orders; // RAM data OUTPUTS
-  output [31:0] accumulated_orders, max_to_trade;
+  output [15:0] accumulated_orders;
+  output[31:0] max_to_trade;
   reg memwr, nocare; // RAM bool output & State machine input, don't care about downstream
   assign thenewmax = update_max;
   // instantiate upstream ram (should it be done here? )
-  ramupstream #(32, 10, 1024) RAMUPSTREAM (
-    .clk_write(clk),
-    .change_max(update_max),
-    .address_write({5'b0, client_id}),
-    .data_write(amount),
-    .write_enable((update_max) || (send_order)),
-    .clk_read(clk),
-    .address_read({5'b0, client_id}),
-    .accumulated_orders(accumulated_orders),
-    .max_to_trade(max_to_trade),
-    .memwr(memwr));                             // output 
+  assign HRESETn = 1'b0;
+  assign accumulated_orders = mem_dataup[15:0];
+  assign max_to_trade = mem_dataup >> 16;
+  assign cancelled_orders = mem_datadown;
+  assign mem_reqdown.we = 1'b0;
 
-  // instantiate downstream ram (should it be done here? )
-  ramdownstream #(32, 5, 32) RAMDOWNSTREAM (
-    .clk_write(clk),                            // input 
-    .downstream_address_write(client_id),       // input 
-    .data_write(amount),                        // input[31:0] 
-    .downstream_write_enable(1'b0),           // upstream cannot write  this memory 
-    .clk_read(clk),                             // input 
-    .address_read(client_id),                   // input [4:0]
-    .memwr(nocare),                              // output 
-    .data_read(cancelled_orders));              // output[31:0]
+  dm_data_upstream RAMUPSTREAM(
+    .clk(clk),    
+    .data_req(mem_requp),    //CPU request input (CPU->cache)
+    .data_write(mem_dataup_wr),     //memory response (memory->cache)
+    .data_read(mem_dataup)    //memory request (cache->memory)
+    );
 
-    // // outputs the risk check value
-    // SLT SLT(.A(max_to_trade),
-    //     .B(accumulated_orders + amount + (~cancelled_orders + 1)),
-    //     .Result(pass_checks));
+    
+// module dm_data_upstream(clk,
+//   data_req,//data request/command, e.g. RW, valid
+//   data_write, //write port (128-bit line)
+//   data_read);
+//   input  clk;//, change_max;
+//   input cache_req_type data_req;//data request/command, e.g. RW, valid
+//   input cache_data_type data_write; //write port (128-bit line)
+//   output cache_data_type data_read; //read port
+
+    
+  dm_data_downstream RAMDOWNSTREAM(
+    .clk(clk),    
+    .data_req(mem_reqdown),    //CPU request input (CPU->cache)
+    .data_write(mem_datadown_wr),     //memory response (memory->cache)
+    .data_read(mem_datadown)    //memory request (cache->memory)
+    );
+
 
   //instantiate upstream state machine to know current state 
     upstream_processor UPSTREAMPROCESSOR(.clk(clk),
@@ -63,21 +73,35 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
           .send_order(send_order),
           .update_max(update_max));
 
-  always @(client_id, amount)
+  always @(client_id, amount) begin
   begin 
-    if (old_amount!= amount ||old_client!=client_id);
+    if (old_amount!= amount ||old_client!=client_id);  
+    mem_requp.index = client_id[9:0];
+      if ((new_max) & (new_max>(mem_dataup)) ) begin// update max, shift amount 16 bits to left
+        // case where new max is lower then current trade
+      correct_amount = amount << 16;
+      pass_checks <= correct_amount>(accumulated_orders + amount - cancelled_orders );
+    end
+    else
+      correct_amount = amount;
+      // no need for an else, amount is less then 16
+
+    mem_dataup_wr = correct_amount;
     old_amount = amount;
     old_client = client_id;
-    pass_checks <= max_to_trade<(accumulated_orders + amount + (~cancelled_orders + 1)) ? 1 : 0 ;
-    // $display(pass_checks); 
-    // $display(accumulated_orders);
-    // $display(client_id);
-    // // $display(amount); // + amount + (~cancelled_orders + 1)));
-  
+    pass_checks <= max_to_trade>(accumulated_orders + amount - cancelled_orders);
+    mem_requp.we = pass_checks;
   end 
-  // always @(client_id,amount)
-  // begin
+  
+  //   // SVA to check if gpio_out during reset
+  trade_risk_check_cpu: assert property (
+    @(posedge clk) // throws an error if the trade is unsafe
+     max_to_trade> accumulated_orders
+      )
+    else begin 
+      $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, pass_checks);
+    end //
+end 
 
-  // end
 
 endmodule

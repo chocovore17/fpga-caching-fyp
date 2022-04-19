@@ -18,7 +18,8 @@ module dm_cache_data(input bit clk,
     always @(posedge(clk)) begin
     if (data_req.we)
     data_mem[data_req.index] <= data_write;
-    end²
+    end
+    
     endmodule
 
     
