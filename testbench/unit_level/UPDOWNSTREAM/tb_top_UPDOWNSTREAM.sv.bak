@@ -55,9 +55,6 @@ module tb_top_UPDOWNSTREAM;
         upstream_rdata: coverpoint intf.accumulated_orders[15:0]{ // equals to gpio_datain
             bins accumulated_orders =  {[0:64]};
         }
-        // rs_check: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
-        //     bins max_to_trade >=  (intf.accumulated_orders - intf.cancelled_orders);
-        // }
         // gpio_parity: coverpoint intf.PARITYERR{
         //     bins digital_point = {1'b0, 1'b1}; //should be no error
         // }

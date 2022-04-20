@@ -1,2 +1,2 @@
 var g_data = {'dummy':null,
-'1':'testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv'};
+'1':'testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv'};
