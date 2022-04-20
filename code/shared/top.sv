@@ -60,13 +60,6 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
 //     .cpu_res(cpu_res)     //cache result (cache->CPU)
 //     );
 
-    // // outputs the risk check value
-    // SLT SLT(.A(max_to_trade),
-    //     .B(accumulated_orders + cpu_amount + (~cpu_res.data + 1)),
-    //     .Result(pass_checks));
-
-
-  
   dm_data_upstream RAMUPSTREAM(
     .clk(clk),    
     .data_req(mem_requp),    //CPU request input (CPU->cache)
@@ -96,7 +89,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   always @(cpu_go,exchange_go, cpu_new_max)
   begin
     
-      if (exchange_go ==1)
+      if ((exchange_go ==1)&(cpu_go==0))
         begin 
           mem_reqdown.index = exchange_client_id[9:0];
           mem_datadown_wr = exchange_amount;
@@ -107,19 +100,19 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
           // cpu_reqdown.valid   = 1;
           // mem_data.data = exchange_amount;
         end
-        else  begin  //default should be cpu 
-          mem_reqdown.we = 1'b0
-          mem_reqdown.index = cpu_client_id[9:0];
-          mem_requp.index = cpu_client_id[9:0];
-          if ((cpu_new_max) & (cpu_amount>(mem_dataup)) ) // update max, shift amount 16 bits to left
-            correct_amount = cpu_amount << 16;
-          else
-            correct_amount = cpu_amount;
-          // no need for an else, amount is less then 16
+      else  begin  //default should be cpu 
+        mem_reqdown.we = 1'b0
+        mem_reqdown.index = cpu_client_id[9:0];
+        mem_requp.index = cpu_client_id[9:0];
+        if ((cpu_new_max) & (cpu_amount>(mem_dataup)) ) // update max, shift amount 16 bits to left
+          correct_amount = cpu_amount << 16;
+        else
+          correct_amount = cpu_amount;
+        // no need for an else, amount is less then 16
 
-            mem_dataup_wr = correct_amount;
-            pass_checks <= max_to_trade>(accumulated_orders + amount - cancelled_orders);
-            mem_requp.we = pass_checks;
+          mem_dataup_wr = correct_amount;
+          pass_checks <= max_to_trade>(accumulated_orders + amount - cancelled_orders);
+          mem_requp.we = pass_checks;
         end 
         
     // ____________________________________________ CHECKS ALWAYS SAFE TO TRADE _________________________________________//

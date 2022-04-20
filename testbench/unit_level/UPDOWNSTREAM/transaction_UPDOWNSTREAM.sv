@@ -35,14 +35,13 @@ class transaction;
 
     //displaying randomized values of items 
     function void print(string tag= "");
-        // $display("\n\n\n\n\n T=%0t [%s] transaction information: cpu_client_id = 0x%0h cpu_amount = 0x%0h cpu_new_max = 0x%0h cpu_go = 0x%0h exchange_client_id = 0x%0h exchange_amount = 0x%0h exchange_go = 0x%0h ",$time, tag, cpu_client_id,cpu_amount,cpu_new_max, cpu_go, exchange_client_id, exchange_amount, exchange_go);
-        // $display("DLS_ERROR = 0b%0b",DLS_ERROR);
+        $display("\n\n\n\n\n T=%0t [%s] transaction information: cpu_client_id = 0x%0h cpu_amount = 0x%0h cpu_new_max = 0x%0h cpu_go = 0x%0h exchange_client_id = 0x%0h exchange_amount = 0x%0h exchange_go = 0x%0h ",$time, tag, cpu_client_id,cpu_amount,cpu_new_max, cpu_go, exchange_client_id, exchange_amount, exchange_go);
     endfunction;
 
     //displaying output collected from DUT 
     function void print_upstream(string tag= "");
-        // $display("\n T=%0t [%s] TOP LEVEL transaction information: ", $time, tag);
-        // $display("accumulated_orders = 0x%0h cancelled_orders = 0x%0h  max_to_trade = 0x%0h  ",accumulated_orders, cancelled_orders,max_to_trade);
+        $display("\n T=%0t [%s] TOP LEVEL transaction information: ", $time, tag);
+        $display("accumulated_orders = 0x%0h cancelled_orders = 0x%0h  max_to_trade = 0x%0h  ",accumulated_orders, cancelled_orders,max_to_trade);
     endfunction;
 
 endclass
