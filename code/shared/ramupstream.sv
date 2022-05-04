@@ -28,15 +28,15 @@ module dm_data_upstream(clk,
       $readmemh("code/shared/rom_trade.mem", memory);
       // $displayb("%p", memory);
     end
-    assign data_read = memory[data_req.index];
+    assign data_read = memory[data_req.rdindex];
 
 
     always @(posedge(clk)) begin
       if (data_req.we)
         if (data_write[31:16] > 2'b01) 
-          memory[data_req.index] <= {data_write[31:15],memory[data_req.index][15:0] }; //+memory[data_req.index]; 
+          memory[data_req.rdindex] <= {data_write[31:15],memory[data_req.rdindex][15:0] }; //+memory[data_req.index]; 
         else begin
-          memory[data_req.index][15:0] <=  memory[data_req.index][15:0] + data_write[15:0]; //+memory[data_req.index];
+          memory[data_req.rdindex][15:0] <=  memory[data_req.rdindex][15:0] + data_write[15:0]; //+memory[data_req.index];
         end
       end
     // // SVA to check if gpio_out during reset
@@ -65,11 +65,11 @@ module dm_cache_tag_upstream(input bit clk, //write clock
   end
   
 
-  assign tag_read = tag_mem[tag_req.index];
+  assign tag_read = tag_mem[tag_req.rdindex];
   always @(posedge(clk)) begin
 
   if (tag_req.we)   
-    tag_mem[tag_req.index] <= tag_write;
+    tag_mem[tag_req.rdindex] <= tag_write;
 
   end
 endmodule
@@ -112,12 +112,12 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   /*read tag by default*/
   tag_req.we = '0;
   /*direct map index for tag*/
-  tag_req.index = cpu_req.addr[13:4];
+  tag_req.rdindex = cpu_req.addr[13:4];
  
   /*read current cache line by default*/
   data_req.we = '0;
   /*direct map index for cache data*/
-  data_req.index = cpu_req.addr[13:4];
+  data_req.rdindex = cpu_req.addr[13:4];
   /*modify correct word (32-bit) based on address*/
   data_write = data_read;
   case(cpu_req.addr[3:2])

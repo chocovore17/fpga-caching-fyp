@@ -92,7 +92,7 @@ module tb_top_UPDOWNSTREAM;
 
         $display("Coverage_input = %0.2f %%", cov_input.get_inst_coverage());
         $display("Coverage_output = %0.2f %%", cov_output.get_inst_coverage());
-        #20000 $stop;
+        #20 $stop;
     end
 
     initial begin 

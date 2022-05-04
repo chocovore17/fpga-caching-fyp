@@ -10,7 +10,8 @@ package cache_def;
  }cache_tag_type;
  //data structure for cache memory request
  typedef struct {
- bit [9:0]index; //10-bit index
+ bit [9:0]wrindex; //10-bit index
+ bit [9:0]rdindex; //10-bit index
  bit we; //write enable
  }cache_req_type;
  //128-bit cache line data

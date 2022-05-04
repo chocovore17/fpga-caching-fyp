@@ -9,7 +9,7 @@
  `include "SLT.sv"
 //  `include "code/shared/rom_trade.mem"
 
-module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax);
+module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
   input[4:0]  client_id;
   input[15:0] amount;
@@ -23,7 +23,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   cache_req_type mem_requp, mem_reqdown;
 
   reg       check_risk, send_order, update_max; // state machine outputs
-  wire [31:0] cancelled_orders; // RAM data OUTPUTS
+  input [31:0] cancelled_orders; // RAM data 
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   reg memwr, nocare; // RAM bool output & State machine input, don't care about downstream
@@ -33,7 +33,6 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   assign accumulated_orders = mem_dataup[15:0];
   assign max_to_trade = mem_dataup >> 16;
   assign cancelled_orders = mem_datadown;
-  assign mem_reqdown.we = 1'b0;
 
   dm_data_upstream RAMUPSTREAM(
     .clk(clk),    
@@ -43,12 +42,12 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     );
 
     
-  dm_data_downstream RAMDOWNSTREAM(
-    .clk(clk),    
-    .data_req(mem_reqdown),    //CPU request input (CPU->cache)
-    .data_write(mem_datadown_wr),     //memory response (memory->cache)
-    .data_read(mem_datadown)    //memory request (cache->memory)
-    );
+  // dm_data_downstream RAMDOWNSTREAM(
+  //   .clk(clk),    
+  //   .data_req(mem_reqdown),    //CPU request input (CPU->cache)
+  //   .data_write(mem_datadown_wr),     //memory response (memory->cache)
+  //   .data_read(mem_datadown)    //memory request (cache->memory)
+  //   );
 
 
   //instantiate upstream state machine to know current state 
@@ -63,7 +62,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
 
   always @(client_id, amount) begin
   begin 
-    mem_requp.index = client_id[9:0];
+    mem_requp.rdindex = client_id[9:0];
       if ((new_max) & (new_max>(mem_dataup)) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
     else
