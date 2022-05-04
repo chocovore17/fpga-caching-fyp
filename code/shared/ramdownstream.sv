@@ -17,20 +17,23 @@ module dm_data_downstream(clk,
   output cache_data_type data_read; //read port
   cache_data_type data_mem[0:1023];
 
-  initial begin
-    for (int i=0; i<1024; i++)
-    data_mem[i] = '0;
-    end
+
     initial begin
       $display("Loading rom.");
       $readmemh("code/shared/rom_empty.mem", data_mem);
       // $displayb("%p", memory);
     end
     assign data_read = data_mem[data_req.rdindex];
+
     always @(posedge(clk)) begin
-    if (data_req.we)
-    data_mem[data_req.wrindex] <= data_write+data_mem[data_req.wrindex];
+      $displayb("%p", data_mem[0:16]);
+
+    if (data_req.we) begin
+        // $display("write %0h to downstream", data_write);  
+        data_mem[data_req.wrindex] <= data_write+data_mem[data_req.wrindex];
     end
+    
+      end
 endmodule
 
 

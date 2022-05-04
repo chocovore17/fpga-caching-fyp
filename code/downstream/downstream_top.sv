@@ -10,10 +10,10 @@
 
  `include "code/shared/cache_def.sv"
  import cache_def::*;
-module downstream_top( clk, client_id, amount, downdatareq /*to display testing*/, cpu_client_id);
+module downstream_top( clk, client_id, amount, downdatareq /*to display testing, cpu_client_id*/);
   input[4:0]  client_id;
   input clk;
-  input[4:0]  cpu_client_id;
+  // input[4:0]  cpu_client_id;
 
   input[15:0] amount;
   output cache_req_type downdatareq; //used outside, by ramdownstream
@@ -32,7 +32,7 @@ module downstream_top( clk, client_id, amount, downdatareq /*to display testing*
   //   .data_read(cancelled_orders)
   // );
 
-  always @(cpu_client_id, client_id, amount)
+  always @(client_id, amount)
   begin 
     // if (old_amount!= amount ||old_client!=client_id) ack <= 1'b1;
     // $display("cancelled : 0x%0h", amount);
@@ -41,6 +41,8 @@ module downstream_top( clk, client_id, amount, downdatareq /*to display testing*
     downdatareq.we = ((client_id!=old_client) || (old_amount!=amount));
     old_amount = amount;
     old_client = client_id; 
+    // if (downdatareq.we)
+    //   $display("write %0h to downstream", amount); 
   end 
 endmodule
 

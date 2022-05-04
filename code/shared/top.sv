@@ -28,7 +28,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   cache_req_type downdatareq;
-  // downdatareq.rdindex  = cpu_client_id;
+  assign downdatareq.rdindex  = cpu_client_id;
 
 
   // downstream ram 
@@ -55,14 +55,14 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
     .clk(clk), 
     .client_id(exchange_client_id), 
     .amount(exchange_amount), 
-    .downdatareq(downdatareq),
-    .cpu_client_id(cpu_client_id)
+    .downdatareq(downdatareq)
+    // .cpu_client_id(cpu_client_id)
     );
 
-    always @(cpu_client_id) begin
-      downdatareq.rdindex  = cpu_client_id;
-      $display("cancelled : 0x%0h", cancelled_orders);
-    end
+    // always @(cpu_client_id) begin
+    //   downdatareq.rdindex  = cpu_client_id;
+    //   // $display("cancelled : 0x%0h", cancelled_orders);
+    // end
   
     
         
