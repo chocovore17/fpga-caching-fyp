@@ -30,7 +30,7 @@ class monitor;
                 trans.thenewmax = `MON_IF.thenewmax;
 
                 @(posedge up_if.slowclk);
-                // trans.print("MONITOR");
+                trans.print("MONITOR");
                 mon2scb.put(trans);
                 -> mon_done;
              end

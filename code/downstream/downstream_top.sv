@@ -33,6 +33,7 @@ module downstream_top( clk, client_id, amount, cancelled_orders /*to display tes
   always @(client_id, amount)
   begin 
     // if (old_amount!= amount ||old_client!=client_id) ack <= 1'b1;
+    $display("cancelled : %0h", cancelled_orders);
     downdatareq.index = client_id;
     downdatareq.we = ((client_id!=old_client) || (old_amount!=amount));
     old_amount = amount;

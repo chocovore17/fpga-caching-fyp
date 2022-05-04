@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/downstream/DOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 11:13:40 on Mar 11,2022
+# Start time: 10:28:29 on May 04,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -23,9 +23,9 @@
 # Loading work.downstream_top(fast)
 # Loading work.dm_data_downstream(fast)
 # Loading work.dwnstrmproc_if(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (128) does not match connection size (112) for port 'data_write'. The port definition is at: code/shared/ramdownstream.sv(12).
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (112) for port 'data_write'. The port definition is at: code/shared/ramdownstream.sv(12).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_DOWNSTREAM/DOWNSTREAM/RAMDOWNSTREAM File: code/downstream/downstream_top.sv Line: 26
-# ** Warning: (vsim-3015) [PCDPC] - Port size (128) does not match connection size (16) for port 'data_read'. The port definition is at: code/shared/ramdownstream.sv(13).
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (16) for port 'data_read'. The port definition is at: code/shared/ramdownstream.sv(13).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_DOWNSTREAM/DOWNSTREAM/RAMDOWNSTREAM File: code/downstream/downstream_top.sv Line: 26
 # run -all
 # --------- [DRIVER] Reset Started ---------
@@ -343,5 +343,5 @@
 # Break in Module tb_top_DOWNSTREAM at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 76
 # Stopped at testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv line 76
 #  quit
-# End time: 11:13:40 on Mar 11,2022, Elapsed time: 0:00:00
+# End time: 10:28:29 on May 04,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2

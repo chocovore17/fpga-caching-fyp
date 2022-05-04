@@ -1,7 +1,7 @@
 class transaction;
 
     rand logic clk;
-    rand logic[5:0] client_id;
+    rand logic[4:0] client_id;
     rand logic [31:0] amount;
     // rand logic [31:0] HWDATA;
     // rand logic [1:0] HTRANS;
@@ -39,7 +39,7 @@ class transaction;
 
     //displaying output collected from DUT 
     function void print_upstream(string tag= "");
-        $display("T=%0t [%s] upstream transaction information: ", $time, tag);
+        // $display("T=%0t [%s] upstream transaction information: ", $time, tag);
         $display("accumulated_orders = 0x%0h max_to_trade = 0b%0h thenewmax = 0b%0h ",accumulated_orders, max_to_trade, thenewmax);
     endfunction;
 

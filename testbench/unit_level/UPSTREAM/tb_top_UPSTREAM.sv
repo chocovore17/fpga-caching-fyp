@@ -44,15 +44,13 @@ module tb_top_UPSTREAM;
         //     bins hselect = {1'b0,1'b1};
         // }
       
-        upstream_maxcheck: coverpoint intf.thenewmax{
-            bins maxcheck = {1'b0, intf.new_max}; //-> ^accumulated_orders = 1'b0; // even 
-        }
     endgroup
 
     //functional coverage point to check range of output signal from DUT
     covergroup cg_output @(posedge intf.slowclk);
-        upstream_rdata: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
-            bins upstream_rdata =  {[0:64]};
+      
+        upstream_maxcheck: coverpoint intf.thenewmax{
+            bins maxcheck = {1'b0, intf.new_max}; //-> ^accumulated_orders = 1'b0; // even 
         }
         // gpio_parity: coverpoint intf.PARITYERR{
         //     bins digital_point = {1'b0, 1'b1}; //should be no error

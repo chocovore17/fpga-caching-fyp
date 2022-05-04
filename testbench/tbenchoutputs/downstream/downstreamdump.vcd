@@ -1,5 +1,5 @@
 $date
-	Fri Mar 11 11:13:40 2022
+	Wed May  4 10:28:29 2022
 $end
 $version
 	QuestaSim Version 10.7c
@@ -58,8 +58,8 @@ $scope fork downdatareq $end
 $var reg 10 K index [9:0] $end
 $var reg 1 L we $end
 $upscope $end
-$var reg 128 M downdatawrite [127:0] $end
-$var reg 128 N downdataread [127:0] $end
+$var reg 32 M downdatawrite [31:0] $end
+$var reg 32 N downdataread [31:0] $end
 $var reg 1 O ack $end
 $var reg 1 P update_memory $end
 
@@ -70,8 +70,8 @@ $scope fork data_req $end
 $var reg 10 Q index [9:0] $end
 $var reg 1 R we $end
 $upscope $end
-$var reg 128 S data_write [127:0] $end
-$var reg 128 T data_read [127:0] $end
+$var reg 32 S data_write [31:0] $end
+$var reg 32 T data_read [31:0] $end
 $upscope $end
 $upscope $end
 $upscope $end

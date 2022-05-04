@@ -6,7 +6,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
     logic HRESETn;
     logic cpu_new_max;
     logic [4:0] cpu_client_id;
-    logic [31:0] cpu_amount;
+    logic [15:0] cpu_amount;
     logic cpu_go;
     logic [4:0] exchange_client_id;
     logic [15:0] exchange_amount;
@@ -14,7 +14,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
 
     
     // output from Upstream processor top
-    logic [31:0] accumulated_orders;
+    logic [15:0] accumulated_orders;
     logic [31:0] max_to_trade;
     logic [15:0] cancelled_orders;
 

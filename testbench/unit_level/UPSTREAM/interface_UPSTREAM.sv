@@ -5,11 +5,11 @@ interface upstream_if (input logic clk, input logic slowclk);
     // inputs
     logic new_max;
     logic [4:0] client_id;
-    logic [31:0] amount;
+    logic [15:0] amount;
     logic new_order;
     
     // output from Upstream processor top
-    logic [31:0] accumulated_orders;
+    logic [15:0] accumulated_orders;
     logic [31:0] max_to_trade;
     logic thenewmax;
 
