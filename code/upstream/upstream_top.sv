@@ -27,7 +27,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
 
   reg       check_risk, send_order, update_max; // state machine outputs
   input [15:0] cancelled_orders; // RAM data 
-  reg [15:0] result, accumulated_orders_reg ; // for signed comp 
+  reg [15:0] result, accumulated_orders_reg, cancelled_orders_reg ; // for signed comp 
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   reg [31:0] max_to_trade_reg ;
@@ -64,6 +64,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   begin 
     mem_requp.rdindex = client_id[9:0];
     accumulated_orders_reg = mem_dataup[15:0];
+    cancelled_orders_reg =  cancelled_orders;
     max_to_trade_reg = mem_dataup >> 16;
     if ((new_max) && (amount>(mem_dataup[15:0])) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
@@ -72,7 +73,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
       // no need for an else, amount is less then 16
 
     mem_dataup_wr = correct_amount;
-    result = (accumulated_orders+ (~cancelled_orders+1) + amount );
+    result = (accumulated_orders+ (~cancelled_orders_reg+1) + amount );
     // $display("%0b, result : %0d",($signed({1'b0, max_to_trade[15:0]})>$signed(result) ),$signed(result) );
     pass_checks = $signed({1'b0, max_to_trade[15:0]})>$signed(result); //extend for neg values
     mem_requp.we = pass_checks;

@@ -1,4 +1,5 @@
 
+
 // interface of GPIO input/ouput signal
 interface updownstream_if (input logic clk, input logic slowclk);
 
@@ -16,7 +17,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
     // output from Upstream processor top
     logic [15:0] accumulated_orders;
     logic [31:0] max_to_trade;
-    logic [15:0] cancelled_orders;
+    logic [31:0] cancelled_orders;
 
 
     //clocking block for driver

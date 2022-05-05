@@ -24,7 +24,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   input[15:0] cpu_amount;
   input cpu_go, cpu_new_max; // for now use same clock to read and write, just not at same time
   input clk;
-  output [15:0] cancelled_orders;
+  output [31:0] cancelled_orders;
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   cache_req_type downdatareq;
@@ -35,7 +35,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   dm_data_downstream RAMDOWNSTREAM(
     .clk(clk),
     .data_req(downdatareq),
-    .data_write({96'b0, exchange_amount}),
+    .data_write({16'b0, exchange_amount}),
     .data_read(cancelled_orders)
   );
 
