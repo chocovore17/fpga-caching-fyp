@@ -70,7 +70,7 @@ module tb_top_UPDOWNSTREAM;
         slowclk = 1'b0;
         forever begin
             #2 clk = ~clk;
-            #10 slowclk = ~slowclk;
+            #2 slowclk = ~slowclk;
         // forever #5 clk = !clk;
         end
     end

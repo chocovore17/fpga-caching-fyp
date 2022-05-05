@@ -24,7 +24,7 @@ module dm_data_upstream(clk,
   cache_data_type memory[0:512];
 
   initial begin
-      $display("Loading rom.");
+      $display("Loading upstream rom.");
       $readmemh("code/shared/rom_trade.mem", memory);
       // $displayb("%p", memory);
     end

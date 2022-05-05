@@ -1,12 +1,14 @@
 var g_data = {
 a9:{
 scopes:[{link:'z.htm?f=0&s=9',val:'work.upstream_processor_top'}]
-,assertions:[{dummy:0},{cr:'m',c:'F',z:'trade_risk_check_cpu',fc:'Rr',pc:'Gr',h0:'44',h1:'1'}
+,assertions:[{dummy:0},{cr:'c',c:'g',z:'trade_pass_checks',fc:'Gr',pc:'Gr',h0:'0',h1:'1'}
+,{cr:'c',c:'g',z:'trade_correctamount_cpu',fc:'Gr',pc:'Gr',h0:'0',h1:'1'}
 ],
 },
 a35:{
 scopes:[{s:'13',b:'0',val:'tb_top_UPDOWNSTREAM'},{s:'33',b:'0',val:'TOP'},{link:'z.htm?f=0&s=35',val:'UPTOP'}]
-,assertions:[{dummy:0},{cr:'m',c:'F',z:'trade_risk_check_cpu',fc:'Rr',pc:'Gr',h0:'44',h1:'1'}
+,assertions:[{dummy:0},{cr:'c',c:'g',z:'trade_pass_checks',fc:'Gr',pc:'Gr',h0:'0',h1:'1'}
+,{cr:'c',c:'g',z:'trade_correctamount_cpu',fc:'Gr',pc:'Gr',h0:'0',h1:'1'}
 ],
 },
 dummyEnd:0
