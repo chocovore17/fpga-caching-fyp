@@ -1,5 +1,5 @@
-# vsim -coverage seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all;  coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb; quit" 
-# Start time: 12:10:48 on May 05,2022
+# vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
+# Start time: 12:32:54 on May 05,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -29,7 +29,6 @@
 # Loading work.updownstream_if(fast)
 # ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex', driven via a port connection, is multiply driven. See code/shared/top.sv(54).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 31
-# ** Warning: (vsim-8634) Code was not compiled with coverage options.
 # run -all
 # Loading downstream rom.
 # Loading upstream rom.
@@ -47,9 +46,6 @@
 #    Time: 1616 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
-#   coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll
-#  coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb
 #  quit
-# Saving coverage database on exit...
-# End time: 12:10:49 on May 05,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 2
+# End time: 12:32:55 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

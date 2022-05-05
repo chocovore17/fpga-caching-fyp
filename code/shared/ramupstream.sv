@@ -9,7 +9,7 @@
  `include "code/shared/cache_def.sv"
 
  import cache_def::*;
- `define SAFE_MEM ((data_read>>16) > data_read[15:0]) 
+ `define MAX_DEF ((data_read>>16) >= 0) 
 
 module dm_data_upstream(clk,
   data_req,//data request/command, e.g. RW, valid
@@ -39,15 +39,15 @@ module dm_data_upstream(clk,
           memory[data_req.rdindex][15:0] <=  memory[data_req.rdindex][15:0] + data_write[15:0]; //+memory[data_req.index];
         end
       end
-    // // SVA to check if gpio_out during reset
-    //     trade_risk_check_mem: assert property (
-    //       @(posedge clk) // throws an error if the trade is unsafe
-    //         `SAFE_MEM == 1'b1
-    //         )
-    //       else begin 
-    //         $error ("The trade is not safe for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.index, memory[data_req.index][31:16], memory[data_req.index][15:0]);
-    //         $displayb(" %0h,  %p",data_write, memory[data_req.index]);
-    //       end //
+    // SVA to check if gpio_out during reset
+        trade_risk_check_mem: assert property (
+          @(posedge clk) // throws an error if the trade is unsafe
+            `MAX_DEF == 1'b1
+            )
+          else begin 
+            $error ("The max to trade not def for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.rdindex, memory[data_req.rdindex][31:16], memory[data_req.rdindex][15:0]);
+            $displayb(" %0d,  %p",data_write, memory[data_req.rdindex]);
+          end //
 endmodule
 
 

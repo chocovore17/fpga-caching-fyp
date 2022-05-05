@@ -8,8 +8,9 @@
  `include "upstream.sv"
  `include "SLT.sv"
 //  `include "code/shared/rom_trade.mem"
-//  `define SAFE ($signed({1'b0, max_to_trade[15:0]})> $signed(accumulated_orders+ (~cancelled_orders+1)))
-
+ `define STATELOGC1 ((update_max == 1) && (check_risk == 1))
+ `define STATELOGC2 ((update_max == 1) && (send_order == 1))
+ `define STATELOGC3 ((check_risk== 1) && (send_order == 1))
  `define SAFETOTRADE  ($signed({1'b0, max_to_trade_reg[15:0]})> $signed(result))
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
@@ -99,14 +100,30 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
       end //
 
       
-    // // SVA to check if state logic 
-    // trade_state_logic: assert property (
-    //   @(posedge clk) // throws an error if the trade is unsafe
-    //   `SAFE == 1'b1
-    //     )
-    //   else begin 
-    //     $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, cancelled amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
-    //   end //
+    // SVA to check if state logic 
+    trade_state_logic1: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC1 == 1'b0
+        )
+      else begin 
+        $error ("two states, update_max and check_risk, are simultaneously high");
+      end //
+        // SVA to check if state logic 
+    trade_state_logic2: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC2 == 1'b0
+        )
+      else begin 
+        $error ("two states, update_max and send_order, are simultaneously high");
+      end //
+        // SVA to check if state logic 
+    trade_state_logic3: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC3 == 1'b0
+        )
+      else begin 
+        $error ("two states, check_risk and send_order, are simultaneously high");
+      end //
 end 
 
 
