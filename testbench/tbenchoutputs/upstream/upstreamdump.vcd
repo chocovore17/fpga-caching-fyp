@@ -1,5 +1,5 @@
 $date
-	Thu May  5 12:25:47 2022
+	Thu May  5 12:32:55 2022
 $end
 $version
 	QuestaSim Version 10.7c
@@ -305,6 +305,9 @@ $var reg 1 f! we $end
 $upscope $end
 $var reg 32 g! data_write [31:0] $end
 $var reg 32 h! data_read [31:0] $end
+
+$scope begin trade_risk_check_mem $end
+$upscope $end
 $upscope $end
 
 $scope module UPSTREAMPROCESSOR $end

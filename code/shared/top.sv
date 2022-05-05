@@ -3,16 +3,16 @@
  compile with the following flags in icarus verilog:  -Wall -g2012 bc inputs/outputs fed back
  */ 
 
-//  `include "ramdownstream.sv"
-//  `include "ramupstream.sv"
+ 
+
+ 
  `include "code/upstream/upstream_top.sv"
  `include "code/downstream/downstream_top.sv"
-//  `include "code/upstream/SLT.sv"
 
  `include "code/shared/cache_def.sv"
  import cache_def::*;
 
- `define SAFE (max_to_trade >  (accumulated_orders - cancelled_orders )) 
+ `define SAFETOTRADE  ($signed({1'b0, max_to_trade[15:0]})> $signed(accumulated_orders+ (~cancelled_orders[15:0]+1)))
 
 module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchange_client_id, exchange_amount, exchange_go, /*to display testing*/ cancelled_orders, accumulated_orders , max_to_trade);
   // input and outputs
@@ -59,23 +59,9 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
     // .cpu_client_id(cpu_client_id)
     );
 
-    // always @(cpu_client_id) begin
-    //   downdatareq.rdindex  = cpu_client_id;
-    //   // $display("cancelled : 0x%0h", cancelled_orders);
-    // end
-  
-    
         
     // ____________________________________________ CHECKS ALWAYS SAFE TO TRADE _________________________________________//
 
-  // // SVA to check if gpio_out during reset
-  //   trade_risk_check: assert property (
-  //     @(posedge clk) // throws an error if the trade is unsafe
-  //     `SAFE == 1'b1
-  //       )
-  //     else begin
-  //       $error ("The trade is not safe for client %0b; max to trade: %0b, accumulated amount: %0b, cancelled: %0b, pass check %0b", cpu_client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
-  //     end //
-         
+  
 
 endmodule
