@@ -17,15 +17,23 @@ module dm_data_downstream(clk,
   output cache_data_type data_read; //read port
   cache_data_type data_mem[0:1023];
 
-  initial begin
-    for (int i=0; i<1024; i++)
-    data_mem[i] = '0;
+
+    initial begin
+      $display("Loading rom.");
+      $readmemh("code/shared/rom_empty.mem", data_mem);
+      // $displayb("%p", memory);
     end
-    assign data_read = data_mem[data_req.index];
+    assign data_read = data_mem[data_req.rdindex];
+
     always @(posedge(clk)) begin
-    if (data_req.we)
-    data_mem[data_req.index] <= data_write+data_mem[data_req.index];
+      // $displayb("%p", data_mem[0:16]);
+
+    if (data_req.we) begin
+      if ((data_write+data_mem[data_req.wrindex])<16'hffaa)
+        data_mem[data_req.wrindex] <= data_write+data_mem[data_req.wrindex];
     end
+    
+      end
 endmodule
 
 
@@ -42,10 +50,10 @@ module dm_cache_tag_downstream(input bit clk, //write clock
   for (int i=0; i<1024; i++)
   tag_mem[i] = '0;
   end
-  assign tag_read = tag_mem[tag_req.index];
+  assign tag_read = tag_mem[tag_req.rdindex];
   always @(posedge(clk)) begin
   if (tag_req.we)
-  tag_mem[tag_req.index] <= tag_mem[tag_req.index]+tag_write;
+  tag_mem[tag_req.rdindex] <= tag_mem[tag_req.rdindex]+tag_write;
   end
 endmodule
 
@@ -87,12 +95,12 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   /*read tag by default*/
   tag_req.we = '0;
   /*direct map index for tag*/
-  tag_req.index = cpu_req.addr[13:4];
+  tag_req.rdindex = cpu_req.addr[13:4];
  
   /*read current cache line by default*/
   data_req.we = '0;
   /*direct map index for cache data*/
-  data_req.index = cpu_req.addr[13:4];
+  data_req.rdindex = cpu_req.addr[13:4];
   /*modify correct word (32-bit) based on address*/
   data_write = data_read;
   case(cpu_req.addr[3:2])

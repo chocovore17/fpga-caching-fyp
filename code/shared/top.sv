@@ -27,9 +27,18 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   output [15:0] cancelled_orders;
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
+  cache_req_type downdatareq;
+  assign downdatareq.rdindex  = cpu_client_id;
 
 
-  
+  // downstream ram 
+  dm_data_downstream RAMDOWNSTREAM(
+    .clk(clk),
+    .data_req(downdatareq),
+    .data_write({96'b0, exchange_amount}),
+    .data_read(cancelled_orders)
+  );
+
   upstream_processor_top UPTOP(
    .clk(clk), 
    .client_id(cpu_client_id), 
@@ -38,16 +47,24 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
    .new_max(cpu_new_max), 
    .accumulated_orders(accumulated_orders), 
    .max_to_trade(max_to_trade), 
-   .thenewmax(thenewmax)
+   .thenewmax(thenewmax),
+   .cancelled_orders(cancelled_orders[15:0])
    );
  
    downstream_top DOWNTOP(
     .clk(clk), 
     .client_id(exchange_client_id), 
     .amount(exchange_amount), 
-    .cancelled_orders(cancelled_orders)
+    .downdatareq(downdatareq)
+    // .cpu_client_id(cpu_client_id)
     );
+
+    // always @(cpu_client_id) begin
+    //   downdatareq.rdindex  = cpu_client_id;
+    //   // $display("cancelled : 0x%0h", cancelled_orders);
+    // end
   
+    
         
     // ____________________________________________ CHECKS ALWAYS SAFE TO TRADE _________________________________________//
 

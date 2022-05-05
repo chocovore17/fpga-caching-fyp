@@ -10,181 +10,181 @@ cModel Technology
 Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
 Xcache_def
 Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-VU80;hR[kP:_KRAMkL2BMK0
+V0;;1LdbXo^SJ7GoB;=4Nl1
 r1
 !s85 0
 !i10b 1
-!s100 EnkcOD`hG;^6N^K9`R=153
-IU80;hR[kP:_KRAMkL2BMK0
+!s100 <l334BPzcEGB?Pi0;K@GH0
+I0;;1LdbXo^SJ7GoB;=4Nl1
 S1
 Z2 d/home/mlg18/fpga-caching-fyp
-Z3 w1651650601
+w1651674500
 8code/shared/cache_def.sv
-Z4 Fcode/shared/cache_def.sv
+Z3 Fcode/shared/cache_def.sv
 L0 1
-Z5 OL;L;10.7c;67
+Z4 OL;L;10.7c;67
 31
-Z6 !s108 1651658860.000000
-Z7 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-Z8 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
+Z5 !s108 1651735263.000000
+Z6 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
+Z7 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
 !i113 0
-Z9 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z10 tCvgOpt 0
+Z8 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 tCvgOpt 0
 vdm_cache_fsm_downstream
 R1
-Z11 DXx4 work 9 cache_def 0 22 U80;hR[kP:_KRAMkL2BMK0
-Z12 DXx4 work 11 top_sv_unit 0 22 9_VeA9GAa<b8ac:L?nPV=3
-Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z10 DXx4 work 9 cache_def 0 22 0;;1LdbXo^SJ7GoB;=4Nl1
+Z11 DXx4 work 11 top_sv_unit 0 22 <fV<UO^lhn]HITnBYNzO83
+Z12 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 WGAVL5RL8AIdLk@A^gU^Q0
-Ic]^WJiYSddO2z7FJ?:2[I2
-Z14 !s105 top_sv_unit
+!s100 ^Y7<3ITI0D??4JE:GFlZ^2
+I3R:LTO>>e>H7d6i@NCOXX2
+Z13 !s105 top_sv_unit
 S1
 R2
-R3
+Z14 w1651731281
 Z15 8code/shared/ramdownstream.sv
 Z16 Fcode/shared/ramdownstream.sv
-Z17 L0 55
-R5
+L0 63
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdm_cache_fsm_upstream
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 R?N_oED8[K_0>J4[fM=Yc0
-IRF9;>BECbd4AEG=4^W18`1
-R14
+!s100 AHWzh8`4OcAN96_EMz]Mn0
+IAhMb00Eh>780Kj2Q_d6Ta3
+R13
 S1
 R2
-R3
+Z17 w1651674998
 Z18 8code/shared/ramupstream.sv
 Z19 Fcode/shared/ramupstream.sv
 L0 80
-R5
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdm_cache_tag_downstream
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 k3fS6VLXk@b:HIX91Rhb93
-IUK_nk=W705k9Aj?1^Q;KN1
-R14
+!s100 W^h5L=[RLV6FVlR30Z2b52
+IHBn4BMNA;X5FTSHaJ``>l0
+R13
 S1
 R2
-R3
+R14
 R15
 R16
-L0 34
-R5
+L0 42
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdm_cache_tag_upstream
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 =md7j?>Y0?ojUMhc4BB<^1
-I]IY:D[b8Jm5A^ScXl?4ZW1
-R14
+!s100 bLU;0@9oS]Wed705c5;e?1
+IzgcJ?[TF[h]U@O?4b<^k00
+R13
 S1
 R2
-R3
+R17
 R18
 R19
-R17
-R5
+L0 55
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdm_data_downstream
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 SJ@8K4@c3>AO<>8knL8Uo1
-I1nWjmbAC19TgU:dDJK91M1
-R14
+!s100 Gc81HH:dMV<WfeXAA0U<S2
+I6XU5@aj<P31S1ndkJF@zO1
+R13
 S1
 R2
-R3
+R14
 R15
 R16
 L0 10
-R5
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdm_data_upstream
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 209Ll=Y@NI6U2Y9FGg[?d3
-Ij2F0I>CLN20;LZa3?hjMM2
-R14
+!s100 O;L2D15ED]BBT?W71FFW93
+I<LHMhTJeB80[Yh^9A]Rdc3
+R13
 S1
 R2
-R3
+R17
 R18
 R19
 L0 14
-R5
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 vdownstream_processor
 R1
 DXx4 work 9 cache_def 0 22 dGlk>aGJ6Vgc]01EG;ZXa0
 DXx4 work 22 downstream_top_sv_unit 0 22 TS0cL:7FW0mkn=hS[0NIb1
-R13
+R12
 r1
 !s85 0
 !i10b 1
@@ -197,39 +197,39 @@ w1646908691
 8code/downstream/downstream.sv
 Fcode/downstream/downstream.sv
 L0 6
-R5
+R4
 31
 !s108 1646923527.000000
 Z21 !s107 code/downstream/get_cxl.sv|code/downstream/downstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
 Z22 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|code/downstream/downstream_top.sv|
 !i113 0
+R8
 R9
-R10
 vdownstream_top
 R1
+R10
 R11
 R12
-R13
 r1
 !s85 0
 !i10b 1
-!s100 l@>O1[3OB6?lDLWD=]Wi92
-IVMOmIah3Z@e6I4zTB59i@1
-R14
+!s100 TWHU9KMV`AQoic3mo63m03
+I^mBod_;VkAVKz_L1XQl1E0
+R13
 S1
 R2
-w1651658754
+w1651678549
 Z23 8code/downstream/downstream_top.sv
 Z24 Fcode/downstream/downstream_top.sv
-L0 13
-R5
+Z25 L0 13
+R4
 31
+R5
 R6
 R7
-R8
 !i113 0
+R8
 R9
-R10
 Xdownstream_top_sv_unit
 R1
 DXx4 work 9 cache_def 0 22 VhD2QSQ59QM8P`NM7LH^30
@@ -242,51 +242,51 @@ I43Ymg<X45`=zI386MJ=d11
 !i103 1
 S1
 R2
-R3
+Z26 w1651650601
 R23
 R24
 R16
-R4
+R3
 L0 8
-R5
+R4
 31
-Z25 !s108 1651656504.000000
-Z26 !s107 code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
+Z27 !s108 1651656504.000000
+Z28 !s107 code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
 R22
 !i113 0
+R8
 R9
-R10
 Ydwnstrmproc_if
 R1
 !s110 1651656504
 !i10b 1
 !s100 K[Q_i;Y3JT?0=aUnkhBzV3
 ICG=Czg`l`6NZ=1jDQI5M>0
-R13
-Z27 !s105 tb_top_DOWNSTREAM_sv_unit
+R12
+Z29 !s105 tb_top_DOWNSTREAM_sv_unit
 S1
 R2
-Z28 w1651650627
+Z30 w1651650627
 8testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-Z29 Ftestbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
+Z31 Ftestbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
-R25
-R26
+R27
+R28
 R22
 !i113 0
+R8
 R9
-R10
 vget_Cxl
 R1
 !s110 1646923657
 !i10b 1
 !s100 9PJ@HW@OzQ>_QT^mL0<ZQ2
 ImFlGG67?zaZ9lhdjcDg7f1
-R13
+R12
 R20
 S1
 R0
@@ -294,7 +294,7 @@ w1646905620
 8code/downstream/get_cxl.sv
 Fcode/downstream/get_cxl.sv
 L0 4
-R5
+R4
 r1
 !s85 0
 31
@@ -302,8 +302,8 @@ r1
 R21
 R22
 !i113 0
+R8
 R9
-R10
 nget_@cxl
 vramdownstream
 R1
@@ -311,7 +311,7 @@ R1
 !i10b 1
 !s100 F;;oTG:`[<D1Y^b<XE@R70
 IacgZ?R3o2HFTLT`_7DoKm3
-R13
+R12
 !s105 upstream_top_sv_unit
 S1
 R0
@@ -319,1371 +319,74 @@ w1650375196
 R15
 R16
 L0 7
-R5
+R4
 r1
 !s85 0
 31
 !s108 1650385229.000000
 !s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/cache_def.sv|code/shared/ramupstream.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPSTREAM/scoreboard_UPSTREAM.sv|testbench/unit_level/UPSTREAM/monitor_UPSTREAM.sv|testbench/unit_level/UPSTREAM/driver_UPSTREAM.sv|testbench/unit_level/UPSTREAM/generator_UPSTREAM.sv|testbench/unit_level/UPSTREAM/transaction_UPSTREAM.sv|testbench/unit_level/UPSTREAM/environment_UPSTREAM.sv|testbench/unit_level/UPSTREAM/tests_UPSTREAM.sv|testbench/unit_level/UPSTREAM/interface_UPSTREAM.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|
-Z30 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|code/upstream/upstream_top.sv|
+Z32 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|code/upstream/upstream_top.sv|
 !i113 0
+R8
 R9
-R10
 vramupstream
 R1
 DXx4 work 9 cache_def 0 22 UX=TIc>JLj@k5G1oCWHU<3
 DXx4 work 11 top_sv_unit 0 22 TiUBS9EbUa1CME1Q0EHW?2
-R13
+R12
 r1
 !s85 0
 !i10b 1
 !s100 QJKl_n;;[UCclhB?kE6YR1
 IC^YdaY>JGY:fQfh4IEfB31
-R14
+R13
 S1
 R0
 w1646908684
 R18
 R19
 L0 8
-R5
+R4
 31
 !s108 1647004783.000000
 !s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-R8
+R7
 !i113 0
+R8
 R9
-R10
 Tseg_work_opt
-!s110 1651658867
-VZXZE^06ncfHJ5Qn_m0DAk0
-Z31 04 19 4 work tb_top_UPDOWNSTREAM fast 0
-Z32 o-work work
-R10
-nseg_work_opt
-Z33 OL;O;10.7c;67
-vSLT
-R1
-R11
-R12
-R13
-r1
-!s85 0
-!i10b 1
-!s100 @0BJU?j;MPR<N8Id]I<On0
-IMV^bEZWg9;=j7Y8Hl9Qj<2
-R14
-S1
-R2
-R3
-8code/upstream/SLT.sv
-Z34 Fcode/upstream/SLT.sv
-L0 2
-R5
-31
-R6
-R7
-R8
-!i113 0
-R9
-R10
-n@s@l@t
-vtb_top_DOWNSTREAM
-R1
-DXx4 work 25 tb_top_DOWNSTREAM_sv_unit 0 22 ci7eo[60fLQCL9U4Wgk>m1
-R13
-r1
-!s85 0
-!i10b 1
-!s100 YjK<I[3g4R<`9NBWizf?=3
-IPlkj<7CKKlERLOJkVJIBV1
-R27
-S1
-R2
-R28
-Z35 8testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-Z36 Ftestbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-L0 4
-R5
-31
-R25
-R26
-R22
-!i113 0
-R9
-R10
-ntb_top_@d@o@w@n@s@t@r@e@a@m
-m255
-K4
-z2
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
-Xcache_def
-Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z2 !s110 1651657971
-!i10b 1
-!s100 EnkcOD`hG;^6N^K9`R=153
-IU80;hR[kP:_KRAMkL2BMK0
-VU80;hR[kP:_KRAMkL2BMK0
-S1
-Z3 d/home/mlg18/fpga-caching-fyp
-Z4 w1651650601
-8code/shared/cache_def.sv
-Z5 Fcode/shared/cache_def.sv
-L0 1
-Z6 OL;L;10.7c;67
-r1
-!s85 0
-31
-Z7 !s108 1651657969.000000
-Z8 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-Z9 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
-!i113 0
-Z10 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z11 tCvgOpt 0
-vdm_cache_fsm_downstream
-R1
-R2
-!i10b 1
-!s100 WGAVL5RL8AIdLk@A^gU^Q0
-Ic]^WJiYSddO2z7FJ?:2[I2
-Z12 VDg1SIo80bB@j0V0VzS_@n1
-Z13 !s105 top_sv_unit
-S1
-R3
-R4
-Z14 8code/shared/ramdownstream.sv
-Z15 Fcode/shared/ramdownstream.sv
-Z16 L0 55
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_fsm_upstream
-R1
-R2
-!i10b 1
-!s100 R?N_oED8[K_0>J4[fM=Yc0
-IRF9;>BECbd4AEG=4^W18`1
-R12
-R13
-S1
-R3
-R4
-Z17 8code/shared/ramupstream.sv
-Z18 Fcode/shared/ramupstream.sv
-L0 80
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_downstream
-R1
-R2
-!i10b 1
-!s100 k3fS6VLXk@b:HIX91Rhb93
-IUK_nk=W705k9Aj?1^Q;KN1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 34
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_upstream
-R1
-R2
-!i10b 1
-!s100 =md7j?>Y0?ojUMhc4BB<^1
-I]IY:D[b8Jm5A^ScXl?4ZW1
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-R16
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_downstream
-R1
-R2
-!i10b 1
-!s100 SJ@8K4@c3>AO<>8knL8Uo1
-I1nWjmbAC19TgU:dDJK91M1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 10
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_upstream
-R1
-R2
-!i10b 1
-!s100 209Ll=Y@NI6U2Y9FGg[?d3
-Ij2F0I>CLN20;LZa3?hjMM2
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-L0 14
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdownstream_processor
-R1
-DXx4 work 9 cache_def 0 22 dGlk>aGJ6Vgc]01EG;ZXa0
-DXx4 work 22 downstream_top_sv_unit 0 22 TS0cL:7FW0mkn=hS[0NIb1
-R12
-r1
-!s85 0
-!i10b 1
-!s100 X7==lfQSB[Wgm]``N@Raa2
-I4Gb5TBhd6Pz>`N??<WFH<3
-Z19 !s105 downstream_top_sv_unit
-S1
-R0
-w1646908691
-8code/downstream/downstream.sv
-Fcode/downstream/downstream.sv
-L0 6
-R6
-31
-!s108 1646923527.000000
-Z20 !s107 code/downstream/get_cxl.sv|code/downstream/downstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-Z21 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|code/downstream/downstream_top.sv|
-!i113 0
-R10
-R11
-vdownstream_top
-R1
-R2
-!i10b 1
-!s100 bWnV4YRVJ]jKP]LCFQ?5<0
-IBfY5?>SQG?eBL^KzbDR:@2
-R12
-R13
-S1
-R3
-R4
-Z22 8code/downstream/downstream_top.sv
-Z23 Fcode/downstream/downstream_top.sv
-L0 13
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-Xdownstream_top_sv_unit
-R1
-DXx4 work 9 cache_def 0 22 VhD2QSQ59QM8P`NM7LH^30
-V43Ymg<X45`=zI386MJ=d11
-r1
-!s85 0
-!i10b 1
-!s100 27c]T`NO=HEQn5IN<f2>R0
-I43Ymg<X45`=zI386MJ=d11
-!i103 1
-S1
-R3
-R4
-R22
-R23
-R15
-R5
-L0 8
-R6
-31
-Z24 !s108 1651656504.000000
-Z25 !s107 code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-R21
-!i113 0
-R10
-R11
-Ydwnstrmproc_if
-R1
-!s110 1651656504
-!i10b 1
-!s100 K[Q_i;Y3JT?0=aUnkhBzV3
-ICG=Czg`l`6NZ=1jDQI5M>0
-R12
-Z26 !s105 tb_top_DOWNSTREAM_sv_unit
-S1
-R3
-Z27 w1651650627
-8testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-Z28 Ftestbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-L0 3
-R6
-r1
-!s85 0
-31
-R24
-R25
-R21
-!i113 0
-R10
-R11
-vget_Cxl
-R1
-!s110 1646923657
-!i10b 1
-!s100 9PJ@HW@OzQ>_QT^mL0<ZQ2
-ImFlGG67?zaZ9lhdjcDg7f1
-R12
-R19
-S1
-R0
-w1646905620
-8code/downstream/get_cxl.sv
-Fcode/downstream/get_cxl.sv
-L0 4
-R6
-r1
-!s85 0
-31
-!s108 1646923657.000000
-R20
-R21
-!i113 0
-R10
-R11
-nget_@cxl
-vramdownstream
-R1
-!s110 1650385229
-!i10b 1
-!s100 F;;oTG:`[<D1Y^b<XE@R70
-IacgZ?R3o2HFTLT`_7DoKm3
-R12
-!s105 upstream_top_sv_unit
-S1
-R0
-w1650375196
-R14
-R15
-L0 7
-R6
-r1
-!s85 0
-31
-!s108 1650385229.000000
-!s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/cache_def.sv|code/shared/ramupstream.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPSTREAM/scoreboard_UPSTREAM.sv|testbench/unit_level/UPSTREAM/monitor_UPSTREAM.sv|testbench/unit_level/UPSTREAM/driver_UPSTREAM.sv|testbench/unit_level/UPSTREAM/generator_UPSTREAM.sv|testbench/unit_level/UPSTREAM/transaction_UPSTREAM.sv|testbench/unit_level/UPSTREAM/environment_UPSTREAM.sv|testbench/unit_level/UPSTREAM/tests_UPSTREAM.sv|testbench/unit_level/UPSTREAM/interface_UPSTREAM.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|
-Z29 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|code/upstream/upstream_top.sv|
-!i113 0
-R10
-R11
-vramupstream
-R1
-Z30 DXx4 work 9 cache_def 0 22 UX=TIc>JLj@k5G1oCWHU<3
-DXx4 work 11 top_sv_unit 0 22 TiUBS9EbUa1CME1Q0EHW?2
-R12
-r1
-!s85 0
-!i10b 1
-!s100 QJKl_n;;[UCclhB?kE6YR1
-IC^YdaY>JGY:fQfh4IEfB31
-R13
-S1
-R0
-w1646908684
-R17
-R18
-L0 8
-R6
-31
-!s108 1647004783.000000
-Z31 !s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-R9
-!i113 0
-R10
-R11
-Tseg_work_opt
-!s110 1651657973
-VIF^ELH]zM4OOjX;2ekE^>1
-Z32 04 19 4 work tb_top_UPDOWNSTREAM fast 0
-Z33 o-work work
-R11
-nseg_work_opt
-Z34 OL;O;10.7c;67
-vSLT
-R1
-R2
-!i10b 1
-!s100 @0BJU?j;MPR<N8Id]I<On0
-IMV^bEZWg9;=j7Y8Hl9Qj<2
-R12
-R13
-S1
-R3
-R4
-8code/upstream/SLT.sv
-Z35 Fcode/upstream/SLT.sv
-L0 2
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-n@s@l@t
-vtb_top_DOWNSTREAM
-R1
-DXx4 work 25 tb_top_DOWNSTREAM_sv_unit 0 22 ci7eo[60fLQCL9U4Wgk>m1
-R12
-r1
-!s85 0
-!i10b 1
-!s100 YjK<I[3g4R<`9NBWizf?=3
-IPlkj<7CKKlERLOJkVJIBV1
-R26
-S1
-R3
-R27
-Z36 8testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-Z37 Ftestbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-L0 4
-R6
-31
-R24
-R25
-R21
-!i113 0
-R10
-R11
-ntb_top_@d@o@w@n@s@t@r@e@a@m
-Xtb_top_DOWNSTREAM_sv_unit
-!s115 dwnstrmproc_if
-R1
-Vci7eo[60fLQCL9U4Wgk>m1
-r1
-!s85 0
-!i10b 1
-!s100 Ifhk`P6NGFý÷vJÚì&óó»ñÎ7/¨ÕMÿ(áíoò/²ÀÕJçgápZµ|æÆpyâ=ÁJµ@I€æx—f{£-ÅJ´TX‘÷i†wk¢;Ó)¦eY”¶yˆ{º£uøž³l¢ÎÔ±
-‘?ôüNÂ;(I±¦ß‚5.¿fYîeÎ	©'éÅþ€ëŒ3øŽ¥ò7<ý—¡'" „Ä:T‚ððO¯åßÉ[¬'M‡qÕFsP ’¡æ¾ø0Þ'^ôÚ½Ã@P‘%NÑ“ æ^yäÖ3oðþZç’íœÈÖF§3×ÖV*’~û(;Ò-æsšõ]çh”_®Ÿ1G÷òÝO™†-â•*È×N…}Ñ¦ŸèÔ;¾X?&{bíó-BŸ†ŠýH½Íê/jK‡ágíZÂÅh}qIutœðIHËUÓ#ˆäH´P¯üæèî³-ÉˆÛÄ¦e\ãÝD<¶'h›¥*,H‡]Ñ{Pjöš´# 	-\:yŠÕ˜£(nÈÿ­Mâ<ñ˜‚¾–ö8/’À7Œzì-@¤f½‚! J”“§Ì¤MàäoÍ±MÂ8‘Iáù›·HÞ<K	‡k¦V«Ó-ƒ4f+¾áCÈ–]Ñ¦éh[­mz?IàtÀŒ@”®Ðœ±‹à¤'’«4¦¢JXå‡"4©Îìósy‡ëwtvtã4o{Òq	…@RWš§,þXÀeÌÙƒ.ð·<­ÂâÜ3?óeª½z ´Ï
-s/J|0ËÇaf>}è™«1†ˆ²´3¬‘¶ð=)1I‚cÝ¹i¤·.ñóû(¤ý¾è¾þTlü«èœÓ!JÐã> ã©ðƒ.ýÉ›¢cO½¥Å8”q‰Çˆ™Ç4GÎm(Wk›{’:3‰†œ_ÌÝåÖü*wâvÌ£Òm~°ã‹YG2Ã²4ùôGMÆÝüøáGoë¨ÚÔ©‘G„sÐ™†áì¼šùCûÌê¢'*T[„Ã=`€ô“$óáÕæ÷À~ü²qƒ’¬RÇLT8bNÝ"¢çå¿’ŸîùˆÛÆ„IÛŸŠ×ÊÉïê¹´®øÜ„ÁRIœÎ³Çe7<Ã‰g¨›<æuÌ[è3-íR»^ßo‡êò‹×æf&‰UÞµzf(o“À5SeC©™‘+&´GU™>¢ *µ
-ßv=@_8~Ç0&tRX„qYâHâ$CnD-—{Äµ‰§§±;§íe*ºÖ5Â7Fê6ƒNAJ
-OÇ‡Ü’%dýŽòÇ®åd²¿Íõ½ ‡£9¢¸TNÆ£–+‚@¹¢V‰–1Í%*Á
-±Bam’tÍ¶wOôO ú¶/û
-Zzº'½õH^’:Úû-áþj:Mâ½¦ùÊ
-Ä 4¼uA'kŠ*Ï;Á>²Í²Ø²`:ÿáˆçB¼fMHË†222|¶Ô	ÉB[‘*³eq·G;Æ)`ã7pW‰…9’(7ý)H‘¢ô‚;,u/éå^Ó'C¹º‘D53Ó—ÙÁQþ‚×L€4ÒÈEÀ,kžÖ¦Îíñ¹ÌÛ¨™Ì±ñ®ØÍ¬§¿øžûªÏ¹ÉŽ¸ŽÞ¼Ë¸ÓÂ=ºË´ÿybðûhJ†p”ðvu-ˆk¢%Í>Ú7…ý·˜¾‘Qÿ2á$Î€Þ²>¬V‚D¸¸À4®~U<Ç@Ù¶T)Çb;¬xaRW².]ºX“(•C:È3‚#ÏäB+ëIŒ˜§}lAéB2—¡Ù¾û&Ö¼¾°žÙ„vì^Q….qLn4Ù¢-úJ•B­	›‹*z¬ì	4nø“% ¸‡¸‚EÆÏé¼Ë%?Œ¦OóÈ€áïîŸ¬ÏLKO"2œù´]FÖžº8¹„}^~÷å.zþN…µl4æ5Cç+^ÆŠ”,ôr¸¡É¯´hA/û‰ë‚2 ~ÎÛ’µï”H¾õóh‰¡ÌÙÇÇw}¹ÅéÌåwhš¼Ø¦üÆX‰Šü®ÖkãÄZýÜÉ,Id”Uì™¶vð±aþ¸ãXÜSI
-ø.‡žÚS¢mòÇC%ï•[é?ú™ýˆ”YŽ¼µµ^¹"¹öìê´Wa…ÁOÐX3íÞæ;H‘B¤A¡‘è_â”nú;€s`ŸÄTuÐ“ÖP˜þrp£_äï¨—=?•¤zé¢pß6öEýí_¥¢y•eMÊ¼–Û³:½Áª‰ß—h›®Ê”Ô 9ˆ©Ü’ ãÁ·ê¯LIaÀÚsù¶s¤òWnž¸[ ;>~Ù
-<žN‡›Ž°JLÑ&ï›m‚=œy’Óâ<\FµTs¡Ë²µûú›ßæx™Ï‡	‘Súf`<Ó,Ø—káZ£,ç&mÖ1éŽŒ^â‘›IC-n>$d['Éã#Cj>Ø›s£Üñ„1ˆÓ“U³+‘Ð4R[Ö°P8ÃÔ*Z“sŽø·tyƒœÏÙÒ~þú»ä7š¨ß‰½åe.ø”ÔÇf2B³:ëæ37xØuNK¸?rÕƒ,{dŠÇçÈöyíƒ¢šš)5mD0‰=¼/Í*]?9¨’NŒ¹±õˆØ…kû‹¦ýQÇ|õÈQÇÓ|òEGoëçù“r[¾ÌOÇf|ß¢ejÕ% ”QBÛ¤&$NVè{iŠ’ãin™„ò<õßd¯Ã®–òT&'Œ~«V£xº!zw#'5Ž·srK ’ž‡ueF×ZŸ’uGk¢|³Ú£pçëe@é™Ð(Ø¹æã1fº‘TÌ0Ð¡Âá3"´õ,ß†=GK§@f‹ˆG/VÊžÚ÷ul‰¤ô¢þíáë¹¨¥µ%ç¿Ë¦Üíæ¿é‹©ËÊFiÍèïÇÂÒ£)É«žÏ£HÛ©ŽÙú§~±ã-ˆ¸ˆ9Cã#ˆTŒäQ‡ÇIëê4x•i\û$?n¹;Õ¹­%åfy§ñzcqBàeRx(Ø†PdT²È†9¢ª>-Çiƒa”Ñ‘v,õnÅödAD½Í®î ×³eå-ÊÔjš·Aš4©¥ÆF: çOÚñ	By}õ¶PfQ .‹å:bÇM¡'`#MòØ½·{‚1¼ÏÓ»Ý…LÚ»î—•S2ç¦$àÉ‰†x•[›ÊÉÄñ0Þoòt¸œ³s0µÞPCì !
-4ûÎñg/oË©¢¡‡™ —¥·â9Êºr|,ëUkÕa%•~6V!?3$verS$k ¸æea
-è¹óeC'iÎ•»³t]I=J¡21VrkÅI“/iŸ÷+B1q€°âüÙ(\~ð˜=¥Abp•goÉ‚ÆZ;ÅÎ±²O²ßBe°Í˜Š÷^4üøÏÇ :|È³-~åpn´P‘B\&bda‚èô*9ÿÓ¸‘
-¡-ôÈgvi‘D·f62&Öî¨›úcÌç`3-ã·ä©¯o‡äÔ íæxÑû–´~©ASÛ1A,ÞHÖ`1^ò|¼.çwn˜d<0#!é
-Á"4iÒyÉ{³5œÚ’]¬5™L1V6•„cB€:î<ñFdè¼”C²û»‡ëj­óûÕI‰Œ× sÙŸ¡¥]¬‰‹’B0¸nf-Nšx­#’ÒY=OÆÎm°C.šôX”%Qõz¡J^ÿ¤Wuæàþ1g©SìUéê´4‰ª»†äÔ§FöDä.‚ËèÍÔuÏ @Í{üõ4R?áOþâlQ1™Iƒ"0R§çõ2`C+ñ£0	·ú¯B¥©@Ês÷Z»$óGnTÞÛ¡+>pâ‡,ž@kS„p
-—gÉó5c$îº¯ÆpÚÐáWkb/þ”B0DÚ?ð6?8ìÃhx“F~ã„ÂØ_ïN?1=Ê;Ã"V3¯ÄY¯r¶…`˜ó¨Ò†"é$„‰¥Nß{×¥	„úãÕ?oÏ®ù×®è·íë–®G=Ó-Ïé‚sCßû½Ùå0[³Â8©¢V"Šaü.Z¶¥W“Ø³Ç‡%#ýj4DVp·v	úÇRî±<—Žñ",{=.2:ðÎÂ<VÞŸí©ÌY©Œó½Iz–õ&ôyóÔ|<hÖt‘JNÎw‚°/*˜Â	Q'ujÜôSv@8¥³ë†+m—™Tþ†mèœ{œÿ“mÊ±ºÓÛ»øÓjÈ×§^û üëá+õÈ¼ö‚lÏ ôXÓ@ˆ
-T–|pß=õFò˜ýÂZû#Ê‘’ºMìQ`–2ŠÄ®ØzíÈ¶æ<‰É´ÈZ§EÎ5Z‰ZÌô!öv<±ÿ÷/× ‹Ó½Îñ.ËÏæì\¯w°Ö1ìÐIæb‘›LæÖ¾$d^{[£Cj;„P7ó£ÜôØú0S“U¶Qà¬•¼“ŠË¿È–ÁNìþúººõ$¢(ÝÆ‚1XÒHš¾ø½ñLó¥[2³j¬ÉÎ›8üÃŽd¸X—Ì;›ª<sA\•ÏÃ!-R¼# Ÿ‹*òŒªB‘¶9ÈÜ$cÚ˜îÛ…wñÅm›Ÿ;Š«…)­ÅzÛž×Pê}ì†³xlMÂ­3'¢,ìœ“/¨ÿW7­Ñ`Aš˜ÂÁãî‹¿¼èÈ‰ˆÙï½×îvõ‘Nû¥CKë§jË÷5}Ïõ_¤¸–	¼Ê[£Œ­ñ
-?GÊÿoÀm[*I œ¿jûÀâ¥æ/Bb-ú~·sh½„P’§®ïÅÇ§|æ®@Où„X™‚t1õR{þêNëÅEJˆµƒb1bÎz”€œà„›'8±´ÎkdïÊµÕ Rp„k¦øã1µä^²uTò«DEˆGTVôûÈ• Z3©¤ÅÀìüW£eðe¾Þ(º²ö	_¼žÎPb!*µñ>n‡-È—eBÏûø¥#Y9ë©20OŠéìA€ßš­Ý/¤Ò"š%£áâþ/Ú±…áoãHÔÔz³³¨b&˜ëY¯˜Õ·] 77¡W—ú¿v²!$ÜQ7²Ž®â6uHžºÐîàlšÈÔ’BÍ¨ˆÆH\îÈÓëu¶ûC`3î,zÄtÍè”HÕhÁ€0/Ðûèz½SF`¼BÚ~üv¼	½Èû¡n³­åJ—ñŽb¹àQ¾Œ 0úš³î¾`;ÜýçQvKf_½ýá&‹§\°$tbÌÊí	Û^k ‹h‰¨„NÊh&!/µD\$F+ˆûàW$[¢?Î¶bIº.su!xÙl×'a?sÌŽQÄŠŒÞ}jÜÙí‚»‚8°‰4tÞ’·)=½6WˆÇ~ÈoÎþRDHµA¡6SQH—lÔž« J"Ùçfs%Oûþƒ=]“:Éúâ&jøwoŸ•Y-R×¢1¥…˜­ÅÆÕ(˜ÿ£ 9‡DÈoe-Ch/œ-ì7Ï¼-ª³m™³Ô„o—€?¸±EC­m»¿ÅH4el®¿çeAC@æiËI˜fÒ+AoæÈÛ>°Ê Ïø‚w‰‚N»·ÅÝ)Oã‹kp";+v,^ÔUj&÷š‘ˆÿm†ÇÓåáRÅ–T^Ó¾ƒäuç(ŠGCmÉg@7`¨Ð!ELœºO÷qwXŠ„Ç`*º§"´Í¿uœu_øÜ;¨øÐ¿v›dY-
-‰‰ ½ m‡ìÿïÌA1#£EËá½¸a*_W*°Úÿ­;‹ßÉ¦KÓÖ\‰¼DJ–¿æFÄaˆú£¤–fCúŠž‚2<Ö8÷•TNÐg¦%p+©[.àY(õ«¦[¾]_k­kbè Iæ®|ðŠ/o³¬±_‘ñ%«W|ÿ²¢>÷~ÚP3s¬&\§uk¯\Á2«ÓlÒ:µ‡›º¤Ížª«Þ÷oè¨¿ª­ÃS¸ZŒÏö0ú´,þà±šZy‡Î<eHcC!ck-â1/qƒÝâ¾›(Ñ³T 7µ	‡6³Á H²{¡ùS¬äÁÃ8¸P
-€Ã—2&s.ÿï£L*¥ßŒóVnë‹ñ	h%¾2sÊî˜¨4³â$Ò|KvK•3;ÀE:Ïîï÷(wcZœÀ°‚×®ñ¬}ÅÊ!bs 5GMQ‚ÅoiíJñ²L-à÷×)†. d·Bh³c,.%ÎÄÀÛµon2*ÛæT&~þ÷.›_ðSžoƒ3ÉŽñ¯ñK½²²§¦F‰ÊQ:åWÎ`ñÈ–Õ‹{Ÿã¬rX–‘†S 4Æü'IŠ3fÌ®†®¾ïÀH¼™€ëdA óÍá?äÆ´KŽrð
-‡´äLÓ.ø˜Ðz@]£ŒàD!	½ìŽÖn)÷0æ«wyv%ð$»û:ˆ•wB¶hŸ¶ pÊ¥Zðû§!‚*Z[i€²ö¨¥Id?ëÏ«,ò6S»/ã®œT”¡'†ÈÝ0"ø¿²ñ_…Gþ7q,[j©¿7Þ¥a~ýÀêØj¨É«l†à×bX†hÀl—	vh…ZûJ¶ÚQê{©-¨®øM Ï àÌK/R¼µËëŸ5¯G?‡[¼'7Jñ$Ç«°2²üÊ†«¸Œßîù‡+Æ€	Î•ÈÙðÎë¬ë‰‰ÐÕêuX™Ú¿"cÐhË‘‹×ÞéƒXÊýÊù™·%•_ü’ÐtÝÐ»8pÜÕíÇb¸1`iÉGcA‰ÈÉá¹öŠ’Ó–9”§“x¸Ù‹\ÔòI’å	”|×c(ÑcÚªô”¢<×c/£>À=ÒFq‰+tNç,3-¨Á †“á	,y…í¡ rwäz¿ÍP’Á+&Êð¢Hi¯V;¯*÷ý:šÀ9®ÎƒÇCy´‚K‡OîÃE~Õ~x
-óµ‰–K\ˆ‹ª²4Shö‡|’l²Ø½À"2ošxØ³JpØ|Š’˜EWuß#ú/€^¼I¼àuû¸‡ õG›·ÀŠU‹¡«kuuGïE&v{"J&òÍíL½M†ÂD¯Å§ÁRÀÁ(š‘žƒóA1ýzX½‘!K­@ŒYZ®Í¹Ó6yŠ²=­:¯¿Á2Å-$k©µhÇ{ge×Ú8„© ë¿š{Gß´í6V~q{ˆ•0@J" _¥v' ÀÛO±L4‘Jôv¥ú›ûef8ƒ¾,V‰üuOåChðê£dÉñ#´N–è–NðhÙA#H÷ò')oà‹Ý`ƒÏ# ½Õ|ÝGÄ0²r¸¸–\LRÄwä<[ìbM5m&Ç'o/«_Ô«† <òª€Ûƒ|è@=Ú›ÇJ²lïÉ¾
-—1Âf‚ªµïœÂ‡Óh‰©‡k«çÇøId‘ÅB7ar<åÎæ'”MÒyj³_äB•ÓÊ~öÔž ,ØYƒG"½å@5Ó§”r¹ê2s—00ð¯«£´°:ê–21þ"¶FÜ¢(³'Ù™²®Ž´Z¿í‚Æb{œ¹Ž¸ê(š¸˜½øös¸;üæÚ¨‚xt]¸©—ÅÒÔ™Kp-ÆôöV#£¤x÷•lW¦Ç.ÞórÅž®æ<ï#j¯Î£‘O{b$tÒú¡:b‹ýèîõEN¿€ã8×$= ‚C~õEMÇíãm—")òßê¡Id^‡nåæãÄ“.^9SÖ÷ÊÓ$4³˜¿tÔ¤|T2¸Ôä->Ý(%ÐOYh°Må?ú<áºŸsÃiZ+€iÄVwe¬!y_
-õF~ó#doðq-ú4¡€AD¸™ÿñîTWÁÇ³
-0³LÚÔoÏá Š4© “K'* âQºò'N¡ X”§¬ÏÉoÉÙ­÷—c]ßÎôèÐhš¼ØÜºK¾²ÕVáP(þú¶yÓ%\ÞÙ¤~ÖLpéÌ6w1®f–º¸3í™„Þ\¾ð|—á!Ò œ!.}¤Õ ¬¨lô¾YÔ®*ìÌ–E”bÒ)¡B<X?’.ÕOX‡QžˆÒ2>ól²ÀI°|¦Þ€-ÆKã²$&oþvÚ¡¼Ñs¢.R®Ò’òçQx6ï€_k‡ds¿`é¤ÛÎtP`æRÔøËRåaâ§se@@Ö14v>øÇ«³}ú†«„C,Þù‡(úOú«Ô‘‡_¸™¿Ì»véiF1—	i¨¢ îâ,}M,åõA~k2%rÓppBzVwkÐöº¸6·°/äÞ\»ª×!!×ú7—N}¤ÐZô¾\Ž›‹«ˆ_6’Ì•VQY®²2°»Õ^Ú¿VoÕÙøÝÂ0èõ°°@8­ºúqd_™«§Cq»’ˆƒ4@ÊüÌs±à×gÌÆNò³ƒA¡@—LÑ-]AöX{*ýq™a¦)súÆWùø@z„¡Ãoñ'8¸ßíJ£?ÌÒŒ—z–z¾þ¸ý4@HÛ„¡7 q¯á˜ƒW2ÙüÉç#4N´·nŒ[»	£-kg¼áÇÉæzÛï`8›Š*;Y¯d1ŠÐíí+^	Uj²^:ÕsÕ˜Æ³Ìÿ¹­‹¡‰!{¾Ù†ÅVOwÞû£"r[P…ÛØk…Jr>û£]Ú/Û&B¹ðãÄA ô^°ÞPŠT½åuFôô0‚{#¦\ObÍìW[ïRD®Þ×;PÆ.æ>Ëjÿ÷N£µDÚÊ¤z¸%|ÿá”m2)Â,¥Lk¾ñÇ3c]ÿê1eq lÍÐ],ÒE’—÷Œé)N"ž{¤SEû„_È¥°4ØõÏ£•9vQïCw—¼ñÙ¦¤<èiMŠ¯Ã~Ôc¯BGy gCRy‚7aAo¯¢b±‹ôÑ1
-Ør¼„uÑWË¸‹ì6u“7ÌF–º±£ëy¹„ÞU.ö·á!B¦þ.}­EÎˆlô·ÙÀáNPnè½Ã™‘>bNº¾ÿåNl›‡¦ú°<4^ùŠÉå"`-ÿš˜·Q’Ò;Ñc>[8rö~SâîÇ`’šÞÿ‰ÉmÈ²¯iÊ1bµYöˆ¸x9Û[sçNf
-zó.ªkþàù¨Æ^³$Ú,Á*¾Er„X’qm<ÏôpŠÔ!/Îñ¦îÊ3{‡üõþäKêT_¼©›@ô™G¹¿æôöZÞ±ƒ¤x
->LWªŽÞãl!H2DK‡oJ€3QK¥B?¦•-u}MóQKöó¿û?«AˆŒ˜qK·Ë2ÑÊ¼{k~ÍÃ®XövÃ¦Q
-š&ùui †Éü+„ºY‹ŽcSü‚}÷É÷{‰‹?Èâ{«¦täª­Û‚b|–Ò;®õAK¹°:«ÐaÓs9žº]Â«çvÙý×ªlïïeâZ·áŠš°6çëWEÆ1GÛÞO ­ŒÖ¼™}òÁ-¹¯À.Œêp:ïÚb°0~Ù€#J…bž8µ¨Í;9‡Íº¨²>EX£¶µC#,žšFcgQ,ÙµDS$_¿ÃF–x›·Gr*ü2:Ó'}mV’öz¡Ø©€’žš¼¿§åmÌöì_*1fñLo˜h¸|}˜mïçJ"ILÎªoºKÖ—HÆZ÷gìCäA"´äî«Ž„V}ÈÚÖ…R%^î ®MÅC-ÄÍNª¦qõt	è„Bt¼ÐnžëÞÁ®7°!y%#*×/k†wOz7™¤ÚÝHÚæSÇÄ•añ›ß6xktÝ¿ôANñ…áp 5CX‡EEGo¤2É“zz˜ä*‘^úÛ5l‡~qZ¦_WtD3K´±È™$—¶K£¬}©ŠÑEÆS/ÅÚ1ó	…ÂzzK†Ÿj”Bé?ô~rð_?[ôLÓ# oŠ@9V;kâ0$t(N„œÆ*ñ3­n`ø—é1…¤gwj»çY•!$n«ùqM!¥e^VçÁU‚ã“¥êØŸ„öZ¸´Ïd 9³oT){?»V«û· #û÷‘u© OÎº½OD$Hº·Ê‡E1H˜š¿¡iyžé©þ®ö<ÝÉÅÒI‡ð=Âfžë¼˜weÞäû2×«¥î8NÍÅÏAc%)Ã 0uÉuol¹Õùü-å£”Ö:(W|ü^=ÔiWÓv`ð{çlÈÇvJ°'>ïãˆè»çAYÿ|fX¶R[Ä]t{
-ªÒ"0Eb^˜‘yœUZªú\Úö5íPüY#éX¯îp½®ô?¡‹ïÂ¤ßDÓEÅïžZ_NÛ­ìNÚÿÑ’ò%`?ÓòŠê£ ¬Þ¾”¯ö9Ü¾½òùLÙ½ï‰¤Îå»DÉ'¸a¸¹ˆwé,žÀÚjº·»’¼Îšôxòã?úô¼Þ€›°½^!«l¡wÅ&qo¯kˆ—J!¤Ô=M¿æ]'ÁU½až„Ž•xe…é×D«-YEP<X\ÃEÿ¶fçgiËÈj©Óe}–á`6ò3¡ ómÁ?é¨Ÿ  Üç—k§«ïú»Â)˜ÏžºÝ†)Þê¨Êä}ýÕï}/,×Í	Z‚=H3@=ŒX·a,DÝ:—ëË+äí³ÕbÞÿÚÞÅˆ»¬ßêˆ¿”‚G¡†ÀMÿnSºT\=%ò¸~ËF¨»¨’;¦y‰‰‹Ö_õ[þÏë…|ÊIo#/L©¶}GËÁÎ¸¸™­[.×ä3ªû‡•m&tÏ½ìÒ9ô†)È¡J¼äxýînãÞ_Ó½^‡¾á.ü=I*û™Mð­À=ÂwLÎâe{¢oñ¥ÒÛj¾_--ÉZÒ0w#¬ñ¾`—•c­¢¹À§!$·lìä];y¯îÝ^Œù¶‰XÆŽà:åm‹¢´TY‚Þª¨T¢NllUW?›=»]ÒIHuô[[…D\ÜH–z·$Öjá<×A>é-m255
-K4
-z2
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
-Xcache_def
-Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z2 !s110 1651658456
-!i10b 1
-!s100 EnkcOD`hG;^6N^K9`R=153
-IU80;hR[kP:_KRAMkL2BMK0
-VU80;hR[kP:_KRAMkL2BMK0
-S1
-Z3 d/home/mlg18/fpga-caching-fyp
-Z4 w1651650601
-8code/shared/cache_def.sv
-Z5 Fcode/shared/cache_def.sv
-L0 1
-Z6 OL;L;10.7c;67
-r1
-!s85 0
-31
-Z7 !s108 1651658455.000000
-Z8 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-Z9 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
-!i113 0
-Z10 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z11 tCvgOpt 0
-vdm_cache_fsm_downstream
-R1
-R2
-!i10b 1
-!s100 WGAVL5RL8AIdLk@A^gU^Q0
-Ic]^WJiYSddO2z7FJ?:2[I2
-Z12 VDg1SIo80bB@j0V0VzS_@n1
-Z13 !s105 top_sv_unit
-S1
-R3
-R4
-Z14 8code/shared/ramdownstream.sv
-Z15 Fcode/shared/ramdownstream.sv
-Z16 L0 55
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_fsm_upstream
-R1
-R2
-!i10b 1
-!s100 R?N_oED8[K_0>J4[fM=Yc0
-IRF9;>BECbd4AEG=4^W18`1
-R12
-R13
-S1
-R3
-R4
-Z17 8code/shared/ramupstream.sv
-Z18 Fcode/shared/ramupstream.sv
-L0 80
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_downstream
-R1
-R2
-!i10b 1
-!s100 k3fS6VLXk@b:HIX91Rhb93
-IUK_nk=W705k9Aj?1^Q;KN1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 34
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_upstream
-R1
-R2
-!i10b 1
-!s100 =md7j?>Y0?ojUMhc4BB<^1
-I]IY:D[b8Jm5A^ScXl?4ZW1
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-R16
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_downstream
-R1
-R2
-!i10b 1
-!s100 SJ@8K4@c3>AO<>8knL8Uo1
-I1nWjmbAC19TgU:dDJK91M1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 10
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_upstream
-R1
-R2
-!i10b 1
-!s100 209Ll=Y@NI6U2Y9FGg[?d3
-Ij2F0I>CLN20;LZa3?hjMM2
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-L0 14
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdownstream_processor
-R1
-DXx4 work 9 cache_def 0 22 dGlk>aGJ6Vgc]01EG;ZXa0
-DXx4 work 22 downstream_top_sv_unit 0 22 TS0cL:7FW0mkn=hS[0NIb1
-R12
-r1
-!s85 0
-!i10b 1
-!s100 X7==lfQSB[Wgm]``N@Raa2
-I4Gb5TBhd6Pz>`N??<WFH<3
-Z19 !s105 downstream_top_sv_unit
-S1
-R0
-w1646908691
-8code/downstream/downstream.sv
-Fcode/downstream/downstream.sv
-L0 6
-R6
-31
-!s108 1646923527.000000
-Z20 !s107 code/downstream/get_cxl.sv|code/downstream/downstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-Z21 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|code/downstream/downstream_top.sv|
-!i113 0
-R10
-R11
-vdownstream_top
-R1
-R2
-!i10b 1
-!s100 bWnV4YRVJ]jKP]LCFQ?5<0
-IBfY5?>SQG?eBL^KzbDR:@2
-R12
-R13
-S1
-R3
-R4
-Z22 8code/downstream/downstream_top.sv
-Z23 Fcode/downstream/downstream_top.sv
-L0 13
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-Xdownstream_top_sv_unit
-R1
-DXx4 work 9 cache_def 0 22 VhD2QSQ59QM8P`NM7LH^30
-V43Ymg<X45`=zI386MJ=d11
-r1
-!s85 0
-!i10b 1
-!s100 27c]T`NO=HEQn5IN<f2>R0
-I43Ymg<X45`=zI386MJ=d11
-!i103 1
-S1
-R3
-R4
-R22
-R23
-R15
-R5
-L0 8
-R6
-31
-Z24 !s108 1651656504.000000
-Z25 !s107 code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-R21
-!i113 0
-R10
-R11
-Ydwnstrmproc_if
-R1
-!s110 1651656504
-!i10b 1
-!s100 K[Q_i;Y3JT?0=aUnkhBzV3
-ICG=Czg`l`6NZ=1jDQI5M>0
-R12
-Z26 !s105 tb_top_DOWNSTREAM_sv_unit
-S1
-R3
-Z27 w1651650627
-8testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-Z28 Ftestbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-L0 3
-R6
-r1
-!s85 0
-31
-R24
-R25
-R21
-!i113 0
-R10
-R11
-vget_Cxl
-R1
-!s110 1646923657
-!i10b 1
-!s100 9PJ@HW@OzQ>_QT^mL0<ZQ2
-ImFlGG67?zaZ9lhdjcDg7f1
-R12
-R19
-S1
-R0
-w1646905620
-8code/downstream/get_cxl.sv
-Fcode/downstream/get_cxl.sv
-L0 4
-R6
-r1
-!s85 0
-31
-!s108 1646923657.000000
-R20
-R21
-!i113 0
-R10
-R11
-nget_@cxl
-vramdownstream
-R1
-!s110 1650385229
-!i10b 1
-!s100 F;;oTG:`[<D1Y^b<XE@R70
-IacgZ?R3o2HFTLT`_7DoKm3
-R12
-!s105 upstream_top_sv_unit
-S1
-R0
-w1650375196
-R14
-R15
-L0 7
-R6
-r1
-!s85 0
-31
-!s108 1650385229.000000
-!s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/cache_def.sv|code/shared/ramupstream.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPSTREAM/scoreboard_UPSTREAM.sv|testbench/unit_level/UPSTREAM/monitor_UPSTREAM.sv|testbench/unit_level/UPSTREAM/driver_UPSTREAM.sv|testbench/unit_level/UPSTREAM/generator_UPSTREAM.sv|testbench/unit_level/UPSTREAM/transaction_UPSTREAM.sv|testbench/unit_level/UPSTREAM/environment_UPSTREAM.sv|testbench/unit_level/UPSTREAM/tests_UPSTREAM.sv|testbench/unit_level/UPSTREAM/interface_UPSTREAM.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|
-Z29 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|code/upstream/upstream_top.sv|
-!i113 0
-R10
-R11
-vramupstream
-R1
-Z30 DXx4 work 9 cache_def 0 22 UX=TIc>JLj@k5G1oCWHU<3
-DXx4 work 11 top_sv_unit 0 22 TiUBS9EbUa1CME1Q0EHW?2
-R12
-r1
-!s85 0
-!i10b 1
-!s100 QJKl_n;;[UCclhB?kE6YR1
-IC^YdaY>JGY:fQfh4IEfB31
-R13
-S1
-R0
-w1646908684
-R17
-R18
-L0 8
-R6
-31
-!s108 1647004783.000000
-Z31 !s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-R9
-!i113 0
-R10
-R11
-Tseg_work_opt
-!s110 1651658457
-VZGL5eZNg5_LoY`ik58kAL3
-Z32 04 19 4 work tb_top_UPDOWNSTREAM fast 0
-Z33 o-work work
-R11
-nseg_work_opt
-Z34 OL;O;10.7c;67
-vSLT
-R1
-R2
-!i10b 1
-!s100 @0BJU?j;MPR<N8Id]I<On0
-IMV^bEZWg9;=j7Y8Hl9Qj<2
-R12
-R13
-S1
-R3
-R4
-8code/upstream/SLT.sv
-Z35 Fcode/upstream/SLT.sv
-L0 2
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-n@s@l@t
-vtb_top_DOWNSTREAM
-R1
-DXx4 work 25 tb_top_DOWNSTREAM_sv_unit 0 22 ci7eo[60fLQCL9U4Wgk>m1
-R12
-r1
-!s85 0
-!i10b 1
-!s100 YjK<I[3g4R<`9NBWizf?=3
-IPlkj<7CKKlERLOJkVJIBV1
-R26
-S1
-R3
-R27
-Z36 8testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-Z37 Ftestbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
-L0 4
-R6
-31
-R24
-R25
-R21
-!i113 0
-R10
-R11
-ntb_top_@d@o@w@n@s@t@r@e@a@m
-Xtb_top_DOWNSTREAM_sv_unit
-!s115 dwnstrmproc_if
-R1
-Vci7eo[60fLQCL9U4Wgk>m1
-r1
-!s85 0
-!i10b 1
-!s100 Ifhk`P6NGw=½ÝÈ¯ƒöá€“ËûV;J$¯n[¼Ë÷“'V~©ƒ¤#b6H¨›ƒ#Aa	®ðq+¨œÒ5C ‹®ñ`:¹Ã$S!Íã6a;6}Í(‚ Mxšö?šMì1ÔlÌv‘Æ~\Ê‰ƒ¢šÑ­‡æ]È½]M1)bºý}¸kˆv\Àr3CoÅ™§&eJ¼GÔ†µ£w,;eššcš”#Ô6ò%U hƒ:¥£íÀ³æ§Z±‰$>ûÀTÔvvR« â*ÜUkY£ÆÙßéÙ›îÅŸ³ÓW…n©ªþÿmhê®Þóž°ßë¬ßªÚ@	ÄÏr˜¹‹¡)§K­©ðWJÀ.éœžì‘h†Û4¿">XZnË­FÚÕG	ÅÈ¹ˆ¹éså"¾·ÙúEl8"qöLôóÖë£Œ¡ŒÓ—|â­½‹®ñßõ]Ü¹Ú¯€K®øŸï‰Â9ŠÉËˆä«»¿§ƒ-¼Û´ø#àëhMò1„ñfu*üT{£
-%ÊJ›'	…úÃÙ®QøAY–; Wp9Óã.r½ÔîYºœ¨Ô]Ã,œ°à(³céƒY2LÖ>á72'~¸uCSDH9ÕŽüt”ŒíÇêù‰ëã¢J•ÙUmIà’y;Ü/Àú­9Y¨ŸÌA|Ù‰Òø×ulˆ¿¬Öò˜èË¡²-öä)ÌÜÔYËÈaù¯AYú7¡Ò7i”Lx“{‚'Žê¢|3"tÇuåÖ“ìÔ÷©P)ˆ0z´7'äwbä×‘++ÈDçi¢ÒŒœÓzD&’Ýæ7hl •q¬§q!é¹­²q(œŸú§?%Ò·b20NózÖ"^xíÅh<5L–-ÞQ–•‚:äi‡æÞƒgâŒüOcÑ-E&ûïSXoÌ<g)|î6T^«\I‰,¥^ÔY&A-°^ötSgøˆÒg¼¬Ös"Lì¯†"]KžÏû±NîÖædöä¿&vÖ¸C­B’[¥$È½À7õÄ£áj0Uô*Ehp‡¾sÛÙ*¼ÜÑM¢Ïü‰ºÓA®U|ÝÊ³/ÐEªùÝW6)œ–žóSwvÛ<>>ÿGªnÃ,ZÊ·	ÍI¥I¦çé{†ùã¡GÙòÄpù-“ÛpDHÑ1ÓzJÊVQ]æ7fð‚ýÚžt‘ÃýuN…J¼ÑAjESdÖ;sË•J°íÖ2(›=©ý°øq˜Å^]RÑÂ4õ‚è­Ã¦ÐxŸ£¦Y‚Ïoi(o_œ+Œ2Ž·|òh¶; â÷s ùªíè¬+ÄÌk‡áÂ*ÄÛÖ~ò:ðsÐ U†x2@Wnú°D4†GRb+ëOä6vmlAï(ŸF±Ù¾ýL{Ë¬¾°˜³)§ü^Wïƒ \nf™,ˆl
-’9¯sY_Š‹^*ë[Ö“2¦wìG«µgå€«îß”Vy‡.“ÔBhB|\gga7TE!#ps{Eº¡<×Ë¾S¶œ´ûbæIŽ~PvGë/añ$Ý¨QxfT²€WeKÐòPWgš`™ºÊ+JóÿX‰º(ëé‚>ý‡£?÷N©çíÝÇmÎ„›«áù•	™ŠTYñ~æÚ ô”_N:oßæð»Ã'Ñƒé¯wègLSC¨×ØîÚY$Úk‰…o{Òûë¨ÈJãÐaá.¤®ü[ª££‹“¿£)Žþµ!÷uâà,<ØÇfc^vxªÐ"zY€	ž¹lÕÃ6ÙÌ¤óêlìÞ@~÷â»€§ëTtÜ¸ÛÝ6U¢½é˜¨oÌÔÉB.Ù#:ˆBP57n÷nµ->áÜÉÊãQ«¢©îî|©èíú¡íÙ…¤[Í‰–Ú/—`¹JoÐó„4WÞsÖXèh¼P|_§ØáþÙfÃlÕƒ`ë”¯Íº9¸ê„9Ð#ô}ÞÐ}æyµ,ë‚Ñ¤!›¬eÂ_é€QfŒÂ/œœ¨®Â:¿åNÂ·s
-¬ÓjÊÖc9ÆÌ™—|~l=1§ Ë“/fÕ*½¬J™‡FíL+…Å-AM|¢ÇL7é£?×žÕA¤ 	ª°©žÊ,¯­ÍÏê÷ ç{à´lòC¾ÏíÁÎ±“j‰Îcx¤¿û¿­,Ú÷ödøŒWÆ¸Møžp³K¥*öûá'õÊ@4ÓK UúÉvZQ½Î«[Þ(Ìûæw”ƒ¤`¤{;DÂ‡ î³JM×q“ÐIó#.üïÍBDr8ÚŒ…D@V“(î|Ëü3åOL²!«Á
-ÕD~ù­Z5»‹"Sªú2É«I&.·Nôyÿ&7o¹KïöRfYÇeÊ"þá!„’$cþN¨¾†pÒzÕµP7±Ê4EeEH“­Å#2w>è™µ4@U¢;Þ{»ÿöKg² ’›ÆzÕumÉª*5¸º1c­Š1ø¸y!^´çO~&4^ªjæ¼>ØÆ_«¡†Ó\Á+¦ÅY½Pg,Û£-€|/úúÐ+.(Q¡°ŒÓ`gê¬­†e]ã*Æþê+CçgÎ6¯ÔQƒƒC+ÈÚ4|Ñ/{(lû {(Ûå¹©a¤`>öWûÞ)à'‘Ãm×N¢ïíHâ%c¬¦BâŠê–ò=Î¾—ØÇ	›•‘+ŒÓ.úûóžr±]é5Z¤þý°@ãº^0pÙVELTøýÄ1K)«ª‘”Ñýæ÷ –4át¤~àãñ#!,E1ÂqlÓ8¶ 46öÕ2'@A>Ô''b24øoñU^ƒ Ð3&åÒez./‚¨„ACÉ‹ÞÚ«éiFuêw³{"‘gjÔÝÃ:4®Ñiš'“s‘B'IÐ2z¿¬È¸}ëò÷|qô~ôù´pjô\ÙŒ’\""xºÊžT¶èœßìò«èý‰Œ×OžìËãÆtÜÃŒIfºµì9¶tÞQa^¸!R¾Þ}©
-òŽ‡œô³-ÌõÔ#õ	°²@€cmÔuNò0Wš£`ŠÆIlžÿç*!ƒ´/º‘%p¤AÒÙ†Â._xyJ´òòê‡k.Pï‰Ñ¿m?Á¨]¶ƒ²ˆÔPÔ6@äu?ÇDe>Ï(¼‡^)©•hø±hø :†ÙüÎÐåY·ðh×iƒ-ŠÜ ¾‘ÂoU›¬ßîñ.˜ìŒ•{kDJ«âÜ×!ìH|ªÉY·nNœÔ>¹€ð„ÞÄÜ¶÷$î††U¬kïãäg^NŒ÷A4 ,·[x·vSK9æC2¶Ü­Ð3/E~Ý¸Ð0Xñð&x«gPhÀ p.Ê¹ÔByghç|ËÓÇ¥OL°,ÕÁ«Á
-×"°>ù­Z7”bSªú=ëI&.Ÿ½Óa:ª®Ý–QDQCY‘%I5P-U7"4S$yô *7ºÑs¯åEJÈœÅfAšB/ÿõ4k°²¥¢ú¾[lZ°žZÖq`TÕaº!€â=¢½°kX´¸!GŸÝ,ŒÅ¿z¾T!ººc2]È–7	|Â/éª.µ ™‚ã:ƒˆ„+ÛP;ãÉ‹€v;|`D%Šö6YP«ŠàÙ¤vÃš¦çª©¬[dH¦ª&eGlÙ†2Xi‘DðDv‡nÇAP`ƒxˆS©£ÆÇƒrA#›<¢>ó ¡	†¦_B+³aîñA$ôËN?è2øA4\[¿å&:9¤^ÓµÆŒöøôÔö´qîHÓÙÃ±Ã1 ž2-ðÃž©¤&yïªÔ¯ðGíEMûý×h’6+¯‹#",ã„AJYŽ¥ÝÞVàùAíãë%á`„ŽÚ³Od§A†ïT.£[Z–uî‚!&tï¨ˆ·dTXÛÂÆaC.2.ì³3$PÈso9Ë²|=ÃGlÄõÖî\@)k
-Ñ''ê”X½UÇ‘%Èòºõ÷gAè6!õàÞiðÔÁSûñòNG?Î¼ÞtÃë¸¶ÿ)š‚ë<Á
-¾ýÇ#BÍÜÌÍ `Z¡åI½ç#˜F:æ·pâÌö—†Ré/dEDW£3Yèà#úôC=…©€„g|z/	C.W ÏÐ'ÊÚ½¨Þ~Ø˜¶íHh±„2±Mxáó(-†uƒm?ÚA'4l¤jz™Ð. 30:Ýætabh¤¡Ì÷?(Ç˜s’(¸i»Ž‡(š°¢Ïþ¨Òxï¦³«¡Ûšõn¥É®Ñó)Ÿ¡æ¢TFØF±dšmôTÕéé‡
-ú1*»…×êLþv‚wÚÅ¼ÿ	¨˜·ô(MŒäÉH€4Úp
-ˆH/½àd^÷dÀë²Ö2:úÇøžð	ºÛ£¼]½Ps¤H†0þ÷8ò'Áš^8—ÂûteL\sOæk)£!#¶óÝæÿ‹$ÃT¤v‘¸Ðì’˜ìÎÜÓ‘OþÙ‹®ÿ¥%°õœC{ÛGnò5'{²g·bÕ‚(Ý+­^žíow‹nñ®1Úˆ™
-#,½†üõGO|]03©íHÜm¹q ÷Ô`Ûï¸¶È¶A{“ëŒˆ¬ìÉ«È¾öL½üù±ùNÚàÑV^ñ›eQ%Æ±Úeþ¯ø’;¥IÊÑôD›ûÿÿR8¬þ ïý¸‰ÚŠæh›ê»‰ßùe=Ã÷,ÕDPxÝÁå&Nù“=ŠY…:Š¬z ùHºpÏßë,t7m¨ÑŽÓ&[=HgAŒ\xî–ÐIzlƒ>¾ÌÕ]ã{Ž²6ð‰OüöñÁÈOS|Ïâ:·cgÃ4Ð]Øó#(¦T°TW à›‡³ª†fªz4‡Ò¬E…üùƒ³B|‘—Xžú¦2Ò8Ð[µá˜rö}kiTg`’™æt3imËŠ$ÓßÊ1a„ãVˆ¸{[¡$Ào=’ÝcTGH›XáOævv0t©™ÖD0j'_‰‡`)èÇR³éüÏón’´@´Ä°Ò3„œ;¢¶×	f5ÇI…eÑ†ƒ/bq¶
-Jœ5þ·™¼Ç5¹¬E„GFòôB„èÌÌ×f{¨Ü²À_¬®¶¼äQ<ûÎêè©OÝþµ‰[WèpVëQÀÍi÷B«Šº÷[æ^§âó<ã9ŠT\@uVÚ ôŸïEŠoßæûÈ—ÑƒY¤ÇègLXó£gØîÑé?¬ÕŒãSºŸÉ°exP9ßÓüò"}é‰½£B®1+þ:í8	Žj{ºžsæ`+{Iò4TW!jB$iÈÖ1FuC,ý€eg[=@CGuV8äz’ß*¸7¦¤mÍN\º»Ãc¨±Öë#Õgí¤ÑK\%d¾y¥P)|ýÈ4&fTR’ 53fvç&{°Jy¿ãÉ‡`yœ­ÜN ¯˜ÌÇyËA	ý»¸>aáÄS‹d‹žó ·yì–_åj)&YOm‰<¯ŠUá]>*œÕc¾Œª…²æ&Ž„³	ÞÓk¢¾^Ù§fÕv_˜Ù…K PsÐ©gyuá'eAûíXÒ3+3%ùžàYh‘}Ñ§óÈ\Ð½Ú840u¿Çf\@•´p›Ì[à¥=2Ö×4§¸µMàˆå†8” Ôìòi¢~ú;vnÖs›ægC+¤_¯Œ)•_–K¹²x¥Nò9‰‘DÖã^f?ª=Ö=(›Î{²‘—ˆWoKn$hš3‹ÆsCfÿÌÙª#£Ð0s­ƒ“Yri1Hž;ì+›]éñ(µxåv´rh¯4r,ô6^õu#¦OiÉ•eÆ¸‡PÉ:ìü¬Ó/å‘÷zæ]ãQÀG^ò8š2gwuÏŽÓ0?J¯ûæ˜a9¼L8]Ë	L	³*9/„Qn½OÆ}èŽ€š×ï¡¾‚ÂÍryì)Ä\,méfU&M5-jÁENOòÍ±B3)†9áù”Eþ¨ÌÉð|ÛžÙÈƒ"@‹!<îá#É‚JœÎP‰iOá¬åv{+!‚xÔWM_bÎÑˆýJÿRG“ç×'f%¾…§BfSh’Ï5ÎÊ ÐŽ~2$aÐ¤@ üzLÇ">ŸÀ`ã"
-˜Â?GÓ`ùØyú†Õ 8ÔB°Rªe£#-÷ô(ós\­+üÄt}Óƒ´±ÌßM6K£¨;ÀQEÆWi¬B±ó	Ã«âzK‚Ù6:µf™£{€UJL/×óíÓ@Ó9²í|„zÇmÍÁHùq@­Yûá(Â=É“e\¡‘{Ähqºü7gDýV—ª¸4˜H©…Î\¹…/§à1ÕÕÏ/m¤Òuÿ˜mä¾O­Üö.Þ·aøWwF‘&,ò/‚¤šªAÆlåšåHš¶1is3;ïmówoßÂoÅ]‘ò?n#ÕXÄ Ã(BÙÕÛ›¦A$Ô+‰Œ…6©›»ãÈ‘GáüIh_æÑÈI¶z;\Õ.¸ÄP0…ÎÐ˜ú7%þ‡’à«ãÑ1Ë‰Ô’añ–tÈQºyš‰Q½›€mÎö}‰æ‹»ûÅn¢Ôz¿åGóL•ÖC_å]Ó>¿ÿ–(Œy®2:PÌê¼VÞ•M«äÙ©ŒùKRõ&þ½{ÛT|<riyYÔDn)ØcZZ”•O`Ž8…dÖ¸ŽÏ8*îè›ª°äMŠÜ[ì¦ª¯è¢¼†±P®<Ë¬ŒÛAf*‘å>¯QÕÂDë¿çŽ´YÌÏÓaÑo§†v0™™(&¸‘©Eò4Üu$XúüQ#'HJžO¨*ÃÜö—Òp¡ñr×G1+ìÝ8EËa|Äu@¡@Il•*IŸ¢rHÐX1	kçwS„"5Íbç{±Hwiáôöâ×¥@¿(CÅÁ¤25$ >ö^eÄ¥ob\YÅô,-ëFÅùN³Ù´©¯–]êŠÊ‚òðÆ]Ø²Q+ª‡íà(N;º‘€ßò;¾üÖp!e²*öWU%!íë¤fV{89Þ<‘ &¼8ÎÛ­31›jÏyäø /Õ#ŸüÃifr^ÿó„ÃÆ¾÷Ï/1<ÔÚB2V2±%A.b¶„~yë)Â†<ðñ¥„ˆ»¯ÇúÇ·¢ÈBbÅ>.¤w/éÅ‚#lê„‚Œ…R=Îû®¸û^ëûˆ¡ð{@/íüûò-Ô!žIÒhíRIxŠÌ›ý~ 5?Á&f$I[±	oá2nž–¿õ§¤2á³Î3|Ç÷¿cß˜1¬Ð]¦Žç|Üºnž¥NýÁo~`{ø¾ir$LýÇýà:]VÐ×¾ÅO`²]ÊÙË*Ÿà1š9}åÃJ6:	ô§JPªñ–9x¢ÆPk…`+ÜíèÅzgK·M¬ó &‚Õ´˜°G¯°é'Èê¯Ïìjú®ßê½À^à	•Ÿ­ö¶³/á
-Ë®Â¸‹ÁL®•³;¿¯
-ÍÃ4ø¡ÇdóèMú³£€~õ*ôÖ\Ò¥ÊB xúË[‰bˆÝÎ©v"œûäZG°‘0±tC
-µþïßxåÈ˜›âT­Ûé»Ïãn‘ŸîÐ.Ê*3M‘0±_0nÂ.Wõ¢ýÄòòâ
-°™ ï…Õfr¿e²:ØU;X³Â˜ËW¹Ø‹ê„šøˆ¸ÎÚú´Ý\I¢¹C3æ+ƒWgb8ÒVˆEKÍT(Çgb;ª;ˆÔ_Ÿ	uS3n3Q\tÄ²þø5€Á; š¸¦5ÅeNÔÍFƒ
-9äÓmv
-H°þNµBhe4¾Ûôw%I~,WX(¸®¿1©¹§©€ÜŸ‹W¯4$†:|˜J±C§FC¦†öi—/Ø‡vÐ…¡Æp·ªez³¢”:·tÖ]ÆVçâÂlQGÒK[ˆvÌŸñ%²âÊz¤pýî¯À!ü´ñz©£"ƒi—OìÑ·Ù™Ä¸€ŠéºÙŒÛ¯¸œÎù¯É¨½õâ)Ÿ¡à«‘Ø@Ñ¡ÊmôRµå,×
-ú7J·@‡êLøG'ÚÅºŸËóØG:§/×³y}´¹¯»†4QŽT+¼ò95Q:'õDS%R#u$fL§e@ Z P(¸H†cijºÊ0	$ÃÊwk Õ‘<ØÈö2½ìÝá˜„r°wæ8&09mjì$ˆ·f[5=–+o£4qY UA†àÝÞØ¶h¡ÝqR(•LÞñE,$C9óçêÔ4˜ºÖ ‚ÐÔád¿y0˜úô¾Âƒ,Æ{ÇùSÎqjâWr/¬=Î…!h*ÁÝùgÎœÜº÷ê˜œðŒZA%Ä6÷,jÈgM,{øhMà$)[ÍùuŽ² <Å —Í¸ˆ±ÄH£´.¶{¢<ž˜f`	ÒÛ×,¾öxïÆq(¸ã*Íÿ^è‰gl§*§Ê#Ç¡
-{ÜÕÅî—fÒ°:¼û6ødfü–Èí=ïpBÊhº°:/“ùè£×®¹šžªŸ©€œw­ë¤áA/è™ˆÕ+_ùÚüòÌáKÈ™ˆ—õU<‹íþŠ¤1HÜ“ÁZ0›9aÎû Þ.ÆsªÃIÈUMá“©~Ù	çæ3™÷›€ýjç›rßË56¨ò¸N­4!ë‰Ô{àÓí|Ähu°U-=ÞîbJLó'¤UB1z¬BMû+×•©—|™fyÆà;3Æ·fÐÔŽÌÔÓ‚]ÉéÂ±,Ð1™	t~pz699ý<ù`ºí;¼ÁH¦¼”NÜ„xØ’±£XƒÕólÅmÆ~ùÇ‹»åZÈÕ'Ò,Ö{ªåämÍG§KÕ_÷+A.  °áÉ‚Ü~ó­fÁbp–R4q‘‚ÆYžv1²O‡„úå°ÊœØ²¥4ƒJ…¿&3=ä¹ÁÐ`ÍÌÞÑuïá
-øý=ÙÏÍ	Ó§oçaa¨ÑRhÅìÎæ:]Ì‚´A¡ý#„oïgÇ	€saŠ˜•eÐ“×EÄ?bp£^M%þ¶Œ˜;×zšµôGUÛÜÈ’3h÷”Kàáüªóè®ø™ŒžÏ®Ûö÷&ö9þìÌ™dS_ˆƒ‹3Äžð¸_>ÌÖú5BYÂ³FY¹t|Yì^²‰ý>ÐöÒf‹x¹À·ªø˜Âåµ0ò®ÐX™
-š©¤Uø×y¯ìÖyÌ½7yœþaiñ$x™…MS8Íï”H.ïý‚Ú´yº(z{¯IL×hKÄQhÙà¨ˆoÂ¼³¯¡¸æ€5©3g— ¼¯öWdüè½ºöuI‰Î‘ò U(Úý÷¤šµK¯›¯Ð‘fç)¯îâ%©Šø­Ýb¯	DR×P ¶°^~ßä|LPè±ƒN{ì`aó
-Tð3"»Ýd^T/õgmk–U:õE@°yr#5dÕ
-µ@+â$h´E6}ÈN«·p\7k6?ø7ö—¨›$‚	…Ì‚9åà3-îi±/o‡éÉ58mæu8ZóÔo£WIª‡2þÔ	°Ë†h¾?êŠ×]ìéxRŠpCÕßíd'p<Ð£2
-+Ö;­ÅF7ží‰·Fp(ÌÊ½Â5^ž–öp2*ŸüÄX“Nÿóƒ°ø_çÏ/6Oê;B2QAÄQ.b±÷@˜û)Â~á¥ƒû…N×úÇ¢{¤òbÅ8q"oÇ/é¥Žè¿lìäŽG6V
-¸›¢sK]ÜË¸„	3•K­Ë®dÓr(ŸñŸÝ”0
-¬’ÖyóFeë8v´\v¹^ÇdÐ¸û¤9É/ê—ôÙÎs@TéöŒúZ€ës¥lCQØóÂéÛSQêž®Ü–k©¨›¶a/ìÚ·*Ü/ùÓç@jÄ{û­Ã"UÛŠí×ì‚(±±íƒÉˆÝò!ª)iFwÂýÖ{"“OàxØÝÁ#°˜nÑk$¨ç“qŒþë’Ê‘øU]ãª~é¹Uòi”]ÍÆyÆ˜‹ÿñSÿ¦³lÞÂÓ\(ÌaX®uàŽý(téJç½ê²5	¿ÿˆ¹¶%ñ¸Ðù‚Kƒ4ÿzYOà³èJ…K+>õ-‹.ÔVR¥Í=áˆüUý´£æÙÑÿ6#9ÎÅ‘^­'N©¤ —ÊÊ®ÐW_Ëß®ò3"yç—xƒ cvÚ·`–<¯íY èpÖ1ê½‚0‘›Js+ Þ$dXÏÃCj=èá“£Üò´7æ3“U°=-zõ¼“µò¸W}ô]˜†tY‹£iæŠ¢në’>ÉØ…JÇåÑNÜq’€2ÏƒJí»Ò—r\ÌÖ/ËÃHø5È‚$º°_Žíc¾~ð¾1ÖA3,±OmåF_|Qù¢¹ìXÜapà0öÓ#¨ç°G'_|OÉ Û±=àC>ø•B8Ô=2.·2X×[d”WS	ãS=5è¢£½º`ïV_âÞtô.< *Â5|Z¤3i |Ù]!uV×÷Ë¯EŠb“¯KÈ—öP¤Çå°9³£gÕ9{…©/³×¼üÚŸpbä<å½ækƒ~ÙÃ%Ã¿/ù¡€Ò-þ/V+¾ñ	bU²'=éÔÙoê†\µoë/N{™Ä\çgFyÊ©A?…AÁFgcLÇ~¥7'Ç8€WWj“¿Fà÷¢9+cóåÆÝ¦~”€9Ê.t§Oe%ÍŽD.ì0°wXP5B9€!"L©Gv/]•q€µÐýÁå«^bÛp5FtQäQe05\Æ&Acc‘áÍÉ&¿4nó©-«¢S`–VÇò³ÖY
-ÕÀRƒ_ƒÀf 4\õßž/´/ë¬ÖMå%`€´öNeÐiXnH³$³§Ì‘0ÐÆ~ÿíÇiåL™ª¤Kø£,ú‰›OäP¹G¹°€´4ZÞ¾tæX
->»#L_ªùªYŠ†Mœ…µ—I„tÃT†Pãñ[VÜÄz:º¿è§Cr&ºD$ÅñÙÑ}WÀ
-Ç¦“ž¦Æƒªº¶á¢9Êû¼Ã|äY¯Øƒ„ËDm255
-K4
-z2
-13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
-cModel Technology
-Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
-Xcache_def
-Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-Z2 !s110 1651658758
-!i10b 1
-!s100 EnkcOD`hG;^6N^K9`R=153
-IU80;hR[kP:_KRAMkL2BMK0
-VU80;hR[kP:_KRAMkL2BMK0
-S1
-Z3 d/home/mlg18/fpga-caching-fyp
-Z4 w1651650601
-8code/shared/cache_def.sv
-Z5 Fcode/shared/cache_def.sv
-L0 1
-Z6 OL;L;10.7c;67
-r1
-!s85 0
-31
-Z7 !s108 1651658757.000000
-Z8 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-Z9 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
-!i113 0
-Z10 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z11 tCvgOpt 0
-vdm_cache_fsm_downstream
-R1
-R2
-!i10b 1
-!s100 WGAVL5RL8AIdLk@A^gU^Q0
-Ic]^WJiYSddO2z7FJ?:2[I2
-Z12 VDg1SIo80bB@j0V0VzS_@n1
-Z13 !s105 top_sv_unit
-S1
-R3
-R4
-Z14 8code/shared/ramdownstream.sv
-Z15 Fcode/shared/ramdownstream.sv
-Z16 L0 55
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_fsm_upstream
-R1
-R2
-!i10b 1
-!s100 R?N_oED8[K_0>J4[fM=Yc0
-IRF9;>BECbd4AEG=4^W18`1
-R12
-R13
-S1
-R3
-R4
-Z17 8code/shared/ramupstream.sv
-Z18 Fcode/shared/ramupstream.sv
-L0 80
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_downstream
-R1
-R2
-!i10b 1
-!s100 k3fS6VLXk@b:HIX91Rhb93
-IUK_nk=W705k9Aj?1^Q;KN1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 34
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_cache_tag_upstream
-R1
-Z19 !s110 1651658757
-!i10b 1
-!s100 =md7j?>Y0?ojUMhc4BB<^1
-I]IY:D[b8Jm5A^ScXl?4ZW1
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-R16
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_downstream
-R1
-R2
-!i10b 1
-!s100 SJ@8K4@c3>AO<>8knL8Uo1
-I1nWjmbAC19TgU:dDJK91M1
-R12
-R13
-S1
-R3
-R4
-R14
-R15
-L0 10
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdm_data_upstream
-R1
-R19
-!i10b 1
-!s100 209Ll=Y@NI6U2Y9FGg[?d3
-Ij2F0I>CLN20;LZa3?hjMM2
-R12
-R13
-S1
-R3
-R4
-R17
-R18
-L0 14
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-vdownstream_processor
-R1
-DXx4 work 9 cache_def 0 22 dGlk>aGJ6Vgc]01EG;ZXa0
-DXx4 work 22 downstream_top_sv_unit 0 22 TS0cL:7FW0mkn=hS[0NIb1
-R12
-r1
-!s85 0
-!i10b 1
-!s100 X7==lfQSB[Wgm]``N@Raa2
-I4Gb5TBhd6Pz>`N??<WFH<3
-Z20 !s105 downstream_top_sv_unit
-S1
-R0
-w1646908691
-8code/downstream/downstream.sv
-Fcode/downstream/downstream.sv
-L0 6
-R6
-31
-!s108 1646923527.000000
-Z21 !s107 code/downstream/get_cxl.sv|code/downstream/downstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-Z22 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|code/downstream/downstream_top.sv|
-!i113 0
-R10
-R11
-vdownstream_top
-R1
-R2
-!i10b 1
-!s100 l@>O1[3OB6?lDLWD=]Wi92
-IVMOmIah3Z@e6I4zTB59i@1
-R12
-R13
-S1
-R3
-w1651658754
-Z23 8code/downstream/downstream_top.sv
-Z24 Fcode/downstream/downstream_top.sv
-L0 13
-R6
-r1
-!s85 0
-31
-R7
-R8
-R9
-!i113 0
-R10
-R11
-Xdownstream_top_sv_unit
-R1
-DXx4 work 9 cache_def 0 22 VhD2QSQ59QM8P`NM7LH^30
-V43Ymg<X45`=zI386MJ=d11
-r1
-!s85 0
-!i10b 1
-!s100 27c]T`NO=HEQn5IN<f2>R0
-I43Ymg<X45`=zI386MJ=d11
-!i103 1
-S1
-R3
-R4
-R23
-R24
-R15
-R5
-L0 8
-R6
-31
-Z25 !s108 1651656504.000000
-Z26 !s107 code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/DOWNSTREAM/scoreboard_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/monitor_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/driver_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/generator_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/transaction_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/environment_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/tests_DOWNSTREAM.sv|testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv|code/downstream/downstream_top.sv|testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv|
-R22
-!i113 0
-R10
-R11
-Ydwnstrmproc_if
-R1
-!s110 1651656504
-!i10b 1
-!s100 K[Q_i;Y3JT?0=aUnkhBzV3
-ICG=Czg`l`6NZ=1jDQI5M>0
-R12
-Z27 !s105 tb_top_DOWNSTREAM_sv_unit
-S1
-R3
-Z28 w1651650627
-8testbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-Z29 Ftestbench/unit_level/DOWNSTREAM/interface_DOWNSTREAM.sv
-L0 3
-R6
-r1
-!s85 0
-31
-R25
-R26
-R22
-!i113 0
-R10
-R11
-vget_Cxl
-R1
-!s110 1646923657
-!i10b 1
-!s100 9PJ@HW@OzQ>_QT^mL0<ZQ2
-ImFlGG67?zaZ9lhdjcDg7f1
-R12
-R20
-S1
-R0
-w1646905620
-8code/downstream/get_cxl.sv
-Fcode/downstream/get_cxl.sv
-L0 4
-R6
-r1
-!s85 0
-31
-!s108 1646923657.000000
-R21
-R22
-!i113 0
-R10
-R11
-nget_@cxl
-vramdownstream
-R1
-!s110 1650385229
-!i10b 1
-!s100 F;;oTG:`[<D1Y^b<XE@R70
-IacgZ?R3o2HFTLT`_7DoKm3
-R12
-!s105 upstream_top_sv_unit
-S1
-R0
-w1650375196
-R14
-R15
-L0 7
-R6
-r1
-!s85 0
-31
-!s108 1650385229.000000
-!s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/cache_def.sv|code/shared/ramupstream.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPSTREAM/scoreboard_UPSTREAM.sv|testbench/unit_level/UPSTREAM/monitor_UPSTREAM.sv|testbench/unit_level/UPSTREAM/driver_UPSTREAM.sv|testbench/unit_level/UPSTREAM/generator_UPSTREAM.sv|testbench/unit_level/UPSTREAM/transaction_UPSTREAM.sv|testbench/unit_level/UPSTREAM/environment_UPSTREAM.sv|testbench/unit_level/UPSTREAM/tests_UPSTREAM.sv|testbench/unit_level/UPSTREAM/interface_UPSTREAM.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|
-Z30 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPSTREAM/tb_top_UPSTREAM.sv|code/upstream/upstream_top.sv|
-!i113 0
-R10
-R11
-vramupstream
-R1
-Z31 DXx4 work 9 cache_def 0 22 UX=TIc>JLj@k5G1oCWHU<3
-DXx4 work 11 top_sv_unit 0 22 TiUBS9EbUa1CME1Q0EHW?2
-R12
-r1
-!s85 0
-!i10b 1
-!s100 QJKl_n;;[UCclhB?kE6YR1
-IC^YdaY>JGY:fQfh4IEfB31
-R13
-S1
-R0
-w1646908684
-R17
-R18
-L0 8
-R6
-31
-!s108 1647004783.000000
-Z32 !s107 code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
-R9
-!i113 0
-R10
-R11
-Tseg_work_opt
-!s110 1651658759
-V>@m^RRL?5]fB8IE?8bE>Y1
+!s110 1651735264
+VhSnj4;`A9VUNnZ47h]AOT0
 Z33 04 19 4 work tb_top_UPDOWNSTREAM fast 0
 Z34 o-work work
-R11
+R9
 nseg_work_opt
 Z35 OL;O;10.7c;67
 vSLT
 R1
-R2
+R10
+R11
+R12
+r1
+!s85 0
 !i10b 1
 !s100 @0BJU?j;MPR<N8Id]I<On0
 IMV^bEZWg9;=j7Y8Hl9Qj<2
-R12
 R13
 S1
-R3
-R4
+R2
+R26
 8code/upstream/SLT.sv
 Z36 Fcode/upstream/SLT.sv
 L0 2
-R6
-r1
-!s85 0
+R4
 31
+R5
+R6
 R7
+!i113 0
 R8
 R9
-!i113 0
-R10
-R11
 n@s@l@t
 vtb_top_DOWNSTREAM
 R1
@@ -1694,25 +397,19 @@ r1
 !i10b 1
 !s100 YjK<I[3g4R<`9NBWizf?=3
 IPlkj<7CKKlERLOJkVJIBV1
-R27
+R29
 S1
-R3
-R28
+R2
+R30
 Z37 8testbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
 Z38 Ftestbench/unit_level/DOWNSTREAM/tb_top_DOWNSTREAM.sv
 L0 4
-R6
+R4
 31
-R25
-R26
+R27
+R28
 R22
 !i113 0
-R10
-R11
-ntb_top_@d@o@w@n@s@t@r@e@a@m
-Xtb_top_DOWNSTREAM_sv_unit
-!s115 dwnstrmproc_if
-R1
-Vci7eo[60fLQCL9U4Wgk>m1
-r1
-!s
+R8
+R9
+ntb

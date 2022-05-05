@@ -32,35 +32,32 @@ module tb_top_UPDOWNSTREAM;
         reset_check: coverpoint intf.HRESETn{
             bins reset_trigger = {1'b0, 1'b1};
         }
-        // upstream_orders_valid: coverpoint intf.accumulated_orders {
-        //     bins valid_data = [32'b0:(intf.cpu_amount + intf.max_to_trade)]; //accumulated order greater than amount to trade
-        // }
-        // valid_numerical_data: coverpoint intf.cpu_amount{
-        //     bins dot = {16'h0001,16'h0000};
-        // }
+        valid_client_id: coverpoint intf.cpu_client_id{
+            bins client_id = {[0:10]};
+        }
         // upstream_not_max: coverpoint intf.cpu_go{
-        //     bins not_max = {1'b1}; //for now, extra test
+        //     bins not_max = ~intf.cpu_new_max; //for now, extra test
         // }
         upstream_new_maxcheck: coverpoint intf.cpu_new_max{
             bins new_maxcheck = {1'b0,1'b1};
         }
-        // upstream_hsel: coverpoint intf.HSEL{
-        //     bins hselect = {1'b0,1'b1};
-        // }
+        downstream_exchchangecheck: coverpoint intf.exchange_go{
+            bins exchange_go = {1'b0,1'b1};
+        }
       
     endgroup
 
     //functional coverage point to check range of output signal from DUT
     covergroup cg_output @(posedge intf.slowclk);
-        upstream_rdata: coverpoint intf.accumulated_orders[15:0]{ // equals to gpio_datain
+        upstream_acc_data: coverpoint intf.accumulated_orders[15:0]{ // equals to gpio_datain
             bins accumulated_orders =  {[0:64]};
         }
-        // rs_check: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
-        //     bins max_to_trade >=  (intf.accumulated_orders - intf.cancelled_orders);
-        // }
-        // gpio_parity: coverpoint intf.PARITYERR{
-        //     bins digital_point = {1'b0, 1'b1}; //should be no error
-        // }
+        upstream_max_data: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
+            bins max_to_trade  =  {[0:65450]};
+        }
+        downstream_cxl_data: coverpoint intf.cancelled_orders[15:0]{ // equals to gpio_datain
+            bins cancelled_orders  =  {[0:64]};
+        }
 
     endgroup
 
@@ -92,7 +89,7 @@ module tb_top_UPDOWNSTREAM;
 
         $display("Coverage_input = %0.2f %%", cov_input.get_inst_coverage());
         $display("Coverage_output = %0.2f %%", cov_output.get_inst_coverage());
-        #20000 $stop;
+        #20 $stop;
     end
 
     initial begin 

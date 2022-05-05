@@ -1,7 +1,7 @@
 var g_db_data = [
 {dummy:0},
-{name:'cg_input',f:1,type:6,id:17,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'16'},
-{name:'cg_output',f:1,type:6,id:23,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'16'},
-{name:'cg_input',f:1,type:6,id:17,tb:'2',h:'2',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'16'},
-{name:'cg_output',f:1,type:6,id:23,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'16'}];
+{name:'cg_input',f:1,type:6,id:14,tb:'4',h:'4',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'13'},
+{name:'cg_output',f:1,type:6,id:24,tb:'3',h:'3',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'13'},
+{name:'cg_input',f:1,type:6,id:14,tb:'4',h:'4',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'13'},
+{name:'cg_output',f:1,type:6,id:24,tb:'3',h:'3',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],hdlPath:'/tb_top_UPDOWNSTREAM',parent:'13'}];
 processConsCovergroupsData(g_db_data);
