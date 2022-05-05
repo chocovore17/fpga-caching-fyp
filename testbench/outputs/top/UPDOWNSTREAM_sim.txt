@@ -1,5 +1,5 @@
-# vsim -coverage seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all;  coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb; quit" 
-# Start time: 09:02:47 on May 05,2022
+# vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
+# Start time: 11:37:27 on May 05,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -33,7 +33,6 @@
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/RAMDOWNSTREAM File: code/shared/top.sv Line: 35
 # ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex', driven via a port connection, is multiply driven. See code/shared/top.sv(54).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 31
-# ** Warning: (vsim-8634) Code was not compiled with coverage options.
 # run -all
 # Loading rom.
 # Loading rom.
@@ -44,704 +43,336 @@
 # T=2000, [DRIVER] starting ---------
 # T=2000, [MONITOR] starting ---------
 # T=2000, [SCOREBOARD] starting ---------
+# ** Error: pass_checks was not computer properly for client 6; max to trade: 65450, accumulated amount: 0, cancelled amount: 0, pass_checks: x, amount 1361
+#    Time: 10 ns Started: 10 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=36000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
+#  T=12000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0xX cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
+#  T=12000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xX cancelled_orders = 0xx  max_to_trade = 0xx  
 # 
-#  T=36000 [SCOREBOARD] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
-#  T=36000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0xxxx cancelled_orders = 0xx  max_to_trade = 0xx  
+#  T=28000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1361 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x49358 exchange_go = 0x1 
+#  T=28000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=84000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
+#  T=44000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52334 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x11382 exchange_go = 0x0 
+#  T=44000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=84000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
-#  T=84000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: d6d8, cancelled amount: 0, pass_checks: 0
-#    Time: 122 ns Started: 122 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=60000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x55000 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x63298 exchange_go = 0x1 
+#  T=60000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x39132 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=132000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
+#  T=76000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x18996 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0x44603 exchange_go = 0x0 
+#  T=76000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x44464  
 # 
-#  T=132000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
-#  T=132000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 98dc, cancelled amount: 0, pass_checks: 0
-#    Time: 170 ns Started: 170 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=92000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x59021 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x42683 exchange_go = 0x0 
+#  T=92000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x11588 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=180000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
+#  T=108000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x61659 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x63840 exchange_go = 0x1 
+#  T=108000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x52506  
+# ** Error: pass_checks was not computer properly for client 0; max to trade: 17246, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 26283
+#    Time: 122 ns Started: 122 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=180000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
-#  T=180000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd6d8 cancelled_orders = 0x0  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 0, cancelled amount: 0, pass_checks: 0
-#    Time: 218 ns Started: 218 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=124000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x41391 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x25006 exchange_go = 0x1 
+#  T=124000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x57782  
 # 
-#  T=228000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
+#  T=140000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x26283 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x64354 exchange_go = 0x0 
+#  T=140000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x17246  
 # 
-#  T=228000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
-#  T=228000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x98dc cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: adb0, cancelled amount: 0, pass_checks: 1
-#    Time: 266 ns Started: 266 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: adb0, cancelled amount: 0, pass_checks: 1
-#    Time: 266 ns Started: 266 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=156000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x10271 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x20424 exchange_go = 0x1 
+#  T=156000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x52566  
 # 
-#  T=276000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
+#  T=172000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x41054 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x15432 exchange_go = 0x0 
+#  T=172000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x20542  
 # 
-#  T=276000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
-#  T=276000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 3; max to trade: ffaa, accumulated amount: a1af, cancelled amount: 0, pass_checks: 0
-#    Time: 314 ns Started: 314 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=188000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x45880 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x25 exchange_amount = 0x42405 exchange_go = 0x1 
+#  T=188000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16572 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=324000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
+#  T=204000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x58511 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x61758 exchange_go = 0x0 
+#  T=204000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x26224  
 # 
-#  T=324000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
-#  T=324000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xadb0 cancelled_orders = 0x0  max_to_trade = 0x1234  
+#  T=220000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x52728 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x26 exchange_amount = 0x62493 exchange_go = 0x0 
+#  T=220000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x11588 cancelled_orders = 0x0  max_to_trade = 0x51486  
 # 
-#  T=372000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
+#  T=236000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x16744 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x5546 exchange_go = 0x1 
+#  T=236000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x39920  
 # 
-#  T=372000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
-#  T=372000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa1af cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 9; max to trade: ffaa, accumulated amount: 281f, cancelled amount: 0, pass_checks: 0
-#    Time: 410 ns Started: 410 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=252000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x35353 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x55563 exchange_go = 0x0 
+#  T=252000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x50060 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=420000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
+#  T=268000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x55463 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x33684 exchange_go = 0x1 
+#  T=268000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5170 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=420000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
-#  T=420000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=284000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x41031 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x44090 exchange_go = 0x0 
+#  T=284000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x45390 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=468000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
+#  T=300000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x32027 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x20 exchange_amount = 0x46880 exchange_go = 0x1 
+#  T=300000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16526 cancelled_orders = 0x0  max_to_trade = 0x39920  
 # 
-#  T=468000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
-#  T=468000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x281f cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 3; max to trade: ffaa, accumulated amount: f696, cancelled amount: 0, pass_checks: 0
-#    Time: 506 ns Started: 506 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=316000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x20264 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x41704 exchange_go = 0x1 
+#  T=316000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16526 cancelled_orders = 0x0  max_to_trade = 0x64054  
 # 
-#  T=516000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
+#  T=332000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x44612 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x20 exchange_amount = 0x51709 exchange_go = 0x1 
+#  T=332000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x40528 cancelled_orders = 0x0  max_to_trade = 0x65450  
+# ** Error: pass_checks was not computer properly for client 10; max to trade: 46470, accumulated amount: 0, cancelled amount: 0, pass_checks: 0, amount 54056
+#    Time: 346 ns Started: 346 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=516000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
-#  T=516000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 98dc, cancelled amount: 0, pass_checks: 0
-#    Time: 554 ns Started: 554 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=348000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x56003 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x44337 exchange_go = 0x0 
+#  T=348000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x40528 cancelled_orders = 0x0  max_to_trade = 0x23688  
 # 
-#  T=564000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
+#  T=364000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x54056 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x30245 exchange_go = 0x0 
+#  T=364000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x46470  
 # 
-#  T=564000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
-#  T=564000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf696 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: adb0, cancelled amount: 0, pass_checks: 0
-#    Time: 602 ns Started: 602 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=380000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3766 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x19888 exchange_go = 0x0 
+#  T=380000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x50060 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=612000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
+#  T=396000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x52528 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x40332 exchange_go = 0x0 
+#  T=396000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19120 cancelled_orders = 0x0  max_to_trade = 0x51486  
 # 
-#  T=612000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
-#  T=612000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x98dc cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: 0, cancelled amount: 0, pass_checks: 0
-#    Time: 650 ns Started: 650 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=412000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x12857 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x54888 exchange_go = 0x1 
+#  T=412000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x40528 cancelled_orders = 0x0  max_to_trade = 0x39520  
 # 
-#  T=660000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
+#  T=428000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x43666 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x28722 exchange_go = 0x1 
+#  T=428000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x25714 cancelled_orders = 0x0  max_to_trade = 0x46470  
 # 
-#  T=660000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
-#  T=660000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xadb0 cancelled_orders = 0x0  max_to_trade = 0x1234  
+#  T=444000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x62539 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x21678 exchange_go = 0x1 
+#  T=444000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x21796 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=708000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
+#  T=460000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x27754 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x23405 exchange_go = 0x1 
+#  T=460000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19720 cancelled_orders = 0x0  max_to_trade = 0x46470  
 # 
-#  T=708000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
-#  T=708000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=476000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x2257 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x23 exchange_amount = 0x14456 exchange_go = 0x1 
+#  T=476000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x30500 cancelled_orders = 0x0  max_to_trade = 0x39520  
 # 
-#  T=756000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
+#  T=492000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x6204 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x12784 exchange_go = 0x1 
+#  T=492000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x35014 cancelled_orders = 0x0  max_to_trade = 0x39520  
 # 
-#  T=756000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
-#  T=756000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: 4df7, cancelled amount: 0, pass_checks: 0
-#    Time: 794 ns Started: 794 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=508000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x61570 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x21583 exchange_go = 0x0 
+#  T=508000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x12408 cancelled_orders = 0x0  max_to_trade = 0x20542  
 # 
-#  T=804000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
+#  T=524000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x118 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x45265 exchange_go = 0x1 
+#  T=524000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x27082 cancelled_orders = 0x0  max_to_trade = 0x39520  
 # 
-#  T=804000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
-#  T=804000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd8a7 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 0
-#    Time: 842 ns Started: 842 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=540000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12460 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x50081 exchange_go = 0x0 
+#  T=540000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19356 cancelled_orders = 0x0  max_to_trade = 0x51486  
 # 
-#  T=852000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
+#  T=556000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x36507 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x46424 exchange_go = 0x1 
+#  T=556000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x41446 cancelled_orders = 0x0  max_to_trade = 0x64054  
 # 
-#  T=852000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
-#  T=852000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4df7 cancelled_orders = 0x0  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 8; max to trade: ffaa, accumulated amount: 0, cancelled amount: 0, pass_checks: 0
-#    Time: 890 ns Started: 890 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=572000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x7832 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x30 exchange_amount = 0x41890 exchange_go = 0x1 
+#  T=572000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x57538 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=900000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
+#  T=588000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x24536 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x64917 exchange_go = 0x0 
+#  T=588000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x35384 cancelled_orders = 0x0  max_to_trade = 0x46470  
 # 
-#  T=900000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
-#  T=900000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xee3e cancelled_orders = 0x0  max_to_trade = 0x1234  
+#  T=604000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42662 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x24771 exchange_go = 0x0 
+#  T=604000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x54242 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=948000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
+#  T=620000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x23709 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x13105 exchange_go = 0x0 
+#  T=620000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19788 cancelled_orders = 0x0  max_to_trade = 0x52566  
+# ** Error: pass_checks was not computer properly for client 2; max to trade: 3952, accumulated amount: 54242, cancelled amount: 0, pass_checks: 1, amount 12272
+#    Time: 634 ns Started: 634 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=948000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
-#  T=948000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=636000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x34744 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x39209 exchange_go = 0x0 
+#  T=636000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x23328 cancelled_orders = 0x0  max_to_trade = 0x64054  
 # 
-#  T=996000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
+#  T=652000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12272 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x22454 exchange_go = 0x0 
+#  T=652000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x54242 cancelled_orders = 0x0  max_to_trade = 0x3952  
 # 
-#  T=996000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
-#  T=996000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: d328, cancelled amount: 0, pass_checks: 0
-#    Time: 1034 ns Started: 1034 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=668000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x63998 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x65000 exchange_go = 0x0 
+#  T=668000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x47872 cancelled_orders = 0x0  max_to_trade = 0x64054  
+# ** Error: pass_checks was not computer properly for client 5; max to trade: 20542, accumulated amount: 32412, cancelled amount: 0, pass_checks: 1, amount 13864
+#    Time: 682 ns Started: 682 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=1044000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
+#  T=684000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x10002 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x25388 exchange_go = 0x0 
+#  T=684000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42314 cancelled_orders = 0x0  max_to_trade = 0x65450  
+# ** Error: pass_checks was not computer properly for client 10; max to trade: 51486, accumulated amount: 47084, cancelled amount: 0, pass_checks: 0, amount 58529
+#    Time: 698 ns Started: 698 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=1044000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
-#  T=1044000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdac3 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=700000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x13864 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x6300 exchange_go = 0x0 
+#  T=700000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x32412 cancelled_orders = 0x0  max_to_trade = 0x20542  
 # 
-#  T=1092000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
+#  T=716000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x58529 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x31626 exchange_go = 0x1 
+#  T=716000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x47084 cancelled_orders = 0x0  max_to_trade = 0x51486  
 # 
-#  T=1092000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
-#  T=1092000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd328 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=732000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x48899 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x14843 exchange_go = 0x1 
+#  T=732000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x57538 cancelled_orders = 0x0  max_to_trade = 0x65450  
+# ** Error: pass_checks was not computer properly for client 10; max to trade: 3024, accumulated amount: 47084, cancelled amount: 0, pass_checks: 1, amount 42791
+#    Time: 746 ns Started: 746 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=1140000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
+#  T=748000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x34280 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0x54526 exchange_go = 0x0 
+#  T=748000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2110 cancelled_orders = 0x0  max_to_trade = 0x46470  
+# ** Error: pass_checks was not computer properly for client 7; max to trade: 65450, accumulated amount: 12048, cancelled amount: 0, pass_checks: 0, amount 45039
+#    Time: 762 ns Started: 762 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=1140000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
-#  T=1140000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x98dc cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=764000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x42791 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x42933 exchange_go = 0x1 
+#  T=764000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x47084 cancelled_orders = 0x0  max_to_trade = 0x3024  
 # 
-#  T=1188000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
+#  T=780000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x45039 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x29125 exchange_go = 0x0 
+#  T=780000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x12048 cancelled_orders = 0x0  max_to_trade = 0x65450  
+# ** Error: pass_checks was not computer properly for client 9; max to trade: 3952, accumulated amount: 21532, cancelled amount: 0, pass_checks: 1, amount 30869
+#    Time: 794 ns Started: 794 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=1188000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
-#  T=1188000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcd30 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=796000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x49181 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x61273 exchange_go = 0x0 
+#  T=796000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x21796 cancelled_orders = 0x0  max_to_trade = 0x65450  
 # 
-#  T=1236000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
+#  T=812000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x30869 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x27 exchange_amount = 0x63157 exchange_go = 0x0 
+#  T=812000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x21532 cancelled_orders = 0x0  max_to_trade = 0x3952  
 # 
-#  T=1236000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
-#  T=1236000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe7bf cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=828000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x58388 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x25589 exchange_go = 0x1 
+#  T=828000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x28614 cancelled_orders = 0x0  max_to_trade = 0x20542  
 # 
-#  T=1284000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
+#  T=844000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x16711 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x4963 exchange_go = 0x1 
+#  T=844000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2110 cancelled_orders = 0x0  max_to_trade = 0x51240  
 # 
-#  T=1284000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
-#  T=1284000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xaa92 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 8; max to trade: ffaa, accumulated amount: 6ca, cancelled amount: 0, pass_checks: 0
-#    Time: 1322 ns Started: 1322 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=860000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x38573 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x28738 exchange_go = 0x1 
+#  T=860000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x53210 cancelled_orders = 0x0  max_to_trade = 0x52566  
 # 
-#  T=1332000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
+#  T=876000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x11016 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x22 exchange_amount = 0x62295 exchange_go = 0x1 
+#  T=876000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x38692 cancelled_orders = 0x0  max_to_trade = 0x39520  
 # 
-#  T=1332000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
-#  T=1332000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe43 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=892000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x9386 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0x58395 exchange_go = 0x1 
+#  T=892000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x22032 cancelled_orders = 0x0  max_to_trade = 0x26224  
 # 
-#  T=1380000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
+#  T=908000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x60779 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x49460 exchange_go = 0x0 
+#  T=908000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6446 cancelled_orders = 0x49460  max_to_trade = 0x52566  
 # 
-#  T=1380000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
-#  T=1380000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6ca cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 9; max to trade: ffaa, accumulated amount: 687a, cancelled amount: 0, pass_checks: 0
-#    Time: 1418 ns Started: 1418 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=924000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x17139 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x22485 exchange_go = 0x1 
+#  T=924000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19100 cancelled_orders = 0x49460  max_to_trade = 0x20542  
 # 
-#  T=1428000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
+#  T=940000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x64012 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x46074 exchange_go = 0x0 
+#  T=940000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x40724 cancelled_orders = 0x49460  max_to_trade = 0x52566  
 # 
-#  T=1428000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
-#  T=1428000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7334 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=956000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x44608 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x61711 exchange_go = 0x0 
+#  T=956000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x40724 cancelled_orders = 0x49460  max_to_trade = 0x62488  
 # 
-#  T=1476000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
+#  T=972000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x62024 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x23856 exchange_go = 0x0 
+#  T=972000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x21532 cancelled_orders = 0x49460  max_to_trade = 0x23680  
 # 
-#  T=1476000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
-#  T=1476000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x687a cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 9952, cancelled amount: 0, pass_checks: 0
-#    Time: 1514 ns Started: 1514 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=988000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x15156 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x39418 exchange_go = 0x0 
+#  T=988000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x33700 cancelled_orders = 0x49460  max_to_trade = 0x62488  
 # 
-#  T=1524000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
+#  T=1004000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x14403 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x26 exchange_amount = 0x46205 exchange_go = 0x1 
+#  T=1004000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x64012 cancelled_orders = 0x49460  max_to_trade = 0x62488  
 # 
-#  T=1524000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
-#  T=1524000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7334 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1562 ns Started: 1562 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1562 ns Started: 1562 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=1020000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x25212 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x64640 exchange_go = 0x0 
+#  T=1020000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x50338 cancelled_orders = 0x49460  max_to_trade = 0x23680  
 # 
-#  T=1572000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
+#  T=1036000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x33326 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x28 exchange_amount = 0x8614 exchange_go = 0x0 
+#  T=1036000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x48900 cancelled_orders = 0x49460  max_to_trade = 0x62488  
 # 
-#  T=1572000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
-#  T=1572000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9952 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: 34eb, cancelled amount: 0, pass_checks: 0
-#    Time: 1610 ns Started: 1610 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1052000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42057 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x19711 exchange_go = 0x0 
+#  T=1052000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x22912 cancelled_orders = 0x49460  max_to_trade = 0x65450  
 # 
-#  T=1620000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
+#  T=1068000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x20561 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x65243 exchange_go = 0x0 
+#  T=1068000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1942 cancelled_orders = 0x49460  max_to_trade = 0x62488  
 # 
-#  T=1620000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
-#  T=1620000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xee3e cancelled_orders = 0x0  max_to_trade = 0x1234  
+#  T=1084000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x38325 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x59769 exchange_go = 0x1 
+#  T=1084000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x25924 cancelled_orders = 0x49460  max_to_trade = 0x23680  
 # 
-#  T=1668000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
+#  T=1100000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x21134 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x17 exchange_amount = 0x27870 exchange_go = 0x1 
+#  T=1100000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x58198 cancelled_orders = 0x49460  max_to_trade = 0x3024  
 # 
-#  T=1668000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
-#  T=1668000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x34eb cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 4; max to trade: ffaa, accumulated amount: 5fd8, cancelled amount: 0, pass_checks: 0
-#    Time: 1706 ns Started: 1706 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1116000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x21217 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x56412 exchange_go = 0x0 
+#  T=1116000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x54316 cancelled_orders = 0x49460  max_to_trade = 0x65450  
 # 
-#  T=1716000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
+#  T=1132000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x46791 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x19835 exchange_go = 0x0 
+#  T=1132000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x35096 cancelled_orders = 0x49460  max_to_trade = 0x3024  
 # 
-#  T=1716000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
-#  T=1716000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x28e cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 0, cancelled amount: 0, pass_checks: 0
-#    Time: 1754 ns Started: 1754 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1148000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x1667 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x12149 exchange_go = 0x1 
+#  T=1148000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16826 cancelled_orders = 0x49460  max_to_trade = 0x65450  
 # 
-#  T=1764000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
+#  T=1164000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x45640 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x17292 exchange_go = 0x0 
+#  T=1164000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x26246 cancelled_orders = 0x49460  max_to_trade = 0x65450  
 # 
-#  T=1764000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
-#  T=1764000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5fd8 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1802 ns Started: 1802 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1802 ns Started: 1802 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=1180000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x40608 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x50214 exchange_go = 0x1 
+#  T=1180000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16826 cancelled_orders = 0x49460  max_to_trade = 0x25744  
 # 
-#  T=1812000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
+#  T=1196000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x65233 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x21 exchange_amount = 0x6930 exchange_go = 0x0 
+#  T=1196000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x34780 cancelled_orders = 0x49460  max_to_trade = 0x20542  
 # 
-#  T=1812000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
-#  T=1812000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 4; max to trade: ffaa, accumulated amount: 4768, cancelled amount: 0, pass_checks: 0
-#    Time: 1850 ns Started: 1850 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1212000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x35984 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x17888 exchange_go = 0x1 
+#  T=1212000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x38086 cancelled_orders = 0x49460  max_to_trade = 0x39520  
 # 
-#  T=1860000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
+#  T=1228000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x58286 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x28 exchange_amount = 0x17635 exchange_go = 0x1 
+#  T=1228000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8542 cancelled_orders = 0x49460  max_to_trade = 0x51240  
 # 
-#  T=1860000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
-#  T=1860000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xee3e cancelled_orders = 0x0  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1898 ns Started: 1898 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: ee3e, cancelled amount: 0, pass_checks: 1
-#    Time: 1898 ns Started: 1898 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
+#  T=1244000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x33239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2811 exchange_go = 0x0 
+#  T=1244000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42314 cancelled_orders = 0x49460  max_to_trade = 0x51036  
 # 
-#  T=1908000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
+#  T=1260000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x54018 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x2 exchange_go = 0x0 
+#  T=1260000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x36038 cancelled_orders = 0x49460  max_to_trade = 0x3024  
 # 
-#  T=1908000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
-#  T=1908000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4768 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 1; max to trade: ffaa, accumulated amount: ab4c, cancelled amount: 0, pass_checks: 0
-#    Time: 1946 ns Started: 1946 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1276000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7255 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x1681 exchange_go = 0x0 
+#  T=1276000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x36038 cancelled_orders = 0x49460  max_to_trade = 0x42500  
 # 
-#  T=1956000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
+#  T=1292000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x62318 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x59035 exchange_go = 0x1 
+#  T=1292000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x52596 cancelled_orders = 0x49460  max_to_trade = 0x39520  
 # 
-#  T=1956000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
-#  T=1956000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xee3e cancelled_orders = 0x0  max_to_trade = 0x1234  
+#  T=1308000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x21816 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x27974 exchange_go = 0x1 
+#  T=1308000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x47872 cancelled_orders = 0x49460  max_to_trade = 0x59100  
 # 
-#  T=2004000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
+#  T=1324000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x48967 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x22 exchange_amount = 0x31383 exchange_go = 0x1 
+#  T=1324000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x52174 cancelled_orders = 0x49460  max_to_trade = 0x51240  
 # 
-#  T=2004000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
-#  T=2004000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xab4c cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1340000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x4918 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0x22889 exchange_go = 0x0 
+#  T=1340000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9176 cancelled_orders = 0x49460  max_to_trade = 0x51036  
+# ** Error: pass_checks was not computer properly for client 6; max to trade: 18964, accumulated amount: 1942, cancelled amount: 49460, pass_checks: 1, amount 1748
+#    Time: 1354 ns Started: 1354 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 91
 # 
-#  T=2052000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
+#  T=1356000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42250 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x58208 exchange_go = 0x1 
+#  T=1356000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19012 cancelled_orders = 0x49460  max_to_trade = 0x51036  
 # 
-#  T=2052000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
-#  T=2052000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x80b6 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1372000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1748 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x54903 exchange_go = 0x1 
+#  T=1372000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1942 cancelled_orders = 0x49460  max_to_trade = 0x18964  
 # 
-#  T=2100000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
+#  T=1388000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x29909 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x39658 exchange_go = 0x1 
+#  T=1388000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x55670 cancelled_orders = 0x62142  max_to_trade = 0x51240  
 # 
-#  T=2100000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
-#  T=2100000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcff0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1404000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x59773 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x38567 exchange_go = 0x1 
+#  T=1404000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x13294 cancelled_orders = 0x49460  max_to_trade = 0x51036  
 # 
-#  T=2148000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
+#  T=1420000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x32647 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0x61381 exchange_go = 0x0 
+#  T=1420000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x13294 cancelled_orders = 0x49460  max_to_trade = 0x54010  
 # 
-#  T=2148000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
-#  T=2148000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa827 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1436000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12036 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x9048 exchange_go = 0x1 
+#  T=1436000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x52596 cancelled_orders = 0x49460  max_to_trade = 0x65294  
 # 
-#  T=2196000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
+#  T=1452000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x52302 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x31 exchange_amount = 0x13399 exchange_go = 0x0 
+#  T=1452000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6408 cancelled_orders = 0x49460  max_to_trade = 0x59100  
 # 
-#  T=2196000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
-#  T=2196000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc191 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1468000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x26790 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x28 exchange_amount = 0x58705 exchange_go = 0x1 
+#  T=1468000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x61100 cancelled_orders = 0x49460  max_to_trade = 0x26224  
 # 
-#  T=2244000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
+#  T=1484000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x33957 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x50364 exchange_go = 0x1 
+#  T=1484000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x22824 cancelled_orders = 0x49460  max_to_trade = 0x20542  
 # 
-#  T=2244000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
-#  T=2244000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8c00 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 7; max to trade: ffaa, accumulated amount: 513, cancelled amount: 0, pass_checks: 0
-#    Time: 2282 ns Started: 2282 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
+#  T=1500000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x60902 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x22 exchange_amount = 0x27147 exchange_go = 0x0 
+#  T=1500000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x25924 cancelled_orders = 0x49460  max_to_trade = 0x2378  
 # 
-#  T=2292000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
+#  T=1516000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x64662 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x41270 exchange_go = 0x0 
+#  T=1516000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x16826 cancelled_orders = 0x49460  max_to_trade = 0x25744  
 # 
-#  T=2292000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
-#  T=2292000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x33ef cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1532000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x51636 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x3566 exchange_go = 0x1 
+#  T=1532000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6408 cancelled_orders = 0x49460  max_to_trade = 0x63788  
 # 
-#  T=2340000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
+#  T=1548000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x58549 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x26438 exchange_go = 0x0 
+#  T=1548000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x61100 cancelled_orders = 0x49460  max_to_trade = 0x37736  
 # 
-#  T=2340000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
-#  T=2340000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x513 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+#  T=1564000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x51267 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x33315 exchange_go = 0x1 
+#  T=1564000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x57970 cancelled_orders = 0x49460  max_to_trade = 0x63788  
 # 
-#  T=2388000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
+#  T=1580000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x31858 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x60007 exchange_go = 0x1 
+#  T=1580000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x38940 cancelled_orders = 0x49460  max_to_trade = 0x18964  
 # 
-#  T=2388000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
-#  T=2388000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcf20 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# 
-#  T=2436000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
-# 
-#  T=2436000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
-#  T=2436000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf94b cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# 
-#  T=2484000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xe414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
-# 
-#  T=2484000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0xe414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
-#  T=2484000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x64a8 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# 
-#  T=2532000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
-# 
-#  T=2532000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
-#  T=2532000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4147 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 3; max to trade: ffaa, accumulated amount: d4d6, cancelled amount: 0, pass_checks: 0
-#    Time: 2570 ns Started: 2570 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# 
-#  T=2580000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x96ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
-# 
-#  T=2580000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x96ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
-#  T=2580000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9e1 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 828e, cancelled amount: 0, pass_checks: 0
-#    Time: 2618 ns Started: 2618 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# 
-#  T=2628000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x2b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
-# 
-#  T=2628000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0x2b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
-#  T=2628000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd4d6 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# 
-#  T=2676000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
-# 
-#  T=2676000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
-#  T=2676000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x828e cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: c581, cancelled amount: c134, pass_checks: 0
-#    Time: 2714 ns Started: 2714 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=2724000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
-# 
-#  T=2724000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0xed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
-#  T=2724000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x71e0 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 874, cancelled amount: c134, pass_checks: 1
-#    Time: 2762 ns Started: 2762 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 874, cancelled amount: c134, pass_checks: 1
-#    Time: 2762 ns Started: 2762 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=2772000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
-# 
-#  T=2772000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
-#  T=2772000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc581 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 4; max to trade: ffaa, accumulated amount: 7d60, cancelled amount: c134, pass_checks: 0
-#    Time: 2810 ns Started: 2810 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# 
-#  T=2820000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
-# 
-#  T=2820000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
-#  T=2820000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x874 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 874, cancelled amount: c134, pass_checks: 1
-#    Time: 2858 ns Started: 2858 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 874, cancelled amount: c134, pass_checks: 1
-#    Time: 2858 ns Started: 2858 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=2868000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
-# 
-#  T=2868000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0xae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
-#  T=2868000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7d60 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 43a8, cancelled amount: c134, pass_checks: 0
-#    Time: 2906 ns Started: 2906 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=2916000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
-# 
-#  T=2916000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
-#  T=2916000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x874 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 4; max to trade: ffaa, accumulated amount: 2ba0, cancelled amount: c134, pass_checks: 0
-#    Time: 2954 ns Started: 2954 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=2964000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
-# 
-#  T=2964000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
-#  T=2964000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x43a8 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 7edc, cancelled amount: c134, pass_checks: 0
-#    Time: 3002 ns Started: 3002 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3012000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x3843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
-# 
-#  T=3012000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x3843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
-#  T=3012000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2ba0 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 7; max to trade: ffaa, accumulated amount: b502, cancelled amount: c134, pass_checks: 0
-#    Time: 3050 ns Started: 3050 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3060000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
-# 
-#  T=3060000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0x627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
-#  T=3060000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7edc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 7edc, cancelled amount: c134, pass_checks: 1
-#    Time: 3098 ns Started: 3098 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 7edc, cancelled amount: c134, pass_checks: 1
-#    Time: 3098 ns Started: 3098 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3108000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
-# 
-#  T=3108000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0x822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
-#  T=3108000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xb502 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 4; max to trade: ffaa, accumulated amount: 7bf1, cancelled amount: c134, pass_checks: 0
-#    Time: 3146 ns Started: 3146 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3156000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
-# 
-#  T=3156000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
-#  T=3156000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7edc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 11e8, cancelled amount: c134, pass_checks: 1
-#    Time: 3194 ns Started: 3194 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 5; max to trade: ffaa, accumulated amount: 11e8, cancelled amount: c134, pass_checks: 1
-#    Time: 3194 ns Started: 3194 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3204000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
-# 
-#  T=3204000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
-#  T=3204000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7bf1 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: 2da4, cancelled amount: c134, pass_checks: 0
-#    Time: 3242 ns Started: 3242 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# 
-#  T=3252000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
-# 
-#  T=3252000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
-#  T=3252000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x11e8 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 11e8, cancelled amount: c134, pass_checks: 1
-#    Time: 3290 ns Started: 3290 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 5; max to trade: ffaa, accumulated amount: 11e8, cancelled amount: c134, pass_checks: 1
-#    Time: 3290 ns Started: 3290 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3300000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
-# 
-#  T=3300000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0x528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
-#  T=3300000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2da4 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client a; max to trade: ffaa, accumulated amount: 36f9, cancelled amount: c134, pass_checks: 0
-#    Time: 3338 ns Started: 3338 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3348000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
-# 
-#  T=3348000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
-#  T=3348000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x11e8 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 7; max to trade: ffaa, accumulated amount: b502, cancelled amount: c134, pass_checks: 1
-#    Time: 3386 ns Started: 3386 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 7; max to trade: ffaa, accumulated amount: b502, cancelled amount: c134, pass_checks: 1
-#    Time: 3386 ns Started: 3386 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3396000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
-# 
-#  T=3396000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xb6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
-#  T=3396000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x36f9 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# 
-#  T=3444000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
-# 
-#  T=3444000 [SCOREBOARD] transaction information: cpu_client_id = 0x7 cpu_amount = 0x683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
-#  T=3444000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xb502 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 9; max to trade: ffaa, accumulated amount: 1080, cancelled amount: c134, pass_checks: 1
-#    Time: 3482 ns Started: 3482 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 9; max to trade: ffaa, accumulated amount: 1080, cancelled amount: c134, pass_checks: 1
-#    Time: 3482 ns Started: 3482 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3492000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
-# 
-#  T=3492000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xb248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
-#  T=3492000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa008 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 8; max to trade: ffaa, accumulated amount: 9f5f, cancelled amount: c134, pass_checks: 0
-#    Time: 3530 ns Started: 3530 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3540000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x9ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
-# 
-#  T=3540000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x9ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
-#  T=3540000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1080 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 6; max to trade: ffaa, accumulated amount: 48bc, cancelled amount: c134, pass_checks: 1
-#    Time: 3578 ns Started: 3578 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 6; max to trade: ffaa, accumulated amount: 48bc, cancelled amount: c134, pass_checks: 1
-#    Time: 3578 ns Started: 3578 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3588000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xfed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
-# 
-#  T=3588000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0xfed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
-#  T=3588000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9f5f cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 1; max to trade: ffaa, accumulated amount: 88f8, cancelled amount: c134, pass_checks: 1
-#    Time: 3626 ns Started: 3626 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 1; max to trade: ffaa, accumulated amount: 88f8, cancelled amount: c134, pass_checks: 1
-#    Time: 3626 ns Started: 3626 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3636000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
-# 
-#  T=3636000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
-#  T=3636000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x48bc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: 93bf, cancelled amount: c134, pass_checks: 1
-#    Time: 3674 ns Started: 3674 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 5; max to trade: ffaa, accumulated amount: 93bf, cancelled amount: c134, pass_checks: 1
-#    Time: 3674 ns Started: 3674 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3684000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
-# 
-#  T=3684000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
-#  T=3684000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x88f8 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 5; max to trade: ffaa, accumulated amount: e898, cancelled amount: c134, pass_checks: 1
-#    Time: 3722 ns Started: 3722 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 5; max to trade: ffaa, accumulated amount: e898, cancelled amount: c134, pass_checks: 1
-#    Time: 3722 ns Started: 3722 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3732000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
-# 
-#  T=3732000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0x81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
-#  T=3732000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x93bf cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 8; max to trade: ffaa, accumulated amount: ba87, cancelled amount: c134, pass_checks: 1
-#    Time: 3770 ns Started: 3770 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 8; max to trade: ffaa, accumulated amount: ba87, cancelled amount: c134, pass_checks: 1
-#    Time: 3770 ns Started: 3770 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3780000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
-# 
-#  T=3780000 [SCOREBOARD] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
-#  T=3780000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe898 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: e1ac, cancelled amount: c134, pass_checks: 0
-#    Time: 3818 ns Started: 3818 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3828000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
-# 
-#  T=3828000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
-#  T=3828000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xba87 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 6; max to trade: ffaa, accumulated amount: 48bc, cancelled amount: c134, pass_checks: 0
-#    Time: 3866 ns Started: 3866 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3876000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
-# 
-#  T=3876000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
-#  T=3876000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe1ac cancelled_orders = 0xc134  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 1; max to trade: ffaa, accumulated amount: 6ca6, cancelled amount: c134, pass_checks: 1
-#    Time: 3914 ns Started: 3914 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 1; max to trade: ffaa, accumulated amount: 6ca6, cancelled amount: c134, pass_checks: 1
-#    Time: 3914 ns Started: 3914 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3924000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
-# 
-#  T=3924000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
-#  T=3924000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x48bc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 1; max to trade: ffaa, accumulated amount: 7fdc, cancelled amount: c134, pass_checks: 0
-#    Time: 3962 ns Started: 3962 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=3972000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xbf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
-# 
-#  T=3972000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xbf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
-#  T=3972000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6ca6 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 0; max to trade: ffaa, accumulated amount: 7edc, cancelled amount: c134, pass_checks: 1
-#    Time: 4010 ns Started: 4010 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 7edc, cancelled amount: c134, pass_checks: 1
-#    Time: 4010 ns Started: 4010 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4020000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
-# 
-#  T=4020000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
-#  T=4020000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7fdc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 6; max to trade: ffaa, accumulated amount: 4f90, cancelled amount: c134, pass_checks: 0
-#    Time: 4058 ns Started: 4058 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4068000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
-# 
-#  T=4068000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
-#  T=4068000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7edc cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 1; max to trade: ffaa, accumulated amount: 9312, cancelled amount: f2be, pass_checks: 0
-#    Time: 4106 ns Started: 4106 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4116000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x6d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
-# 
-#  T=4116000 [SCOREBOARD] transaction information: cpu_client_id = 0x6 cpu_amount = 0x6d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
-#  T=4116000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4f90 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 1; max to trade: ffaa, accumulated amount: 9312, cancelled amount: c134, pass_checks: 1
-#    Time: 4154 ns Started: 4154 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 1; max to trade: ffaa, accumulated amount: 9312, cancelled amount: c134, pass_checks: 1
-#    Time: 4154 ns Started: 4154 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4164000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
-# 
-#  T=4164000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0x74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
-#  T=4164000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9312 cancelled_orders = 0xf2be  max_to_trade = 0xffaa  
-# 
-#  T=4212000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
-# 
-#  T=4212000 [SCOREBOARD] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
-#  T=4212000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9312 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: 41e, cancelled amount: c134, pass_checks: 1
-#    Time: 4250 ns Started: 4250 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: 41e, cancelled amount: c134, pass_checks: 1
-#    Time: 4250 ns Started: 4250 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4260000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
-# 
-#  T=4260000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
-#  T=4260000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5665 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# 
-#  T=4308000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
-# 
-#  T=4308000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
-#  T=4308000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x41e cancelled_orders = 0xc134  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 9; max to trade: ffaa, accumulated amount: 17c6, cancelled amount: c134, pass_checks: 1
-#    Time: 4346 ns Started: 4346 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 9; max to trade: ffaa, accumulated amount: 17c6, cancelled amount: c134, pass_checks: 1
-#    Time: 4346 ns Started: 4346 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4356000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xcc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
-# 
-#  T=4356000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0xcc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
-#  T=4356000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc2c cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# 
-#  T=4404000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x68a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
-# 
-#  T=4404000 [SCOREBOARD] transaction information: cpu_client_id = 0x9 cpu_amount = 0x68a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
-#  T=4404000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x17c6 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: 4036, cancelled amount: c134, pass_checks: 1
-#    Time: 4442 ns Started: 4442 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client a; max to trade: ffaa, accumulated amount: 4036, cancelled amount: c134, pass_checks: 1
-#    Time: 4442 ns Started: 4442 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4452000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
-# 
-#  T=4452000 [SCOREBOARD] transaction information: cpu_client_id = 0x4 cpu_amount = 0x84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
-#  T=4452000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x50e7 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: 2fb8, cancelled amount: c134, pass_checks: 1
-#    Time: 4490 ns Started: 4490 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: 2fb8, cancelled amount: c134, pass_checks: 1
-#    Time: 4490 ns Started: 4490 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4500000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
-# 
-#  T=4500000 [SCOREBOARD] transaction information: cpu_client_id = 0xa cpu_amount = 0xede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
-#  T=4500000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4036 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 3; max to trade: ffaa, accumulated amount: 622e, cancelled amount: c134, pass_checks: 0
-#    Time: 4538 ns Started: 4538 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4548000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xfc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
-# 
-#  T=4548000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xfc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
-#  T=4548000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2fb8 cancelled_orders = 0xc134  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 1234, accumulated amount: 2c4e, cancelled amount: c134, pass_checks: 1
-#    Time: 4586 ns Started: 4586 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 2; max to trade: 1234, accumulated amount: 2c4e, cancelled amount: c134, pass_checks: 1
-#    Time: 4586 ns Started: 4586 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4596000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
-# 
-#  T=4596000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
-#  T=4596000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x622e cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: The trade is not SAFE for client 0; max to trade: ffaa, accumulated amount: 471f, cancelled amount: c134, pass_checks: 0
-#    Time: 4634 ns Started: 4634 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4644000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xe4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
-# 
-#  T=4644000 [SCOREBOARD] transaction information: cpu_client_id = 0x2 cpu_amount = 0xe4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
-#  T=4644000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2c4e cancelled_orders = 0xc134  max_to_trade = 0x1234  
-# ** Error: pass_checks was not computer properly for client 8; max to trade: ffaa, accumulated amount: d5ec, cancelled amount: c134, pass_checks: 0
-#    Time: 4682 ns Started: 4682 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# 
-#  T=4692000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
-# 
-#  T=4692000 [SCOREBOARD] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
-#  T=4692000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x471f cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client 3; max to trade: ffaa, accumulated amount: 2be2, cancelled amount: c134, pass_checks: 1
-#    Time: 4730 ns Started: 4730 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client 3; max to trade: ffaa, accumulated amount: 2be2, cancelled amount: c134, pass_checks: 1
-#    Time: 4730 ns Started: 4730 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4740000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
-# 
-#  T=4740000 [SCOREBOARD] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
-#  T=4740000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd5ec cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# ** Error: pass_checks was not computer properly for client a; max to trade: ffaa, accumulated amount: e89f, cancelled amount: c134, pass_checks: 1
-#    Time: 4778 ns Started: 4778 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 88
-# ** Error: The trade is not SAFE for client a; max to trade: ffaa, accumulated amount: e89f, cancelled amount: c134, pass_checks: 1
-#    Time: 4778 ns Started: 4778 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_risk_check_cpu File: code/upstream/upstream_top.sv Line: 78
-# 
-#  T=4788000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
-# 
-#  T=4788000 [SCOREBOARD] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
-#  T=4788000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2be2 cancelled_orders = 0xc134  max_to_trade = 0xffaa  
-# T=4788000 [Generator] Done generation
+#  T=1596000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x21336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x28583 exchange_go = 0x0 
+#  T=1596000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x50776 cancelled_orders = 0x49460  max_to_trade = 0x65294  
+# T=1596000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
+# 
+#  T=1612000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x47747 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x63173 exchange_go = 0x1 
+#  T=1612000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x38236 cancelled_orders = 0x49460  max_to_trade = 0x37736  
 # ** Note: $stop    : testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
-#    Time: 4808 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+#    Time: 1616 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
-#   coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll
-#  coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb
 #  quit
-# Saving coverage database on exit...
-# End time: 09:02:48 on May 05,2022, Elapsed time: 0:00:01
-# Errors: 94, Warnings: 4
+# End time: 11:37:28 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 10, Warnings: 3
