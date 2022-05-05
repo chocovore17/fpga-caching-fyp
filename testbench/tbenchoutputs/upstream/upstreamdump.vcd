@@ -1,5 +1,5 @@
 $date
-	Thu May  5 08:21:07 2022
+	Thu May  5 09:02:48 2022
 $end
 $version
 	QuestaSim Version 10.7c
@@ -261,6 +261,12 @@ $var reg 1 N! memwr $end
 $var reg 1 O! nocare $end
 
 $scope begin trade_risk_check_cpu $end
+$upscope $end
+
+$scope begin trade_pass_checks $end
+$upscope $end
+
+$scope begin trade_correctamount_cpu $end
 $upscope $end
 
 $scope module RAMUPSTREAM $end

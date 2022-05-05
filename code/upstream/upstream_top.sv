@@ -9,7 +9,7 @@
  `include "SLT.sv"
 //  `include "code/shared/rom_trade.mem"
  `define SAFE (max_to_trade >  (accumulated_orders - cancelled_orders )) 
- `define  (max_to_trade >  (accumulated_orders - cancelled_orders )) 
+ `define SAFETOTRADE (max_to_trade >  (accumulated_orders + amount - cancelled_orders )) 
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
@@ -77,6 +77,35 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     else begin 
       $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, cancelled amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
     end //
+
+    
+  // SVA to check if trade safe respected
+  trade_pass_checks: assert property (
+    @(posedge clk) // throws an error if the trade is unsafe
+    `SAFE == pass_checks
+      )
+    else begin 
+      $error ("pass_checks was not computer properly for client %0h; max to trade: %0h, accumulated amount: %0h, cancelled amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
+    end //
+
+    // SVA to check if CORRECT amount written
+    trade_correctamount_cpu: assert property (
+      @(posedge clk) // throws an error if the correct amount is different from amount to trade
+       (correct_amount == amount) || (correct_amount== amount[32:16])
+        )
+      else begin 
+        $error ("The amount was not indexed properly: amount %0h; correct amount (to write): %0h", amount, correct_amount);
+      end //
+
+      
+    // // SVA to check if state logic 
+    // trade_state_logic: assert property (
+    //   @(posedge clk) // throws an error if the trade is unsafe
+    //   `SAFE == 1'b1
+    //     )
+    //   else begin 
+    //     $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, cancelled amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
+    //   end //
 end 
 
 
