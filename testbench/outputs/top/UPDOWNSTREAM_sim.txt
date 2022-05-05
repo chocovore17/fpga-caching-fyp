@@ -1,5 +1,5 @@
 # vsim -coverage seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all;  coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb; quit" 
-# Start time: 12:10:48 on May 05,2022
+# Start time: 12:20:37 on May 05,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -51,5 +51,5 @@
 #  coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb
 #  quit
 # Saving coverage database on exit...
-# End time: 12:10:49 on May 05,2022, Elapsed time: 0:00:01
+# End time: 12:20:38 on May 05,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 2
