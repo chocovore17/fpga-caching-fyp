@@ -1,5 +1,5 @@
-# vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 11:56:16 on May 05,2022
+# vsim -coverage seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all;  coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll; coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb; quit" 
+# Start time: 12:10:48 on May 05,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -29,6 +29,7 @@
 # Loading work.updownstream_if(fast)
 # ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex', driven via a port connection, is multiply driven. See code/shared/top.sv(54).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 31
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
 # run -all
 # Loading downstream rom.
 # Loading upstream rom.
@@ -39,26 +40,6 @@
 # T=2000, [DRIVER] starting ---------
 # T=2000, [MONITOR] starting ---------
 # T=2000, [SCOREBOARD] starting ---------
-# ** Error: pass_checks was not computer properly for client 6; max to trade: 65450, accumulated amount: 0, cancelled amount: 0, pass_checks: x, amount 1361
-#    Time: 10 ns Started: 10 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 0; max to trade: 17246, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 26283
-#    Time: 122 ns Started: 122 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 10; max to trade: 46470, accumulated amount: 0, cancelled amount: 0, pass_checks: 0, amount 54056
-#    Time: 346 ns Started: 346 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 2; max to trade: 3952, accumulated amount: 54242, cancelled amount: 0, pass_checks: 1, amount 12272
-#    Time: 634 ns Started: 634 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 5; max to trade: 20542, accumulated amount: 32412, cancelled amount: 0, pass_checks: 1, amount 13864
-#    Time: 682 ns Started: 682 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 10; max to trade: 51486, accumulated amount: 47084, cancelled amount: 0, pass_checks: 0, amount 58529
-#    Time: 698 ns Started: 698 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 10; max to trade: 3024, accumulated amount: 47084, cancelled amount: 0, pass_checks: 1, amount 42791
-#    Time: 746 ns Started: 746 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 7; max to trade: 65450, accumulated amount: 12048, cancelled amount: 0, pass_checks: 0, amount 45039
-#    Time: 762 ns Started: 762 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 9; max to trade: 3952, accumulated amount: 21532, cancelled amount: 0, pass_checks: 1, amount 30869
-#    Time: 794 ns Started: 794 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
-# ** Error: pass_checks was not computer properly for client 6; max to trade: 18964, accumulated amount: 1942, cancelled amount: 49460, pass_checks: 1, amount 1748
-#    Time: 1354 ns Started: 1354 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 89
 # T=1596000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
@@ -66,6 +47,9 @@
 #    Time: 1616 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
+#   coverage report -file testbench/outputs/top/UPDOWNSTREAM_cov_report.txt -byfile -assert -directive -cvg -codeAll
+#  coverage save -onexit -assert -directive -cvg -codeAll testbench/outputs/top/updown.ucdb
 #  quit
-# End time: 11:56:17 on May 05,2022, Elapsed time: 0:00:01
-# Errors: 10, Warnings: 1
+# Saving coverage database on exit...
+# End time: 12:10:49 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
