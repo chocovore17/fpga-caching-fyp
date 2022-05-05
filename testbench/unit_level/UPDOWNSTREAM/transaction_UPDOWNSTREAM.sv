@@ -11,7 +11,7 @@ class transaction;
     rand logic exchange_go;
     //comment/uncomment correponding constriant for constraned random testing(CRT)
     constraint c_client_id{
-        cpu_client_id inside{0,4,8,12};//only select the possible numerical range of each digit
+        cpu_client_id inside{[0:10]};//only select the possible numerical range of each digit
         // PARITYSEL == 1'b0;
     }
     // constraint c_adress{

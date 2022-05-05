@@ -26,10 +26,10 @@ module dm_data_downstream(clk,
     assign data_read = data_mem[data_req.rdindex];
 
     always @(posedge(clk)) begin
-      $displayb("%p", data_mem[0:16]);
+      // $displayb("%p", data_mem[0:16]);
 
     if (data_req.we) begin
-        // $display("write %0h to downstream", data_write);  
+      if ((data_write+data_mem[data_req.wrindex])<16'hffaa)
         data_mem[data_req.wrindex] <= data_write+data_mem[data_req.wrindex];
     end
     

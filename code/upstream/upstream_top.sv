@@ -8,6 +8,8 @@
  `include "upstream.sv"
  `include "SLT.sv"
 //  `include "code/shared/rom_trade.mem"
+ `define SAFE (max_to_trade >  (accumulated_orders - cancelled_orders )) 
+ `define  (max_to_trade >  (accumulated_orders - cancelled_orders )) 
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
@@ -23,16 +25,15 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   cache_req_type mem_requp, mem_reqdown;
 
   reg       check_risk, send_order, update_max; // state machine outputs
-  input [31:0] cancelled_orders; // RAM data 
+  input [15:0] cancelled_orders; // RAM data 
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
   reg memwr, nocare; // RAM bool output & State machine input, don't care about downstream
   assign thenewmax = update_max;
-  // instantiate upstream ram (should it be done here? )
-  assign HRESETn = 1'b0;
+  // instantiate upstream ram 
   assign accumulated_orders = mem_dataup[15:0];
   assign max_to_trade = mem_dataup >> 16;
-  assign cancelled_orders = mem_datadown;
+  // assign cancelled_orders = mem_datadown;
 
   dm_data_upstream RAMUPSTREAM(
     .clk(clk),    
@@ -41,19 +42,13 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     .data_read(mem_dataup)    //memory request (cache->memory)
     );
 
-    
-  // dm_data_downstream RAMDOWNSTREAM(
-  //   .clk(clk),    
-  //   .data_req(mem_reqdown),    //CPU request input (CPU->cache)
-  //   .data_write(mem_datadown_wr),     //memory response (memory->cache)
-  //   .data_read(mem_datadown)    //memory request (cache->memory)
-  //   );
 
 
   //instantiate upstream state machine to know current state 
     upstream_processor UPSTREAMPROCESSOR(.clk(clk),
           .risk_ok(pass_checks),
           .new_order(new_order),
+          .HRESETn(1'b1),
           .new_max(new_max),
           .memwr(memwr),
           .check_risk(check_risk),
@@ -74,13 +69,13 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     mem_requp.we = pass_checks;
   end 
   
-  //   // SVA to check if gpio_out during reset
+  // SVA to check if trade safe respected
   trade_risk_check_cpu: assert property (
     @(posedge clk) // throws an error if the trade is unsafe
-     max_to_trade> accumulated_orders
+    `SAFE == 1'b1
       )
     else begin 
-      $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, pass_checks);
+      $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, cancelled amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks);
     end //
 end 
 

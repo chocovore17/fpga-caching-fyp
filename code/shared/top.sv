@@ -48,7 +48,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
    .accumulated_orders(accumulated_orders), 
    .max_to_trade(max_to_trade), 
    .thenewmax(thenewmax),
-   .cancelled_orders(cancelled_orders)
+   .cancelled_orders(cancelled_orders[15:0])
    );
  
    downstream_top DOWNTOP(
