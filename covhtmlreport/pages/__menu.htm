@@ -106,17 +106,20 @@
   <script type="text/javascript">
   <!--
     d = new Tree('d');
-    d.add(1, 0, 'tb_top_UPDOWNSTREAM', 'z.htm?f=1&s=13', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+    d.add(1, 0, 'tb_top_UPDOWNSTREAM', 'z.htm?f=1&s=16', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 d.add(2, 1, 'intf (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(3, 1, 'TOP', 'z.htm?f=1&s=33', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(3, 1, 'TOP', 'z.htm?f=1&s=36', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 d.add(4, 3, 'RAMDOWNSTREAM (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(5, 3, 'UPTOP', 'z.htm?f=1&s=35', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(6, 5, 'RAMUPSTREAM (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(7, 5, 'UPSTREAMPROCESSOR (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(8, 3, 'DOWNTOP (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(9, 0, 'tb_top_UPDOWNSTREAM_sv_unit (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(10, 0, 'cache_def (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-d.add(11, 0, 'top_sv_unit (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(5, 3, 'UPTOP', 'z.htm?f=1&s=38', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(6, 5, 'CACHEUPSTREAM', 'z.htm?f=1&s=44', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(7, 6, 'ctag (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(8, 6, 'cdata', 'z.htm?f=1&s=46', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(9, 6, 'cmem (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(10, 5, 'UPSTREAMPROCESSOR (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(11, 3, 'DOWNTOP', 'z.htm?f=1&s=50', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(12, 0, 'tb_top_UPDOWNSTREAM_sv_unit (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(13, 0, 'cache_def (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+d.add(14, 0, 'top_sv_unit (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 
     if ((d.length() > 0) && (t.length() < 1)) {
       document.getElementById('pane2').style.display='';
@@ -137,10 +140,13 @@ u.add(4, 0, 'work.top_sv_unit (no coverage)', null, '', '../icons/square-ltBlue.
 u.add(5, 0, 'work.top', 'z.htm?f=1&s=7', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 u.add(6, 0, 'work.dm_data_downstream (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 u.add(7, 0, 'work.upstream_processor_top', 'z.htm?f=1&s=9', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-u.add(8, 0, 'work.dm_data_upstream (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-u.add(9, 0, 'work.upstream_processor (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-u.add(10, 0, 'work.downstream_top (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
-u.add(11, 0, 'work.updownstream_if (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(8, 0, 'work.dm_cache_fsm_upstream', 'z.htm?f=1&s=10', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(9, 0, 'work.dm_cache_tag_upstream (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(10, 0, 'work.dm_data_upstream', 'z.htm?f=1&s=12', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(11, 0, 'work.mem_controller (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(12, 0, 'work.upstream_processor (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(13, 0, 'work.downstream_top', 'z.htm?f=1&s=15', '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
+u.add(14, 0, 'work.updownstream_if (no coverage)', null, '', '../icons/square-ltBlue.png', 'SystemVerilog', false, 'node','nodeSel');
 
     // document.write(u);
   //-->

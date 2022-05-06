@@ -10,21 +10,21 @@ cModel Technology
 Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
 Xcache_def
 Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-VEDChMX8FXHYiz>LQZQY@E3
+VceHBc:GMYeo;bC[Uk>VQV3
 r1
 !s85 0
 !i10b 1
-!s100 ^9fQ=XQhfYd>@Rldg@N`;0
-IEDChMX8FXHYiz>LQZQY@E3
+!s100 @ghd@8_A5B`FY;a_I;=643
+IceHBc:GMYeo;bC[Uk>VQV3
 S1
 Z2 d/home/mlg18/fpga-caching-fyp
-w1651748125
+w1651815473
 8code/shared/cache_def.sv
 Z3 Fcode/shared/cache_def.sv
 L0 1
 Z4 OL;L;10.7c;67
 31
-Z5 !s108 1651750370.000000
+Z5 !s108 1651823438.000000
 Z6 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
 Z7 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
 !i113 0
@@ -32,18 +32,18 @@ Z8 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mti
 Z9 tCvgOpt 0
 vdm_cache_fsm_downstream
 R1
-Z10 DXx4 work 9 cache_def 0 22 EDChMX8FXHYiz>LQZQY@E3
-Z11 DXx4 work 11 top_sv_unit 0 22 hFA5Z=Nfa^aHKJSKM40Z73
+Z10 DXx4 work 9 cache_def 0 22 ceHBc:GMYeo;bC[Uk>VQV3
+Z11 DXx4 work 11 top_sv_unit 0 22 VA^N?WRS;E[W<R5^0nT^W1
 Z12 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 oSP1c`j_<a];`LAAoD2:h3
-IZ65:E@Oe@F4UU;gf8z0dR1
+!s100 S6i40FWQXffi3hJJmQ2AM0
+IZ;7PSgJgJz5zm>Gld1:Fo2
 Z13 !s105 top_sv_unit
 S1
 R2
-Z14 w1651747947
+Z14 w1651763420
 Z15 8code/shared/ramdownstream.sv
 Z16 Fcode/shared/ramdownstream.sv
 L0 63
@@ -63,15 +63,15 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 AHWzh8`4OcAN96_EMz]Mn0
-IAhMb00Eh>780Kj2Q_d6Ta3
+!s100 2fH[cB`l0M=]j0kWVAz:f3
+IiN?CV6A:WK0XL4GJBGjZU2
 R13
 S1
 R2
-Z17 w1651750369
+Z17 w1651823283
 Z18 8code/shared/ramupstream.sv
 Z19 Fcode/shared/ramupstream.sv
-L0 80
+L0 131
 R4
 31
 R5
@@ -113,15 +113,15 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 bLU;0@9oS]Wed705c5;e?1
-IzgcJ?[TF[h]U@O?4b<^k00
+!s100 Q>2oR^gKf7V3S:Q`H[FF22
+I?Z];o[5A`Ei^`aG7Zd9??3
 R13
 S1
 R2
 R17
 R18
 R19
-L0 55
+L0 60
 R4
 31
 R5
@@ -163,8 +163,8 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 >fgBG`5jc=hzcZK19>PLi3
-In5aaE[@?Dgn_0[4Rn^SBQ2
+!s100 Q2DL@MINaDBW>U=dJF?VI0
+ITK<N5G0@nR]a[B90=@nXR1
 R13
 S1
 R2
@@ -305,6 +305,31 @@ R22
 R8
 R9
 nget_@cxl
+vmem_controller
+R1
+R10
+R11
+R12
+r1
+!s85 0
+!i10b 1
+!s100 XAH<7`0[4FG3Ph61NG;NF3
+IzQJAEf;[`8S89FX@fn0_;2
+R13
+S1
+R2
+R17
+R18
+R19
+L0 84
+R4
+31
+R5
+R6
+R7
+!i113 0
+R8
+R9
 vramdownstream
 R1
 !s110 1650385229
@@ -355,8 +380,8 @@ R7
 R8
 R9
 Tseg_work_opt
-!s110 1651750372
-Vg>DjB:ooUR7eX?1[C`Vd20
+!s110 1651823440
+VZ@eN9c?N`dVjVF>M0gImi3
 Z32 04 19 4 work tb_top_UPDOWNSTREAM fast 0
 Z33 o-work work
 R9
@@ -448,7 +473,7 @@ R9
 ntb_top_@d@o@w@n@s@t@r@e@a@m_sv_unit
 vtb_top_UPDOWNSTREAM
 R1
-DXx4 work 27 tb_top_UPDOWNSTREAM_sv_unit 0 22 [j>B`3g;WIn[<hdl0A3SJ3
+DXx4 work 27 tb_top_UPDOWNSTREAM_sv_unit 0 22 ==^D`oMZnJWEi16kB6m2d0
 R12
 r1
 !s85 0
@@ -458,9 +483,9 @@ I2i5D97762U;_=QUojmZ4h3
 Z38 !s105 tb_top_UPDOWNSTREAM_sv_unit
 S1
 R2
-w1651744498
-Z39 8testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
-Z40 Ftestbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
+Z39 w1651823356
+Z40 8testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
+Z41 Ftestbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
 L0 4
 R4
 31
@@ -474,18 +499,18 @@ ntb_top_@u@p@d@o@w@n@s@t@r@e@a@m
 Xtb_top_UPDOWNSTREAM_sv_unit
 !s115 updownstream_if
 R1
-V[j>B`3g;WIn[<hdl0A3SJ3
+V==^D`oMZnJWEi16kB6m2d0
 r1
 !s85 0
 !i10b 1
-!s100 hFXhUQ58SgUe5FdTNb3RD2
-I[j>B`3g;WIn[<hdl0A3SJ3
+!s100 5eO0Y8kj5OQCgBbDgkgE<0
+I==^D`oMZnJWEi16kB6m2d0
 !i103 1
 S1
 R2
-Z41 w1651748096
 R39
 R40
+R41
 Z42 Ftestbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv
 Ftestbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv
 Ftestbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv
@@ -590,23 +615,23 @@ R9
 Xtop_sv_unit
 R1
 R10
-VhFA5Z=Nfa^aHKJSKM40Z73
+VVA^N?WRS;E[W<R5^0nT^W1
 r1
 !s85 0
 !i10b 1
-!s100 QEJcE<d0D<6l4IU1Q:HH<2
-IhFA5Z=Nfa^aHKJSKM40Z73
+!s100 Wfakn^XI;znbKeAG@aGG=3
+IVA^N?WRS;E[W<R5^0nT^W1
 !i103 1
 S1
 R2
-R17
+Z51 w1651823434
 R49
 R50
-Z51 Fcode/upstream/upstream_top.sv
+Z52 Fcode/upstream/upstream_top.sv
 R16
 R3
 R19
-Z52 Fcode/upstream/upstream.sv
+Z53 Fcode/upstream/upstream.sv
 R35
 R24
 L0 8
@@ -620,7 +645,7 @@ R8
 R9
 Yupdownstream_if
 R1
-!s110 1651750371
+!s110 1651823438
 !i10b 1
 !s100 1mLb1aACWaL<@9a9fDMi_1
 I3A@^L7<4TdL;1@5h9>RMg3
@@ -628,7 +653,7 @@ R12
 R38
 S1
 R2
-R41
+w1651748096
 8testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv
 R42
 L0 4
@@ -679,9 +704,9 @@ IcbLFI5zNlLLA^TT]CnH1m3
 R13
 S1
 R2
-Z53 w1651650602
+Z54 w1651650602
 8code/upstream/upstream.sv
-R52
+R53
 L0 5
 R4
 31
@@ -699,14 +724,14 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 :=ZkE_z_e37:5:F[9CE[b1
-ITBm_b3E9_Hk>ElZ[H18S51
+!s100 _5SK9MYYf3iBNFJFBIY>Q3
+I]XlcTHXHSXR15A@fz^<=Y1
 R13
 S1
 R2
-w1651749629
-Z54 8code/upstream/upstream_top.sv
 R51
+Z55 8code/upstream/upstream_top.sv
+R52
 L0 16
 R4
 31
@@ -728,13 +753,13 @@ I65fT;bSERe=eC[nFQSjSz3
 !i103 1
 S1
 R2
-R53
 R54
-R51
+R55
+R52
 R16
 R3
 R19
-R52
+R53
 R35
 L0 8
 R4

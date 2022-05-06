@@ -20,7 +20,10 @@ package cache_def;
  // data structures for CPU<->Cache controller interface
  // CPU request (CPU->cache controller)
  typedef struct {
- bit [31:0]addr; //32-bit request addr
+//  bit [31:0]addr; //32-bit request addr
+    
+ bit [9:0]wrindex; //10-bit index
+ bit [9:0]rdindex; //10-bit index
  bit [31:0]data; //32-bit request data (used when write)
  bit rw; //request type : 0 = read, 1 = write
  bit valid; //request is valid
@@ -34,8 +37,8 @@ package cache_def;
  // data structures for cache controller<->memory interface
  // memory request (cache controller->memory)
  typedef struct {
- bit [31:0]addr; //request byte addr
- bit [127:0]data; //128-bit request data (used when write)
+ bit [9:0]addr; //request byte addr
+ bit [31:0]data; //128-bit request data (used when write)
  bit rw; //request type : 0 = read, 1 = write
  bit valid; //request is valid
  }mem_req_type;

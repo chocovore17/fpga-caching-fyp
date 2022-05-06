@@ -95,15 +95,15 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   /*read tag by default*/
   tag_req.we = '0;
   /*direct map index for tag*/
-  tag_req.rdindex = cpu_req.addr[13:4];
+  tag_req.rdindex = cpu_req.rdindex[13:4];
  
   /*read current cache line by default*/
   data_req.we = '0;
   /*direct map index for cache data*/
-  data_req.rdindex = cpu_req.addr[13:4];
+  data_req.rdindex = cpu_req.rdindex[13:4];
   /*modify correct word (32-bit) based on address*/
   data_write = data_read;
-  case(cpu_req.addr[3:2])
+  case(cpu_req.rdindex[3:2])
   2'b00:data_write[31:0] = cpu_req.data;
   // 2'b01:data_write[63:32] = cpu_req.data;
   // 2'b10:data_write[95:64] = cpu_req.data;
@@ -111,7 +111,7 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
  endcase
  
   /*read out correct word(32-bit) from cache (to CPU)*/
-  case(cpu_req.addr[3:2])
+  case(cpu_req.rdindex[3:2])
   2'b00:v_cpu_res.data = data_read[31:0];
   // 2'b01:v_cpu_res.data = data_read[63:32];
   // 2'b10:v_cpu_res.data = data_read[95:64];
@@ -119,7 +119,7 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   endcase
  
   /*memory request address (sampled from CPU request)*/
-  v_mem_req.addr = cpu_req.addr;
+  v_mem_req.addr = cpu_req.rdindex;
   /*memory request data (used in write)*/
   v_mem_req.data = data_read;
    v_mem_req.rw = '0;
@@ -136,7 +136,7 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   /*compare_tag state*/
   compare_tag : begin
   /*cache hit (tag match and cache entry is valid)*/
-  if (cpu_req.addr[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) begin
+  if (cpu_req.rdindex[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) begin
   v_cpu_res.ready = '1;
  
   /*write hit*/
@@ -159,7 +159,7 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   tag_req.we = '1;
   tag_write.valid = '1;
   /*new tag*/
-  tag_write.tag = cpu_req.addr[TAGMSB:TAGLSB];
+  tag_write.tag = cpu_req.rdindex[TAGMSB:TAGLSB];
   /*cache line is dirty if write*/
   tag_write.dirty = cpu_req.rw;
  
@@ -172,7 +172,7 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   else begin
   /*miss with dirty line*/
   /*write back address*/
-  v_mem_req.addr = {tag_read.tag, cpu_req.addr[TAGLSB-1:0]};
+  v_mem_req.addr = {tag_read.tag, cpu_req.rdindex[TAGLSB-1:0]};
   v_mem_req.rw = '1;
   /*wait till write is completed*/
   vstate = write_back;

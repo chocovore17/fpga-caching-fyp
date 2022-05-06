@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 12:32:54 on May 05,2022
+# Start time: 08:50:42 on May 06,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -23,15 +23,23 @@
 # Loading work.top(fast)
 # Loading work.dm_data_downstream(fast)
 # Loading work.upstream_processor_top(fast)
+# Loading work.dm_cache_fsm_upstream(fast)
+# Loading work.dm_cache_tag_upstream(fast)
 # Loading work.dm_data_upstream(fast)
+# Loading work.mem_controller(fast)
 # Loading work.upstream_processor(fast)
 # Loading work.downstream_top(fast)
 # Loading work.updownstream_if(fast)
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/mem_data', driven via a port connection, is multiply driven. See code/upstream/upstream_top.sv(62).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem File: code/shared/ramupstream.sv Line: 289
 # ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex', driven via a port connection, is multiply driven. See code/shared/top.sv(54).
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 31
 # run -all
 # Loading downstream rom.
-# Loading upstream rom.
+# Loading upstream cache.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 18 of file "code/shared/rom_trade.mem". (Current address [17], address range [0:16])    : code/shared/ramupstream.sv(30)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cdata
+# Loading upstream memory.
 # --------- [DRIVER] Reset Started ---------
 # --------- [DRIVER] Reset Ended ---------
 # T=2000 [Generator] starting
@@ -39,13 +47,615 @@
 # T=2000, [DRIVER] starting ---------
 # T=2000, [MONITOR] starting ---------
 # T=2000, [SCOREBOARD] starting ---------
+# 
+#  T=12000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0xX cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
+#  T=12000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xX cancelled_orders = 0xx  max_to_trade = 0xx  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount cc6e; correct amount (to write): cc6e, correct_amount[31:16]: 0
+#    Time: 26 ns Started: 26 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# ** Error: pass_checks was not computer properly for client 5; max to trade: 0, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 52334
+#    Time: 26 ns Started: 26 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 116
+# 
+#  T=28000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1361 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x49358 exchange_go = 0x1 
+#  T=28000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xX cancelled_orders = 0x0  max_to_trade = 0xx  
+# data cpu 4289331200, 
+# ** Error: The amount was not indexed properly: amount d6d8; correct amount (to write): d6d80000, correct_amount[31:16]: d6d8
+#    Time: 42 ns Started: 42 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=44000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52334 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x11382 exchange_go = 0x0 
+#  T=44000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 4a34; correct amount (to write): 4a34, correct_amount[31:16]: 0
+#    Time: 58 ns Started: 58 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=60000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x55000 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x63298 exchange_go = 0x1 
+#  T=60000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x65450  
+# data cpu 2913992704, 
+# ** Error: The amount was not indexed properly: amount e68d; correct amount (to write): e68d0000, correct_amount[31:16]: e68d
+#    Time: 74 ns Started: 74 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=76000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x18996 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0x44603 exchange_go = 0x0 
+#  T=76000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 2913992704, 
+# ** Error: The amount was not indexed properly: amount f0db; correct amount (to write): f0db0000, correct_amount[31:16]: f0db
+#    Time: 90 ns Started: 90 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=92000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x59021 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x42683 exchange_go = 0x0 
+#  T=92000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x44464  
+# data cpu 3786801152, 
+# ** Error: The amount was not indexed properly: amount a1af; correct amount (to write): a1af0000, correct_amount[31:16]: a1af
+#    Time: 106 ns Started: 106 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=108000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x61659 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x63840 exchange_go = 0x1 
+#  T=108000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x44464  
+# data cpu 3786801152, 
+# ** Error: The amount was not indexed properly: amount 66ab; correct amount (to write): 66ab0000, correct_amount[31:16]: 66ab
+#    Time: 122 ns Started: 122 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=124000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x41391 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x25006 exchange_go = 0x1 
+#  T=124000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x57782  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 281f; correct amount (to write): 281f0000, correct_amount[31:16]: 281f
+#    Time: 138 ns Started: 138 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=140000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x26283 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x64354 exchange_go = 0x0 
+#  T=140000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x57782  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount a05e; correct amount (to write): a05e, correct_amount[31:16]: 0
+#    Time: 154 ns Started: 154 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=156000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x10271 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x20424 exchange_go = 0x1 
+#  T=156000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 3786801152, 
+# ** Error: The amount was not indexed properly: amount b338; correct amount (to write): b3380000, correct_amount[31:16]: b338
+#    Time: 170 ns Started: 170 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=172000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x41054 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x15432 exchange_go = 0x0 
+#  T=172000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount e48f; correct amount (to write): e48f0000, correct_amount[31:16]: e48f
+#    Time: 186 ns Started: 186 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=188000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x45880 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x25 exchange_amount = 0x42405 exchange_go = 0x1 
+#  T=188000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x57782  
+# data cpu 3278635008, 
+# ** Error: The amount was not indexed properly: amount cdf8; correct amount (to write): cdf80000, correct_amount[31:16]: cdf8
+#    Time: 202 ns Started: 202 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=204000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x58511 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x61758 exchange_go = 0x0 
+#  T=204000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 4168; correct amount (to write): 4168, correct_amount[31:16]: 0
+#    Time: 218 ns Started: 218 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=220000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x52728 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x26 exchange_amount = 0x62493 exchange_go = 0x0 
+#  T=220000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x50028  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 8a19; correct amount (to write): 8a19, correct_amount[31:16]: 0
+#    Time: 234 ns Started: 234 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=236000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x16744 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x5546 exchange_go = 0x1 
+#  T=236000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 2262302720, 
+# ** Error: The amount was not indexed properly: amount d8a7; correct amount (to write): d8a7, correct_amount[31:16]: 0
+#    Time: 250 ns Started: 250 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=252000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x35353 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x55563 exchange_go = 0x0 
+#  T=252000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 2262302720, 
+# ** Error: The amount was not indexed properly: amount a047; correct amount (to write): a047, correct_amount[31:16]: 0
+#    Time: 266 ns Started: 266 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=268000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x55463 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x33684 exchange_go = 0x1 
+#  T=268000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x34520  
+# data cpu 2262302720, 
+# ** Error: The amount was not indexed properly: amount 7d1b; correct amount (to write): 7d1b0000, correct_amount[31:16]: 7d1b
+#    Time: 282 ns Started: 282 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=284000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x41031 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x44090 exchange_go = 0x0 
+#  T=284000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x34520  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 4f28; correct amount (to write): 4f28, correct_amount[31:16]: 0
+#    Time: 298 ns Started: 298 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=300000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x32027 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x20 exchange_amount = 0x46880 exchange_go = 0x1 
+#  T=300000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x34520  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount ae44; correct amount (to write): ae440000, correct_amount[31:16]: ae44
+#    Time: 314 ns Started: 314 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=316000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x20264 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x41704 exchange_go = 0x1 
+#  T=316000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount dac3; correct amount (to write): dac30000, correct_amount[31:16]: dac3
+#    Time: 330 ns Started: 330 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=332000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x44612 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x20 exchange_amount = 0x51709 exchange_go = 0x1 
+#  T=332000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount d328; correct amount (to write): d3280000, correct_amount[31:16]: d328
+#    Time: 346 ns Started: 346 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=348000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x56003 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x44337 exchange_go = 0x0 
+#  T=348000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount eb6; correct amount (to write): eb60000, correct_amount[31:16]: eb6
+#    Time: 362 ns Started: 362 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=364000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x54056 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x30245 exchange_go = 0x0 
+#  T=364000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount cd30; correct amount (to write): cd300000, correct_amount[31:16]: cd30
+#    Time: 378 ns Started: 378 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=380000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3766 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x19888 exchange_go = 0x0 
+#  T=380000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 3239; correct amount (to write): 3239, correct_amount[31:16]: 0
+#    Time: 394 ns Started: 394 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=396000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x52528 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x40332 exchange_go = 0x0 
+#  T=396000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount aa92; correct amount (to write): aa92, correct_amount[31:16]: 0
+#    Time: 410 ns Started: 410 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=412000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x12857 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x54888 exchange_go = 0x1 
+#  T=412000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount f44b; correct amount (to write): f44b, correct_amount[31:16]: 0
+#    Time: 426 ns Started: 426 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=428000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x43666 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x28722 exchange_go = 0x1 
+#  T=428000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 6c6a; correct amount (to write): 6c6a, correct_amount[31:16]: 0
+#    Time: 442 ns Started: 442 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=444000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x62539 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x21678 exchange_go = 0x1 
+#  T=444000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 8d1; correct amount (to write): 8d10000, correct_amount[31:16]: 8d1
+#    Time: 458 ns Started: 458 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=460000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x27754 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x23405 exchange_go = 0x1 
+#  T=460000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 183c; correct amount (to write): 183c0000, correct_amount[31:16]: 183c
+#    Time: 474 ns Started: 474 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=476000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x2257 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x23 exchange_amount = 0x14456 exchange_go = 0x1 
+#  T=476000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount f082; correct amount (to write): f082, correct_amount[31:16]: 0
+#    Time: 490 ns Started: 490 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=492000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x6204 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x12784 exchange_go = 0x1 
+#  T=492000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 76; correct amount (to write): 760000, correct_amount[31:16]: 76
+#    Time: 506 ns Started: 506 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=508000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x61570 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x21583 exchange_go = 0x0 
+#  T=508000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 3517972480, 
+# ** Error: The amount was not indexed properly: amount 30ac; correct amount (to write): 30ac0000, correct_amount[31:16]: 30ac
+#    Time: 522 ns Started: 522 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=524000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x118 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x45265 exchange_go = 0x1 
+#  T=524000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 8e9b; correct amount (to write): 8e9b0000, correct_amount[31:16]: 8e9b
+#    Time: 538 ns Started: 538 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=540000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12460 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x50081 exchange_go = 0x0 
+#  T=540000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x53680  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 1e98; correct amount (to write): 1e980000, correct_amount[31:16]: 1e98
+#    Time: 554 ns Started: 554 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=556000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x36507 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x46424 exchange_go = 0x1 
+#  T=556000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 5fd8; correct amount (to write): 5fd8, correct_amount[31:16]: 0
+#    Time: 570 ns Started: 570 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=572000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x7832 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x30 exchange_amount = 0x41890 exchange_go = 0x1 
+#  T=572000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 1633157120, 
+# ** Error: The amount was not indexed properly: amount a6a6; correct amount (to write): a6a6, correct_amount[31:16]: 0
+#    Time: 586 ns Started: 586 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=588000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x24536 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x64917 exchange_go = 0x0 
+#  T=588000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 1633157120, 
+# ** Error: The amount was not indexed properly: amount 5c9d; correct amount (to write): 5c9d, correct_amount[31:16]: 0
+#    Time: 602 ns Started: 602 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=604000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42662 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x24771 exchange_go = 0x0 
+#  T=604000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x24920  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 87b8; correct amount (to write): 87b80000, correct_amount[31:16]: 87b8
+#    Time: 618 ns Started: 618 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=620000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x23709 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x13105 exchange_go = 0x0 
+#  T=620000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x24920  
+# data cpu 3266314240, 
+# ** Error: The amount was not indexed properly: amount 2ff0; correct amount (to write): 2ff00000, correct_amount[31:16]: 2ff0
+#    Time: 634 ns Started: 634 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=636000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x34744 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x39209 exchange_go = 0x0 
+#  T=636000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu 3266314240, 
+# ** Error: The amount was not indexed properly: amount f9fe; correct amount (to write): f9fe, correct_amount[31:16]: 0
+#    Time: 650 ns Started: 650 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=652000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12272 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x22454 exchange_go = 0x0 
+#  T=652000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x49840  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 2712; correct amount (to write): 2712, correct_amount[31:16]: 0
+#    Time: 666 ns Started: 666 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=668000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x63998 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x65000 exchange_go = 0x0 
+#  T=668000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x49840  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 3628; correct amount (to write): 3628, correct_amount[31:16]: 0
+#    Time: 682 ns Started: 682 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=684000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x10002 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x25388 exchange_go = 0x0 
+#  T=684000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount e4a1; correct amount (to write): e4a10000, correct_amount[31:16]: e4a1
+#    Time: 698 ns Started: 698 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=700000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x13864 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x6300 exchange_go = 0x0 
+#  T=700000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount bf03; correct amount (to write): bf03, correct_amount[31:16]: 0
+#    Time: 714 ns Started: 714 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=716000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x58529 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x31626 exchange_go = 0x1 
+#  T=716000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 85e8; correct amount (to write): 85e80000, correct_amount[31:16]: 85e8
+#    Time: 730 ns Started: 730 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=732000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x48899 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x14843 exchange_go = 0x1 
+#  T=732000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount a727; correct amount (to write): a727, correct_amount[31:16]: 0
+#    Time: 746 ns Started: 746 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=748000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x34280 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0x54526 exchange_go = 0x0 
+#  T=748000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount afef; correct amount (to write): afef, correct_amount[31:16]: 0
+#    Time: 762 ns Started: 762 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=764000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x42791 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x42933 exchange_go = 0x1 
+#  T=764000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount c01d; correct amount (to write): c01d, correct_amount[31:16]: 0
+#    Time: 778 ns Started: 778 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=780000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x45039 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x29125 exchange_go = 0x0 
+#  T=780000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 7895; correct amount (to write): 7895, correct_amount[31:16]: 0
+#    Time: 794 ns Started: 794 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=796000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x49181 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x61273 exchange_go = 0x0 
+#  T=796000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount e414; correct amount (to write): e4140000, correct_amount[31:16]: e414
+#    Time: 810 ns Started: 810 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=812000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x30869 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x27 exchange_amount = 0x63157 exchange_go = 0x0 
+#  T=812000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu  360710144, 
+# ** Error: The amount was not indexed properly: amount 4147; correct amount (to write): 4147, correct_amount[31:16]: 0
+#    Time: 826 ns Started: 826 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=828000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x58388 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x25589 exchange_go = 0x1 
+#  T=828000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 96ad; correct amount (to write): 96ad, correct_amount[31:16]: 0
+#    Time: 842 ns Started: 842 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=844000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x16711 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x4963 exchange_go = 0x1 
+#  T=844000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x5504  
+# data cpu  360710144, 
+# ** Error: The amount was not indexed properly: amount 2b08; correct amount (to write): 2b08, correct_amount[31:16]: 0
+#    Time: 858 ns Started: 858 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=860000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x38573 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x28738 exchange_go = 0x1 
+#  T=860000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# data cpu  360710144, 
+# ** Error: The amount was not indexed properly: amount 24aa; correct amount (to write): 24aa0000, correct_amount[31:16]: 24aa
+#    Time: 874 ns Started: 874 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=876000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x11016 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x22 exchange_amount = 0x62295 exchange_go = 0x1 
+#  T=876000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x5504  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount ed6b; correct amount (to write): ed6b, correct_amount[31:16]: 0
+#    Time: 890 ns Started: 890 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=892000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x9386 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0x58395 exchange_go = 0x1 
+#  T=892000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x5504  
+# data cpu  360710144, 
+# ** Error: The amount was not indexed properly: amount 42f3; correct amount (to write): 42f3, correct_amount[31:16]: 0
+#    Time: 906 ns Started: 906 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=908000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x60779 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x49460 exchange_go = 0x0 
+#  T=908000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu  360727283, 
+# ** Error: The amount was not indexed properly: amount fa0c; correct amount (to write): fa0c0000, correct_amount[31:16]: fa0c
+#    Time: 922 ns Started: 922 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=924000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x17139 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x22485 exchange_go = 0x1 
+#  T=924000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount ae40; correct amount (to write): ae400000, correct_amount[31:16]: ae40
+#    Time: 938 ns Started: 938 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=940000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x64012 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x46074 exchange_go = 0x0 
+#  T=940000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x17139 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu  360727283, 
+# ** Error: The amount was not indexed properly: amount f248; correct amount (to write): f248, correct_amount[31:16]: 0
+#    Time: 954 ns Started: 954 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=956000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x44608 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x61711 exchange_go = 0x0 
+#  T=956000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu  360727283, 
+# ** Error: The amount was not indexed properly: amount 3b34; correct amount (to write): 3b34, correct_amount[31:16]: 0
+#    Time: 970 ns Started: 970 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=972000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x62024 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x23856 exchange_go = 0x0 
+#  T=972000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x17139 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 3843; correct amount (to write): 38430000, correct_amount[31:16]: 3843
+#    Time: 986 ns Started: 986 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=988000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x15156 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x20 exchange_amount = 0x39418 exchange_go = 0x0 
+#  T=988000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x17139 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu  360727283, 
+# ** Error: The amount was not indexed properly: amount 627c; correct amount (to write): 627c, correct_amount[31:16]: 0
+#    Time: 1002 ns Started: 1002 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1004000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x14403 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x26 exchange_amount = 0x46205 exchange_go = 0x1 
+#  T=1004000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 822e; correct amount (to write): 822e, correct_amount[31:16]: 0
+#    Time: 1018 ns Started: 1018 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1020000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x25212 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x64640 exchange_go = 0x0 
+#  T=1020000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x17139 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu  360752495, 
+# ** Error: The amount was not indexed properly: amount a449; correct amount (to write): a449, correct_amount[31:16]: 0
+#    Time: 1034 ns Started: 1034 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1036000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x33326 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x28 exchange_amount = 0x8614 exchange_go = 0x0 
+#  T=1036000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 5051; correct amount (to write): 5051, correct_amount[31:16]: 0
+#    Time: 1050 ns Started: 1050 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1052000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42057 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x19711 exchange_go = 0x0 
+#  T=1052000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x5504  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 95b5; correct amount (to write): 95b5, correct_amount[31:16]: 0
+#    Time: 1066 ns Started: 1066 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1068000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x20561 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x65243 exchange_go = 0x0 
+#  T=1068000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 528e; correct amount (to write): 528e, correct_amount[31:16]: 0
+#    Time: 1082 ns Started: 1082 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1084000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x38325 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x59769 exchange_go = 0x1 
+#  T=1084000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 52e1; correct amount (to write): 52e1, correct_amount[31:16]: 0
+#    Time: 1098 ns Started: 1098 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1100000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x21134 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x17 exchange_amount = 0x27870 exchange_go = 0x1 
+#  T=1100000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount b6c7; correct amount (to write): b6c7, correct_amount[31:16]: 0
+#    Time: 1114 ns Started: 1114 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1116000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x21217 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x56412 exchange_go = 0x0 
+#  T=1116000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 683; correct amount (to write): 683, correct_amount[31:16]: 0
+#    Time: 1130 ns Started: 1130 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1132000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x46791 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x19835 exchange_go = 0x0 
+#  T=1132000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount b248; correct amount (to write): b2480000, correct_amount[31:16]: b248
+#    Time: 1146 ns Started: 1146 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1148000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x1667 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x12149 exchange_go = 0x1 
+#  T=1148000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 9ea0; correct amount (to write): 9ea0, correct_amount[31:16]: 0
+#    Time: 1162 ns Started: 1162 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1164000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x45640 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x17292 exchange_go = 0x0 
+#  T=1164000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount fed1; correct amount (to write): fed1, correct_amount[31:16]: 0
+#    Time: 1178 ns Started: 1178 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1180000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x40608 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x26 exchange_amount = 0x50214 exchange_go = 0x1 
+#  T=1180000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 8c90; correct amount (to write): 8c900000, correct_amount[31:16]: 8c90
+#    Time: 1194 ns Started: 1194 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1196000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x65233 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x21 exchange_amount = 0x6930 exchange_go = 0x0 
+#  T=1196000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 1477420399, 
+# ** Error: The amount was not indexed properly: amount e3ae; correct amount (to write): e3ae0000, correct_amount[31:16]: e3ae
+#    Time: 1210 ns Started: 1210 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1212000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x35984 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x17888 exchange_go = 0x1 
+#  T=1212000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 81d7; correct amount (to write): 81d7, correct_amount[31:16]: 0
+#    Time: 1226 ns Started: 1226 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1228000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x58286 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x28 exchange_amount = 0x17635 exchange_go = 0x1 
+#  T=1228000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x22543  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount d302; correct amount (to write): d3020000, correct_amount[31:16]: d302
+#    Time: 1242 ns Started: 1242 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1244000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x33239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2811 exchange_go = 0x0 
+#  T=1244000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 1c57; correct amount (to write): 1c570000, correct_amount[31:16]: 1c57
+#    Time: 1258 ns Started: 1258 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1260000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x54018 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x2 exchange_go = 0x0 
+#  T=1260000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 1477420399, 
+# ** Error: The amount was not indexed properly: amount f36e; correct amount (to write): f36e0000, correct_amount[31:16]: f36e
+#    Time: 1274 ns Started: 1274 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1276000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7255 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x1681 exchange_go = 0x0 
+#  T=1276000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 5538; correct amount (to write): 55380000, correct_amount[31:16]: 5538
+#    Time: 1290 ns Started: 1290 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1292000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x62318 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x59035 exchange_go = 0x1 
+#  T=1292000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x22543  
+# data cpu 2954863983, 
+# ** Error: The amount was not indexed properly: amount bf47; correct amount (to write): bf47, correct_amount[31:16]: 0
+#    Time: 1306 ns Started: 1306 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1308000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x21816 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x27974 exchange_go = 0x1 
+#  T=1308000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 2954863983, 
+# ** Error: The amount was not indexed properly: amount 1336; correct amount (to write): 1336, correct_amount[31:16]: 0
+#    Time: 1322 ns Started: 1322 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1324000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x48967 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x22 exchange_amount = 0x31383 exchange_go = 0x1 
+#  T=1324000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x45087  
+# data cpu 2954863983, 
+# ** Error: The amount was not indexed properly: amount a50a; correct amount (to write): a50a, correct_amount[31:16]: 0
+#    Time: 1338 ns Started: 1338 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1340000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x4918 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0x22889 exchange_go = 0x0 
+#  T=1340000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x45087  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 6d4; correct amount (to write): 6d4, correct_amount[31:16]: 0
+#    Time: 1354 ns Started: 1354 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1356000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42250 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x58208 exchange_go = 0x1 
+#  T=1356000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x42351 cancelled_orders = 0x49460  max_to_trade = 0x45087  
+# data cpu 2954840697, 
+# ** Error: The amount was not indexed properly: amount 74d5; correct amount (to write): 74d5, correct_amount[31:16]: 0
+#    Time: 1370 ns Started: 1370 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1372000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1748 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x54903 exchange_go = 0x1 
+#  T=1372000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 2954840697, 
+# ** Error: The amount was not indexed properly: amount e97d; correct amount (to write): e97d0000, correct_amount[31:16]: e97d
+#    Time: 1386 ns Started: 1386 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1388000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x29909 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x30 exchange_amount = 0x39658 exchange_go = 0x1 
+#  T=1388000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19065 cancelled_orders = 0x62142  max_to_trade = 0x45087  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 7f87; correct amount (to write): 7f870000, correct_amount[31:16]: 7f87
+#    Time: 1402 ns Started: 1402 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1404000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x59773 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x38567 exchange_go = 0x1 
+#  T=1404000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19065 cancelled_orders = 0x49460  max_to_trade = 0x45087  
+# data cpu 3539618425, 
+# ** Error: The amount was not indexed properly: amount 2f04; correct amount (to write): 2f04, correct_amount[31:16]: 0
+#    Time: 1418 ns Started: 1418 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1420000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x32647 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0x61381 exchange_go = 0x0 
+#  T=1420000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 3539618425, 
+# ** Error: The amount was not indexed properly: amount cc4e; correct amount (to write): cc4e, correct_amount[31:16]: 0
+#    Time: 1434 ns Started: 1434 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1436000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x12036 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x29 exchange_amount = 0x9048 exchange_go = 0x1 
+#  T=1436000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19065 cancelled_orders = 0x49460  max_to_trade = 0x54010  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 68a6; correct amount (to write): 68a60000, correct_amount[31:16]: 68a6
+#    Time: 1450 ns Started: 1450 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1452000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x52302 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x31 exchange_amount = 0x13399 exchange_go = 0x0 
+#  T=1452000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x19065 cancelled_orders = 0x49460  max_to_trade = 0x54010  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 84a5; correct amount (to write): 84a50000, correct_amount[31:16]: 84a5
+#    Time: 1466 ns Started: 1466 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1468000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x26790 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x28 exchange_amount = 0x58705 exchange_go = 0x1 
+#  T=1468000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount ede6; correct amount (to write): ede60000, correct_amount[31:16]: ede6
+#    Time: 1482 ns Started: 1482 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1484000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x33957 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x50364 exchange_go = 0x1 
+#  T=1484000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 3539605191, 
+# ** Error: The amount was not indexed properly: amount fc96; correct amount (to write): fc960000, correct_amount[31:16]: fc96
+#    Time: 1498 ns Started: 1498 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1500000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x60902 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x22 exchange_amount = 0x27147 exchange_go = 0x0 
+#  T=1500000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu 3539605191, 
+# ** Error: The amount was not indexed properly: amount c9b4; correct amount (to write): c9b40000, correct_amount[31:16]: c9b4
+#    Time: 1514 ns Started: 1514 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1516000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x64662 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x24 exchange_amount = 0x41270 exchange_go = 0x0 
+#  T=1516000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5831 cancelled_orders = 0x49460  max_to_trade = 0x54010  
+# data cpu 3539605191, 
+# ** Error: The amount was not indexed properly: amount e4b5; correct amount (to write): e4b50000, correct_amount[31:16]: e4b5
+#    Time: 1530 ns Started: 1530 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1532000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x51636 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x27 exchange_amount = 0x3566 exchange_go = 0x1 
+#  T=1532000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5831 cancelled_orders = 0x49460  max_to_trade = 0x54010  
+# data cpu 3379173063, 
+# ** Error: The amount was not indexed properly: amount c843; correct amount (to write): c843, correct_amount[31:16]: 0
+#    Time: 1546 ns Started: 1546 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1548000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x58549 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x26438 exchange_go = 0x0 
+#  T=1548000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5831 cancelled_orders = 0x49460  max_to_trade = 0x54010  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount 7c72; correct amount (to write): 7c720000, correct_amount[31:16]: 7c72
+#    Time: 1562 ns Started: 1562 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1564000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x51267 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x33315 exchange_go = 0x1 
+#  T=1564000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5831 cancelled_orders = 0x49460  max_to_trade = 0x51562  
+# data cpu 3379173063, 
+# ** Error: The amount was not indexed properly: amount 5358; correct amount (to write): 53580000, correct_amount[31:16]: 5358
+#    Time: 1578 ns Started: 1578 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1580000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x31858 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x60007 exchange_go = 0x1 
+#  T=1580000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
+# data cpu          0, 
+# ** Error: The amount was not indexed properly: amount ba83; correct amount (to write): ba830000, correct_amount[31:16]: ba83
+#    Time: 1594 ns Started: 1594 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 125
+# 
+#  T=1596000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x21336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x28583 exchange_go = 0x0 
+#  T=1596000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5831 cancelled_orders = 0x49460  max_to_trade = 0x51562  
 # T=1596000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
+# 
+#  T=1612000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x47747 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x63173 exchange_go = 0x1 
+#  T=1612000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x49460  max_to_trade = 0x0  
 # ** Note: $stop    : testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
 #    Time: 1616 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 #  quit
-# End time: 12:32:55 on May 05,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 08:50:42 on May 06,2022, Elapsed time: 0:00:00
+# Errors: 100, Warnings: 3

@@ -16,28 +16,33 @@ module dm_data_upstream(clk,
   data_write, //write port (128-bit line)
   data_read);
   input  clk;//, change_max;
+  reg[4:0] i;
+
   input cache_req_type data_req;//data request/command, e.g. RW, valid
   input cache_data_type data_write; //write port (128-bit line)
   output cache_data_type data_read; //read port
 
 
-  cache_data_type memory[0:512];
+  cache_data_type memory[0:16];
 
   initial begin
-      $display("Loading upstream rom.");
+      $display("Loading upstream cache.");
       $readmemh("code/shared/rom_trade.mem", memory);
       // $displayb("%p", memory);
     end
     assign data_read = memory[data_req.rdindex];
-
-
     always @(posedge(clk)) begin
       if (data_req.we)
+      // $display("BEFORE %d, ",memory[data_req.rdindex]);
         if (data_write[31:16] > 2'b01) 
           memory[data_req.rdindex] <= {data_write[31:15],memory[data_req.rdindex][15:0] }; //+memory[data_req.index]; 
         else begin
           memory[data_req.rdindex][15:0] <=  memory[data_req.rdindex][15:0] + data_write[15:0]; //+memory[data_req.index];
         end
+        for (i=0; i<5; i=i+1)begin
+          @(posedge clk) ; 
+        end
+        // $display("AFTER %d, ",memory[data_req.rdindex]);
       end
     // SVA to check if gpio_out during reset
         trade_risk_check_mem: assert property (
@@ -76,6 +81,52 @@ endmodule
 
 
 
+module mem_controller(input bit clk, //write clock
+  output mem_data_type mem_data, //memory response (memory->cache)
+  // input change_max,
+  input mem_req_type mem_req) ;//memory request (cache->memory))
+    reg[4:0] i;
+    reg[31:0] datav;
+    cache_data_type memory[0:512];
+    assign mem_data.data = datav;
+    initial begin
+        $display("Loading upstream memory.");
+        $readmemh("code/shared/rom_trade.mem", memory);
+        // $displayb("%p", memory);
+      end
+      always @(mem_req.addr) begin
+        datav = memory[mem_req.addr];
+        for (i=0; i<5; i=i+1)begin
+              @(posedge clk) ; 
+            end
+            wait (i=== 5); //Implementation 1      
+      end 
+      assign mem_data.ready = 1'b1;
+  
+      always @(posedge(clk)) begin
+        if (mem_req.rw)
+          if (mem_req.data[31:16] > 2'b01) 
+            memory[mem_req.addr] <= {mem_req.data[31:15],memory[mem_req.addr][15:0] }; //+memory[data_req.index]; 
+          else begin
+            memory[mem_req.addr][15:0] <=  memory[mem_req.addr][15:0] + mem_req.data[15:0]; //+memory[data_req.index];
+          end
+          for (i=0; i<7; i=i+1)
+             @(posedge clk) ; 
+        wait (i=== 7); //Implementation 1      
+        end
+      // // SVA to check if gpio_out during reset
+      //     trade_risk_check_mem: assert property (
+      //       @(posedge clk) // throws an error if the trade is unsafe
+      //         `MAX_DEF == 1'b1
+      //         )
+      //       else begin 
+      //         $error ("The max to trade not def for client %0h; max to trade: %0h, accumulated amount: %0h", data_req.rdindex, memory[data_req.rdindex][31:16], memory[data_req.rdindex][15:0]);
+      //         $displayb(" %0d,  %p",data_write, memory[data_req.rdindex]);
+      //       end //
+  endmodule
+
+  
+
 /*cache finite state machine*/
 module dm_cache_fsm_upstream(input bit clk, input bit rst,
   input cpu_req_type cpu_req, //CPU request input (CPU->cache)
@@ -84,7 +135,6 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   output mem_req_type mem_req, //memory request (cache->memory)
   output cpu_result_type cpu_res //cache result (cache->CPU)
   );
-  
   /*write clock*/
   typedef enum {idle, compare_tag, allocate, write_back} cache_state_type;
   /*FSM state register*/
@@ -104,7 +154,8 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   assign mem_req = v_mem_req; //connect to output ports
   assign cpu_res = v_cpu_res; 
   always_comb begin
- 
+    // $display("vstate : %0d", vstate);
+
   /*-------------------------default values for all signals------------*/
   /*no state change by default*/
   vstate = rstate;
@@ -112,15 +163,15 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   /*read tag by default*/
   tag_req.we = '0;
   /*direct map index for tag*/
-  tag_req.rdindex = cpu_req.addr[13:4];
+  tag_req.rdindex = cpu_req.rdindex[13:4];
  
   /*read current cache line by default*/
   data_req.we = '0;
   /*direct map index for cache data*/
-  data_req.rdindex = cpu_req.addr[13:4];
+  data_req.rdindex = cpu_req.rdindex[13:4];
   /*modify correct word (32-bit) based on address*/
   data_write = data_read;
-  case(cpu_req.addr[3:2])
+  case(cpu_req.rdindex[3:2])
   2'b00:data_write[31:0] = cpu_req.data;
   2'b01:data_write[63:32] = cpu_req.data;
   2'b10:data_write[95:64] = cpu_req.data;
@@ -128,7 +179,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
  endcase
  
   /*read out correct word(32-bit) from cache (to CPU)*/
-  case(cpu_req.addr[3:2])
+  case(cpu_req.rdindex[3:2])
   2'b00:v_cpu_res.data = data_read[31:0];
   2'b01:v_cpu_res.data = data_read[63:32];
   2'b10:v_cpu_res.data = data_read[95:64];
@@ -136,7 +187,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   endcase
  
   /*memory request address (sampled from CPU request)*/
-  v_mem_req.addr = cpu_req.addr;
+  v_mem_req.addr = cpu_req.rdindex;
   /*memory request data (used in write)*/
   v_mem_req.data = data_read;
    v_mem_req.rw = '0;
@@ -152,13 +203,17 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   end
   /*compare_tag state*/
   compare_tag : begin
+    // $display("/*compare_tag state*/");
+
   /*cache hit (tag match and cache entry is valid)*/
-  if (cpu_req.addr[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) begin
+  if (cpu_req.rdindex[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) begin
   v_cpu_res.ready = '1;
- 
+
   /*write hit*/
   if (cpu_req.rw) begin
   /*read/modify cache line*/
+    
+  // $display("/*write hit*/");
   tag_req.we = '1; data_req.we = '1;
   /*no change in tag*/
   tag_write.tag = tag_read.tag;
@@ -176,7 +231,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   tag_req.we = '1;
   tag_write.valid = '1;
   /*new tag*/
-  tag_write.tag = cpu_req.addr[TAGMSB:TAGLSB];
+  tag_write.tag = cpu_req.rdindex[TAGMSB:TAGLSB];
   /*cache line is dirty if write*/
   tag_write.dirty = cpu_req.rw;
  
@@ -189,7 +244,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   else begin
   /*miss with dirty line*/
   /*write back address*/
-  v_mem_req.addr = {tag_read.tag, cpu_req.addr[TAGLSB-1:0]};
+  v_mem_req.addr = {tag_read.tag, cpu_req.rdindex[TAGLSB-1:0]};
   v_mem_req.rw = '1;
   /*wait till write is completed*/
   vstate = write_back;
@@ -199,6 +254,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   /*wait for allocating a new cache line*/
   allocate: begin
   /*memory controller has responded*/
+    // $display("mem data : %0d, mem data rdy: %0d", mem_data.data, mem_data.ready);
   if (mem_data.ready) begin
   /*re-compare tag for write miss (need modify correct word)*/
   vstate = compare_tag;
@@ -230,4 +286,5 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
  /*connect cache tag/data memory*/
  dm_cache_tag_upstream ctag(.*);
  dm_data_upstream cdata(.*);
+ mem_controller cmem(.*);
  endmodule
