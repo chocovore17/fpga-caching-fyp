@@ -185,18 +185,17 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   data_write = data_read;
   case(cpu_req.rdindex[3:2])
   2'b00:data_write[31:0] = cpu_req.data;
-  2'b01:data_write[63:32] = cpu_req.data;
-  2'b10:data_write[95:64] = cpu_req.data;
-  2'b11:data_write[127:96] = cpu_req.data;
+  // 2'b01:data_write[63:32] = cpu_req.data;
+  // 2'b10:data_write[95:64] = cpu_req.data;
+  // 2'b11:data_write[127:96] = cpu_req.data; //no need for now
  endcase
  
   /*read out correct word(32-bit) from cache (to CPU)*/
- $display("cpu_req.rdindex[3:2] : %0h", cpu_req.rdindex[3:2]);
   case(cpu_req.rdindex[3:2])
   2'b00:v_cpu_res.data = data_read[31:0];
-  2'b01:v_cpu_res.data = data_read[63:32];
-  2'b10:v_cpu_res.data = data_read[95:64];
-  2'b11:v_cpu_res.data = data_read[127:96];
+  // 2'b01:v_cpu_res.data = data_read[63:32];
+  // 2'b10:v_cpu_res.data = data_read[95:64];
+  // 2'b11:v_cpu_res.data = data_read[127:96];
   endcase
  
   /*memory request address (sampled from CPU request)*/
