@@ -12,6 +12,7 @@
  `define STATELOGC2 ((update_max == 1) && (send_order == 1))
  `define STATELOGC3 ((check_risk== 1) && (send_order == 1))
  `define SAFETOTRADE  ($signed({1'b0, max_to_trade_reg[15:0]})> $signed(result))
+ `define AMOUNTGOOD ((correct_amount == amount)||(correct_amount[31:16]== amount))
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
@@ -85,18 +86,20 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
 
   always @(client_id, amount) begin
   begin 
-    cpu_req.rdindex = client_id[9:0];
+    cpu_req.rdindex[31:14] = '0;
+    cpu_req.rdindex[13:4] = client_id[9:0];
+    cpu_req.rdindex[4:0] ='0;
     cpu_req.valid = 1'b1;
     // wait until cpu res rdy 
     wait (cpu_res.ready === 1); //Implementation 1
-    $display("data cpu %d, ", cpu_res.data);
+    // $display("data cpu %d, ", cpu_res.data);
     accumulated_orders_reg = cpu_res.data[15:0];
     cancelled_orders_reg =  cancelled_orders;
     max_to_trade_reg = cpu_res.data >> 16;
     if ((new_max) && (amount>(cpu_res.data[15:0])) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
     else
-      correct_amount = amount;
+      correct_amount = amount[15:0];
       // no need for an else, amount is less then 16
 
     cpu_req.data = correct_amount;
@@ -104,6 +107,15 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     // $display("%0b, result : %0d",($signed({1'b0, max_to_trade[15:0]})>$signed(result) ),$signed(result) );
     pass_checks = $signed({1'b0, max_to_trade_reg[15:0]})>$signed(result); //extend for neg values
     cpu_req.rw = pass_checks;
+      // SVA to check if CORRECT amount written
+    trade_correctamount_cpu: assert property (
+      @(posedge clk) // throws an error if the correct amount is different from amount to trade
+      `AMOUNTGOOD == 1'b0
+        )
+      else begin 
+        $error ("The amount was not indexed properly: amount %0d; correct amount (to write): %0d, correct_amount[31:16]: %0d, (correct_amount == amount) %0d , (correct_amount[31:16]== amount) %0d, ((correct_amount == amount)||(correct_amount[31:16]== amount))%0d", amount, correct_amount, correct_amount[31:16], (correct_amount == amount), (correct_amount[31:16]== amount), ((correct_amount == amount)||(correct_amount[31:16]== amount)));
+      end //
+
   end 
   
     
@@ -116,15 +128,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
       $error ("pass_checks was not computer properly for client %0d; max to trade: %0d, accumulated amount: %0d, cancelled amount: %0d, pass_checks: %0d, amount %0d", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks, amount);
     end //
 
-    // SVA to check if CORRECT amount written
-    trade_correctamount_cpu: assert property (
-      @(posedge clk) // throws an error if the correct amount is different from amount to trade
-       ((correct_amount == amount) || (correct_amount[31:16]== amount))
-        )
-      else begin 
-        $error ("The amount was not indexed properly: amount %0h; correct amount (to write): %0h, correct_amount[31:16]: %0h", amount, correct_amount, correct_amount[31:16]);
-      end //
-
+  
       
     // SVA to check if state logic 
     trade_state_logic1: assert property (

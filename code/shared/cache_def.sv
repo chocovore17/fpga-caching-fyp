@@ -15,7 +15,7 @@ package cache_def;
  bit we; //write enable
  }cache_req_type;
  //128-bit cache line data
- typedef bit [31:0]cache_data_type;
+ typedef bit [128:0]cache_data_type;
  
  // data structures for CPU<->Cache controller interface
  // CPU request (CPU->cache controller)
@@ -38,7 +38,7 @@ package cache_def;
  // memory request (cache controller->memory)
  typedef struct {
  bit [9:0]addr; //request byte addr
- bit [31:0]data; //128-bit request data (used when write)
+ bit [127:0]data; //128-bit request data (used when write)
  bit rw; //request type : 0 = read, 1 = write
  bit valid; //request is valid
  }mem_req_type;
