@@ -88,7 +88,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   begin 
     cpu_req.rdindex[31:14] = '0;
     cpu_req.rdindex[13:4] = client_id[9:0];
-    cpu_req.rdindex[4:0] ='0;
+    cpu_req.rdindex[3:0] ='0;
     cpu_req.valid = 1'b1;
     // wait until cpu res rdy 
     wait (cpu_res.ready === 1); //Implementation 1

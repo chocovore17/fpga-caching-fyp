@@ -38,6 +38,7 @@ package cache_def;
  // memory request (cache controller->memory)
  typedef struct {
  bit [9:0]addr; //request byte addr
+ bit [9:0]wraddr; //request byte addr
  bit [127:0]data; //128-bit request data (used when write)
  bit rw; //request type : 0 = read, 1 = write
  bit valid; //request is valid

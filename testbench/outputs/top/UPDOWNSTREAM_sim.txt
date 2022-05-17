@@ -1,12 +1,11 @@
 # vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 15:34:41 on May 16,2022
-# //  Questa Sim-64
-# //  Version 10.7c linux_x86_64 Aug 17 2018
+# Start time: 14:28:50 on May 17,2022
+# //  ModelSim SE-64 10.6d Feb 23 2018Linux 3.10.0-1160.25.1.el7.x86_64
 # //
 # //  Copyright 1991-2018 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
-# //  QuestaSim and its associated documentation contain trade
+# //  ModelSim SE-64 and its associated documentation contain trade
 # //  secrets and commercial or financial information that are the property of
 # //  Mentor Graphics Corporation and are privileged, confidential,
 # //  and exempt from disclosure under the Freedom of Information Act,
@@ -21,7 +20,10 @@
 # Loading work.cache_def(fast)
 # Loading work.top_sv_unit(fast)
 # Loading work.top(fast)
+# Loading work.dm_cache_fsm_downstream(fast)
+# Loading work.dm_cache_tag_downstream(fast)
 # Loading work.dm_data_downstream(fast)
+# Loading work.downmem_controller(fast)
 # Loading work.upstream_processor_top(fast)
 # Loading work.dm_cache_fsm_upstream(fast)
 # Loading work.dm_cache_tag_upstream(fast)
@@ -30,16 +32,25 @@
 # Loading work.upstream_processor(fast)
 # Loading work.downstream_top(fast)
 # Loading work.updownstream_if(fast)
-# ** Warning: (vsim-3015) [PCDPC] - Port size (129) does not match connection size (32) for port 'data_write'. The port definition is at: code/shared/ramdownstream.sv(12).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/RAMDOWNSTREAM File: code/shared/top.sv Line: 35
-# ** Warning: (vsim-3015) [PCDPC] - Port size (129) does not match connection size (32) for port 'data_read'. The port definition is at: code/shared/ramdownstream.sv(13).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/RAMDOWNSTREAM File: code/shared/top.sv Line: 35
-# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/mem_data', driven via a port connection, is multiply driven. See code/upstream/upstream_top.sv(63).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem File: code/shared/ramupstream.sv Line: 303
-# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex', driven via a port connection, is multiply driven. See code/shared/top.sv(54).
-#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 31
+# ** Warning: (vsim-3839) code/shared/ramdownstream.sv(272): Variable '/tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/mem_data_down', driven via a port connection, is multiply driven. See code/shared/top.sv(60).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem File: code/shared/ramdownstream.sv
+# ** Warning: (vsim-3839) code/shared/ramupstream.sv(302): Variable '/tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/mem_data', driven via a port connection, is multiply driven. See code/upstream/upstream_top.sv(63).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem File: code/shared/ramupstream.sv
+# ** Warning: (vsim-3839) code/shared/top.sv(103): Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[3:0]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv
+# ** Warning: (vsim-3839) code/shared/top.sv(101): Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[9:4]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv
+# ** Warning: (vsim-3839) code/shared/top.sv(97): Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.data', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv
+# ** Warning: (vsim-3839) code/shared/top.sv(96): Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.valid', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv
 # run -all
 # Loading downstream rom.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "code/shared/rom_empty.mem". (Current address [33], address range [0:32])    : code/shared/ramdownstream.sv(25)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cdata
+# Loading downstream memory.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_empty.mem". (Current address [122], address range [0:121])    : code/shared/ramdownstream.sv(78)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem
 # Loading upstream cache.
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "code/shared/rom_trade.mem". (Current address [33], address range [0:32])    : code/shared/ramupstream.sv(31)
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cdata
@@ -47,23 +58,36 @@
 # ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_trade.mem". (Current address [122], address range [0:121])    : code/shared/ramupstream.sv(102)
 #    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem
 # --------- [DRIVER] Reset Started ---------
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 0, vstate 0
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: 0, vstate 0
+# rd from: 0, wr from: 0
 # --------- [DRIVER] Reset Ended ---------
 # T=2000 [Generator] starting
 # repeat count = 100
 # T=2000, [DRIVER] starting ---------
 # T=2000, [MONITOR] starting ---------
 # T=2000, [SCOREBOARD] starting ---------
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 0, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: c0ce, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: c0ce, vstate 1
+# rd from: 60, wr from: 10
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: c0ce, vstate 2
+# rd from: 60, wr from: 10
 # 
 #  T=12000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
 #  T=12000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0xxxx cancelled_orders = 0xx  max_to_trade = 0xx  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: c0ce, vstate 1
+# rd from: 60, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 2c76, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 2c76, vstate 1
+# rd from: 50, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 2c76, vstate 2
+# rd from: 50, wr from: b0
 # ** Error: pass_checks was not computer properly for client 5; max to trade: 65484, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 52334
 #    Time: 26 ns Started: 26 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 128
 # ** Error: The amount was not indexed properly: amount 52334; correct amount (to write): 52334, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
@@ -71,770 +95,1376 @@
 # 
 #  T=28000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
 #  T=28000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0xxxx cancelled_orders = 0x0  max_to_trade = 0xx  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 2c76, vstate 1
+# rd from: 50, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: f742, vstate 1
+# rd from: 0, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f742, vstate 1
+# rd from: 20, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f742, vstate 2
+# rd from: 20, wr from: 110
 # 
 #  T=44000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
 #  T=44000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: f742, vstate 1
+# rd from: 20, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: ae3b, vstate 1
+# rd from: 0, wr from: 80
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: ae3b, vstate 1
+# rd from: 50, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: ae3b, vstate 2
+# rd from: 50, wr from: 80
 # 
 #  T=60000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
 #  T=60000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: ae3b, vstate 1
+# rd from: 50, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: a6bb, vstate 1
+# rd from: 0, wr from: 90
+# v_cpu_res.data: 0, cpu_req.data: a6bb, vstate 2
+# rd from: 0, wr from: 90
 # 
 #  T=76000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
 #  T=76000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: a6bb, vstate 1
+# rd from: 0, wr from: 90
+# v_cpu_res.data: 0, cpu_req.data: f960, vstate 1
+# rd from: 0, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: f960, vstate 1
+# rd from: 20, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: f960, vstate 2
+# rd from: 20, wr from: 1d0
 # 
 #  T=92000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
 #  T=92000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: f960, vstate 1
+# rd from: 20, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 61ae, vstate 1
+# rd from: 0, wr from: 1b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 61ae, vstate 1
+# rd from: 30, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: 61ae, vstate 2
+# rd from: 30, wr from: 1b0
 # 
 #  T=108000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
 #  T=108000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 61ae, vstate 1
+# rd from: 30, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: fb62, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: fb62, vstate 2
+# rd from: 0, wr from: 30
 # 
 #  T=124000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
-#  T=124000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=124000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: fb62, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 4fc8, vstate 1
+# rd from: 0, wr from: 130
+# v_cpu_res.data: 0, cpu_req.data: 4fc8, vstate 1
+# rd from: 90, wr from: 130
+# v_cpu_res.data: 0, cpu_req.data: 4fc8, vstate 1
+# rd from: 90, wr from: 130
+# v_cpu_res.data: 0, cpu_req.data: 4fc8, vstate 0
+# rd from: 90, wr from: 130
 # 
 #  T=140000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
-#  T=140000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xf0db  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=140000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 4fc8, vstate 1
+# rd from: 90, wr from: 130
+# v_cpu_res.data: 0, cpu_req.data: 3c48, vstate 1
+# rd from: 0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: 3c48, vstate 1
+# rd from: 0, wr from: 50
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 3c48, vstate 1
+# rd from: a0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: 3c48, vstate 2
+# rd from: a0, wr from: 50
 # 
 #  T=156000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
-#  T=156000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xf0db  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=156000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 3c48, vstate 1
+# rd from: a0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: a5a5, vstate 1
+# rd from: 0, wr from: 190
+# v_cpu_res.data: 0, cpu_req.data: a5a5, vstate 1
+# rd from: 30, wr from: 190
+# v_cpu_res.data: 0, cpu_req.data: a5a5, vstate 1
+# rd from: 30, wr from: 190
+# v_cpu_res.data: 0, cpu_req.data: a5a5, vstate 0
+# rd from: 30, wr from: 190
 # 
 #  T=172000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
 #  T=172000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: a5a5, vstate 1
+# rd from: 30, wr from: 190
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 1
+# rd from: 0, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 1
+# rd from: 0, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 1
+# rd from: 50, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 1
+# rd from: 50, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 0
+# rd from: 50, wr from: 110
 # 
 #  T=188000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
-#  T=188000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xa1af  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=188000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x66ab  
+# v_cpu_res.data: 0, cpu_req.data: f13e, vstate 1
+# rd from: 50, wr from: 110
+# v_cpu_res.data: 0, cpu_req.data: f41d, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: f41d, vstate 1
+# rd from: 0, wr from: 1a0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: f41d, vstate 1
+# rd from: 20, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: f41d, vstate 2
+# rd from: 20, wr from: 1a0
 # 
 #  T=204000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
-#  T=204000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xa1af  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=204000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x66ab  
+# v_cpu_res.data: 0, cpu_req.data: f41d, vstate 1
+# rd from: 20, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: 15aa, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 15aa, vstate 1
+# rd from: a0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 15aa, vstate 2
+# rd from: a0, wr from: b0
 # 
 #  T=220000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
 #  T=220000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 15aa, vstate 1
+# rd from: a0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: d90b, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: d90b, vstate 1
+# rd from: 40, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: d90b, vstate 2
+# rd from: 40, wr from: 100
 # 
 #  T=236000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
 #  T=236000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: d90b, vstate 1
+# rd from: 40, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: 8394, vstate 1
+# rd from: 0, wr from: 1e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 8394, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: 8394, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: 8394, vstate 0
+# rd from: 10, wr from: 1e0
 # 
 #  T=252000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
-#  T=252000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=252000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: 8394, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: ac3a, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: ac3a, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: ac3a, vstate 1
+# rd from: 20, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: ac3a, vstate 2
+# rd from: 20, wr from: c0
 # 
 #  T=268000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
-#  T=268000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x66ab  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=268000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: ac3a, vstate 1
+# rd from: 20, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: b720, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: b720, vstate 1
+# rd from: 20, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: b720, vstate 2
+# rd from: 20, wr from: 140
 # 
 #  T=284000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
-#  T=284000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=284000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: b720, vstate 1
+# rd from: 20, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: a2e8, vstate 1
+# rd from: 0, wr from: 60
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: a2e8, vstate 1
+# rd from: 80, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: a2e8, vstate 1
+# rd from: 80, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: a2e8, vstate 0
+# rd from: 80, wr from: 60
 # 
 #  T=300000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
-#  T=300000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xea7b cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=300000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: a2e8, vstate 1
+# rd from: 80, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 1
+# rd from: 80, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 1
+# rd from: 80, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 0
+# rd from: 80, wr from: 140
 # 
 #  T=316000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
-#  T=316000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa05e cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=316000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: c9fd, vstate 1
+# rd from: 80, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: ad31, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: ad31, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: ad31, vstate 1
+# rd from: 60, wr from: 180
+# v_cpu_res.data: a2e8, cpu_req.data: ad31, vstate 1
+# rd from: 60, wr from: 180
+# v_cpu_res.data: a2e8, cpu_req.data: ad31, vstate 0
+# rd from: 60, wr from: 180
 # 
 #  T=332000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
-#  T=332000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xef86 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=332000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: a2e8, cpu_req.data: ad31, vstate 1
+# rd from: 60, wr from: 180
+# v_cpu_res.data: a2e8, cpu_req.data: 7625, vstate 1
+# rd from: 0, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 7625, vstate 1
+# rd from: 0, wr from: 1d0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 7625, vstate 1
+# rd from: a0, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 7625, vstate 2
+# rd from: a0, wr from: 1d0
 # 
 #  T=348000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
-#  T=348000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0x0  max_to_trade = 0xffcc  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=348000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0xa2e8  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: 7625, vstate 1
+# rd from: a0, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 4db0, vstate 1
+# rd from: 0, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 4db0, vstate 1
+# rd from: 50, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 4db0, vstate 1
+# rd from: 50, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 4db0, vstate 0
+# rd from: 50, wr from: e0
 # 
 #  T=364000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
-#  T=364000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=364000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: 4db0, vstate 1
+# rd from: 50, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 1
+# rd from: 80, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 1
+# rd from: 80, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 0
+# rd from: 80, wr from: 100
 # 
 #  T=380000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
 #  T=380000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: 9d8c, vstate 1
+# rd from: 80, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: d668, vstate 1
+# rd from: 0, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: d668, vstate 1
+# rd from: 0, wr from: 60
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: d668, vstate 1
+# rd from: 60, wr from: 60
+# v_cpu_res.data: a2e8, cpu_req.data: d668, vstate 1
+# rd from: 60, wr from: 60
+# v_cpu_res.data: 17950, cpu_req.data: d668, vstate 0
+# rd from: 60, wr from: 60
 # 
 #  T=396000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
-#  T=396000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9dca cancelled_orders = 0x0  max_to_trade = 0xffaa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=396000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xae44  
+# v_cpu_res.data: 17950, cpu_req.data: d668, vstate 1
+# rd from: 60, wr from: 60
+# v_cpu_res.data: 17950, cpu_req.data: 7032, vstate 1
+# rd from: 0, wr from: 40
+# v_cpu_res.data: 0, cpu_req.data: 7032, vstate 1
+# rd from: 0, wr from: 40
+# v_cpu_res.data: 0, cpu_req.data: 7032, vstate 1
+# rd from: 70, wr from: 40
+# v_cpu_res.data: 0, cpu_req.data: 7032, vstate 2
+# rd from: 70, wr from: 40
 # 
 #  T=412000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
-#  T=412000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=412000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0x7950  max_to_trade = 0xdac3  
+# v_cpu_res.data: 0, cpu_req.data: 7032, vstate 1
+# rd from: 70, wr from: 40
+# v_cpu_res.data: 0, cpu_req.data: 54ae, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: 54ae, vstate 1
+# rd from: 60, wr from: 1a0
+# v_cpu_res.data: 17950, cpu_req.data: 54ae, vstate 1
+# rd from: 60, wr from: 1a0
+# v_cpu_res.data: 17950, cpu_req.data: 54ae, vstate 0
+# rd from: 60, wr from: 1a0
 # 
 #  T=428000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
-#  T=428000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xfea7 cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=428000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xcc6e cancelled_orders = 0x0  max_to_trade = 0xdac3  
+# v_cpu_res.data: 17950, cpu_req.data: 54ae, vstate 1
+# rd from: 60, wr from: 1a0
+# v_cpu_res.data: 17950, cpu_req.data: 5b6d, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 5b6d, vstate 1
+# rd from: 0, wr from: b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 5b6d, vstate 1
+# rd from: 80, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 5b6d, vstate 1
+# rd from: 80, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 5b6d, vstate 0
+# rd from: 80, wr from: b0
 # 
 #  T=444000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
-#  T=444000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa939 cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=444000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x7950  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: 5b6d, vstate 1
+# rd from: 80, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 1
+# rd from: 0, wr from: 170
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 1
+# rd from: 0, wr from: 170
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 1
+# rd from: 80, wr from: 170
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 1
+# rd from: 80, wr from: 170
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 0
+# rd from: 80, wr from: 170
 # 
 #  T=460000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
-#  T=460000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9dca cancelled_orders = 0x0  max_to_trade = 0xcd30  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=460000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: 3878, vstate 1
+# rd from: 80, wr from: 170
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 1
+# rd from: 90, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 1
+# rd from: 90, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 0
+# rd from: 90, wr from: 10
 # 
 #  T=476000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
-#  T=476000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa34 cancelled_orders = 0x0  max_to_trade = 0xcd30  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=476000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6c6a cancelled_orders = 0x0  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: 31f0, vstate 1
+# rd from: 90, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 1
+# rd from: 0, wr from: f0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 1
+# rd from: 80, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 1
+# rd from: 80, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 0
+# rd from: 80, wr from: f0
 # 
 #  T=492000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
-#  T=492000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1305 cancelled_orders = 0x0  max_to_trade = 0xcd30  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=492000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa05e cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 544f, vstate 1
+# rd from: 80, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 0
+# rd from: 50, wr from: 180
 # 
 #  T=508000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
-#  T=508000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1305 cancelled_orders = 0x0  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=508000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x753b cancelled_orders = 0x0  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: b0d1, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: c3a1, vstate 1
+# rd from: 0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: c3a1, vstate 1
+# rd from: 0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: c3a1, vstate 1
+# rd from: 20, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: c3a1, vstate 2
+# rd from: 20, wr from: 50
 # 
 #  T=524000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
 #  T=524000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xeb6  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 0, cpu_req.data: c3a1, vstate 1
+# rd from: 20, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: b558, vstate 1
+# rd from: 0, wr from: d0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: b558, vstate 1
+# rd from: a0, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: b558, vstate 2
+# rd from: a0, wr from: d0
 # 
 #  T=540000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
-#  T=540000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6796 cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=540000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a34 cancelled_orders = 0x0  max_to_trade = 0x7d1b  
+# v_cpu_res.data: 0, cpu_req.data: b558, vstate 1
+# rd from: a0, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: a3a2, vstate 1
+# rd from: 0, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: a3a2, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: a3a2, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: a3a2, vstate 0
+# rd from: 60, wr from: 1e0
 # 
 #  T=556000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
 #  T=556000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x0  max_to_trade = 0xd328  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 17950, cpu_req.data: a3a2, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: fd95, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: fd95, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: fd95, vstate 1
+# rd from: 40, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: fd95, vstate 1
+# rd from: 40, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: fd95, vstate 0
+# rd from: 40, wr from: c0
 # 
 #  T=572000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
-#  T=572000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9d84 cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=572000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xfea7 cancelled_orders = 0x7950  max_to_trade = 0xdac3  
+# v_cpu_res.data: 0, cpu_req.data: fd95, vstate 1
+# rd from: 40, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: 60c3, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 60c3, vstate 1
+# rd from: 0, wr from: 140
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 60c3, vstate 2
+# rd from: 0, wr from: 140
 # 
 #  T=588000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
-#  T=588000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x76  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=588000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xfea7 cancelled_orders = 0x0  max_to_trade = 0xdac3  
+# v_cpu_res.data: 0, cpu_req.data: 60c3, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 3331, vstate 1
+# rd from: 0, wr from: 20
+# v_cpu_res.data: 0, cpu_req.data: 3331, vstate 1
+# rd from: 20, wr from: 20
+# v_cpu_res.data: 0, cpu_req.data: 3331, vstate 2
+# rd from: 20, wr from: 20
 # 
 #  T=604000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
-#  T=604000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd8a7 cancelled_orders = 0x0  max_to_trade = 0x66ab  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=604000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 3331, vstate 1
+# rd from: 20, wr from: 20
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 1
+# rd from: 0, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 1
+# rd from: 0, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 1
+# rd from: 40, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 1
+# rd from: 40, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 0
+# rd from: 40, wr from: d0
 # 
 #  T=620000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
-#  T=620000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9842 cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=620000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7ae0 cancelled_orders = 0x0  max_to_trade = 0x7d1b  
+# v_cpu_res.data: 0, cpu_req.data: 9929, vstate 1
+# rd from: 40, wr from: d0
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 1
+# rd from: 0, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 1
+# rd from: 0, wr from: e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 0
+# rd from: 20, wr from: e0
 # 
 #  T=636000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
-#  T=636000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x76  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=636000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa6a6 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 57b6, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: fde8, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: fde8, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: fde8, vstate 1
+# rd from: 10, wr from: 10
+# v_cpu_res.data: 31f0, cpu_req.data: fde8, vstate 1
+# rd from: 10, wr from: 10
+# v_cpu_res.data: 12fd8, cpu_req.data: fde8, vstate 0
+# rd from: 10, wr from: 10
 # 
 #  T=652000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
-#  T=652000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf4df cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=652000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd77d cancelled_orders = 0x0  max_to_trade = 0x7d1b  
+# v_cpu_res.data: 12fd8, cpu_req.data: fde8, vstate 1
+# rd from: 10, wr from: 10
+# v_cpu_res.data: 12fd8, cpu_req.data: 632c, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 632c, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 632c, vstate 1
+# rd from: 90, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 632c, vstate 1
+# rd from: 90, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 632c, vstate 0
+# rd from: 90, wr from: f0
 # 
 #  T=668000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
-#  T=668000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd8a7 cancelled_orders = 0x0  max_to_trade = 0x66ab  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=668000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa047 cancelled_orders = 0x2fd8  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: 632c, vstate 1
+# rd from: 90, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 1
+# rd from: 0, wr from: 140
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 1
+# rd from: 50, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 1
+# rd from: 50, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 0
+# rd from: 50, wr from: 140
 # 
 #  T=684000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
-#  T=684000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x387 cancelled_orders = 0x0  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=684000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xb89a cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: 189c, vstate 1
+# rd from: 50, wr from: 140
+# v_cpu_res.data: 0, cpu_req.data: 7b8a, vstate 1
+# rd from: 0, wr from: 120
+# v_cpu_res.data: 0, cpu_req.data: 7b8a, vstate 1
+# rd from: 0, wr from: 120
+# v_cpu_res.data: 0, cpu_req.data: 7b8a, vstate 1
+# rd from: a0, wr from: 120
+# v_cpu_res.data: 0, cpu_req.data: 7b8a, vstate 2
+# rd from: a0, wr from: 120
 # 
 #  T=700000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
-#  T=700000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x87b8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=700000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x76  
+# v_cpu_res.data: 0, cpu_req.data: 7b8a, vstate 1
+# rd from: a0, wr from: 120
+# v_cpu_res.data: 0, cpu_req.data: 39fb, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: 0, cpu_req.data: 39fb, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: 39fb, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: 39fb, vstate 0
+# rd from: 60, wr from: a0
 # 
 #  T=716000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
 #  T=716000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 17950, cpu_req.data: 39fb, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: d4fe, vstate 1
+# rd from: 0, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: d4fe, vstate 1
+# rd from: 0, wr from: 80
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: d4fe, vstate 1
+# rd from: 50, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: d4fe, vstate 1
+# rd from: 50, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: d4fe, vstate 0
+# rd from: 50, wr from: 80
 # 
 #  T=732000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
-#  T=732000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xbc1c cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=732000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1d3f cancelled_orders = 0x7950  max_to_trade = 0xdac3  
+# v_cpu_res.data: 0, cpu_req.data: d4fe, vstate 1
+# rd from: 50, wr from: 80
+# v_cpu_res.data: 0, cpu_req.data: a7b5, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: a7b5, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 0, cpu_req.data: a7b5, vstate 1
+# rd from: a0, wr from: 100
+# v_cpu_res.data: 39fb, cpu_req.data: a7b5, vstate 1
+# rd from: a0, wr from: 100
+# v_cpu_res.data: 39fb, cpu_req.data: a7b5, vstate 0
+# rd from: a0, wr from: 100
 # 
 #  T=748000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
-#  T=748000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3628 cancelled_orders = 0x0  max_to_trade = 0x87b8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=748000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x76  
+# v_cpu_res.data: 39fb, cpu_req.data: a7b5, vstate 1
+# rd from: a0, wr from: 100
+# v_cpu_res.data: 39fb, cpu_req.data: 71c5, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 71c5, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 71c5, vstate 1
+# rd from: 70, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 71c5, vstate 2
+# rd from: 70, wr from: 30
 # 
 #  T=764000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
-#  T=764000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x0  max_to_trade = 0xe4a1  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=764000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8a19 cancelled_orders = 0x39fb  max_to_trade = 0xe4a1  
+# v_cpu_res.data: 0, cpu_req.data: 71c5, vstate 1
+# rd from: 70, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: ef59, vstate 1
+# rd from: 0, wr from: 1e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: ef59, vstate 1
+# rd from: 40, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: ef59, vstate 1
+# rd from: 40, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: ef59, vstate 0
+# rd from: 40, wr from: 1e0
 # 
 #  T=780000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
-#  T=780000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7b1f cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=780000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf44b cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: ef59, vstate 1
+# rd from: 40, wr from: 1e0
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 1
+# rd from: 90, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 1
+# rd from: 90, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 0
+# rd from: 90, wr from: 1b0
 # 
 #  T=796000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
-#  T=796000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3628 cancelled_orders = 0x0  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=796000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2e5e cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: f6b5, vstate 1
+# rd from: 90, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: 63f5, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: 0, cpu_req.data: 63f5, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: 0, cpu_req.data: 63f5, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: 63f5, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: 63f5, vstate 0
+# rd from: 60, wr from: a0
 # 
 #  T=812000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
-#  T=812000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x387 cancelled_orders = 0x0  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=812000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdfac cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 17950, cpu_req.data: 63f5, vstate 1
+# rd from: 60, wr from: a0
+# v_cpu_res.data: 17950, cpu_req.data: 1363, vstate 1
+# rd from: 0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: 1363, vstate 1
+# rd from: 0, wr from: 50
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: 1363, vstate 2
+# rd from: 0, wr from: 50
 # 
 #  T=828000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xe414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
-#  T=828000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2b0e cancelled_orders = 0x0  max_to_trade = 0xdac3  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=828000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdc42 cancelled_orders = 0x7950  max_to_trade = 0xdac3  
+# v_cpu_res.data: 0, cpu_req.data: 1363, vstate 1
+# rd from: 0, wr from: 50
+# v_cpu_res.data: 0, cpu_req.data: 7042, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: 0, cpu_req.data: 7042, vstate 1
+# rd from: 80, wr from: a0
+# v_cpu_res.data: d4fe, cpu_req.data: 7042, vstate 1
+# rd from: 80, wr from: a0
+# v_cpu_res.data: d4fe, cpu_req.data: 7042, vstate 0
+# rd from: 80, wr from: a0
 # 
 #  T=844000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
-#  T=844000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd2a5 cancelled_orders = 0x0  max_to_trade = 0x66ab  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=844000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xf0db  
+# v_cpu_res.data: d4fe, cpu_req.data: 7042, vstate 1
+# rd from: 80, wr from: a0
+# v_cpu_res.data: d4fe, cpu_req.data: f357, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 0, cpu_req.data: f357, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 0, cpu_req.data: f357, vstate 1
+# rd from: 30, wr from: 160
+# v_cpu_res.data: 0, cpu_req.data: f357, vstate 1
+# rd from: 30, wr from: 160
+# v_cpu_res.data: 0, cpu_req.data: f357, vstate 0
+# rd from: 30, wr from: 160
 # 
 #  T=860000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x96ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
-#  T=860000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x387 cancelled_orders = 0x0  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=860000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x65bd cancelled_orders = 0xd4fe  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: f357, vstate 1
+# rd from: 30, wr from: 160
+# v_cpu_res.data: 0, cpu_req.data: e41b, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: e41b, vstate 1
+# rd from: 0, wr from: b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: e41b, vstate 2
+# rd from: 0, wr from: b0
 # 
 #  T=876000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x2b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
-#  T=876000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x24cf cancelled_orders = 0x0  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=876000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# v_cpu_res.data: 0, cpu_req.data: e41b, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 0, cpu_req.data: c134, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: c134, vstate 1
+# rd from: 90, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: c134, vstate 1
+# rd from: 90, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: c134, vstate 0
+# rd from: 90, wr from: 0
 # 
 #  T=892000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
-#  T=892000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x13ec cancelled_orders = 0x0  max_to_trade = 0x66ab  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=892000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4147 cancelled_orders = 0x0  max_to_trade = 0xf0db  
+# v_cpu_res.data: 0, cpu_req.data: c134, vstate 1
+# rd from: 90, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: 57d5, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: c134, cpu_req.data: 57d5, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: c134, cpu_req.data: 57d5, vstate 0
+# rd from: 0, wr from: f0
 # 
 #  T=908000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
-#  T=908000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9a34 cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=908000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5841 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: c134, cpu_req.data: 57d5, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: c134, cpu_req.data: b3fa, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: c134, cpu_req.data: b3fa, vstate 0
+# rd from: 0, wr from: 1b0
 # 
 #  T=924000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
-#  T=924000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x13ec cancelled_orders = 0xc134  max_to_trade = 0x24aa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=924000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x65f1 cancelled_orders = 0xc134  max_to_trade = 0xf0db  
+# v_cpu_res.data: c134, cpu_req.data: b3fa, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: c134, cpu_req.data: f10f, vstate 1
+# rd from: 0, wr from: e0
+# v_cpu_res.data: c134, cpu_req.data: f10f, vstate 1
+# rd from: 40, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: f10f, vstate 1
+# rd from: 40, wr from: e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: f10f, vstate 0
+# rd from: 40, wr from: e0
 # 
 #  T=940000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
-#  T=940000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x56df cancelled_orders = 0xc134  max_to_trade = 0x24aa  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=940000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa8e4 cancelled_orders = 0xc134  max_to_trade = 0xf0db  
+# v_cpu_res.data: 0, cpu_req.data: f10f, vstate 1
+# rd from: 40, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 5d30, vstate 1
+# rd from: 0, wr from: 90
+# v_cpu_res.data: c134, cpu_req.data: 5d30, vstate 1
+# rd from: 0, wr from: 90
+# v_cpu_res.data: c134, cpu_req.data: 5d30, vstate 0
+# rd from: 0, wr from: 90
 # 
 #  T=956000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
-#  T=956000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf645 cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=956000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xee7b cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: c134, cpu_req.data: 5d30, vstate 1
+# rd from: 0, wr from: 90
+# v_cpu_res.data: c134, cpu_req.data: 99fa, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: c134, cpu_req.data: 99fa, vstate 0
+# rd from: 0, wr from: 140
 # 
 #  T=972000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
-#  T=972000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x56df cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=972000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa8e4 cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
+# v_cpu_res.data: c134, cpu_req.data: 99fa, vstate 1
+# rd from: 0, wr from: 140
+# v_cpu_res.data: c134, cpu_req.data: b47d, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: c134, cpu_req.data: b47d, vstate 1
+# rd from: 40, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: b47d, vstate 1
+# rd from: 40, wr from: 1a0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 0, cpu_req.data: b47d, vstate 0
+# rd from: 40, wr from: 1a0
 # 
 #  T=988000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
-#  T=988000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4927 cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=988000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9b2c cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
+# v_cpu_res.data: 0, cpu_req.data: b47d, vstate 1
+# rd from: 40, wr from: 1a0
+# v_cpu_res.data: 0, cpu_req.data: fc80, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: c134, cpu_req.data: fc80, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: c134, cpu_req.data: fc80, vstate 0
+# rd from: 0, wr from: a0
 # 
 #  T=1004000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x3843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
-#  T=1004000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa485 cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1004000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9cbb cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: c134, cpu_req.data: fc80, vstate 1
+# rd from: 0, wr from: a0
+# v_cpu_res.data: c134, cpu_req.data: 21a6, vstate 1
+# rd from: 0, wr from: 1c0
+# v_cpu_res.data: c134, cpu_req.data: 21a6, vstate 1
+# rd from: 70, wr from: 1c0
+# v_cpu_res.data: 0, cpu_req.data: 21a6, vstate 1
+# rd from: 70, wr from: 1c0
+# v_cpu_res.data: 0, cpu_req.data: 21a6, vstate 2
+# rd from: 70, wr from: 1c0
 # 
 #  T=1020000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
-#  T=1020000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x845b cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1020000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd660 cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
+# v_cpu_res.data: 0, cpu_req.data: 21a6, vstate 1
+# rd from: 70, wr from: 1c0
+# v_cpu_res.data: 0, cpu_req.data: 4cff, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: c134, cpu_req.data: 4cff, vstate 1
+# rd from: 0, wr from: b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: c134, cpu_req.data: 4cff, vstate 0
+# rd from: 0, wr from: b0
 # 
 #  T=1036000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
-#  T=1036000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2b0e cancelled_orders = 0xc134  max_to_trade = 0xe414  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1036000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa43a cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: c134, cpu_req.data: 4cff, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: c134, cpu_req.data: fedb, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: c134, cpu_req.data: fedb, vstate 1
+# rd from: 40, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: fedb, vstate 1
+# rd from: 40, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: fedb, vstate 0
+# rd from: 40, wr from: 0
 # 
 #  T=1052000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
-#  T=1052000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe6d7 cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1052000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x38dc cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
+# v_cpu_res.data: 0, cpu_req.data: fedb, vstate 1
+# rd from: 40, wr from: 0
+# v_cpu_res.data: 0, cpu_req.data: e979, vstate 1
+# rd from: 0, wr from: 60
+# v_cpu_res.data: 1c00f, cpu_req.data: e979, vstate 1
+# rd from: 0, wr from: 60
+# v_cpu_res.data: 1c00f, cpu_req.data: e979, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: e979, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: e979, vstate 2
+# rd from: 50, wr from: 60
 # 
 #  T=1068000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
-#  T=1068000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdcc8 cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1068000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd4fe cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: e979, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: 6cde, vstate 1
+# rd from: 0, wr from: 110
+# v_cpu_res.data: 1c00f, cpu_req.data: 6cde, vstate 1
+# rd from: 0, wr from: 110
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: 6cde, vstate 1
+# rd from: a0, wr from: 110
+# v_cpu_res.data: 20ab2, cpu_req.data: 6cde, vstate 1
+# rd from: a0, wr from: 110
+# v_cpu_res.data: 20ab2, cpu_req.data: 6cde, vstate 2
+# rd from: a0, wr from: 110
 # 
 #  T=1084000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
-#  T=1084000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2d19 cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1084000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x85e8  
+# v_cpu_res.data: 20ab2, cpu_req.data: 6cde, vstate 1
+# rd from: a0, wr from: 110
+# v_cpu_res.data: 20ab2, cpu_req.data: dc5c, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 1c00f, cpu_req.data: dc5c, vstate 1
+# rd from: 0, wr from: c0
+# v_cpu_res.data: 1c00f, cpu_req.data: dc5c, vstate 1
+# rd from: 50, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: dc5c, vstate 1
+# rd from: 50, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: dc5c, vstate 2
+# rd from: 50, wr from: c0
 # 
 #  T=1100000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
-#  T=1100000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3140 cancelled_orders = 0xc134  max_to_trade = 0xe4a1  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1100000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3140 cancelled_orders = 0xab2  max_to_trade = 0xe4a1  
+# v_cpu_res.data: 0, cpu_req.data: dc5c, vstate 1
+# rd from: 50, wr from: c0
+# v_cpu_res.data: 0, cpu_req.data: 4d7b, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 1c00f, cpu_req.data: 4d7b, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 1c00f, cpu_req.data: 4d7b, vstate 1
+# rd from: a0, wr from: 1a0
+# v_cpu_res.data: 20ab2, cpu_req.data: 4d7b, vstate 1
+# rd from: a0, wr from: 1a0
+# v_cpu_res.data: 20ab2, cpu_req.data: 4d7b, vstate 2
+# rd from: a0, wr from: 1a0
 # 
 #  T=1116000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
-#  T=1116000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc2ce cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1116000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x95b5 cancelled_orders = 0x0  max_to_trade = 0x85e8  
+# v_cpu_res.data: 20ab2, cpu_req.data: 4d7b, vstate 1
+# rd from: a0, wr from: 1a0
+# v_cpu_res.data: 20ab2, cpu_req.data: 2f75, vstate 1
+# rd from: 0, wr from: 60
+# v_cpu_res.data: 1c00f, cpu_req.data: 2f75, vstate 1
+# rd from: 0, wr from: 60
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: 2f75, vstate 1
+# rd from: 70, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: 2f75, vstate 1
+# rd from: 70, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: 2f75, vstate 2
+# rd from: 70, wr from: 60
 # 
 #  T=1132000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
-#  T=1132000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x83ce cancelled_orders = 0xc134  max_to_trade = 0xe4a1  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1132000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x83ce cancelled_orders = 0xab2  max_to_trade = 0xe4a1  
+# v_cpu_res.data: 0, cpu_req.data: 2f75, vstate 1
+# rd from: 70, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: 438c, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 1c00f, cpu_req.data: 438c, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 1c00f, cpu_req.data: 438c, vstate 1
+# rd from: a0, wr from: 30
+# v_cpu_res.data: 20ab2, cpu_req.data: 438c, vstate 1
+# rd from: a0, wr from: 30
+# v_cpu_res.data: 20ab2, cpu_req.data: 438c, vstate 2
+# rd from: a0, wr from: 30
 # 
 #  T=1148000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
-#  T=1148000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xad3c cancelled_orders = 0xc134  max_to_trade = 0xe414  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1148000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2668 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# v_cpu_res.data: 20ab2, cpu_req.data: 438c, vstate 1
+# rd from: a0, wr from: 30
+# v_cpu_res.data: 20ab2, cpu_req.data: c426, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 1c00f, cpu_req.data: c426, vstate 1
+# rd from: 0, wr from: 1a0
+# v_cpu_res.data: 1c00f, cpu_req.data: c426, vstate 1
+# rd from: 90, wr from: 1a0
+# v_cpu_res.data: 5d30, cpu_req.data: c426, vstate 1
+# rd from: 90, wr from: 1a0
+# v_cpu_res.data: 5d30, cpu_req.data: c426, vstate 0
+# rd from: 90, wr from: 1a0
 # 
 #  T=1164000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
-#  T=1164000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xc134  max_to_trade = 0xe4a1  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1164000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xab2  max_to_trade = 0xe4a1  
+# v_cpu_res.data: 5d30, cpu_req.data: c426, vstate 1
+# rd from: 90, wr from: 1a0
+# v_cpu_res.data: 5d30, cpu_req.data: 1b12, vstate 1
+# rd from: 0, wr from: 150
+# v_cpu_res.data: 1c00f, cpu_req.data: 1b12, vstate 1
+# rd from: 0, wr from: 150
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: 1b12, vstate 1
+# rd from: 80, wr from: 150
+# v_cpu_res.data: d4fe, cpu_req.data: 1b12, vstate 1
+# rd from: 80, wr from: 150
+# v_cpu_res.data: d4fe, cpu_req.data: 1b12, vstate 0
+# rd from: 80, wr from: 150
 # 
 #  T=1180000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x9ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
-#  T=1180000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x879f cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1180000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x45ac cancelled_orders = 0x5d30  max_to_trade = 0xffaa  
+# v_cpu_res.data: d4fe, cpu_req.data: 1b12, vstate 1
+# rd from: 80, wr from: 150
+# v_cpu_res.data: d4fe, cpu_req.data: 45e0, vstate 1
+# rd from: 0, wr from: 40
+# v_cpu_res.data: 1c00f, cpu_req.data: 45e0, vstate 1
+# rd from: 0, wr from: 40
+# v_cpu_res.data: 1c00f, cpu_req.data: 45e0, vstate 1
+# rd from: 60, wr from: 40
+# v_cpu_res.data: 17950, cpu_req.data: 45e0, vstate 1
+# rd from: 60, wr from: 40
+# v_cpu_res.data: 17950, cpu_req.data: 45e0, vstate 2
+# rd from: 60, wr from: 40
 # 
 #  T=1196000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xfed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
-#  T=1196000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x879f cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1196000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xfc6a cancelled_orders = 0xd4fe  max_to_trade = 0xcd30  
+# v_cpu_res.data: 17950, cpu_req.data: 45e0, vstate 1
+# rd from: 60, wr from: 40
+# v_cpu_res.data: 17950, cpu_req.data: 44e3, vstate 1
+# rd from: 0, wr from: 1c0
+# v_cpu_res.data: 1c00f, cpu_req.data: 44e3, vstate 1
+# rd from: 0, wr from: 1c0
+# v_cpu_res.data: 1c00f, cpu_req.data: 44e3, vstate 1
+# rd from: 10, wr from: 1c0
+# v_cpu_res.data: 12fd8, cpu_req.data: 44e3, vstate 1
+# rd from: 10, wr from: 1c0
+# v_cpu_res.data: 12fd8, cpu_req.data: 44e3, vstate 2
+# rd from: 10, wr from: 1c0
 # 
 #  T=1212000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
-#  T=1212000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xb3bf cancelled_orders = 0xc134  max_to_trade = 0xe414  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1212000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdc42 cancelled_orders = 0x7950  max_to_trade = 0xe414  
+# v_cpu_res.data: 12fd8, cpu_req.data: 44e3, vstate 1
+# rd from: 10, wr from: 1c0
+# v_cpu_res.data: 12fd8, cpu_req.data: afb, vstate 1
+# rd from: 0, wr from: 60
+# v_cpu_res.data: 1c00f, cpu_req.data: afb, vstate 1
+# rd from: 0, wr from: 60
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: afb, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: afb, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: afb, vstate 2
+# rd from: 50, wr from: 60
 # 
 #  T=1228000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
-#  T=1228000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8b20 cancelled_orders = 0xc134  max_to_trade = 0xfa0c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1228000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9a45 cancelled_orders = 0x2fd8  max_to_trade = 0xffcc  
+# v_cpu_res.data: 0, cpu_req.data: afb, vstate 1
+# rd from: 50, wr from: 60
+# v_cpu_res.data: 0, cpu_req.data: 2, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 1c00f, cpu_req.data: 2, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 1c00f, cpu_req.data: 2, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: 2, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: 2, vstate 2
+# rd from: 50, wr from: 180
 # 
 #  T=1244000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
-#  T=1244000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x15af cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1244000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe896 cancelled_orders = 0x0  max_to_trade = 0x85e8  
+# v_cpu_res.data: 0, cpu_req.data: 2, vstate 1
+# rd from: 50, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: 691, vstate 1
+# rd from: 0, wr from: d0
+# v_cpu_res.data: 1c00f, cpu_req.data: 691, vstate 1
+# rd from: 0, wr from: d0
+# v_cpu_res.data: 1c00f, cpu_req.data: 691, vstate 1
+# rd from: 80, wr from: d0
+# v_cpu_res.data: d4fe, cpu_req.data: 691, vstate 1
+# rd from: 80, wr from: d0
+# v_cpu_res.data: d4fe, cpu_req.data: 691, vstate 0
+# rd from: 80, wr from: d0
 # 
 #  T=1260000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
-#  T=1260000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9786 cancelled_orders = 0xc134  max_to_trade = 0x85e8  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1260000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6a6d cancelled_orders = 0x0  max_to_trade = 0x85e8  
+# v_cpu_res.data: d4fe, cpu_req.data: 691, vstate 1
+# rd from: 80, wr from: d0
+# v_cpu_res.data: d4fe, cpu_req.data: e69b, vstate 1
+# rd from: 0, wr from: e0
+# v_cpu_res.data: 1c00f, cpu_req.data: e69b, vstate 1
+# rd from: 0, wr from: e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: e69b, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: e69b, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: e69b, vstate 0
+# rd from: 20, wr from: e0
 # 
 #  T=1276000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
-#  T=1276000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8670 cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1276000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xfb3b cancelled_orders = 0xd4fe  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: e69b, vstate 1
+# rd from: 20, wr from: e0
+# v_cpu_res.data: 0, cpu_req.data: 6d46, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: 1c00f, cpu_req.data: 6d46, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: 1c00f, cpu_req.data: 6d46, vstate 1
+# rd from: 60, wr from: 1b0
+# v_cpu_res.data: 17950, cpu_req.data: 6d46, vstate 1
+# rd from: 60, wr from: 1b0
+# v_cpu_res.data: 17950, cpu_req.data: 6d46, vstate 0
+# rd from: 60, wr from: 1b0
 # 
 #  T=1292000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
-#  T=1292000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4fd7 cancelled_orders = 0xc134  max_to_trade = 0xb338  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1292000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x76d cancelled_orders = 0x0  max_to_trade = 0x7d1b  
+# v_cpu_res.data: 17950, cpu_req.data: 6d46, vstate 1
+# rd from: 60, wr from: 1b0
+# v_cpu_res.data: 17950, cpu_req.data: 7a97, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 1c00f, cpu_req.data: 7a97, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 1c00f, cpu_req.data: 7a97, vstate 1
+# rd from: 10, wr from: 160
+# v_cpu_res.data: 12fd8, cpu_req.data: 7a97, vstate 1
+# rd from: 10, wr from: 160
+# v_cpu_res.data: 12fd8, cpu_req.data: 7a97, vstate 2
+# rd from: 10, wr from: 160
 # 
 #  T=1308000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
-#  T=1308000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x404f cancelled_orders = 0xc134  max_to_trade = 0xe414  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1308000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x68d2 cancelled_orders = 0x7950  max_to_trade = 0xe414  
+# v_cpu_res.data: 12fd8, cpu_req.data: 7a97, vstate 1
+# rd from: 10, wr from: 160
+# v_cpu_res.data: 12fd8, cpu_req.data: 5969, vstate 1
+# rd from: 0, wr from: b0
+# v_cpu_res.data: 1c00f, cpu_req.data: 5969, vstate 1
+# rd from: 0, wr from: b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: 5969, vstate 1
+# rd from: 10, wr from: b0
+# v_cpu_res.data: 12fd8, cpu_req.data: 5969, vstate 1
+# rd from: 10, wr from: b0
+# v_cpu_res.data: 12fd8, cpu_req.data: 5969, vstate 2
+# rd from: 10, wr from: b0
 # 
 #  T=1324000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xbf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
-#  T=1324000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x8b20 cancelled_orders = 0xc134  max_to_trade = 0xe3ae  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1324000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9a45 cancelled_orders = 0x2fd8  max_to_trade = 0xe3ae  
+# v_cpu_res.data: 12fd8, cpu_req.data: 5969, vstate 1
+# rd from: 10, wr from: b0
+# v_cpu_res.data: 12fd8, cpu_req.data: e360, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 1c00f, cpu_req.data: e360, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 1c00f, cpu_req.data: e360, vstate 0
+# rd from: 0, wr from: 100
 # 
 #  T=1340000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
-#  T=1340000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4a67 cancelled_orders = 0xc134  max_to_trade = 0xe3ae  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1340000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x598c cancelled_orders = 0x2fd8  max_to_trade = 0xe3ae  
+# v_cpu_res.data: 1c00f, cpu_req.data: e360, vstate 1
+# rd from: 0, wr from: 100
+# v_cpu_res.data: 1c00f, cpu_req.data: d677, vstate 1
+# rd from: 0, wr from: 1e0
+# v_cpu_res.data: 1c00f, cpu_req.data: d677, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: d677, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: d677, vstate 0
+# rd from: 60, wr from: 1e0
 # 
 #  T=1356000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
-#  T=1356000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5d9d cancelled_orders = 0xc134  max_to_trade = 0xe3ae  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1356000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xdd25 cancelled_orders = 0xc00f  max_to_trade = 0xfa0c  
+# v_cpu_res.data: 17950, cpu_req.data: d677, vstate 1
+# rd from: 60, wr from: 1e0
+# v_cpu_res.data: 17950, cpu_req.data: 9aea, vstate 1
+# rd from: 0, wr from: 1e0
+# v_cpu_res.data: 1c00f, cpu_req.data: 9aea, vstate 1
+# rd from: 0, wr from: 1e0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 1c00f, cpu_req.data: 9aea, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 12fd8, cpu_req.data: 9aea, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 12fd8, cpu_req.data: 9aea, vstate 2
+# rd from: 10, wr from: 1e0
 # 
 #  T=1372000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x6d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
-#  T=1372000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x404f cancelled_orders = 0xc134  max_to_trade = 0x5538  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1372000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xbe0a cancelled_orders = 0x7950  max_to_trade = 0xe414  
+# v_cpu_res.data: 12fd8, cpu_req.data: 9aea, vstate 1
+# rd from: 10, wr from: 1e0
+# v_cpu_res.data: 12fd8, cpu_req.data: 96a7, vstate 1
+# rd from: 0, wr from: 130
+# v_cpu_res.data: 1c00f, cpu_req.data: 96a7, vstate 1
+# rd from: 0, wr from: 130
+# v_cpu_res.data: 1c00f, cpu_req.data: 96a7, vstate 1
+# rd from: 10, wr from: 130
+# v_cpu_res.data: 12fd8, cpu_req.data: 96a7, vstate 1
+# rd from: 10, wr from: 130
+# v_cpu_res.data: 12fd8, cpu_req.data: 96a7, vstate 2
+# rd from: 10, wr from: 130
 # 
 #  T=1388000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
-#  T=1388000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5d9d cancelled_orders = 0xf2be  max_to_trade = 0xa50a  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1388000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x6cc2 cancelled_orders = 0x2fd8  max_to_trade = 0xe3ae  
+# v_cpu_res.data: 12fd8, cpu_req.data: 96a7, vstate 1
+# rd from: 10, wr from: 130
+# v_cpu_res.data: 12fd8, cpu_req.data: efc5, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 1c00f, cpu_req.data: efc5, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 1c00f, cpu_req.data: efc5, vstate 1
+# rd from: 80, wr from: 0
+# v_cpu_res.data: d4fe, cpu_req.data: efc5, vstate 1
+# rd from: 80, wr from: 0
+# v_cpu_res.data: d4fe, cpu_req.data: efc5, vstate 0
+# rd from: 80, wr from: 0
 # 
 #  T=1404000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
-#  T=1404000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd272 cancelled_orders = 0xc134  max_to_trade = 0xa50a  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1404000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe197 cancelled_orders = 0x2fd8  max_to_trade = 0xe3ae  
+# v_cpu_res.data: d4fe, cpu_req.data: efc5, vstate 1
+# rd from: 80, wr from: 0
+# v_cpu_res.data: d4fe, cpu_req.data: 2358, vstate 1
+# rd from: 0, wr from: 1d0
+# v_cpu_res.data: 2afd4, cpu_req.data: 2358, vstate 1
+# rd from: 0, wr from: 1d0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 2afd4, cpu_req.data: 2358, vstate 1
+# rd from: 20, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 2358, vstate 1
+# rd from: 20, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 2358, vstate 0
+# rd from: 20, wr from: 1d0
 # 
 #  T=1420000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
-#  T=1420000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa2c7 cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1420000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1792 cancelled_orders = 0xd4fe  max_to_trade = 0xcd30  
+# v_cpu_res.data: 0, cpu_req.data: 2358, vstate 1
+# rd from: 20, wr from: 1d0
+# v_cpu_res.data: 0, cpu_req.data: 3457, vstate 1
+# rd from: 0, wr from: 1f0
+# v_cpu_res.data: 2afd4, cpu_req.data: 3457, vstate 1
+# rd from: 0, wr from: 1f0
+# v_cpu_res.data: 2afd4, cpu_req.data: 3457, vstate 1
+# rd from: 30, wr from: 1f0
+# v_cpu_res.data: 0, cpu_req.data: 3457, vstate 1
+# rd from: 30, wr from: 1f0
+# v_cpu_res.data: 0, cpu_req.data: 3457, vstate 2
+# rd from: 30, wr from: 1f0
 # 
 #  T=1436000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
-#  T=1436000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4fd7 cancelled_orders = 0xc134  max_to_trade = 0xf36e  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1436000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x76d cancelled_orders = 0x0  max_to_trade = 0xf36e  
+# v_cpu_res.data: 0, cpu_req.data: 3457, vstate 1
+# rd from: 30, wr from: 1f0
+# v_cpu_res.data: 0, cpu_req.data: e551, vstate 1
+# rd from: 0, wr from: 1c0
+# v_cpu_res.data: 2afd4, cpu_req.data: e551, vstate 1
+# rd from: 0, wr from: 1c0
+# v_cpu_res.data: 2afd4, cpu_req.data: e551, vstate 1
+# rd from: 90, wr from: 1c0
+# v_cpu_res.data: 5d30, cpu_req.data: e551, vstate 1
+# rd from: 90, wr from: 1c0
+# v_cpu_res.data: 5d30, cpu_req.data: e551, vstate 0
+# rd from: 90, wr from: 1c0
 # 
 #  T=1452000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xcc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
-#  T=1452000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x7edb cancelled_orders = 0xc134  max_to_trade = 0xf36e  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1452000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x2b08 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# v_cpu_res.data: 5d30, cpu_req.data: e551, vstate 1
+# rd from: 90, wr from: 1c0
+# v_cpu_res.data: 5d30, cpu_req.data: c4bc, vstate 1
+# rd from: 0, wr from: 10
+# v_cpu_res.data: 2afd4, cpu_req.data: c4bc, vstate 1
+# rd from: 0, wr from: 10
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 2afd4, cpu_req.data: c4bc, vstate 1
+# rd from: 40, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: c4bc, vstate 1
+# rd from: 40, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: c4bc, vstate 0
+# rd from: 40, wr from: 10
 # 
 #  T=1468000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x68a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
-#  T=1468000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa2c7 cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1468000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xe44c cancelled_orders = 0x5d30  max_to_trade = 0xffaa  
+# v_cpu_res.data: 0, cpu_req.data: c4bc, vstate 1
+# rd from: 40, wr from: 10
+# v_cpu_res.data: 0, cpu_req.data: 6a0b, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 2afd4, cpu_req.data: 6a0b, vstate 1
+# rd from: 0, wr from: 160
+# v_cpu_res.data: 2afd4, cpu_req.data: 6a0b, vstate 1
+# rd from: a0, wr from: 160
+# v_cpu_res.data: 20ab2, cpu_req.data: 6a0b, vstate 1
+# rd from: a0, wr from: 160
+# v_cpu_res.data: 20ab2, cpu_req.data: 6a0b, vstate 2
+# rd from: a0, wr from: 160
 # 
 #  T=1484000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
-#  T=1484000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x9786 cancelled_orders = 0xc134  max_to_trade = 0xd302  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1484000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x254f cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# v_cpu_res.data: 20ab2, cpu_req.data: 6a0b, vstate 1
+# rd from: a0, wr from: 160
+# v_cpu_res.data: 20ab2, cpu_req.data: a136, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 2afd4, cpu_req.data: a136, vstate 1
+# rd from: 0, wr from: 180
+# v_cpu_res.data: 2afd4, cpu_req.data: a136, vstate 1
+# rd from: 20, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: a136, vstate 1
+# rd from: 20, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: a136, vstate 0
+# rd from: 20, wr from: 180
 # 
 #  T=1500000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
-#  T=1500000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xc134  max_to_trade = 0xb248  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1500000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xab2  max_to_trade = 0xb248  
+# v_cpu_res.data: 0, cpu_req.data: a136, vstate 1
+# rd from: 20, wr from: 180
+# v_cpu_res.data: 0, cpu_req.data: dee, vstate 1
+# rd from: 0, wr from: 1b0
+# v_cpu_res.data: 2afd4, cpu_req.data: dee, vstate 1
+# rd from: 0, wr from: 1b0
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: 2afd4, cpu_req.data: dee, vstate 1
+# rd from: 30, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: dee, vstate 1
+# rd from: 30, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: dee, vstate 2
+# rd from: 30, wr from: 1b0
 # 
 #  T=1516000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xfc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
-#  T=1516000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4b29 cancelled_orders = 0xc134  max_to_trade = 0xf36e  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1516000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x76d cancelled_orders = 0x0  max_to_trade = 0x2f04  
+# v_cpu_res.data: 0, cpu_req.data: dee, vstate 1
+# rd from: 30, wr from: 1b0
+# v_cpu_res.data: 0, cpu_req.data: 6746, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: 2afd4, cpu_req.data: 6746, vstate 1
+# rd from: 0, wr from: f0
+# v_cpu_res.data: 2afd4, cpu_req.data: 6746, vstate 1
+# rd from: 20, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 6746, vstate 1
+# rd from: 20, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 6746, vstate 0
+# rd from: 20, wr from: f0
 # 
 #  T=1532000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
-#  T=1532000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4b29 cancelled_orders = 0xc134  max_to_trade = 0xfc96  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1532000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf756 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# v_cpu_res.data: 0, cpu_req.data: 6746, vstate 1
+# rd from: 20, wr from: f0
+# v_cpu_res.data: 0, cpu_req.data: 8223, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 2afd4, cpu_req.data: 8223, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 2afd4, cpu_req.data: 8223, vstate 2
+# rd from: 0, wr from: 0
 # 
 #  T=1548000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xe4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
-#  T=1548000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4b29 cancelled_orders = 0xc134  max_to_trade = 0xc9b4  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1548000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x76d cancelled_orders = 0x0  max_to_trade = 0xfc96  
+# v_cpu_res.data: 2afd4, cpu_req.data: 8223, vstate 1
+# rd from: 0, wr from: 0
+# v_cpu_res.data: 2afd4, cpu_req.data: ea67, vstate 1
+# rd from: 0, wr from: 130
+# v_cpu_res.data: 2afd4, cpu_req.data: ea67, vstate 1
+# rd from: 80, wr from: 130
+# v_cpu_res.data: d4fe, cpu_req.data: ea67, vstate 1
+# rd from: 80, wr from: 130
+# mem_data_down.ready from controller 1 mem.
+# v_cpu_res.data: d4fe, cpu_req.data: ea67, vstate 0
+# rd from: 80, wr from: 130
 # 
 #  T=1564000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
-#  T=1564000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xd272 cancelled_orders = 0xc134  max_to_trade = 0xe97d  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1564000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x822f cancelled_orders = 0xafd4  max_to_trade = 0xfa0c  
+# v_cpu_res.data: d4fe, cpu_req.data: ea67, vstate 1
+# rd from: 80, wr from: 130
+# v_cpu_res.data: d4fe, cpu_req.data: 6fa7, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 2afd4, cpu_req.data: 6fa7, vstate 1
+# rd from: 0, wr from: 30
+# v_cpu_res.data: 2afd4, cpu_req.data: 6fa7, vstate 1
+# rd from: 30, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 6fa7, vstate 1
+# rd from: 30, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: 6fa7, vstate 2
+# rd from: 30, wr from: 30
 # 
 #  T=1580000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
-#  T=1580000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa2c7 cancelled_orders = 0xc134  max_to_trade = 0x183c  
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+#  T=1580000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x1792 cancelled_orders = 0xd4fe  max_to_trade = 0x7f87  
+# v_cpu_res.data: 0, cpu_req.data: 6fa7, vstate 1
+# rd from: 30, wr from: 30
+# v_cpu_res.data: 0, cpu_req.data: f6c5, vstate 1
+# rd from: 0, wr from: 120
+# v_cpu_res.data: 2afd4, cpu_req.data: f6c5, vstate 1
+# rd from: 0, wr from: 120
+# v_cpu_res.data: 2afd4, cpu_req.data: f6c5, vstate 1
+# rd from: a0, wr from: 120
+# v_cpu_res.data: 20ab2, cpu_req.data: f6c5, vstate 1
+# rd from: a0, wr from: 120
+# v_cpu_res.data: 20ab2, cpu_req.data: f6c5, vstate 2
+# rd from: a0, wr from: 120
 # 
 #  T=1596000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
-#  T=1596000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4b29 cancelled_orders = 0xc134  max_to_trade = 0xe4b5  
+#  T=1596000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc10a cancelled_orders = 0x0  max_to_trade = 0xb338  
 # T=1596000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
-# cpu_req.rdindex[3:2] : 0
-# cpu_req.rdindex[3:2] : 0
+# v_cpu_res.data: 20ab2, cpu_req.data: f6c5, vstate 1
+# rd from: a0, wr from: 120
+# v_cpu_res.data: 20ab2, cpu_req.data: f6c5, vstate 2
+# rd from: a0, wr from: 120
 # 
 #  T=1612000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xba83 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0xf6c5 exchange_go = 0x1 
-#  T=1612000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xc134  max_to_trade = 0xede6  
+#  T=1612000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3a95 cancelled_orders = 0xab2  max_to_trade = 0xede6  
 # ** Note: $stop    : testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
 #    Time: 1616 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 #  quit
-# End time: 15:34:43 on May 16,2022, Elapsed time: 0:00:02
-# Errors: 2, Warnings: 6
+# End time: 14:29:31 on May 17,2022, Elapsed time: 0:00:41
+# Errors: 2, Warnings: 10
