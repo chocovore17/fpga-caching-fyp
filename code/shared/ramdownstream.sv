@@ -162,8 +162,8 @@ module dm_cache_fsm_downstream(input bit clk, input bit rst,
   // 2'b10:v_cpu_res.data = data_read[95:64];
   // 2'b11:v_cpu_res.data = data_read[127:96];
   endcase
-  $display("v_cpu_res.data: %0h, cpu_req.data: %0h, vstate %0h", v_cpu_res.data, cpu_req.data, vstate);
-  $display("rd from: %0h, wr from: %0h", cpu_req.rdindex,cpu_req.wrindex);
+  // $display("v_cpu_res.data: %0h, cpu_req.data: %0h, vstate %0h", v_cpu_res.data, cpu_req.data, vstate);
+  // $display("rd from: %0h, wr from: %0h", cpu_req.rdindex,cpu_req.wrindex);
 
  
   // TODO: ADD RD/WR MEM REQ ADDR

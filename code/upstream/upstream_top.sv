@@ -32,10 +32,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   //outputs,
   mem_req_type mem_req; //memory request (cache->memory)
   cpu_result_type cpu_res; //cache result (cache->CPU)
- 
-
-
-
+  reg counter;
   reg       check_risk, send_order, update_max; // state machine outputs
   input [15:0] cancelled_orders; // RAM data 
   reg [15:0] result, accumulated_orders_reg, cancelled_orders_reg ; // for signed comp 
@@ -49,6 +46,9 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   assign max_to_trade =  max_to_trade_reg ;
 
 
+  // initial begin
+  //   counter = '0;
+  // end
   // assign cancelled_orders = mem_datadown;
 
   // dm_data_upstream RAMUPSTREAM(

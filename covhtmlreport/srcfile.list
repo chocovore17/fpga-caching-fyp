@@ -1,5 +1,4 @@
-code/downstream/downstream_top.sv
-code/shared/ramupstream.sv
-code/shared/top.sv
-code/upstream/upstream_top.sv
-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
+mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv
+mem_model_bs/downstream/downstream_top.sv
+mem_model_bs/shared/top.sv
+mem_model_bs/upstream/upstream_top.sv

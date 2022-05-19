@@ -105,7 +105,7 @@ module mem_controller(input bit clk, //write clock
       always @(mem_req.addr) begin
         datav = memory[mem_req.addr];
         // $displayb("DATAV %0h", datav);
-        for (i=0; i<5; i=i+1)begin
+        for (i=0; i<6; i=i+1)begin
               @(posedge clk) ; 
             end
             wait (i=== 5); //Implementation 1      
@@ -121,7 +121,7 @@ module mem_controller(input bit clk, //write clock
             memory[mem_req.addr][15:0] <=  memory[mem_req.addr][15:0] + mem_req.data[15:0]; //+memory[data_req.index];
           end
              $displayb("MEMORY %p", memory[mem_req.addr]);
-          for (i=0; i<7; i=i+1)
+          for (i=0; i<8; i=i+1)
              @(posedge clk) ; 
         wait (i=== 7); //Implementation 1   
         // end   

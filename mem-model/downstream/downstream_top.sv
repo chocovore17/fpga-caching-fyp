@@ -3,8 +3,8 @@
  compile with the following flags in icarus verilog:  -Wall -g2012 bc inputs/outputs fed back
  */ 
 
- `include "code/shared/ramdownstream.sv"
- `include "code/shared/cache_def.sv"
+ `include "mem-model/shared/ramdownstream.sv"
+ `include "mem-model/shared/cache_def.sv"
  import cache_def::*;
 
 
