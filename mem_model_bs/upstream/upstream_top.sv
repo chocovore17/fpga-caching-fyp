@@ -80,12 +80,17 @@ always @(client_id, amount)
     max_to_trade_reg = cpu_res.data >> 16;
 
     fork begin : write_fork
+      correct_amount = { 16'b0, amount_reg[15:0]};
       if ((new_max) & & (amount > (cpu_res.data[15 : 0]))) // update max, shift amount 16 bits to left
-        correct_amount = {amount_reg[31:16], 16'b0};
-      else
-        correct_amount = { 16'b0, amount_reg[15:0]};
-
-        cpu_req.data = correct_amount;
+        correct_amount = { amount_reg[15:0], 16'b0};
+      cpu_req.data = correct_amount;
+        // SVA to check if CORRECT amount written
+      trade_correctamount_cpu : assert property (
+        @(client_id) // throws an $errorif the correct amount is different from amount to trade
+        `AMOUNTGOOD== 1'b1 )
+      else begin
+        $error("The amount was NOT indexed properly: amount %0d; correct amount (TO write): %0d, correct_amount[31:16]: %0d, (correct_amount == amount) %0d , (correct_amount[31:16]== amount) %0d, ((correct_amount == amount)||(correct_amount[31:16]== amount))%0d", amount_reg, correct_amount, correct_amount[31 : 16], (correct_amount == amount_reg), (correct_amount[31 : 16] == amount_reg), `AMOUNTGOOD);
+      end //
         result = (accumulated_orders_reg + (~cancelled_orders_reg + 1) + amount_reg);
         // $display("%0b, result : %0d", ($signed({1'b0, max_to_trade[15 : 0]}) > $signed(result)), $signed(result));
         pass_checks = $signed({1'b0, max_to_trade_reg[15 : 0]}) > $signed(result); //extend for neg values
@@ -95,13 +100,6 @@ always @(client_id, amount)
         // $display("HEYYYYY written %0h .", written);
     end : write_fork
     join
-      // SVA to check if CORRECT amount written
-    // trade_correctamount_cpu : assert property (
-    //   @(posedge clk) // throws an $errorif the correct amount is different from amount to trade
-    //   `AMOUNTGOOD== 1'b1 )
-    // else begin
-    //   $error("The amount was NOT indexed properly: amount %0d; correct amount (TO write): %0d, correct_amount[31:16]: %0d, (correct_amount == amount) %0d , (correct_amount[31:16]== amount) %0d, ((correct_amount == amount)||(correct_amount[31:16]== amount))%0d", amount_reg, correct_amount, correct_amount[31 : 16], (correct_amount == amount_reg), (correct_amount[31 : 16] == amount_reg), `AMOUNTGOOD);
-    // end //
 
     //  SVA to check if trade safe respected
     trade_pass_checks : assert property (
@@ -143,6 +141,5 @@ always @(client_id, amount)
     wait fork;
 
   end
-  $display("`AMOUNTGOOD, %b",`AMOUNTGOOD);
 
  endmodule

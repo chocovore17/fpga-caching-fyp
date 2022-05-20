@@ -3,7 +3,7 @@ c23:[4,'reset_check',[],,'22',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_
 c24:[4,'valid_client_id',[],,'22',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','199',,'client_id']],[]],
 c25:[4,'upstream_new_maxcheck',[],,'22',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','199',,'new_maxcheck']],[]],
 c26:[4,'downstream_exchchangecheck',[],,'22',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','199',,'exchange_go']],[]],
-c32:[4,'upstream_acc_data',[],,'31',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','196',,'accumulated_orders']],[]],
+c32:[4,'upstream_acc_data',[],,'31',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','141',,'accumulated_orders']],[]],
 c33:[4,'upstream_max_data',[],,'31',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','196',,'max_to_trade']],[]],
 c34:[4,'downstream_cxl_data',[],,'31',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','129',,'cancelled_orders']],[]],
 dummyEnd:0

@@ -46,19 +46,6 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   assign max_to_trade =  max_to_trade_reg ;
 
 
-  // initial begin
-  //   counter = '0;
-  // end
-  // assign cancelled_orders = mem_datadown;
-
-  // dm_data_upstream RAMUPSTREAM(
-  //   .clk(clk),    
-  //   .data_req(mem_requp),    //CPU request input (CPU->cache)
-  //   .data_write(mem_dataup_wr),     //memory response (memory->cache)
-  //   .data_read(mem_dataup)    //memory request (cache->memory)
-  //   );
-
-
 /*cache finite state machine*/
     dm_cache_fsm_upstream CACHEUPSTREAM(
       .clk(clk),
@@ -109,8 +96,8 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     cpu_req.rw = pass_checks;
       // SVA to check if CORRECT amount written
     trade_correctamount_cpu: assert property (
-      @(posedge clk) // throws an error if the correct amount is different from amount to trade
-      `AMOUNTGOOD == 1'b0
+      @(client_id) // throws an error if the correct amount is different from amount to trade
+      `AMOUNTGOOD == 1'b1
         )
       else begin 
         $error ("The amount was not indexed properly: amount %0d; correct amount (to write): %0d, correct_amount[31:16]: %0d, (correct_amount == amount) %0d , (correct_amount[31:16]== amount) %0d, ((correct_amount == amount)||(correct_amount[31:16]== amount))%0d", amount, correct_amount, correct_amount[31:16], (correct_amount == amount), (correct_amount[31:16]== amount), ((correct_amount == amount)||(correct_amount[31:16]== amount)));
@@ -121,7 +108,7 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     
   // SVA to check if trade safe respected
   trade_pass_checks: assert property (
-    @(posedge clk) // throws an error if the trade is unsafe
+    @(client_id) // throws an error if the trade is unsafe
     `SAFETOTRADE == pass_checks
       )
     else begin 
