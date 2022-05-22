@@ -25,6 +25,7 @@ module dm_data_upstream(clk,
   
   reg done_rd_reg;
   reg done_wr_reg;
+  reg totalsent;
   assign done_rd = done_rd_reg;
   assign done_wr = done_wr_reg;
 
@@ -37,6 +38,7 @@ module dm_data_upstream(clk,
   initial begin
       $display("Loading upstream rom.");
       $readmemh("code/shared/rom_trade.mem", memory);
+      totalsent= 0;
       // done_rd_reg = '1;
       // done_wr_reg = '1;
       // $displayb("%p", memory);
@@ -59,6 +61,8 @@ module dm_data_upstream(clk,
     always @(data_req.we) begin
     // always_comb begin
 
+      totalsent= totalsent+1;
+      $display("totalsent t %0d.", totalsent);
       done_wr_reg = '0;
       if (data_req.we)
         if (data_write[31:16] > 2'b01) 

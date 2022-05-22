@@ -18,6 +18,7 @@ module dm_data_upstream(clk,
   data_read);
   input  clk;//, change_max;
   reg[4:0] i;
+  reg[12:0] totalsent;
 
   input cache_req_type data_req;//data request/command, e.g. RW, valid
   input cache_data_type data_write; //write port (128-bit line)
@@ -29,20 +30,25 @@ module dm_data_upstream(clk,
   initial begin
       $display("Loading upstream cache.");
       $readmemh("code/shared/rom_trade.mem", memory);
+      totalsent= 0;
+
       // $displayb("%p", memory);
     end
     assign data_read = memory[data_req.rdindex];
     always @(posedge(clk)) begin
-      if (data_req.we)
-      // $display("Writing %0h cache.", data_write);
+      if (data_req.we) begin
+      totalsent= totalsent+1;
+      // $display("data_req.rdindex %0h cache.", data_req.rdindex);
       // $display("BEFORE %d, ",memory[data_req.rdindex]);
         if (data_write[31:16] > 2'b01) 
           memory[data_req.rdindex] <= {data_write[31:16],memory[data_req.rdindex][15:0] }; //+memory[data_req.index]; 
         else begin
           memory[data_req.rdindex][15:0] <=  memory[data_req.rdindex][15:0] + data_write[15:0]; //+memory[data_req.index];
+          $display("totalsent to accuorders cache %0d.", totalsent);
         end
         // $display("AFTER %d, ",memory[data_req.rdindex]);
       end
+    end
     // SVA to check if gpio_out during reset
         trade_risk_check_mem: assert property (
           @(posedge clk) // throws an error if the trade is unsafe
@@ -126,6 +132,7 @@ module mem_controller(input bit clk, //write clock
         wait (i=== 7); //Implementation 1   
         // end   
         end
+                // $displayb("%p", memory);
       // // SVA to check if gpio_out during reset
       //     trade_risk_check_mem: assert property (
       //       @(posedge clk) // throws an error if the trade is unsafe

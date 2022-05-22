@@ -23,6 +23,7 @@ module dm_mem_upstream(input bit clk, input bit rst,
 	output written
 	);
 	reg[4 : 0] i;
+  reg[6:0] totalsent;
 	reg written_reg;
 	assign written = written_reg;
 	cache_data_type memory[0 : 121];
@@ -30,6 +31,7 @@ module dm_mem_upstream(input bit clk, input bit rst,
 	initial begin
     $display("Loading upstream memory.");
     $readmemh("mem_model_bs/shared/rom_trade.mem", memory);
+    totalsent= 0;
     // $displayb("%p", memory);
   end
 
@@ -49,6 +51,9 @@ module dm_mem_upstream(input bit clk, input bit rst,
   // assign mem_data.ready = 1'b1;
 
   always @(cpu_req.rw) begin
+    totalsent= totalsent+1;
+    $display("totalsent to upstream %0d.", totalsent);
+
     written_reg = 1'b0;
     if (cpu_req.rw) begin
       if (cpu_req.data[31 : 16] > 2'b01)
@@ -67,6 +72,9 @@ module dm_mem_upstream(input bit clk, input bit rst,
         join
         wait fork;
         written_reg = 1'b1;
+        // $displayb("%p", memory);
+
+    
         // $display("HEYYYYY Writing %0h mem. after wait, written_reg", cpu_req.data, written_reg);
 
     end

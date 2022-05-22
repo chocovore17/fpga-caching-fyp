@@ -19,10 +19,14 @@ module dm_data_downstream(clk,
   cache_data_type data_mem[0:32];
   reg[4:0] i;
 
+  reg[12:0] totalsent;
+
 
     initial begin
       $display("Loading downstream rom.");
       $readmemh("code/shared/rom_empty.mem", data_mem);
+      totalsent= 0;
+
       // $displayb("%p", memory);
     end
     assign data_read = data_mem[data_req.rdindex];
@@ -31,6 +35,8 @@ module dm_data_downstream(clk,
       // $displayb("%p", data_mem[0:16]);
 
     if (data_req.we) begin
+      totalsent= totalsent+1;
+      // $display("totalsent to downstream cache %0d.", totalsent);
       // if ((data_write+data_mem[data_req.wrindex])<16'hffaa)
       // $display("data_write %0h, data_mem[data_req.wrindex] %0h .", data_write, data_mem[data_req.wrindex]);
 
