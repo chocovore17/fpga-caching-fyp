@@ -10,7 +10,7 @@
 
  import cache_def::*;
  `define MAX_DEF ((data_read>>16) >= 0) 
- parameter int TAGMAX = 32; //tag msb
+ parameter int TAGMAX = 5; //tag msb
 
 module dm_data_upstream(clk,
   data_req,//data request/command, e.g. RW, valid
@@ -18,34 +18,35 @@ module dm_data_upstream(clk,
   data_read);
   input  clk;//, change_max;
   reg[4:0] i;
-  reg[12:0] totalsent;
+  reg[12:0] totalsent =0;
 
   input cache_req_type data_req;//data request/command, e.g. RW, valid
   input cache_data_type data_write; //write port (128-bit line)
   output cache_data_type data_read; //read port
-
+  reg[31:0] data_writeprev =0;
 
   cache_data_type memory[0:TAGMAX];
 
   initial begin
       $display("Loading upstream cache.");
       $readmemh("code/shared/rom_trade.mem", memory);
-      totalsent= 0;
 
       // $displayb("%p", memory);
     end
     assign data_read = memory[data_req.rdindex];
-    always @(posedge(clk)) begin
-      if (data_req.we) begin
-      totalsent= totalsent+1;
+    // always @(posedge(clk)) begin
+    always_comb begin
+      if ((data_req.we)&&(data_write != data_writeprev)) begin
+      totalsent <=  totalsent+1;
+      $display("totalsent to accuorders cache %0d, data_write %0h.", totalsent, data_write);
       // $display("data_req.rdindex %0h cache.", data_req.rdindex);
       // $display("BEFORE %d, ",memory[data_req.rdindex]);
         if (data_write[31:16] > 2'b01) 
           memory[data_req.rdindex] <= {data_write[31:16],memory[data_req.rdindex][15:0] }; //+memory[data_req.index]; 
         else begin
           memory[data_req.rdindex][15:0] <=  memory[data_req.rdindex][15:0] + data_write[15:0]; //+memory[data_req.index];
-          $display("totalsent to accuorders cache %0d.", totalsent);
         end
+        data_writeprev =data_write;
         // $display("AFTER %d, ",memory[data_req.rdindex]);
       end
     end
@@ -69,28 +70,33 @@ module dm_cache_tag_upstream(input bit clk, //write clock
 );
   // timeunit 1ns; timeprecision 1ps;
   cache_tag_type tag_mem[0:TAGMAX];
+  reg tagvdirty;
+  reg[6:0] i;
   initial begin
   for (int i=0; i<TAGMAX; i++)
   tag_mem[i] = '0;
   end
   
-  // initial begin
-  //   $display("Loading upstream cache.");
-  //   $readmemh("code/shared/rom_trade.mem", tag_mem);
-  //   // $displayb("%p", memory);
-  // end
-  
 
-  assign tag_read = tag_mem[tag_req.rdindex];
+  assign tag_read.tag = tag_mem[tag_req.rdindex];
+  assign tag_read.valid = 1'b1;
+
   always @(posedge(clk)) begin
-
-  if (tag_req.we)  begin
-  // $display("tag_write value %0h., tag_req.rdindex %0h", tag_write.tag, tag_req.rdindex);
-    tag_mem[tag_req.rdindex] <= tag_write;
-      // $displayb("%p", tag_mem);
+    if (tag_req.we)  begin
+      tag_mem[tag_req.rdindex] <= tag_write;
+      if (tag_write.dirty)  begin
+        fork
+          begin  : dirty_wait_fork
+            for (i = 0;i < 3;  i = i + 1) begin
+              @(posedge clk);
+            end
+          end : dirty_wait_fork
+        join
+        wait fork;
+      end
+    end
   end
 
-  end
 endmodule
 
 
@@ -101,38 +107,52 @@ module mem_controller(input bit clk, //write clock
   input mem_req_type mem_req) ;//memory request (cache->memory))
     reg[4:0] i;
     reg[127:0] datav;
+    reg datardy;
     cache_data_type memory[0:121];
     assign mem_data.data = datav;
+    assign mem_data.ready = datardy;
+
     initial begin
         $display("Loading upstream memory.");
         $readmemh("code/shared/rom_trade.mem", memory);
         // $displayb("%p", memory);
       end
       always @(mem_req.addr) begin
+        datardy = 1'b0;
         datav = memory[mem_req.addr];
         // $displayb("DATAV %0h", datav);
         for (i=0; i<6; i=i+1)begin
               @(posedge clk) ; 
             end
-            wait (i=== 5); //Implementation 1      
+            wait (i=== 5); //Implementation 1    
+            datardy = 1'b1;
       end 
-      assign mem_data.ready = 1'b1;
+      // assign mem_data.ready = 1'b1;
   
-      always @(mem_req.rw) begin
+      always @(mem_req.rw, mem_req.valid) begin
+        $display("mem_data.rw, %0h, mem_req.valid %0b", mem_req.rw, mem_req.valid );
         // if (mem_req.rw) begin
-          $display("Writing %0h mem.", mem_req.data);
+        datardy = 1'b0;
+        $display("mem_data.ready, %0h", mem_data.ready);
+
+          $display("Writing %0d mem.", mem_req.data);
           if (mem_req.data[31:16] > 2'b01) 
             memory[mem_req.addr] <= {mem_req.data[31:15],memory[mem_req.addr][15:0] }; //+memory[data_req.index]; 
           else begin
             memory[mem_req.addr][15:0] <=  memory[mem_req.addr][15:0] + mem_req.data[15:0]; //+memory[data_req.index];
-          end
-             $displayb("MEMORY %p", memory[mem_req.addr]);
-          for (i=0; i<8; i=i+1)
-             @(posedge clk) ; 
-        wait (i=== 7); //Implementation 1   
+          end  
+             fork
+              begin  : write_wait_fork
+                for (i = 0;i < 3;  i = i + 1) begin
+                  @(posedge clk);
+                  $display("watng fork, %0h", i);
+                end
+              end : write_wait_fork
+            join
+            wait fork;
+            datardy = 1'b1;
         // end   
         end
-                // $displayb("%p", memory);
       // // SVA to check if gpio_out during reset
       //     trade_risk_check_mem: assert property (
       //       @(posedge clk) // throws an error if the trade is unsafe
@@ -172,139 +192,166 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
   mem_req_type v_mem_req;
   assign mem_req = v_mem_req; //connect to output ports
   assign cpu_res = v_cpu_res; 
+  
+
   always_comb begin
-    // $display("vstate : %0d", vstate);
-
-  /*-------------------------default values for all signals------------*/
-  /*no state change by default*/
-  vstate = rstate;
-  v_cpu_res = '{0, 0}; tag_write = '{0, 0, 0};
-  /*read tag by default*/
-  tag_req.we = '0;
-  /*direct map index for tag*/
-  tag_req.rdindex = cpu_req.rdindex[13:4];
- 
-  /*read current cache line by default*/
-  data_req.we = '0;
-  /*direct map index for cache data*/
-  data_req.rdindex = cpu_req.rdindex[13:4];
-  /*modify correct word (32-bit) based on address*/
-  data_write = data_read;
-  case(cpu_req.rdindex[3:2])
-  2'b00:data_write[31:0] = cpu_req.data;
-  // 2'b01:data_write[63:32] = cpu_req.data;
-  // 2'b10:data_write[95:64] = cpu_req.data;
-  // 2'b11:data_write[127:96] = cpu_req.data; //no need for now
- endcase
- 
-  /*read out correct word(32-bit) from cache (to CPU)*/
-  case(cpu_req.rdindex[3:2])
-  2'b00:v_cpu_res.data = data_read[31:0];
-  // 2'b01:v_cpu_res.data = data_read[63:32];
-  // 2'b10:v_cpu_res.data = data_read[95:64];
-  // 2'b11:v_cpu_res.data = data_read[127:96];
-  endcase
- 
-  /*memory request address (sampled from CPU request)*/
-  v_mem_req.addr = cpu_req.rdindex;
-  /*memory request data (used in write)*/
-  v_mem_req.data = data_read;
-   v_mem_req.rw = '0;
- 
- 
-  //------------------------------------Cache FSM-------------------------
-  case(rstate)
-  /*idle state*/
-  idle : begin
-  /*If there is a CPU request, then compare cache tag*/
-  if (cpu_req.valid)
-  vstate = compare_tag;
-  end
-  /*compare_tag state*/
-  compare_tag : begin
-    // $display("/*compare_tag state*/");
-
-  /*cache hit (tag match and cache entry is valid)*/
-  if (cpu_req.rdindex[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) begin
-  v_cpu_res.ready = '1;
-  // $display("data cpu %d, ", cpu_res.data);
-
-  /*write hit*/
-  if (cpu_req.rw) begin
-  /*read/modify cache line*/
     
-  tag_req.we = '1; data_req.we = 1'b1;
-  /*no change in tag*/
-  tag_write.tag = tag_read.tag;
-  // $display("data_req.we; %d, ", data_req.we);
-  tag_write.valid = '1;
-  /*cache line is dirty*/
-  tag_write.dirty = '1;
-  end
- 
-  /*xaction is finished*/
-  vstate = idle;
-  end
-  /*cache miss*/
-  else begin
-  /*generate new tag*/
-  tag_req.we = '1;
-  tag_write.valid = '1;
-  /*new tag*/
-  tag_write.tag = cpu_req.rdindex[TAGMSB:TAGLSB];
-  /*cache line is dirty if write*/
-  tag_write.dirty = cpu_req.rw;
- 
-  /*generate memory request on miss*/
-  v_mem_req.valid = '1;
-  /*compulsory miss or miss with clean block*/
-  if (tag_read.valid == 1'b0 || tag_read.dirty == 1'b0)
-  /*wait till a new block is allocated*/
-  vstate = allocate;
-  else begin
-  /*miss with dirty line*/
-  /*write back address*/
-  v_mem_req.addr = {tag_read.tag, cpu_req.rdindex[TAGLSB-1:0]};
-  v_mem_req.rw = '1;
-  /*wait till write is completed*/
-  vstate = write_back;
-  end
-  end
-  end
-  /*wait for allocating a new cache line*/
-  allocate: begin
-  /*memory controller has responded*/
-    // $display("mem data : %0d, mem data rdy: %0d", mem_data.data, mem_data.ready);
-  if (mem_data.ready) begin
-  /*re-compare tag for write miss (need modify correct word)*/
-  vstate = compare_tag;
-  data_write = mem_data.data;
-  /*update cache line data*/
-  data_req.we = '1;
-  end
-  end
-  /*wait for writing back dirty cache line*/
-  write_back : begin
-  /*write back is completed*/
-  if (mem_data.ready) begin
-  /*issue new memory request (allocating a new line)*/
-  v_mem_req.valid = '1;
-  v_mem_req.rw = '0;
- 
-  vstate = allocate; 
-  end
-  end
+    /*-------------------------default values for all signals------------*/
+    /*no state change by default*/
+    vstate = rstate;
+    v_cpu_res = '{0, 0}; tag_write = '{0, 0, 0};
+    /*read tag by default*/
+    tag_req.we = '0;
+    /*direct map index for tag*/
+    tag_req.rdindex = cpu_req.rdindex[13:4];
+  
+    /*read current cache line by default*/
+    data_req.we = '0;
+    /*direct map index for cache data*/
+    data_req.rdindex = cpu_req.rdindex[13:4];
+    /*modify correct word (32-bit) based on address*/
+    // data_write = data_read[32:0];
+    data_write = cpu_req.data;
+    case(cpu_req.rdindex[3:2])
+    2'b00:data_write[31:0] = cpu_req.data;
+    // 2'b01:data_write[63:32] = cpu_req.data;
+    // 2'b10:data_write[95:64] = cpu_req.data;
+    // 2'b11:data_write[127:96] = cpu_req.data; //no need for now
   endcase
- end
- always_ff @(posedge(clk)) begin
-  // $display(mem_data.data);
-  if (rst)
-  rstate <= idle; //reset to idle state
-  else
-  rstate <= vstate;
- end
- /*connect cache tag/data memory*/
- dm_cache_tag_upstream ctag(.*);
- dm_data_upstream cdata(.*);
- mem_controller cmem(.*);
+  
+    /*read out correct word(32-bit) from cache (to CPU)*/
+    case(cpu_req.rdindex[3:2])
+    2'b00:v_cpu_res.data = data_read[31:0];
+    // 2'b01:v_cpu_res.data = data_read[63:32];
+    // 2'b10:v_cpu_res.data = data_read[95:64];
+    // 2'b11:v_cpu_res.data = data_read[127:96];
+    endcase
+  
+    /*memory request address (sampled from CPU request)*/
+    v_mem_req.addr = cpu_req.rdindex;
+    /*memory request data (used in write)*/
+    v_mem_req.data = data_write;
+    v_mem_req.rw = '0;
+    $display("state, %0h", rstate);
+
+    //------------------------------------Cache FSM-------------------------
+    case(rstate)
+      /*idle state*/
+      idle : 
+      begin : idle_state
+        /*If there is a CPU request, then compare cache tag*/
+        if (cpu_req.valid)
+          vstate = compare_tag;
+      end: idle_state
+
+      /*compare_tag state*/
+      compare_tag : 
+      begin :compare_tag_state
+        // $display("/*compare_tag state*/");
+        /*cache hit (tag match and cache entry is valid)*/
+        $display("cpu_req.rdindex[TAGMSB:TAGLSB] %0h, tag_read.tag  %0h", cpu_req.rdindex[TAGMSB:TAGLSB], tag_read.tag );
+        if (cpu_req.rdindex[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) 
+        begin :cache_hit
+          v_cpu_res.ready = '1;
+          /*write hit*/
+          if (cpu_req.rw) 
+          begin: write_hit
+              $display("/*write hit*/");
+            /*read/modify cache line*/
+              
+            tag_req.we = '1; data_req.we = 1'b1;
+            /*no change in tag*/
+            tag_write.tag = tag_read.tag;
+            // $display("data_req.we; %d, ", data_req.we);
+            tag_write.valid = '1;
+            /*cache line is dirty*/
+            tag_write.dirty = '1;
+          end: write_hit
+        
+          /*xaction is finished*/
+          vstate = idle;
+        end :cache_hit
+
+        /*cache miss*/
+        else 
+        begin :cache_miss
+          $display("/*cache miss*/");
+          /*generate new tag*/
+          tag_req.we = '1;
+          tag_write.valid = '1;
+          /*new tag*/
+          tag_write.tag = cpu_req.rdindex[TAGMSB:TAGLSB];
+          /*cache line is dirty if write*/
+          tag_write.dirty = cpu_req.rw;
+          /*generate memory request on miss*/
+          v_mem_req.valid = '1;
+          /*compulsory miss or miss with clean block*/
+          if (tag_read.valid == 1'b0 || tag_write.dirty == 1'b0) 
+          begin
+            /*wait till a new block is allocated*/
+            // $display("wait till a new block is allocated : %0d, tag_read.valid  %0h, tag_write.dirty %0h", data_write, tag_read.valid, tag_write.dirty);
+            vstate = allocate;
+          end
+          else begin : dirty_line_miss
+            /*miss with dirty line*/
+            $display("miss with dirty line");
+
+            /*write back address*/
+            v_mem_req.addr = {tag_read.tag, cpu_req.rdindex[TAGLSB-1:0]};
+            // $display("Allocate, should rw mem");
+            // v_mem_req.data = data_write;
+            v_mem_req.rw = '1;
+            // $display("mem_data.rw, %0h, mem_req.valid %0b", mem_req.rw, mem_req.valid );
+            tag_write.dirty  = '0; //wrote to mem so clean now
+
+            /*wait till write is completed*/
+            vstate = write_back;
+          end: dirty_line_miss
+        end :cache_miss
+      end:compare_tag_state
+
+      /*wait for allocating a new cache line*/
+      allocate: 
+      begin : allocate_state
+      /*memory controller has responded*/
+        // $display("mem data : %0d, mem data rdy: %0d", mem_data.data, mem_data.ready);
+      if (mem_data.ready) 
+      begin
+          // $display("goes to compare_tag");
+        /*re-compare tag for write miss (need modify correct word)*/
+        vstate = compare_tag;
+        data_write = mem_data.data; //CHANGED NOT SURE
+        // v_mem_req.data = data_write;
+        // v_mem_req.rw = '1; //wrte through, uncomment for wrte bac 
+        /*update cache line data*/
+        data_req.we = '1;
+        end
+      end : allocate_state
+      /*wait for writing back dirty cache line*/
+
+      write_back : 
+      begin :write_back_state
+        /*write back is completed*/
+        if (mem_data.ready) 
+        begin
+          /*issue new memory request (allocating a new line)*/
+          v_mem_req.valid = '1;
+          v_mem_req.rw = '0;
+          vstate = allocate; 
+        end
+      end :write_back_state
+    endcase
+  end
+  always_ff @(posedge(clk)) 
+  begin
+      // $display(mem_data.data);
+      if (rst)
+      rstate <= idle; //reset to idle state
+      else
+      rstate <= vstate;
+  end
+  /*connect cache tag/data memory*/
+  dm_cache_tag_upstream ctag(.*);
+  dm_data_upstream cdata(.*);
+  mem_controller cmem(.*);
  endmodule

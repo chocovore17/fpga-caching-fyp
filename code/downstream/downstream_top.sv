@@ -18,7 +18,9 @@ module downstream_top( clk, client_id, amount, downdatareq /*to display testing,
   reg old_amount;
 
 
-  always @(client_id, amount)
+  // always @(client_id, amount)
+  always_comb
+
   begin 
     downdatareq.wrindex[13:4] = client_id;
     downdatareq.rw = ((client_id!=old_client) || (old_amount!=amount));

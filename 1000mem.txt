@@ -3368,3 +3368,125 @@ Reading pref.tcl
 # Error loading design
 # End time: 10:56:42 on May 22,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+** Warning: (vlib-34) Library already exists at "work".
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
+Start time: 16:43:06 on May 23,2022
+vlog -work work "+acc=blnr" -noincr -timescale 1ns/1ps mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv mem_model_bs/shared/top.sv 
+-- Compiling interface updownstream_if
+** Warning: ** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(2)
+** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv(1)
+** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv(1)
+** at mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: ** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(2)
+** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv(1)
+** while parsing file included at mem-model-testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv(1)
+** at mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(1): (vlog-13233) Design unit "tb_top_UPDOWNSTREAM_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+-- Compiling package tb_top_UPDOWNSTREAM_sv_unit
+** Warning: mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling module tb_top_UPDOWNSTREAM
+** Warning: mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: mem-model-testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling package cache_def
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(9)
+** while parsing file included at mem_model_bs/upstream/upstream_top.sv(7)
+** while parsing file included at mem_model_bs/shared/ramupstream.sv(11)
+** at mem_model_bs/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(6)
+** while parsing file included at mem_model_bs/shared/ramdownstream.sv(7)
+** at mem_model_bs/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(6)
+** at mem_model_bs/shared/ramdownstream.sv(11): (vlog-2275) 'dm_data_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(6)
+** at mem_model_bs/shared/ramdownstream.sv(44): (vlog-2275) 'dm_cache_tag_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(6)
+** at mem_model_bs/shared/ramdownstream.sv(64): (vlog-2275) 'downmem_controller' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(6)
+** at mem_model_bs/shared/ramdownstream.sv(102): (vlog-2275) 'dm_cache_fsm_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(10)
+** while parsing file included at mem_model_bs/downstream/downstream_top.sv(7)
+** at mem_model_bs/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at mem_model_bs/shared/top.sv(12)
+** at mem_model_bs/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: mem_model_bs/shared/top.sv(15): (vlog-2263) Redefinition of macro: 'SAFETOTRADE' (previously defined near mem_model_bs/upstream/upstream_top.sv(12), old value '($signed({1'b0, max_to_trade_reg[15 : 0]}) > $signed(result))', new value '($signed({1'b0, max_to_trade[15:0]})> $signed(accumulated_orders+ (~cancelled_orders[15:0]+1)))') .
+** Warning: mem_model_bs/shared/ramdownstream.sv(8): (vlog-13233) Design unit "top_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+-- Compiling package top_sv_unit
+-- Importing package cache_def
+-- Compiling module dm_data_downstream
+-- Compiling module dm_cache_tag_downstream
+-- Compiling module downmem_controller
+-- Compiling module dm_cache_fsm_downstream
+** Warning: mem_model_bs/shared/ramdownstream.sv(137): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(138): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(143): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(144): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(190): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(190): (vlog-2697) LSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(213): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(213): (vlog-2697) LSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(227): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(228): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module dm_mem_upstream
+-- Compiling module upstream_processor
+-- Compiling module upstream_processor_top
+** Warning: mem_model_bs/upstream/upstream_top.sv(71): (vlog-2697) MSB of part-select into 'client_id' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module dm_data_downstream
+-- Compiling module dm_cache_tag_downstream
+-- Compiling module downmem_controller
+-- Compiling module dm_cache_fsm_downstream
+** Warning: mem_model_bs/shared/ramdownstream.sv(137): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(138): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(143): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(144): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(190): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(190): (vlog-2697) LSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(213): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(213): (vlog-2697) LSB of part-select into 'wrindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(227): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/ramdownstream.sv(228): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module downstream_top
+** Warning: mem_model_bs/downstream/downstream_top.sv(23): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module top
+** Warning: mem_model_bs/shared/top.sv(101): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/top.sv(102): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: mem_model_bs/shared/top.sv(102): (vlog-2697) LSB of part-select into 'rdindex' is out of bounds.
+
+Top level modules:
+	tb_top_UPDOWNSTREAM
+End time: 16:43:07 on May 23,2022, Elapsed time: 0:00:01
+Errors: 0, Warnings: 42
+QuestaSim-64 vopt 10.7c Compiler 2018.08 Aug 17 2018
+Start time: 16:43:07 on May 23,2022
+vopt -work work tb_top_UPDOWNSTREAM -o seg_work_opt 
+
+Top level modules:
+	tb_top_UPDOWNSTREAM
+
+Analyzing design...
+-- Loading module tb_top_UPDOWNSTREAM
+-- Loading interface updownstream_if
+-- Loading module top
+-- Loading module dm_cache_fsm_downstream
+-- Loading module dm_cache_tag_downstream
+-- Loading module dm_data_downstream
+-- Loading module downmem_controller
+-- Loading module upstream_processor_top
+-- Loading module dm_mem_upstream
+-- Loading module upstream_processor
+-- Loading module downstream_top
+Incremental compilation check found no design-units (out of 15) may be reused.
+Optimizing 15 design-units (inlining 0/11 module instances):
+** Fatal: (SIGINT) Compile interrupted.
+Vopt Compiler exiting
+End time: 16:43:08 on May 23,2022, Elapsed time: 0:00:01
+Errors: 1, Warnings: 0
