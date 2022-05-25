@@ -10,21 +10,21 @@ cModel Technology
 Z0 d/home/mlg18/homedir/EIE4/fpga-caching-fyp
 Xcache_def
 Z1 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-V[kQDRD]ZZ7E6omS4MBbmV1
+V=OYBkiA>JX;458o29O=Z?3
 r1
 !s85 0
 !i10b 1
-!s100 5AG0oWSSifNaolnRgAcDz3
-I[kQDRD]ZZ7E6omS4MBbmV1
+!s100 mTPJ=G?XS<T;hcc1^_lZk3
+I=OYBkiA>JX;458o29O=Z?3
 S1
 Z2 d/home/mlg18/fpga-caching-fyp
-w1653317012
+w1653478245
 8code/shared/cache_def.sv
 Z3 Fcode/shared/cache_def.sv
 L0 1
 Z4 OL;L;10.7c;67
 31
-Z5 !s108 1653478007.000000
+Z5 !s108 1653478310.000000
 Z6 !s107 code/downstream/downstream_top.sv|code/upstream/SLT.sv|code/upstream/upstream.sv|code/shared/ramupstream.sv|code/shared/cache_def.sv|code/shared/ramdownstream.sv|code/upstream/upstream_top.sv|testbench/unit_level/UPDOWNSTREAM/scoreboard_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/monitor_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/driver_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/generator_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv|testbench/unit_level/UPDOWNSTREAM/interface_UPDOWNSTREAM.sv|code/shared/top.sv|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|
 Z7 !s90 -work|work|+acc=blnr|-noincr|-timescale|1ns/1ps|testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv|code/shared/top.sv|
 !i113 0
@@ -32,8 +32,8 @@ Z8 o-work work +acc=blnr -timescale 1ns/1ps -L mtiAvm -L mtiRnm -L mtiOvm -L mti
 Z9 tCvgOpt 0
 vdm_cache_fsm_downstream
 R1
-Z10 DXx4 work 9 cache_def 0 22 [kQDRD]ZZ7E6omS4MBbmV1
-Z11 DXx4 work 11 top_sv_unit 0 22 0zCGMVlfS96?H36a9`JoW0
+Z10 DXx4 work 9 cache_def 0 22 =OYBkiA>JX;458o29O=Z?3
+Z11 DXx4 work 11 top_sv_unit 0 22 <mo<CX3nMb;EGD@Lg3fC=0
 Z12 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -63,15 +63,15 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 39]l=T1RZUzaojh>f8o`c0
-Il?LP]lYdg8d4TDWng4WfR1
+!s100 h8nWV@dN2ER]ZTd9_YRnB2
+I@jok`kJfWlLnB:ioE2S<Z2
 R13
 S1
 R2
-Z17 w1653478001
+Z17 w1653478309
 Z18 8code/shared/ramupstream.sv
 Z19 Fcode/shared/ramupstream.sv
-L0 170
+L0 169
 R4
 31
 R5
@@ -363,8 +363,8 @@ R12
 r1
 !s85 0
 !i10b 1
-!s100 YH:M:UA7Ibj5z`=0WdCKL1
-I7nBSdg[<6g=4;;=>Z=Lmi2
+!s100 ?zN]^;iYMbQVohR?Clie]3
+I5aBmnc9D>>j?gXhdXWTYU3
 R13
 S1
 R2
@@ -430,8 +430,8 @@ R7
 R8
 R9
 Tseg_work_opt
-!s110 1653478009
-VOkOdj1Camm:jYGBmdC8BH2
+!s110 1653478312
+VHTaWIdnjoXTij1FF>:o>a3
 Z33 04 19 4 work tb_top_UPDOWNSTREAM fast 0
 Z34 o-work work
 R9
@@ -665,12 +665,12 @@ R9
 Xtop_sv_unit
 R1
 R10
-V0zCGMVlfS96?H36a9`JoW0
+V<mo<CX3nMb;EGD@Lg3fC=0
 r1
 !s85 0
 !i10b 1
-!s100 DmLGk2[E1F8NUN2kifRD60
-I0zCGMVlfS96?H36a9`JoW0
+!s100 HI7T:_Hdl>6nb?i6dBBVU3
+I<mo<CX3nMb;EGD@Lg3fC=0
 !i103 1
 S1
 R2
@@ -695,7 +695,7 @@ R8
 R9
 Yupdownstream_if
 R1
-!s110 1653478007
+!s110 1653478311
 !i10b 1
 !s100 1mLb1aACWaL<@9a9fDMi_1
 I3A@^L7<4TdL;1@5h9>RMg3

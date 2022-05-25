@@ -1,7 +1,7 @@
 package cache_def;
  // data structures for cache tag & data
- parameter int TAGMSB = 32; //tag msb
- parameter int TAGLSB = 14; //tag lsb
+ parameter int TAGMSB = 16; //tag msb
+ parameter int TAGLSB = 4; //tag lsb
  //data structure for cache tag
  typedef struct packed {
  bit valid; //valid bit

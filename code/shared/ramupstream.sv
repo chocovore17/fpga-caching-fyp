@@ -130,7 +130,6 @@ module mem_controller(input bit clk, //write clock
       // assign mem_data.ready = 1'b1;
   
       always @(mem_req.rw, mem_req.valid) begin
-        $display("mem_data.rw, %0h, mem_req.valid %0b", mem_req.rw, mem_req.valid );
         // if (mem_req.rw) begin
         datardy = 1'b0;
         $display("mem_data.ready, %0h", mem_data.ready);
@@ -249,7 +248,6 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
       begin :compare_tag_state
         // $display("/*compare_tag state*/");
         /*cache hit (tag match and cache entry is valid)*/
-        $display("cpu_req.rdindex[TAGMSB:TAGLSB] %0h, tag_read.tag  %0h", cpu_req.rdindex[TAGMSB:TAGLSB], tag_read.tag );
         if (cpu_req.rdindex[TAGMSB:TAGLSB] == tag_read.tag && tag_read.valid) 
         begin :cache_hit
           v_cpu_res.ready = '1;
