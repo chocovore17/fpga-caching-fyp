@@ -1,0 +1,98 @@
+# vsim seg_work_opt -c -logfile AHB_peripherals_files/tbench/tbenchoutputs/gpio/AHB_GPIO_sim.txt -do "run -all; quit" 
+# Start time: 23:25:44 on Dec 17,2021
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top_AHBGPIO_sv_unit(fast)
+# Loading work.tb_top_AHBGPIO(fast)
+# Loading work.ahbgpio_if(fast)
+# Loading work.AHBGPIO(fast)
+# Loading work.ahbgpio_if(fast)
+# run -all
+# --------- [DRIVER] Reset Started ---------
+# --------- [DRIVER] Reset Ended ---------
+# T=5000 [Generator] starting
+# repeat count = 20
+# T=5000, [DRIVER] starting ---------
+# T=5000, [DRIVER-TRANSFER: 0] ---------
+# T=5000, [MONITOR] starting ---------
+# T=5000, [SCOREBOARD] starting ---------
+# T=25000, [DRIVER-TRANSFER: 1] ---------
+# T=45000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=45000, [DRIVER-TRANSFER: 2] ---------
+# T=65000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=65000, [DRIVER-TRANSFER: 3] ---------
+# T=85000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=85000, [DRIVER-TRANSFER: 4] ---------
+# T=105000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=105000, [DRIVER-TRANSFER: 5] ---------
+# T=125000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=125000, [DRIVER-TRANSFER: 6] ---------
+# T=145000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0xc717 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=145000, [DRIVER-TRANSFER: 7] ---------
+# T=165000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x80ff GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=165000, [DRIVER-TRANSFER: 8] ---------
+# T=185000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x9fc1 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=185000, [DRIVER-TRANSFER: 9] ---------
+# T=205000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=205000, [DRIVER-TRANSFER: 10] ---------
+# T=225000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=225000, [DRIVER-TRANSFER: 11] ---------
+# T=245000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=245000, [DRIVER-TRANSFER: 12] ---------
+# T=265000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=265000, [DRIVER-TRANSFER: 13] ---------
+# T=285000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0xa1f4 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=285000, [DRIVER-TRANSFER: 14] ---------
+# T=305000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=305000, [DRIVER-TRANSFER: 15] ---------
+# T=325000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x22b4 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=325000, [DRIVER-TRANSFER: 16] ---------
+# T=345000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=345000, [DRIVER-TRANSFER: 17] ---------
+# T=365000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=365000, [DRIVER-TRANSFER: 18] ---------
+# T=385000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=385000, [DRIVER-TRANSFER: 19] ---------
+# T=405000 [SCOREBOARD] gpio transaction information: 
+# HRDATA = 0x0 GPIOOUT = 0b0 PARITYERR = 0bx 
+# T=405000 [Generator] Done generation
+# Coverage_input = 100.00 %
+# Coverage_output = 100.00 %
+# ** Note: $stop    : AHB_peripherals_files/tbench/unit_level/AHBGPIO/tb_top_AHBGPIO.sv(100)
+#    Time: 425 ns  Iteration: 0  Instance: /tb_top_AHBGPIO
+# Break in Module tb_top_AHBGPIO at AHB_peripherals_files/tbench/unit_level/AHBGPIO/tb_top_AHBGPIO.sv line 100
+# Stopped at AHB_peripherals_files/tbench/unit_level/AHBGPIO/tb_top_AHBGPIO.sv line 100
+#  quit
+# End time: 23:25:45 on Dec 17,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

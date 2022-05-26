@@ -1,3 +1,5 @@
+code/downstream/downstream_top.sv
+code/shared/ramupstream.sv
 code/shared/top.sv
 code/upstream/upstream_top.sv
 testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv

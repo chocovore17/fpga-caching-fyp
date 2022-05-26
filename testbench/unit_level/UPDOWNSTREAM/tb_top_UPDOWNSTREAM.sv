@@ -33,7 +33,7 @@ module tb_top_UPDOWNSTREAM;
             bins reset_trigger = {1'b0, 1'b1};
         }
         valid_client_id: coverpoint intf.cpu_client_id{
-            bins client_id = {[0:10]};
+            bins client_id = {[0:31]};
         }
         // upstream_not_max: coverpoint intf.cpu_go{
         //     bins not_max = ~intf.cpu_new_max; //for now, extra test
@@ -50,7 +50,7 @@ module tb_top_UPDOWNSTREAM;
     //functional coverage point to check range of output signal from DUT
     covergroup cg_output @(posedge intf.slowclk);
         upstream_acc_data: coverpoint intf.accumulated_orders[15:0]{ // equals to gpio_datain
-            bins accumulated_orders =  {[0:64]};
+            bins accumulated_orders =  {[0:30]};
         }
         upstream_max_data: coverpoint intf.max_to_trade[15:0]{ // equals to gpio_datain
             bins max_to_trade  =  {[0:65450]};
@@ -70,7 +70,7 @@ module tb_top_UPDOWNSTREAM;
         slowclk = 1'b0;
         forever begin
             #2 clk = ~clk;
-            #2 slowclk = ~slowclk;
+            #4 slowclk = ~slowclk;
         // forever #5 clk = !clk;
         end
     end

@@ -35,7 +35,7 @@ class environment;
     mon2scb = new;
 
     //CRT iteration
-    crt_n = 100;
+    crt_n = 30;
     
     //creating generator, driver, monitor and scoreboard
     gen  = new(gen2driv, crt_n);
@@ -55,7 +55,6 @@ class environment;
     // reset driver to 7 segment display
     driv.reset();
   endtask
-  
   task test();
     fork 
       // uncommment/comment corresponding task in generator with different stimulus
