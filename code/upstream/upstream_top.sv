@@ -16,7 +16,7 @@
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
-  input[4:0]  client_id;
+  input[8:0]  client_id;
   input[15:0] amount;
   output thenewmax;
   reg HRESETn;
@@ -71,17 +71,23 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
           .send_order(send_order),
           .update_max(update_max));
 
-  always_comb begin
+  // always_comb begin         
+always @(client_id, amount)
   begin  : main_process
-    
-    cpu_req.rdindex[31:14] = '0;
-    cpu_req.rdindex[13:4] = client_id[9:0];
-    cpu_req.rdindex[3:0] ='0;
-    cpu_req.valid = 1'b1;
     // wait until cpu res rdy 
     // wait (cpu_res.ready === 1); //Implementation 1
     accumulated_orders_reg = cpu_res.data[15:0];
     cancelled_orders_reg =  cancelled_orders;
+  
+  fork begin: read_fork
+    cpu_req.rdindex[31:14] = '0;
+    cpu_req.rdindex[13:4] = client_id[9:0];
+    cpu_req.rdindex[3:0] ='0;
+    cpu_req.valid = 1'b1;
+    // wait until cpu res rdy
+  end : read_fork
+  join
+  wait fork;
     max_to_trade_reg = cpu_res.data >> 16;
     if ((new_max) && (amount>(cpu_res.data[15:0])) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
@@ -95,13 +101,14 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
     // $display("%0b, result : %0d",($signed({1'b0, max_to_trade[15:0]})>$signed(result) ),$signed(result) );
     pass_checks = $signed({1'b0, max_to_trade_reg[15:0]})>$signed(result); //extend for neg values
     cpu_req.rw = pass_checks;
+    wait (cpu_res.ready == 1); //Implementation 1
 
   end  : main_process
   
     
       // SVA to check if CORRECT amount written
   trade_correctamount_cpu: assert property (
-    @(client_id) // throws an error if the correct amount is different from amount to trade
+    @(accumulated_orders_reg) // throws an error if the correct amount is different from amount to trade
     `AMOUNTGOOD == 1'b1
       )
     else begin 
@@ -142,7 +149,6 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
       else begin 
         $error ("two states, check_risk and send_order, are simultaneously high");
       end //
-end 
 
 
 endmodule

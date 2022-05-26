@@ -35,7 +35,7 @@ class environment;
     mon2scb = new;
 
     //CRT iteration
-    crt_n = 1000;
+    crt_n = 50;
     
     //creating generator, driver, monitor and scoreboard
     gen  = new(gen2driv, crt_n);

@@ -1,0 +1,854 @@
+** Warning: (vlib-34) Library already exists at "work".
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
+Start time: 12:46:44 on May 25,2022
+vlog -work work "+acc=blnr" -noincr -timescale 1ns/1ps testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv code/shared/top.sv 
+-- Compiling interface updownstream_if
+** Warning: ** while parsing file included at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(2)
+** while parsing file included at testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv(1)
+** while parsing file included at testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv(1)
+** at testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: ** while parsing file included at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(2)
+** while parsing file included at testbench/unit_level/UPDOWNSTREAM/tests_UPDOWNSTREAM.sv(1)
+** while parsing file included at testbench/unit_level/UPDOWNSTREAM/environment_UPDOWNSTREAM.sv(1)
+** at testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling package tb_top_UPDOWNSTREAM_sv_unit
+** Warning: testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling module tb_top_UPDOWNSTREAM
+** Warning: testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: testbench/unit_level/UPDOWNSTREAM/transaction_UPDOWNSTREAM.sv(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling package cache_def
+** Warning: ** while parsing file included at code/shared/top.sv(9)
+** while parsing file included at code/upstream/upstream_top.sv(7)
+** while parsing file included at code/shared/ramupstream.sv(9)
+** at code/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(6)
+** while parsing file included at code/shared/ramdownstream.sv(7)
+** at code/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(6)
+** at code/shared/ramdownstream.sv(11): (vlog-2275) 'dm_data_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(6)
+** at code/shared/ramdownstream.sv(52): (vlog-2275) 'dm_cache_tag_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(6)
+** at code/shared/ramdownstream.sv(72): (vlog-2275) 'downmem_controller' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(6)
+** at code/shared/ramdownstream.sv(110): (vlog-2275) 'dm_cache_fsm_downstream' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(10)
+** while parsing file included at code/downstream/downstream_top.sv(7)
+** at code/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: ** while parsing file included at code/shared/top.sv(12)
+** at code/shared/cache_def.sv(1): (vlog-2275) 'cache_def' already exists and will be overwritten.
+** Warning: code/shared/top.sv(15): (vlog-2263) Redefinition of macro: 'SAFETOTRADE' (previously defined near code/upstream/upstream_top.sv(14), old value '($signed({1'b0, max_to_trade_reg[15:0]})> $signed(result))', new value '($signed({1'b0, max_to_trade[15:0]})> $signed(accumulated_orders+ (~cancelled_orders[15:0]+1)))') .
+-- Compiling package top_sv_unit
+-- Importing package cache_def
+-- Compiling module dm_data_downstream
+-- Compiling module dm_cache_tag_downstream
+-- Compiling module downmem_controller
+-- Compiling module dm_cache_fsm_downstream
+** Warning: code/shared/ramdownstream.sv(145): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(146): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(151): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(152): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(200): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(223): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module dm_data_upstream
+** Warning: code/shared/ramupstream.sv(39): (vlog-2182) 'data_writeprev' might be read before written in always_comb or always @* block.
+-- Compiling module dm_cache_tag_upstream
+-- Compiling module mem_controller
+-- Compiling module dm_cache_fsm_upstream
+** Warning: code/shared/ramupstream.sv(202): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(207): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(248): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(278): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+-- Compiling module upstream_processor
+-- Compiling module SLT
+-- Compiling module upstream_processor_top
+** Warning: code/upstream/upstream_top.sv(83): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(83): (vlog-2697) LSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(84): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(84): (vlog-2697) MSB of part-select into 'client_id' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module dm_data_downstream
+-- Compiling module dm_cache_tag_downstream
+-- Compiling module downmem_controller
+-- Compiling module dm_cache_fsm_downstream
+** Warning: code/shared/ramdownstream.sv(145): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(146): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(151): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(152): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(200): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(223): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Compiling package cache_def
+-- Compiling module downstream_top
+** Warning: code/downstream/downstream_top.sv(25): (vlog-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/downstream/downstream_top.sv(26): (vlog-2182) 'old_client' might be read before written in always_comb or always @* block.
+** Warning: code/downstream/downstream_top.sv(26): (vlog-2182) 'old_amount' might be read before written in always_comb or always @* block.
+-- Compiling package cache_def
+-- Compiling module top
+** Warning: code/shared/top.sv(101): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/top.sv(102): (vlog-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/top.sv(102): (vlog-2697) LSB of part-select into 'rdindex' is out of bounds.
+
+Top level modules:
+	tb_top_UPDOWNSTREAM
+	SLT
+End time: 12:46:46 on May 25,2022, Elapsed time: 0:00:02
+Errors: 0, Warnings: 42
+QuestaSim-64 vopt 10.7c Compiler 2018.08 Aug 17 2018
+Start time: 12:46:46 on May 25,2022
+vopt -work work tb_top_UPDOWNSTREAM -o seg_work_opt 
+
+Top level modules:
+	tb_top_UPDOWNSTREAM
+
+Analyzing design...
+-- Loading module tb_top_UPDOWNSTREAM
+-- Loading interface updownstream_if
+-- Loading module top
+-- Loading module dm_cache_fsm_downstream
+-- Loading module dm_cache_tag_downstream
+-- Loading module dm_data_downstream
+-- Loading module downmem_controller
+-- Loading module upstream_processor_top
+-- Loading module dm_cache_fsm_upstream
+-- Loading module dm_cache_tag_upstream
+-- Loading module dm_data_upstream
+-- Loading module mem_controller
+-- Loading module upstream_processor
+-- Loading module downstream_top
+Incremental compilation check found 5 design-units (out of 18) may be reused.
+Optimizing 13 design-units (inlining 0/14 module instances):
+-- Optimizing module dm_cache_fsm_upstream(fast)
+** Warning: code/shared/ramupstream.sv(202): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(207): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(248): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramupstream.sv(278): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+-- Optimizing module upstream_processor_top(fast)
+** Warning: code/upstream/upstream_top.sv(83): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(83): (vopt-2697) LSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(84): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/upstream/upstream_top.sv(84): (vopt-2697) MSB of part-select into 'client_id' is out of bounds.
+-- Optimizing module dm_cache_fsm_downstream(fast)
+** Warning: code/shared/ramdownstream.sv(145): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(146): (vopt-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(151): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(152): (vopt-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(200): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/ramdownstream.sv(223): (vopt-2697) MSB of part-select into 'wrindex' is out of bounds.
+-- Optimizing module mem_controller(fast)
+-- Optimizing module upstream_processor(fast)
+-- Optimizing module dm_data_upstream(fast)
+** Warning: code/shared/ramupstream.sv(39): (vopt-2182) 'data_writeprev' might be read before written in always_comb or always @* block.
+-- Optimizing module downmem_controller(fast)
+-- Optimizing module top(fast)
+** Warning: code/shared/top.sv(101): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/top.sv(102): (vopt-2697) MSB of part-select into 'rdindex' is out of bounds.
+** Warning: code/shared/top.sv(102): (vopt-2697) LSB of part-select into 'rdindex' is out of bounds.
+-- Optimizing module dm_cache_tag_upstream(fast)
+-- Optimizing module downstream_top(fast)
+** Warning: code/downstream/downstream_top.sv(25): (vopt-2697) MSB of part-select into 'wrindex' is out of bounds.
+** Warning: code/downstream/downstream_top.sv(26): (vopt-2182) 'old_client' might be read before written in always_comb or always @* block.
+** Warning: code/downstream/downstream_top.sv(26): (vopt-2182) 'old_amount' might be read before written in always_comb or always @* block.
+-- Optimizing module dm_cache_tag_downstream(fast)
+-- Optimizing module dm_data_downstream(fast)
+-- Optimizing package top_sv_unit(fast)
+Optimized design name is seg_work_opt
+End time: 12:46:48 on May 25,2022, Elapsed time: 0:00:02
+Errors: 0, Warnings: 21
+Reading pref.tcl
+
+# 10.7c
+
+# vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
+# Start time: 12:46:49 on May 25,2022
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top_UPDOWNSTREAM_sv_unit(fast)
+# Loading work.tb_top_UPDOWNSTREAM(fast)
+# Loading work.updownstream_if(fast)
+# Loading work.cache_def(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.dm_cache_fsm_downstream(fast)
+# Loading work.dm_cache_tag_downstream(fast)
+# Loading work.dm_data_downstream(fast)
+# Loading work.downmem_controller(fast)
+# Loading work.upstream_processor_top(fast)
+# Loading work.dm_cache_fsm_upstream(fast)
+# Loading work.dm_cache_tag_upstream(fast)
+# Loading work.dm_data_upstream(fast)
+# Loading work.mem_controller(fast)
+# Loading work.upstream_processor(fast)
+# Loading work.downstream_top(fast)
+# Loading work.updownstream_if(fast)
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/mem_data_down', driven via a port connection, is multiply driven. See code/shared/top.sv(60).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem File: code/shared/ramdownstream.sv Line: 278
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/mem_data', driven via a port connection, is multiply driven. See code/upstream/upstream_top.sv(50).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem File: code/shared/ramupstream.sv Line: 353
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[3:0]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 103
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[9:4]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 101
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.data', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 97
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.valid', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 96
+# run -all
+# Loading downstream rom.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "code/shared/rom_empty.mem". (Current address [33], address range [0:32])    : code/shared/ramdownstream.sv(27)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cdata
+# Loading downstream memory.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_empty.mem". (Current address [122], address range [0:121])    : code/shared/ramdownstream.sv(84)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem
+# Loading upstream cache.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 18 of file "code/shared/rom_trade.mem". (Current address [17], address range [0:16])    : code/shared/ramupstream.sv(32)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cdata
+# Loading upstream memory.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_trade.mem". (Current address [122], address range [0:121])    : code/shared/ramupstream.sv(114)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem
+# ** Warning: (vsim-3881) testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(36): Sign-and-Width conversion applied in bin 'client_id' for Coverpoint 'valid_client_id'. Value '200' changed to '31 (maximum)' value.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+# ** Warning: (vsim-3882) testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(36): Out of bounds value range in bin 'client_id' for Coverpoint 'valid_client_id' converted to nearest valid bounded range of [0:31].
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+# --------- [DRIVER] Reset Started ---------
+# state, 0
+# state, 0
+# --------- [DRIVER] Reset Ended ---------
+# T=2000 [Generator] starting
+# repeat count = 50
+# T=2000, [DRIVER] starting ---------
+# T=2000, [MONITOR] starting ---------
+# T=2000, [SCOREBOARD] starting ---------
+# ** Error: should be writing to downstream memory
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.DOWNTOP.downstream_write_enable File: code/downstream/downstream_top.sv Line: 38
+# ** Error: two states, check_risk and send_order, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic3 File: code/upstream/upstream_top.sv Line: 150
+# ** Error: two states, update_max and send_order, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic2 File: code/upstream/upstream_top.sv Line: 142
+# ** Error: two states, update_max and check_risk, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic1 File: code/upstream/upstream_top.sv Line: 134
+# state, 0
+# state, 0
+# ** Error: pass_checks was not computer properly for client 6; max to trade: 65450, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 1361
+#    Time: 6 ns Started: 6 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 123
+# ** Error: The amount was not indexed properly: amount 1361; correct amount (to write): 89194496, correct_amount[31:16]: 1361, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 1, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 6 ns Started: 6 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# mem_data_down.ready from controller 1 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 0
+# Writing 89194496 mem.
+# 
+#  T=18000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
+#  T=18000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0xxxx cancelled_orders = 0xx  max_to_trade = 0xx  
+# watng fork, 0
+# state, 3
+# watng fork, 3
+# state, 3
+# 
+#  T=42000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
+#  T=42000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 2
+# totalsent to accuorders cache 0, data_write ffcc0000.
+# state, 2
+# ** Error: The amount was not indexed properly: amount 55000; correct amount (to write): 89194496, correct_amount[31:16]: 1361, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 54 ns Started: 54 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 1, data_write 5510000.
+# state, 1
+# /*write hit*/
+# 
+#  T=66000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
+#  T=66000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 18996; correct amount (to write): 18996, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 78 ns Started: 78 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*cache miss*/
+# 
+#  T=90000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
+#  T=90000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 2
+# totalsent to accuorders cache 2, data_write ffcc0000.
+# state, 2
+# state, 1
+# /*cache miss*/
+# 
+#  T=114000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
+#  T=114000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x551  
+# state, 2
+# ** Error: The amount was not indexed properly: amount 61659; correct amount (to write): 18996, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 126 ns Started: 126 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# 
+#  T=138000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
+#  T=138000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x551  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 41391; correct amount (to write): 2712600576, correct_amount[31:16]: 41391, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 1, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 150 ns Started: 150 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 2712600576 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# 
+#  T=162000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
+#  T=162000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x551  
+# watng fork, 0
+# state, 3
+# watng fork, 1
+# 
+#  T=186000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
+#  T=186000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# watng fork, 2
+# state, 3
+# ** Error: The amount was not indexed properly: amount 10271; correct amount (to write): 2712600576, correct_amount[31:16]: 41391, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 198 ns Started: 198 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 2
+# 
+#  T=210000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
+#  T=210000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 3, data_write a1af0000.
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 41054 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 41054; correct amount (to write): 41054, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 222 ns Started: 222 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 0
+# state, 3
+# 
+#  T=234000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
+#  T=234000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# watng fork, 1
+# state, 3
+# state, 3
+# watng fork, 2
+# state, 3
+# 
+#  T=258000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
+#  T=258000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# state, 2
+# totalsent to accuorders cache 4, data_write ffcc0000.
+# state, 2
+# mem_data_down.ready from controller 1 mem.
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 5, data_write b3380000.
+# state, 1
+# /*write hit*/
+# 
+#  T=282000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
+#  T=282000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 0
+# state, 0
+# state, 0
+# ** Error: The amount was not indexed properly: amount 52728; correct amount (to write): 3455582208, correct_amount[31:16]: 52728, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 1, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 294 ns Started: 294 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 3455582208 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# 
+#  T=306000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
+#  T=306000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# watng fork, 0
+# state, 3
+# mem_data_down.ready from controller 1 mem.
+# watng fork, 1
+# 
+#  T=330000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
+#  T=330000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# watng fork, 2
+# state, 3
+# ** Error: The amount was not indexed properly: amount 35353; correct amount (to write): 3455582208, correct_amount[31:16]: 52728, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 342 ns Started: 342 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 2
+# totalsent to accuorders cache 6, data_write ffcc0000.
+# state, 2
+# 
+#  T=354000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
+#  T=354000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 3455582208 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# ** Error: The amount was not indexed properly: amount 55463; correct amount (to write): 3455582208, correct_amount[31:16]: 52728, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 366 ns Started: 366 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 0
+# state, 3
+# 
+#  T=378000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
+#  T=378000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# watng fork, 1
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 41031; correct amount (to write): 3455582208, correct_amount[31:16]: 52728, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 390 ns Started: 390 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 2
+# state, 3
+# 
+#  T=402000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
+#  T=402000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# state, 2
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 7, data_write cdf80000.
+# state, 1
+# /*write hit*/
+# 
+#  T=426000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
+#  T=426000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 20264; correct amount (to write): 20264, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 438 ns Started: 438 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 20264 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# 
+#  T=450000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
+#  T=450000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xb338  
+# watng fork, 0
+# state, 3
+# watng fork, 1
+# 
+#  T=474000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
+#  T=474000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
+# watng fork, 2
+# state, 3
+# ** Error: The amount was not indexed properly: amount 56003; correct amount (to write): 20264, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 486 ns Started: 486 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 2
+# totalsent to accuorders cache 8, data_write ffcc0000.
+# state, 2
+# 
+#  T=498000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
+#  T=498000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 20264 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# ** Error: The amount was not indexed properly: amount 54056; correct amount (to write): 20264, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 510 ns Started: 510 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 0
+# state, 3
+# 
+#  T=522000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
+#  T=522000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0xa2e8  max_to_trade = 0xcdf8  
+# watng fork, 1
+# ** Error: The amount was not indexed properly: amount 3766; correct amount (to write): 20264, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 534 ns Started: 534 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 2
+# state, 3
+# 
+#  T=546000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
+#  T=546000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
+# state, 2
+# ** Error: The amount was not indexed properly: amount 52528; correct amount (to write): 20264, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 558 ns Started: 558 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 9, data_write 4f28.
+# state, 1
+# /*write hit*/
+# 
+#  T=570000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
+#  T=570000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
+# state, 0
+# state, 0
+# state, 0
+# ** Error: The amount was not indexed properly: amount 12857; correct amount (to write): 12857, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 582 ns Started: 582 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 10, data_write 3239.
+# state, 1
+# /*write hit*/
+# 
+#  T=594000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
+#  T=594000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xcdf8  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*cache miss*/
+# 
+#  T=618000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
+#  T=618000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x4f28 cancelled_orders = 0xa2e8  max_to_trade = 0xffcc  
+# state, 2
+# totalsent to accuorders cache 11, data_write ffcc0000.
+# state, 2
+# state, 1
+# 
+#  T=642000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
+#  T=642000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3239 cancelled_orders = 0x0  max_to_trade = 0x551  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 27754; correct amount (to write): 27754, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 654 ns Started: 654 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 12, data_write 6c6a.
+# state, 1
+# /*write hit*/
+# 
+#  T=666000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
+#  T=666000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3239 cancelled_orders = 0xa2e8  max_to_trade = 0x551  
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 13, data_write 8d1.
+# state, 1
+# /*write hit*/
+# 
+#  T=690000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
+#  T=690000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 6204 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# 
+#  T=714000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
+#  T=714000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xbb92 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# watng fork, 0
+# state, 3
+# watng fork, 1
+# 
+#  T=738000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
+#  T=738000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc463 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# watng fork, 2
+# state, 3
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 118; correct amount (to write): 6204, correct_amount[31:16]: 0, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))0
+#    Time: 750 ns Started: 750 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 2
+# totalsent to accuorders cache 14, data_write ffcc0000.
+# state, 2
+# 
+#  T=762000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
+#  T=762000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc463 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 15, data_write 183c.
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*write hit*/
+# mem_data.ready, 1
+# Writing 816578560 mem.
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 16, data_write 30ac0000.
+# state, 1
+# /*write hit*/
+# ** Error: The amount was not indexed properly: amount 12460; correct amount (to write): 816578560, correct_amount[31:16]: 12460, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 1, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 774 ns Started: 774 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 0
+# state, 0
+# 
+#  T=786000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
+#  T=786000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xc463 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# watng fork, 1
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*write hit*/
+# mem_data_down.ready from controller 1 mem.
+# totalsent to accuorders cache 17, data_write 8e9b0000.
+# state, 1
+# /*write hit*/
+# watng fork, 2
+# state, 1
+# /*write hit*/
+# state, 0
+# 
+#  T=810000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
+#  T=810000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x183c cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*write hit*/
+# mem_data.ready, 1
+# Writing 513277952 mem.
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 18, data_write 1e980000.
+# state, 1
+# /*write hit*/
+# watng fork, 0
+# state, 0
+# 
+#  T=834000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
+#  T=834000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x30ac  
+# watng fork, 1
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# watng fork, 2
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 3
+# mem_data.ready, 1
+# Writing 24536 mem.
+# state, 3
+# 
+#  T=858000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
+#  T=858000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0xa2e8  max_to_trade = 0x8e9b  
+# watng fork, 0
+# state, 3
+# mem_data_down.ready from controller 1 mem.
+# watng fork, 1
+# 
+#  T=882000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
+#  T=882000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3239 cancelled_orders = 0x0  max_to_trade = 0x1e98  
+# watng fork, 2
+# state, 3
+# state, 2
+# totalsent to accuorders cache 19, data_write ffcc0000.
+# state, 2
+# 
+#  T=906000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
+#  T=906000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 20, data_write a6a6.
+# state, 1
+# /*write hit*/
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# mem_data.ready, 1
+# Writing 34744 mem.
+# state, 1
+# /*cache miss*/
+# miss with dirty line
+# ** Error: The amount was not indexed properly: amount 34744; correct amount (to write): 34744, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 918 ns Started: 918 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# watng fork, 0
+# state, 3
+# 
+#  T=930000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
+#  T=930000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# watng fork, 1
+# state, 3
+# state, 3
+# watng fork, 2
+# state, 3
+# 
+#  T=954000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
+#  T=954000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa6a6 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 2
+# totalsent to accuorders cache 21, data_write ffcc0000.
+# state, 2
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 22, data_write 2ff00000.
+# state, 1
+# /*write hit*/
+# 
+#  T=978000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
+#  T=978000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# state, 0
+# state, 0
+# state, 0
+# ** Error: The amount was not indexed properly: amount 10002; correct amount (to write): 10002, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 990 ns Started: 990 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 23, data_write 2712.
+# state, 1
+# /*write hit*/
+# 
+#  T=1002000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
+#  T=1002000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x31f0  max_to_trade = 0xffaa  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 24, data_write 3628.
+# state, 1
+# /*write hit*/
+# 
+#  T=1026000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
+#  T=1026000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x2ff0  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 25, data_write e4a10000.
+# state, 1
+# /*write hit*/
+# 
+#  T=1050000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
+#  T=1050000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3f4e cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 26, data_write bf03.
+# state, 1
+# /*write hit*/
+# 
+#  T=1074000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
+#  T=1074000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x3628 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 0
+# state, 0
+# state, 0
+# mem_data_down.ready from controller 1 mem.
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 27, data_write 85e8.
+# state, 1
+# /*write hit*/
+# 
+#  T=1098000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
+#  T=1098000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0xa2e8  max_to_trade = 0xe4a1  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 28, data_write a727.
+# state, 1
+# /*write hit*/
+# 
+#  T=1122000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
+#  T=1122000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xf13c cancelled_orders = 0x0  max_to_trade = 0x1e98  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 29, data_write afef.
+# state, 1
+# /*write hit*/
+# 
+#  T=1146000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
+#  T=1146000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xbc10 cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 30, data_write c01d.
+# state, 1
+# /*write hit*/
+# 
+#  T=1170000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
+#  T=1170000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xa727 cancelled_orders = 0x0  max_to_trade = 0xe4a1  
+# state, 0
+# state, 0
+# state, 0
+# state, 1
+# /*write hit*/
+# totalsent to accuorders cache 31, data_write 7895.
+# state, 1
+# /*write hit*/
+# 
+#  T=1194000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
+#  T=1194000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0xafef cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# T=1194000 [Generator] Done generation
+# Coverage_input = 100.00 %
+# Coverage_output = 100.00 %
+# state, 0
+# ** Note: $stop    : testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
+#    Time: 1214 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+# Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
+# Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
+#  quit
+# End time: 12:46:49 on May 25,2022, Elapsed time: 0:00:00
+# Errors: 27, Warnings: 12

@@ -38,14 +38,6 @@ module dm_mem_upstream(input bit clk, input bit rst,
   always @(cpu_req.rdindex) begin
     cpu_res.ready = 1'b0; 
     cpu_res.data = memory[cpu_req.rdindex];
-    fork
-      begin
-        for (i = 0; i < 4; i = i + 1)begin
-            @(posedge clk);
-        end
-      end
-    join
-    wait fork;
     cpu_res.ready = 1'b1;
   end
   // assign mem_data.ready = 1'b1;

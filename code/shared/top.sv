@@ -18,7 +18,7 @@ module top( clk, HRESETn, cpu_client_id, cpu_amount, cpu_go, cpu_new_max, exchan
   // input and outputs
   input[4:0]  exchange_client_id;
   input[15:0] exchange_amount;
-  input[4:0]  cpu_client_id;
+  input[8:0]  cpu_client_id;
   input HRESETn, exchange_go;
 
   input[15:0] cpu_amount;

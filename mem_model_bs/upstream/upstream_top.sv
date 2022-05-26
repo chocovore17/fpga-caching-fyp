@@ -97,7 +97,6 @@ always @(client_id, amount)
         // $display("HEYYYYY pass_checks %0h .", pass_checks);
         cpu_req.rw = pass_checks;
         wait (written == 1); //Implementation 1
-        // $display("HEYYYYY written %0h .", written);
     end : write_fork
     join
 
