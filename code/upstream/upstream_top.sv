@@ -16,7 +16,7 @@
 
 module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
-  input[8:0]  client_id;
+  input[9:0]  client_id;
   input[15:0] amount;
   output thenewmax;
   reg HRESETn;

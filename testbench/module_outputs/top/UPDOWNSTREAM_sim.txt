@@ -1,0 +1,518 @@
+# vsim seg_work_opt -c -logfile testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
+# Start time: 15:23:31 on May 26,2022
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top_UPDOWNSTREAM_sv_unit(fast)
+# Loading work.tb_top_UPDOWNSTREAM(fast)
+# Loading work.updownstream_if(fast)
+# Loading work.cache_def(fast)
+# Loading work.top_sv_unit(fast)
+# Loading work.top(fast)
+# Loading work.dm_cache_fsm_downstream(fast)
+# Loading work.dm_cache_tag_downstream(fast)
+# Loading work.dm_data_downstream(fast)
+# Loading work.downmem_controller(fast)
+# Loading work.upstream_processor_top(fast)
+# Loading work.dm_cache_fsm_upstream(fast)
+# Loading work.dm_cache_tag_upstream(fast)
+# Loading work.dm_data_upstream(fast)
+# Loading work.mem_controller(fast)
+# Loading work.upstream_processor(fast)
+# Loading work.downstream_top(fast)
+# Loading work.updownstream_if(fast)
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/mem_data_down', driven via a port connection, is multiply driven. See code/shared/top.sv(60).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem File: code/shared/ramdownstream.sv Line: 278
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/mem_data', driven via a port connection, is multiply driven. See code/upstream/upstream_top.sv(50).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem File: code/shared/ramupstream.sv Line: 369
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[3:0]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 103
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.rdindex[9:4]', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 101
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.data', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 97
+# ** Warning: (vsim-3839) Variable '/tb_top_UPDOWNSTREAM/TOP/downdatareq.valid', driven via a port connection, is multiply driven. See code/shared/top.sv(83).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP File: code/shared/top.sv Line: 96
+# run -all
+# Loading downstream rom.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 34 of file "code/shared/rom_empty.mem". (Current address [33], address range [0:32])    : code/shared/ramdownstream.sv(27)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cdata
+# Loading downstream memory.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_empty.mem". (Current address [122], address range [0:121])    : code/shared/ramdownstream.sv(84)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/CACHEDOWNSTREAM/cmem
+# Loading upstream cache.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 18 of file "code/shared/rom_trade.mem". (Current address [17], address range [0:16])    : code/shared/ramupstream.sv(34)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cdata
+# Loading upstream memory.
+# ** Warning: (vsim-PLI-3407) Too many data words read on line 123 of file "code/shared/rom_trade.mem". (Current address [122], address range [0:121])    : code/shared/ramupstream.sv(125)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM/TOP/UPTOP/CACHEUPSTREAM/cmem
+# --------- [DRIVER] Reset Started ---------
+# --------- [DRIVER] Reset Ended ---------
+# T=2000 [Generator] starting
+# repeat count = 100
+# T=2000, [DRIVER] starting ---------
+# T=2000, [MONITOR] starting ---------
+# T=2000, [SCOREBOARD] starting ---------
+# ** Error: should be writing to downstream memory
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.DOWNTOP.downstream_write_enable File: code/downstream/downstream_top.sv Line: 38
+# ** Error: two states, check_risk and send_order, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic3 File: code/upstream/upstream_top.sv Line: 150
+# ** Error: two states, update_max and send_order, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic2 File: code/upstream/upstream_top.sv Line: 142
+# ** Error: two states, update_max and check_risk, are simultaneously high
+#    Time: 2 ns Started: 2 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_state_logic1 File: code/upstream/upstream_top.sv Line: 134
+# ** Error: pass_checks was not computer properly for client 225; max to trade: 65450, accumulated amount: 0, cancelled amount: 0, pass_checks: 1, amount 1361
+#    Time: 6 ns Started: 6 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_pass_checks File: code/upstream/upstream_top.sv Line: 123
+# ** Error: The amount was not indexed properly: amount 1361; correct amount (to write): 89194496, correct_amount[31:16]: 1361, (correct_amount == amount) 0 , (correct_amount[31:16]== amount) 1, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 6 ns Started: 6 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=18000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
+#  T=18000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0xxxx cancelled_orders = 0xx  max_to_trade = 0xx  
+# 
+# =============
+# 
+# totalsent to cache 0, data_write 5510000.
+# 
+#  T=42000 [MONITOR] transaction information: cpu_client_id = 0xe1 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
+#  T=42000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xffaa  
+# 
+# =============
+# 
+# totalsent to cache 1, data_write cc6e.
+# totalsent to accuorders cache 0, data_write cc6e.
+# 
+#  T=66000 [MONITOR] transaction information: cpu_client_id = 0x72 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
+#  T=66000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=90000 [MONITOR] transaction information: cpu_client_id = 0x63 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
+#  T=90000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=114000 [MONITOR] transaction information: cpu_client_id = 0xb5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
+#  T=114000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=138000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
+#  T=138000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=162000 [MONITOR] transaction information: cpu_client_id = 0x8d cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
+#  T=162000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 2, data_write a1af0000.
+# 
+#  T=186000 [MONITOR] transaction information: cpu_client_id = 0xc1 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
+#  T=186000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=210000 [MONITOR] transaction information: cpu_client_id = 0xbc cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
+#  T=210000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=234000 [MONITOR] transaction information: cpu_client_id = 0xb8 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
+#  T=234000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=258000 [MONITOR] transaction information: cpu_client_id = 0xe cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
+#  T=258000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 3, data_write b3380000.
+# 
+#  T=282000 [MONITOR] transaction information: cpu_client_id = 0x28 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
+#  T=282000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# 
+#  T=306000 [MONITOR] transaction information: cpu_client_id = 0x98 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
+#  T=306000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# 
+#  T=330000 [MONITOR] transaction information: cpu_client_id = 0x30 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
+#  T=330000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# 
+#  T=354000 [MONITOR] transaction information: cpu_client_id = 0x7d cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
+#  T=354000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# 
+#  T=378000 [MONITOR] transaction information: cpu_client_id = 0x27 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
+#  T=378000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0xa1af  
+# 
+# =============
+# 
+# totalsent to cache 4, data_write d8a7.
+# totalsent to accuorders cache 1, data_write d8a7.
+# 
+#  T=402000 [MONITOR] transaction information: cpu_client_id = 0x97 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
+#  T=402000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=426000 [MONITOR] transaction information: cpu_client_id = 0x80 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
+#  T=426000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=450000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
+#  T=450000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=474000 [MONITOR] transaction information: cpu_client_id = 0x26 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
+#  T=474000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 5, data_write ae440000.
+# 
+#  T=498000 [MONITOR] transaction information: cpu_client_id = 0xaa cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
+#  T=498000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=522000 [MONITOR] transaction information: cpu_client_id = 0x2b cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
+#  T=522000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=546000 [MONITOR] transaction information: cpu_client_id = 0x4b cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
+#  T=546000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=570000 [MONITOR] transaction information: cpu_client_id = 0xb9 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
+#  T=570000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=594000 [MONITOR] transaction information: cpu_client_id = 0x93 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
+#  T=594000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 6, data_write 3239.
+# totalsent to accuorders cache 2, data_write 3239.
+# 
+#  T=618000 [MONITOR] transaction information: cpu_client_id = 0xff cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
+#  T=618000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=642000 [MONITOR] transaction information: cpu_client_id = 0x3e cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
+#  T=642000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=666000 [MONITOR] transaction information: cpu_client_id = 0x97 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
+#  T=666000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=690000 [MONITOR] transaction information: cpu_client_id = 0x1d cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
+#  T=690000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+# =============
+# 
+# totalsent to cache 7, data_write 8d10000.
+# 
+#  T=714000 [MONITOR] transaction information: cpu_client_id = 0xfa cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
+#  T=714000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=738000 [MONITOR] transaction information: cpu_client_id = 0xa0 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
+#  T=738000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=762000 [MONITOR] transaction information: cpu_client_id = 0x1d cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
+#  T=762000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=786000 [MONITOR] transaction information: cpu_client_id = 0xab cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
+#  T=786000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=810000 [MONITOR] transaction information: cpu_client_id = 0xd6 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
+#  T=810000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 8, data_write 8e9b0000.
+# 
+#  T=834000 [MONITOR] transaction information: cpu_client_id = 0x4e cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
+#  T=834000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=858000 [MONITOR] transaction information: cpu_client_id = 0x8f cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
+#  T=858000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=882000 [MONITOR] transaction information: cpu_client_id = 0x10 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
+#  T=882000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x9d8c  max_to_trade = 0x0  
+# 
+#  T=906000 [MONITOR] transaction information: cpu_client_id = 0x11 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
+#  T=906000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 9, data_write 5c9d.
+# totalsent to accuorders cache 3, data_write 5c9d.
+# 
+#  T=930000 [MONITOR] transaction information: cpu_client_id = 0x8c cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
+#  T=930000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
+# 
+#  T=954000 [MONITOR] transaction information: cpu_client_id = 0x42 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
+#  T=954000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
+# 
+#  T=978000 [MONITOR] transaction information: cpu_client_id = 0x28 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
+#  T=978000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
+# 
+#  T=1002000 [MONITOR] transaction information: cpu_client_id = 0xc8 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
+#  T=1002000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 13864; correct amount (to write): 13864, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 1014 ns Started: 1014 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# 
+#  T=1026000 [MONITOR] transaction information: cpu_client_id = 0x24 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
+#  T=1026000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x8e9b  
+# 
+# =============
+# 
+# totalsent to cache 10, data_write 3628.
+# totalsent to accuorders cache 4, data_write 3628.
+# 
+#  T=1050000 [MONITOR] transaction information: cpu_client_id = 0xbf cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
+#  T=1050000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5c9d cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1074000 [MONITOR] transaction information: cpu_client_id = 0xd7 cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
+#  T=1074000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5c9d cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# 
+#  T=1098000 [MONITOR] transaction information: cpu_client_id = 0xd5 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
+#  T=1098000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5c9d cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# mem_data_down.ready from controller 1 mem.
+# ** Error: The amount was not indexed properly: amount 42791; correct amount (to write): 42791, correct_amount[31:16]: 0, (correct_amount == amount) 1 , (correct_amount[31:16]== amount) 0, ((correct_amount == amount)||(correct_amount[31:16]== amount))1
+#    Time: 1110 ns Started: 1110 ns  Scope: tb_top_UPDOWNSTREAM.TOP.UPTOP.trade_correctamount_cpu File: code/upstream/upstream_top.sv Line: 115
+# 
+#  T=1122000 [MONITOR] transaction information: cpu_client_id = 0x2d cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
+#  T=1122000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x5c9d cancelled_orders = 0x0  max_to_trade = 0xffcc  
+# 
+#  T=1146000 [MONITOR] transaction information: cpu_client_id = 0x9f cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
+#  T=1146000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 11, data_write a727.
+# totalsent to accuorders cache 5, data_write a727.
+# 
+#  T=1170000 [MONITOR] transaction information: cpu_client_id = 0xcf cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
+#  T=1170000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1194000 [MONITOR] transaction information: cpu_client_id = 0x27 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
+#  T=1194000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1218000 [MONITOR] transaction information: cpu_client_id = 0x6d cpu_amount = 0x7895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
+#  T=1218000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1242000 [MONITOR] transaction information: cpu_client_id = 0xf3 cpu_amount = 0xe414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
+#  T=1242000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1266000 [MONITOR] transaction information: cpu_client_id = 0x30 cpu_amount = 0x4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
+#  T=1266000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 12, data_write 96ad.
+# totalsent to accuorders cache 6, data_write 96ad.
+# 
+#  T=1290000 [MONITOR] transaction information: cpu_client_id = 0x5a cpu_amount = 0x96ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
+#  T=1290000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1314000 [MONITOR] transaction information: cpu_client_id = 0xd4 cpu_amount = 0x2b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
+#  T=1314000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1338000 [MONITOR] transaction information: cpu_client_id = 0xa8 cpu_amount = 0x24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
+#  T=1338000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1362000 [MONITOR] transaction information: cpu_client_id = 0x62 cpu_amount = 0xed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
+#  T=1362000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 13, data_write 42f3.
+# totalsent to accuorders cache 7, data_write 42f3.
+# 
+#  T=1386000 [MONITOR] transaction information: cpu_client_id = 0x26 cpu_amount = 0x42f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
+#  T=1386000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1410000 [MONITOR] transaction information: cpu_client_id = 0x8b cpu_amount = 0xfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
+#  T=1410000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1434000 [MONITOR] transaction information: cpu_client_id = 0xde cpu_amount = 0xae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
+#  T=1434000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0xa3a2  max_to_trade = 0x0  
+# 
+#  T=1458000 [MONITOR] transaction information: cpu_client_id = 0x15 cpu_amount = 0xf248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
+#  T=1458000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1482000 [MONITOR] transaction information: cpu_client_id = 0xe5 cpu_amount = 0x3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
+#  T=1482000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 14, data_write 38430000.
+# 
+#  T=1506000 [MONITOR] transaction information: cpu_client_id = 0x79 cpu_amount = 0x3843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
+#  T=1506000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1530000 [MONITOR] transaction information: cpu_client_id = 0x5a cpu_amount = 0x627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
+#  T=1530000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x48e4  max_to_trade = 0x0  
+# 
+#  T=1554000 [MONITOR] transaction information: cpu_client_id = 0x3d cpu_amount = 0x822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
+#  T=1554000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1578000 [MONITOR] transaction information: cpu_client_id = 0x19 cpu_amount = 0xa449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
+#  T=1578000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 15, data_write 5051.
+# totalsent to accuorders cache 8, data_write 5051.
+# 
+#  T=1602000 [MONITOR] transaction information: cpu_client_id = 0x35 cpu_amount = 0x5051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
+#  T=1602000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1626000 [MONITOR] transaction information: cpu_client_id = 0x39 cpu_amount = 0x95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
+#  T=1626000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1650000 [MONITOR] transaction information: cpu_client_id = 0x4d cpu_amount = 0x528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
+#  T=1650000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x4e81  max_to_trade = 0x0  
+# 
+#  T=1674000 [MONITOR] transaction information: cpu_client_id = 0x2a cpu_amount = 0x52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
+#  T=1674000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1698000 [MONITOR] transaction information: cpu_client_id = 0xf4 cpu_amount = 0xb6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
+#  T=1698000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 16, data_write 683.
+# totalsent to accuorders cache 9, data_write 683.
+# 
+#  T=1722000 [MONITOR] transaction information: cpu_client_id = 0xaf cpu_amount = 0x683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
+#  T=1722000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1746000 [MONITOR] transaction information: cpu_client_id = 0xba cpu_amount = 0xb248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
+#  T=1746000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1770000 [MONITOR] transaction information: cpu_client_id = 0x11 cpu_amount = 0x9ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
+#  T=1770000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x48e4  max_to_trade = 0x0  
+# 
+#  T=1794000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xfed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
+#  T=1794000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0xfde8  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 17, data_write 8c900000.
+# 
+#  T=1818000 [MONITOR] transaction information: cpu_client_id = 0xec cpu_amount = 0x8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
+#  T=1818000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=1842000 [MONITOR] transaction information: cpu_client_id = 0x2d cpu_amount = 0xe3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
+#  T=1842000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1866000 [MONITOR] transaction information: cpu_client_id = 0x93 cpu_amount = 0x81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
+#  T=1866000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1890000 [MONITOR] transaction information: cpu_client_id = 0x2e cpu_amount = 0xd302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
+#  T=1890000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1914000 [MONITOR] transaction information: cpu_client_id = 0x7d cpu_amount = 0x1c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
+#  T=1914000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 18, data_write f36e0000.
+# 
+#  T=1938000 [MONITOR] transaction information: cpu_client_id = 0xf4 cpu_amount = 0xf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
+#  T=1938000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=1962000 [MONITOR] transaction information: cpu_client_id = 0xc cpu_amount = 0x5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
+#  T=1962000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x6a8a  max_to_trade = 0x0  
+# 
+#  T=1986000 [MONITOR] transaction information: cpu_client_id = 0xaa cpu_amount = 0xbf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
+#  T=1986000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2010000 [MONITOR] transaction information: cpu_client_id = 0x27 cpu_amount = 0x1336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
+#  T=2010000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 19, data_write a50a0000.
+# 
+#  T=2034000 [MONITOR] transaction information: cpu_client_id = 0x95 cpu_amount = 0xa50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
+#  T=2034000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x6a8a  max_to_trade = 0x0  
+# 
+#  T=2058000 [MONITOR] transaction information: cpu_client_id = 0x32 cpu_amount = 0x6d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
+#  T=2058000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2082000 [MONITOR] transaction information: cpu_client_id = 0x64 cpu_amount = 0x74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
+#  T=2082000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=2106000 [MONITOR] transaction information: cpu_client_id = 0x3a cpu_amount = 0xe97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
+#  T=2106000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2130000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
+#  T=2130000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x48e4  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 20, data_write 2f040000.
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=2154000 [MONITOR] transaction information: cpu_client_id = 0xe6 cpu_amount = 0x2f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
+#  T=2154000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2178000 [MONITOR] transaction information: cpu_client_id = 0xb0 cpu_amount = 0xcc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
+#  T=2178000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2202000 [MONITOR] transaction information: cpu_client_id = 0x44 cpu_amount = 0x68a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
+#  T=2202000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x6a8a  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=2226000 [MONITOR] transaction information: cpu_client_id = 0xb7 cpu_amount = 0x84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
+#  T=2226000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2250000 [MONITOR] transaction information: cpu_client_id = 0xd3 cpu_amount = 0xede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
+#  T=2250000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x6a8a  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 21, data_write ede60000.
+# 
+#  T=2274000 [MONITOR] transaction information: cpu_client_id = 0xaf cpu_amount = 0xfc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
+#  T=2274000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=2298000 [MONITOR] transaction information: cpu_client_id = 0x32 cpu_amount = 0xc9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
+#  T=2298000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2322000 [MONITOR] transaction information: cpu_client_id = 0xf7 cpu_amount = 0xe4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
+#  T=2322000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+#  T=2346000 [MONITOR] transaction information: cpu_client_id = 0xa2 cpu_amount = 0xc843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
+#  T=2346000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# mem_data_down.ready from controller 1 mem.
+# 
+#  T=2370000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
+#  T=2370000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# 
+# =============
+# 
+# totalsent to cache 22, data_write 53580000.
+# 
+#  T=2394000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x5358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
+#  T=2394000 [SCOREBOARD] TOP LEVEL transaction information:    accumulated_orders = 0x0 cancelled_orders = 0x0  max_to_trade = 0x0  
+# T=2394000 [Generator] Done generation
+# Coverage_input = 100.00 %
+# Coverage_output = 100.00 %
+# ** Note: $stop    : testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
+#    Time: 2414 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+# Break in Module tb_top_UPDOWNSTREAM at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
+# Stopped at testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
+#  quit
+# End time: 15:23:32 on May 26,2022, Elapsed time: 0:00:01
+# Errors: 8, Warnings: 10
