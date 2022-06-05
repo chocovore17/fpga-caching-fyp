@@ -1,12 +1,5 @@
 
 
-Other (TODO)
-1. Write functional coverage plan 
-4. Write & check memory 
-5. Explain why no use of class
-6. Explain tbench structure  
-
-
 *Useful links + bibiography*: 
 
   <div id="top"></div>
@@ -111,16 +104,11 @@ The repository constains the following frameworks/libraries.
 
 In order to make running the project simpler and faster, we wrote a script to remove the gui and run a faster simulation. These bash script can be found under Hardware folder. 
 
-## What to do next 
+## What to do next for future developers
 
-1. Top test fix 
-2. Module random downstream 
-3. Module random upstream
-4. Module random top 
-5. Write some of the report 
-6. Obtain graphs & results questasim 
-7. Improve memory & compare memory models 
-8. Write cache & compare. 
+1. Formal Verification with Jasper Gold and TLA+ - script provided
+2. Synthesis on FPGA 
+
 ### Prerequisites
 
 This repository load local variable to run questasim. It is therefore required to:
@@ -211,6 +199,8 @@ AHB_peripherals_files
 1. Client id = adress to read
 
 ## Repository structure 
+
+all the relevant pieces of code is under code/ folder. 
  1. Shared: memory files 
     1. Memory class 
     2. module to instantiate memory from a file 
@@ -226,8 +216,6 @@ AHB_peripherals_files
     2. Random: use randomisation on classes (TODO)
     3. Formal verification & other methods to implement  (TODO)
 
-### Performance  
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -242,21 +230,6 @@ All assembly files can be found under src/*. These files were compiled and provi
 
 
 
-
-<!-- FORMAL VERIFICATION TESTS -->
-## Formal Verification
-
-### Logs
-Logs for top level testing with all screenshots are under tbenchoutputs/tbenchoutputs_fv/*
-
-The jaspergold file can be found under tbenchcode/formal_verification
-
-
-### Assumptions 
-
-
-### Performance  
-
 ## References
 [baseline-module-tests]:( https://www.edaplayground.com/playgrounds?searchString=&language=SystemVerilog%2FVerilog&simulator=&methodologies=&_libraries=on&_svx=on&_easierUVM=on&curated=true&_curated=on
 )
@@ -270,8 +243,8 @@ Lecture notes
 <!-- CONTACT -->
 ## Contact
 
-Maëlle Guerre - [@gt_hub](https://github.com/chocovore17)
-John Wickerson - *add website*
+Maëlle Guerre - [@github](https://github.com/chocovore17)
+John Wickerson - [@webpage](https://johnwickerson.github.io/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
