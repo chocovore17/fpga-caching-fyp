@@ -12,7 +12,6 @@ class scoreboard;
         forever begin
             transaction trans;
             mon2scb.get(trans);
-            trans.print("SCOREBOARD");
             trans.print_upstream("SCOREBOARD");
 
             @(mon_done);

@@ -1,0 +1,188 @@
+# vsim seg_work_opt -c -logfile AHB_peripherals_files/tbench/tbenchoutputs/7seg/AHB_7SEG_sim.txt -do "run -all; quit" 
+# Start time: 23:25:59 on Dec 17,2021
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top_AHB7SEGDEC_sv_unit(fast)
+# Loading work.tb_top_AHB7SEGDEC(fast)
+# Loading work.ahb7seg_if(fast)
+# Loading work.AHB7SEGDEC(fast)
+# Loading work.ahb7seg_if(fast)
+# run -all
+# --------- [DRIVER] Reset Started ---------
+# --------- [DRIVER] Reset Ended ---------
+# T=5000 [Generator] starting
+# repeat count = 50
+# T=5000, [DRIVER] starting ---------
+# T=5000, [DRIVER-TRANSFER: 0] ---------
+# T=5000, [MONITOR] starting ---------
+# T=5000, [SCOREBOARD] starting ---------
+# T=25000, [DRIVER-TRANSFER: 1] ---------
+# T=45000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x0x seg = 0b10010 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=45000, [DRIVER-TRANSFER: 2] ---------
+# T=65000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x81 seg = 0b1111001 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=65000, [DRIVER-TRANSFER: 3] ---------
+# T=85000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x9 seg = 0b10000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=85000, [DRIVER-TRANSFER: 4] ---------
+# T=105000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xb seg = 0b11 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=105000, [DRIVER-TRANSFER: 5] ---------
+# T=125000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x0 seg = 0b1000000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=125000, [DRIVER-TRANSFER: 6] ---------
+# T=145000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x6 seg = 0b10 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=145000, [DRIVER-TRANSFER: 7] ---------
+# T=165000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x86 seg = 0b10 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=165000, [DRIVER-TRANSFER: 8] ---------
+# T=185000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x82 seg = 0b100100 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=185000, [DRIVER-TRANSFER: 9] ---------
+# T=205000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x83 seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=205000, [DRIVER-TRANSFER: 10] ---------
+# T=225000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xc seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=225000, [DRIVER-TRANSFER: 11] ---------
+# T=245000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8a seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=245000, [DRIVER-TRANSFER: 12] ---------
+# T=265000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8a seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=265000, [DRIVER-TRANSFER: 13] ---------
+# T=285000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8c seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=285000, [DRIVER-TRANSFER: 14] ---------
+# T=305000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8 seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=305000, [DRIVER-TRANSFER: 15] ---------
+# T=325000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xb seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=325000, [DRIVER-TRANSFER: 16] ---------
+# T=345000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xb seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=345000, [DRIVER-TRANSFER: 17] ---------
+# T=365000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x4 seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=365000, [DRIVER-TRANSFER: 18] ---------
+# T=385000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x5 seg = 0b110000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=385000, [DRIVER-TRANSFER: 19] ---------
+# T=405000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x7 seg = 0b1111000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=405000, [DRIVER-TRANSFER: 20] ---------
+# T=425000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x89 seg = 0b10000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=425000, [DRIVER-TRANSFER: 21] ---------
+# T=445000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x1 seg = 0b1111001 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=445000, [DRIVER-TRANSFER: 22] ---------
+# T=465000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8b seg = 0b11 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=465000, [DRIVER-TRANSFER: 23] ---------
+# T=485000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8b seg = 0b11 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=485000, [DRIVER-TRANSFER: 24] ---------
+# T=505000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x2 seg = 0b100100 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=505000, [DRIVER-TRANSFER: 25] ---------
+# T=525000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x2 seg = 0b100100 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=525000, [DRIVER-TRANSFER: 26] ---------
+# T=545000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x9 seg = 0b10000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=545000, [DRIVER-TRANSFER: 27] ---------
+# T=565000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xa seg = 0b1000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=565000, [DRIVER-TRANSFER: 28] ---------
+# T=585000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x86 seg = 0b1000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=585000, [DRIVER-TRANSFER: 29] ---------
+# T=605000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x85 seg = 0b10010 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=605000, [DRIVER-TRANSFER: 30] ---------
+# T=625000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x0 seg = 0b1000000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=625000, [DRIVER-TRANSFER: 31] ---------
+# T=645000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x85 seg = 0b1000000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=645000, [DRIVER-TRANSFER: 32] ---------
+# T=665000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0xd seg = 0b1000000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=665000, [DRIVER-TRANSFER: 33] ---------
+# T=685000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x80 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=685000, [DRIVER-TRANSFER: 34] ---------
+# T=705000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x7 seg = 0b1111000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=705000, [DRIVER-TRANSFER: 35] ---------
+# T=725000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x87 seg = 0b1111000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=725000, [DRIVER-TRANSFER: 36] ---------
+# T=745000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8a seg = 0b1000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=745000, [DRIVER-TRANSFER: 37] ---------
+# T=765000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x80 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=765000, [DRIVER-TRANSFER: 38] ---------
+# T=785000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x84 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=785000, [DRIVER-TRANSFER: 39] ---------
+# T=805000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x80 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=805000, [DRIVER-TRANSFER: 40] ---------
+# T=825000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x8c seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=825000, [DRIVER-TRANSFER: 41] ---------
+# T=845000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x87 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=845000, [DRIVER-TRANSFER: 42] ---------
+# T=865000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x0 seg = 0b1000000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=865000, [DRIVER-TRANSFER: 43] ---------
+# T=885000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x2 seg = 0b100100 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=885000, [DRIVER-TRANSFER: 44] ---------
+# T=905000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x81 seg = 0b1111001 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=905000, [DRIVER-TRANSFER: 45] ---------
+# T=925000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x4 seg = 0b1111001 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=925000, [DRIVER-TRANSFER: 46] ---------
+# T=945000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x88 seg = 0b1111001 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=945000, [DRIVER-TRANSFER: 47] ---------
+# T=965000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x86 seg = 0b1111001 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=965000, [DRIVER-TRANSFER: 48] ---------
+# T=985000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x80 seg = 0b1000000 an = 0b1110 dp = 0b0 DLS_ERROR = 0b0
+# T=985000, [DRIVER-TRANSFER: 49] ---------
+# T=1005000 [SCOREBOARD] 7seg transaction information: 
+# HRDATA = 0x9 seg = 0b10000 an = 0b1110 dp = 0b1 DLS_ERROR = 0b0
+# T=1005000 [Generator] Done generation
+# Coverage_input = 100.00 %
+# Coverage_output = 68.93 %
+# ** Note: $stop    : AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tb_top_AHB7SEGDEC.sv(138)
+#    Time: 1025 ns  Iteration: 0  Instance: /tb_top_AHB7SEGDEC
+# Break in Module tb_top_AHB7SEGDEC at AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tb_top_AHB7SEGDEC.sv line 138
+# Stopped at AHB_peripherals_files/tbench/unit_level/AHB7SEGDEC/tb_top_AHB7SEGDEC.sv line 138
+#  quit
+# End time: 23:25:59 on Dec 17,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

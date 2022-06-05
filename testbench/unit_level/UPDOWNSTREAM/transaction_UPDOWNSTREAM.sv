@@ -2,7 +2,7 @@ class transaction;
 
     rand logic clk;
     rand logic HRESETn;
-    rand logic[4:0] cpu_client_id;
+    rand logic[9:0] cpu_client_id;
     rand logic [31:0] cpu_amount;
     rand logic cpu_new_max;
     rand logic cpu_go;
@@ -11,12 +11,12 @@ class transaction;
     rand logic exchange_go;
     //comment/uncomment correponding constriant for constraned random testing(CRT)
     constraint c_client_id{
-        cpu_client_id inside{0,4,8,12};//only select the possible numerical range of each digit
+        cpu_client_id inside{[0:255]};//only select the possible numerical range of each digit
         // PARITYSEL == 1'b0;
     }
-    // constraint c_adress{
-    //     cpu_amount inside{0,4,8,12};//only select the possible 4 address of 4 digits
-    // }
+    constraint c_adress{
+        cpu_amount inside{[16'hfff0000:16'hfffffffe]};//only select the possible 4 address of 4 digits
+    }
     // constraint c_write{
     //     cpu_new_max == 1'b1;//always enable ahb write in CRT
     // }

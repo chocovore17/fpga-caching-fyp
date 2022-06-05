@@ -1,7 +1,11 @@
 var g_data = {
-c21:[4,'reset_check',[],,'20',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','199',,'reset_trigger']],[]],
-c22:[4,'upstream_new_maxcheck',[],,'20',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','199',,'new_maxcheck']],[]],
-c26:[4,'upstream_rdata',[],,'25',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','16','/tb_top_UPDOWNSTREAM',[[],[0,'1','43',,'accumulated_orders']],[]],
+c26:[4,'reset_check',[],,'25',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','16001',,'reset_trigger']],[]],
+c27:[4,'valid_client_id',[],,'25',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','16001',,'client_id']],[]],
+c28:[4,'upstream_new_maxcheck',[],,'25',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','16001',,'new_maxcheck']],[]],
+c29:[4,'downstream_exchchangecheck',[],,'25',2,1,'\\/tb_top_UPDOWNSTREAM/cov_input ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','16001',,'exchange_go']],[]],
+c35:[4,'upstream_acc_data',[],,'34',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','70',,'accumulated_orders']],[]],
+c36:[4,'upstream_max_data',[],,'34',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','15887',,'max_to_trade']],[]],
+c37:[4,'downstream_cxl_data',[],,'34',2,1,'\\/tb_top_UPDOWNSTREAM/cov_output ','19','/tb_top_UPDOWNSTREAM',[[],[0,'1','217',,'cancelled_orders']],[]],
 dummyEnd:0
 };
 processCovergroupsData(g_data);

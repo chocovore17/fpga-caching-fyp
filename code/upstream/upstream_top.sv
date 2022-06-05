@@ -8,10 +8,15 @@
  `include "upstream.sv"
  `include "SLT.sv"
 //  `include "code/shared/rom_trade.mem"
+ `define STATELOGC1 ((update_max == 1) && (check_risk == 1))
+ `define STATELOGC2 ((update_max == 1) && (send_order == 1))
+ `define STATELOGC3 ((check_risk== 1) && (send_order == 1))
+ `define SAFETOTRADE  ($signed({1'b0, max_to_trade_reg[15:0]})> $signed(result))
+ `define AMOUNTGOOD ((correct_amount == amount)||(correct_amount[31:16]== amount))
 
-module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax);
+module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumulated_orders, max_to_trade, thenewmax, cancelled_orders);
   input  clk, new_order, new_max; // for now use same clock to read and write, just not at same time
-  input[4:0]  client_id;
+  input[9:0]  client_id;
   input[15:0] amount;
   output thenewmax;
   reg HRESETn;
@@ -19,71 +24,131 @@ module upstream_processor_top(clk, client_id, amount, new_order, new_max, accumu
   reg pass_checks; //state machine input
   reg upstream_enable ; //RAM inputs
   
-  cache_data_type mem_dataup_wr, mem_dataup, mem_datadown, mem_datadown_wr;
-  cache_req_type mem_requp, mem_reqdown;
-
+  // cache_data_type mem_dataup_wr, mem_dataup, mem_datadown, mem_datadown_wr;
+  // cache_req_type mem_requp, mem_reqdown;
+  
+  cpu_req_type cpu_req; //CPU request input (CPU->cache)
+  mem_data_type mem_data; //memory response (memory->cache)
+  //outputs,
+  mem_req_type mem_req; //memory request (cache->memory)
+  cpu_result_type cpu_res; //cache result (cache->CPU)
+  reg counter;
   reg       check_risk, send_order, update_max; // state machine outputs
-  wire [31:0] cancelled_orders; // RAM data OUTPUTS
+  input [15:0] cancelled_orders; // RAM data 
+  reg [15:0] result, accumulated_orders_reg, cancelled_orders_reg ; // for signed comp 
   output [15:0] accumulated_orders;
   output[31:0] max_to_trade;
+  reg [31:0] max_to_trade_reg ;
   reg memwr, nocare; // RAM bool output & State machine input, don't care about downstream
   assign thenewmax = update_max;
-  // instantiate upstream ram (should it be done here? )
-  assign HRESETn = 1'b0;
-  assign accumulated_orders = mem_dataup[15:0];
-  assign max_to_trade = mem_dataup >> 16;
-  assign cancelled_orders = mem_datadown;
-  assign mem_reqdown.we = 1'b0;
+  // // instantiate upstream ram 
+  assign accumulated_orders =  accumulated_orders_reg ;
+  assign max_to_trade =  max_to_trade_reg ;
 
-  dm_data_upstream RAMUPSTREAM(
-    .clk(clk),    
-    .data_req(mem_requp),    //CPU request input (CPU->cache)
-    .data_write(mem_dataup_wr),     //memory response (memory->cache)
-    .data_read(mem_dataup)    //memory request (cache->memory)
-    );
 
-    
-  dm_data_downstream RAMDOWNSTREAM(
-    .clk(clk),    
-    .data_req(mem_reqdown),    //CPU request input (CPU->cache)
-    .data_write(mem_datadown_wr),     //memory response (memory->cache)
-    .data_read(mem_datadown)    //memory request (cache->memory)
-    );
+/*cache finite state machine*/
+    dm_cache_fsm_upstream CACHEUPSTREAM(
+      .clk(clk),
+      //inputs: 
+      .rst(1'b0), //no reset for now
+      .cpu_req(cpu_req), //CPU request input (CPU->cache)
+      .mem_data(mem_data), //memory response (memory->cache)
+      // outputs:
+      .mem_req(mem_req), //memory request (cache->memory) don't care here 
+      .cpu_res(cpu_res) //cache result (cache->CPU)
+      );
+      
 
 
   //instantiate upstream state machine to know current state 
     upstream_processor UPSTREAMPROCESSOR(.clk(clk),
           .risk_ok(pass_checks),
           .new_order(new_order),
+          .HRESETn(1'b1),
           .new_max(new_max),
           .memwr(memwr),
           .check_risk(check_risk),
           .send_order(send_order),
           .update_max(update_max));
 
-  always @(client_id, amount) begin
-  begin 
-    mem_requp.index = client_id[9:0];
-      if ((new_max) & (new_max>(mem_dataup)) ) // update max, shift amount 16 bits to left
+  // always_comb begin         
+always @(client_id, amount)
+  begin  : main_process
+    // wait until cpu res rdy 
+    // wait (cpu_res.ready === 1); //Implementation 1
+    accumulated_orders_reg = cpu_res.data[15:0];
+    cancelled_orders_reg =  cancelled_orders;
+  
+  fork begin: read_fork
+    cpu_req.rdindex[31:14] = '0;
+    cpu_req.rdindex[13:4] = client_id[9:0];
+    cpu_req.rdindex[3:0] ='0;
+    cpu_req.valid = 1'b1;
+    // wait until cpu res rdy
+  end : read_fork
+  join
+  wait fork;
+    max_to_trade_reg = cpu_res.data >> 16;
+    if ((new_max) && (amount>(cpu_res.data[15:0])) ) // update max, shift amount 16 bits to left
       correct_amount = amount << 16;
     else
-      correct_amount = amount;
+      correct_amount = amount[15:0];
       // no need for an else, amount is less then 16
 
-    mem_dataup_wr = correct_amount;
-    pass_checks <= max_to_trade>(accumulated_orders + amount - cancelled_orders);
-    mem_requp.we = pass_checks;
-  end 
+    cpu_req.data = correct_amount;
+
+    result = (accumulated_orders_reg+ (~cancelled_orders_reg+1) + amount );
+    // $display("%0b, result : %0d",($signed({1'b0, max_to_trade[15:0]})>$signed(result) ),$signed(result) );
+    pass_checks = $signed({1'b0, max_to_trade_reg[15:0]})>$signed(result); //extend for neg values
+    cpu_req.rw = pass_checks;
+    wait (cpu_res.ready == 1); //Implementation 1
+
+  end  : main_process
   
-  //   // SVA to check if gpio_out during reset
-  trade_risk_check_cpu: assert property (
-    @(posedge clk) // throws an error if the trade is unsafe
-     max_to_trade> accumulated_orders
+    
+      // SVA to check if CORRECT amount written
+  trade_correctamount_cpu: assert property (
+    @(accumulated_orders_reg) // throws an error if the correct amount is different from amount to trade
+    `AMOUNTGOOD == 1'b1
       )
     else begin 
-      $error ("The trade is not SAFE for client %0h; max to trade: %0h, accumulated amount: %0h, pass_checks: %0h", client_id, max_to_trade, accumulated_orders, pass_checks);
+      $error ("The amount was not indexed properly: amount %0d; correct amount (to write): %0d, correct_amount[31:16]: %0d, (correct_amount == amount) %0d , (correct_amount[31:16]== amount) %0d, ((correct_amount == amount)||(correct_amount[31:16]== amount))%0d", amount, correct_amount, correct_amount[31:16], (correct_amount == amount), (correct_amount[31:16]== amount), ((correct_amount == amount)||(correct_amount[31:16]== amount)));
     end //
-end 
+  // SVA to check if trade safe respected
+  trade_pass_checks: assert property (
+    @(client_id) // throws an error if the trade is unsafe
+    `SAFETOTRADE == pass_checks
+      )
+    else begin 
+      $error ("pass_checks was not computer properly for client %0d; max to trade: %0d, accumulated amount: %0d, cancelled amount: %0d, pass_checks: %0d, amount %0d", client_id, max_to_trade, accumulated_orders, cancelled_orders, pass_checks, amount);
+    end //
+
+  
+      
+    // SVA to check if state logic 
+    trade_state_logic1: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC1 == 1'b0
+        )
+      else begin 
+        $error ("two states, update_max and check_risk, are simultaneously high");
+      end //
+        // SVA to check if state logic 
+    trade_state_logic2: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC2 == 1'b0
+        )
+      else begin 
+        $error ("two states, update_max and send_order, are simultaneously high");
+      end //
+        // SVA to check if state logic 
+    trade_state_logic3: assert property (
+      @(posedge clk) // throws an error if two states high
+      `STATELOGC3 == 1'b0
+        )
+      else begin 
+        $error ("two states, check_risk and send_order, are simultaneously high");
+      end //
 
 
 endmodule

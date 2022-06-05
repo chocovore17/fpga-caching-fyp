@@ -55,7 +55,6 @@ class environment;
     // reset driver to 7 segment display
     driv.reset();
   endtask
-  
   task test();
     fork 
       // uncommment/comment corresponding task in generator with different stimulus

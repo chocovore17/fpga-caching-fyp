@@ -3,41 +3,41 @@
  compile with the following flags in icarus verilog:  -Wall -g2012 bc inputs/outputs fed back
  */ 
 
-//  `include "../shared/ramdownstream.sv"
  `include "code/shared/ramdownstream.sv"
-//  `include "downstream.sv"
-//  `include "get_cxl.sv"
-
  `include "code/shared/cache_def.sv"
  import cache_def::*;
-module downstream_top( clk, client_id, amount, cancelled_orders /*to display testing*/);
+
+
+module downstream_top( clk, client_id, amount, downdatareq /*to display testing, cpu_client_id*/);
   input[4:0]  client_id;
   input clk;
+
   input[15:0] amount;
-  output [15:0] cancelled_orders;
+  output cpu_req_type downdatareq; //used outside, by ramdownstream
   reg old_client;
   reg old_amount;
-  cache_req_type downdatareq;
-  cache_data_type downdatawrite, downdataread;
-  reg ack; //state machine input - should be in a @new stuff instead and manually set ack to 1 
-  reg update_memory; //RAM inputs, state machine output by default 0
 
-  // downstream ram 
-  dm_data_downstream RAMDOWNSTREAM(
-    .clk(clk),
-    .data_req(downdatareq),
-    .data_write({96'b0, amount}),
-    .data_read(cancelled_orders)
-  );
 
-  always @(client_id, amount)
+  // always @(client_id, amount)
+  always_comb
+
   begin 
-    // if (old_amount!= amount ||old_client!=client_id) ack <= 1'b1;
-    $display("cancelled : %0h", cancelled_orders);
-    downdatareq.index = client_id;
-    downdatareq.we = ((client_id!=old_client) || (old_amount!=amount));
+    downdatareq.wrindex[13:4] = client_id;
+    downdatareq.rw = ((client_id!=old_client) || (old_amount!=amount));
+    downdatareq.valid = 1'b1;
+    downdatareq.data =amount;
     old_amount = amount;
-    old_client = client_id; 
-  end 
-endmodule
+    old_client = client_id;
+    // $display("downdatareq.rw",downdatareq.rw);  
+    // SVA to check write enable logic 
+downstream_write_enable: assert property (
+  @(posedge clk) // throws an error if two states high
+  downdatareq.rw == 1'b1
+    )
+  else begin 
+    $error ("should be writing to downstream memory");
+  end //
 
+   
+end 
+endmodule

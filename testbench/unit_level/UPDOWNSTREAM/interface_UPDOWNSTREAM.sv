@@ -1,11 +1,12 @@
 
+
 // interface of GPIO input/ouput signal
 interface updownstream_if (input logic clk, input logic slowclk);
 
     // inputs
     logic HRESETn;
     logic cpu_new_max;
-    logic [4:0] cpu_client_id;
+    logic [9:0] cpu_client_id;
     logic [15:0] cpu_amount;
     logic cpu_go;
     logic [4:0] exchange_client_id;
@@ -16,7 +17,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
     // output from Upstream processor top
     logic [15:0] accumulated_orders;
     logic [31:0] max_to_trade;
-    logic [15:0] cancelled_orders;
+    logic [31:0] cancelled_orders;
 
 
     //clocking block for driver
