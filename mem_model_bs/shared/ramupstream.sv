@@ -23,7 +23,7 @@ module dm_mem_upstream(input bit clk, input bit rst,
 	output written
 	);
 	reg[4 : 0] i;
-  reg[6:0] totalsent;
+  reg[16:0] totalsent, totalsentacc;
 	reg written_reg;
 	assign written = written_reg;
 	cache_data_type memory[0 : 121];
@@ -32,6 +32,7 @@ module dm_mem_upstream(input bit clk, input bit rst,
     $display("Loading upstream memory.");
     $readmemh("mem_model_bs/shared/rom_trade.mem", memory);
     totalsent= 0;
+    totalsentacc=0;
     // $displayb("%p", memory);
   end
 
@@ -52,6 +53,8 @@ module dm_mem_upstream(input bit clk, input bit rst,
         memory[cpu_req.rdindex] = {cpu_req.data[31 : 15], memory[cpu_req.rdindex][15 : 0] }; // + memory[data_req.index];
       else
         begin
+          totalsentacc= totalsentacc+1;
+          $display("totalsent to accumulated orders %0d.", totalsentacc);
           memory[cpu_req.rdindex][15 : 0] = memory[cpu_req.rdindex][15 : 0] + cpu_req.data[15 : 0]; // + memory[data_req.index];
         end
         fork

@@ -33,11 +33,11 @@ module tb_top_UPDOWNSTREAM;
             bins reset_trigger = {1'b0, 1'b1};
         }
         valid_client_id: coverpoint intf.cpu_client_id{
-            bins client_id = {[0:31]};
+            bins client_id = {[0:255]};
         }
         // upstream_not_max: coverpoint intf.cpu_go{
         //     bins not_max = ~intf.cpu_new_max; //for now, extra test
-        // }
+        // }    
         upstream_new_maxcheck: coverpoint intf.cpu_new_max{
             bins new_maxcheck = {1'b0,1'b1};
         }

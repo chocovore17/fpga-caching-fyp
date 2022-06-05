@@ -2,7 +2,7 @@ class transaction;
 
     rand logic clk;
     rand logic HRESETn;
-    rand logic[4:0] cpu_client_id;
+    rand logic[9:0] cpu_client_id;
     rand logic [31:0] cpu_amount;
     rand logic cpu_new_max;
     rand logic cpu_go;

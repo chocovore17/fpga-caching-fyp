@@ -10,7 +10,7 @@
 
  import cache_def::*;
  `define MAX_DEF ((data_read>>16) >= 0) 
- parameter int TAGMAX = 12; //tag msb
+ parameter int TAGMAX = 16; //tag msb 1 for memory model 
 
 module dm_data_upstream(clk,
   data_req,//data request/command, e.g. RW, valid
@@ -100,7 +100,7 @@ module dm_cache_tag_upstream(input bit clk, //write clock
         wait fork;
       end
     end
-    $display("tag mem is now %p", tag_mem);
+    // $display("tag mem is now %p", tag_mem);
 
   end
 
@@ -151,7 +151,7 @@ module mem_controller(input bit clk, //write clock
               begin  : write_wait_fork
                 for (i = 0;i < 4;  i = i + 1) begin
                   @(posedge clk);
-                  $display(" WAITS MEM");
+                  // $display(" WAITS MEM");
                 end
               end : write_wait_fork
             join
@@ -240,7 +240,7 @@ module dm_cache_fsm_upstream(input bit clk, input bit rst,
     /*memory request data (used in write)*/
     v_mem_req.data = data_write;
     v_mem_req.rw = '0;
-    $display("state, %0h, mem_data.ready %0b, mem_req.rw %0b, mem_req.valid %0b", rstate, mem_data.ready, mem_req.rw, mem_req.valid);
+    // $display("state, %0h, mem_data.ready %0b, mem_req.rw %0b, mem_req.valid %0b", rstate, mem_data.ready, mem_req.rw, mem_req.valid);
 
     //------------------------------------Cache FSM-------------------------
     case(rstate)

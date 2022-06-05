@@ -1,5 +1,5 @@
 # vsim seg_work_opt -c -logfile mem-model-testbench/outputs/top/UPDOWNSTREAM_sim.txt -do "run -all; quit" 
-# Start time: 15:39:58 on May 25,2022
+# Start time: 12:20:21 on May 26,2022
 # //  Questa Sim-64
 # //  Version 10.7c linux_x86_64 Aug 17 2018
 # //
@@ -53,173 +53,1024 @@
 # --------- [DRIVER] Reset Started ---------
 # --------- [DRIVER] Reset Ended ---------
 # T=5000 [Generator] starting
-# repeat count = 50
+# repeat count = 500
 # T=5000, [DRIVER] starting ---------
 # T=5000, [MONITOR] starting ---------
 # T=5000, [SCOREBOARD] starting ---------
 # totalsent to upstream 1.
 # 
 #  T=30000 [MONITOR] transaction information: cpu_client_id = 0xx cpu_amount = 0x0xxxx cpu_new_max = 0xx cpu_go = 0xx exchange_client_id = 0xx exchange_amount = 0xx exchange_go = 0xx 
-# totalsent to downstream 1.
 # 
 #  T=70000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x551 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc0ce exchange_go = 0x1 
-# totalsent to downstream 2.
 # 
 #  T=110000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xcc6e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2c76 exchange_go = 0x0 
-# totalsent to downstream 3.
 # totalsent to upstream 2.
 # 
 #  T=150000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf742 exchange_go = 0x1 
-# totalsent to downstream 4.
 # totalsent to upstream 3.
 # 
 #  T=190000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x4a34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xae3b exchange_go = 0x0 
-# totalsent to downstream 5.
 # 
 #  T=230000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xe68d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xa6bb exchange_go = 0x0 
-# totalsent to downstream 6.
 # 
 #  T=270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf0db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xf960 exchange_go = 0x1 
-# totalsent to downstream 7.
 # 
 #  T=310000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa1af cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x61ae exchange_go = 0x1 
-# totalsent to downstream 8.
-# totalsent to downstream 9.
 # 
 #  T=350000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x66ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfb62 exchange_go = 0x0 
 # 
 #  T=390000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x281f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4fc8 exchange_go = 0x1 
-# totalsent to downstream 10.
-# totalsent to downstream 11.
 # 
 #  T=430000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa05e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x3c48 exchange_go = 0x0 
-# totalsent to downstream 12.
 # 
 #  T=470000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb338 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xa5a5 exchange_go = 0x1 
 # 
 #  T=510000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xe48f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xf13e exchange_go = 0x0 
-# totalsent to downstream 13.
 # totalsent to upstream 4.
 # 
 #  T=550000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xcdf8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf41d exchange_go = 0x0 
-# totalsent to downstream 14.
 # totalsent to upstream 5.
+# totalsent to accumulated orders 1.
 # 
 #  T=590000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x4168 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x15aa exchange_go = 0x1 
-# totalsent to downstream 15.
-# totalsent to downstream 16.
 # 
 #  T=630000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8a19 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xd90b exchange_go = 0x0 
 # 
 #  T=670000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd8a7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x8394 exchange_go = 0x1 
-# totalsent to downstream 17.
 # totalsent to upstream 6.
 # 
 #  T=710000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa047 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xac3a exchange_go = 0x0 
-# totalsent to downstream 18.
-# totalsent to downstream 19.
 # 
 #  T=750000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7d1b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xb720 exchange_go = 0x1 
-# totalsent to downstream 20.
 # 
 #  T=790000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4f28 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xa2e8 exchange_go = 0x1 
-# totalsent to downstream 21.
 # 
 #  T=830000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xae44 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc9fd exchange_go = 0x1 
 # 
 #  T=870000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdac3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad31 exchange_go = 0x0 
-# totalsent to downstream 22.
-# totalsent to downstream 23.
 # 
 #  T=910000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd328 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x7625 exchange_go = 0x0 
-# totalsent to downstream 24.
 # 
 #  T=950000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xeb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4db0 exchange_go = 0x0 
-# totalsent to downstream 25.
 # 
 #  T=990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xcd30 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0x9d8c exchange_go = 0x0 
 # 
 #  T=1030000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x3239 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xd668 exchange_go = 0x1 
-# totalsent to downstream 26.
-# totalsent to downstream 27.
 # 
 #  T=1070000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xaa92 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7032 exchange_go = 0x1 
-# totalsent to downstream 28.
 # 
 #  T=1110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf44b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x54ae exchange_go = 0x1 
-# totalsent to downstream 29.
 # 
 #  T=1150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x5b6d exchange_go = 0x1 
-# totalsent to downstream 30.
 # 
 #  T=1190000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x3878 exchange_go = 0x1 
-# totalsent to downstream 31.
 # 
 #  T=1230000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x183c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x31f0 exchange_go = 0x1 
-# totalsent to downstream 32.
 # 
 #  T=1270000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf082 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x544f exchange_go = 0x0 
 # 
 #  T=1310000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xb0d1 exchange_go = 0x1 
-# totalsent to downstream 33.
 # 
 #  T=1350000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x30ac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc3a1 exchange_go = 0x0 
-# totalsent to downstream 34.
-# totalsent to downstream 35.
 # 
 #  T=1390000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8e9b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb558 exchange_go = 0x1 
-# totalsent to downstream 36.
 # 
 #  T=1430000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1e98 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xa3a2 exchange_go = 0x1 
 # 
 #  T=1470000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xfd95 exchange_go = 0x0 
-# totalsent to downstream 37.
 # 
 #  T=1510000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa6a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x60c3 exchange_go = 0x0 
-# totalsent to downstream 38.
-# totalsent to downstream 39.
 # 
 #  T=1550000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5c9d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x3331 exchange_go = 0x0 
-# totalsent to downstream 40.
 # 
 #  T=1590000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x87b8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x9929 exchange_go = 0x0 
-# totalsent to downstream 41.
 # 
 #  T=1630000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2ff0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x57b6 exchange_go = 0x0 
-# totalsent to downstream 42.
 # 
 #  T=1670000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xf9fe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xfde8 exchange_go = 0x0 
-# totalsent to downstream 43.
 # 
 #  T=1710000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x2712 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x632c exchange_go = 0x0 
 # 
 #  T=1750000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3628 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x189c exchange_go = 0x0 
-# totalsent to downstream 44.
-# totalsent to downstream 45.
 # 
 #  T=1790000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe4a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x7b8a exchange_go = 0x1 
-# totalsent to downstream 46.
 # 
 #  T=1830000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xbf03 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x39fb exchange_go = 0x1 
-# totalsent to downstream 47.
 # 
 #  T=1870000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x85e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xd4fe exchange_go = 0x0 
 # 
 #  T=1910000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xa727 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xa7b5 exchange_go = 0x1 
-# totalsent to downstream 48.
-# totalsent to downstream 49.
 # 
 #  T=1950000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xafef cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x71c5 exchange_go = 0x0 
-# totalsent to downstream 50.
 # 
 #  T=1990000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xc01d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xef59 exchange_go = 0x0 
-# T=1990000 [Generator] Done generation
+# 
+#  T=2030000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7895 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xf6b5 exchange_go = 0x0 
+# 
+#  T=2070000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xe414 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x63f5 exchange_go = 0x1 
+# 
+#  T=2110000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x4147 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x1363 exchange_go = 0x1 
+# 
+#  T=2150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x96ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x7042 exchange_go = 0x1 
+# 
+#  T=2190000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x2b08 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xf357 exchange_go = 0x1 
+# 
+#  T=2230000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x24aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xe41b exchange_go = 0x1 
+# 
+#  T=2270000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xed6b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xc134 exchange_go = 0x0 
+# 
+#  T=2310000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x42f3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x57d5 exchange_go = 0x1 
+# 
+#  T=2350000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfa0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xb3fa exchange_go = 0x0 
+# 
+#  T=2390000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xae40 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf10f exchange_go = 0x0 
+# 
+#  T=2430000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf248 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x5d30 exchange_go = 0x0 
+# 
+#  T=2470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x3b34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x99fa exchange_go = 0x0 
+# 
+#  T=2510000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x3843 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xb47d exchange_go = 0x1 
+# 
+#  T=2550000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x627c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xfc80 exchange_go = 0x0 
+# 
+#  T=2590000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x822e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x21a6 exchange_go = 0x0 
+# 
+#  T=2630000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa449 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x4cff exchange_go = 0x0 
+# 
+#  T=2670000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x5051 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfedb exchange_go = 0x0 
+# 
+#  T=2710000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x95b5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xe979 exchange_go = 0x1 
+# 
+#  T=2750000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x528e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x6cde exchange_go = 0x1 
+# 
+#  T=2790000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x52e1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xdc5c exchange_go = 0x0 
+# 
+#  T=2830000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb6c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x4d7b exchange_go = 0x0 
+# 
+#  T=2870000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x683 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2f75 exchange_go = 0x1 
+# 
+#  T=2910000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb248 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x438c exchange_go = 0x0 
+# 
+#  T=2950000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x9ea0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc426 exchange_go = 0x1 
+# 
+#  T=2990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xfed1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1b12 exchange_go = 0x0 
+# 
+#  T=3030000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8c90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x45e0 exchange_go = 0x1 
+# 
+#  T=3070000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe3ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x44e3 exchange_go = 0x1 
+# 
+#  T=3110000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x81d7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xafb exchange_go = 0x0 
+# 
+#  T=3150000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd302 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2 exchange_go = 0x0 
+# 
+#  T=3190000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1c57 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0x691 exchange_go = 0x0 
+# 
+#  T=3230000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf36e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe69b exchange_go = 0x1 
+# 
+#  T=3270000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x5538 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x6d46 exchange_go = 0x1 
+# 
+#  T=3310000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xbf47 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7a97 exchange_go = 0x1 
+# 
+#  T=3350000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1336 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x5969 exchange_go = 0x0 
+# 
+#  T=3390000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa50a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xe360 exchange_go = 0x1 
+# 
+#  T=3430000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x6d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xd677 exchange_go = 0x1 
+# 
+#  T=3470000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x74d5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x9aea exchange_go = 0x1 
+# 
+#  T=3510000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xe97d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x96a7 exchange_go = 0x1 
+# 
+#  T=3550000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7f87 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xefc5 exchange_go = 0x0 
+# 
+#  T=3590000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2f04 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2358 exchange_go = 0x1 
+# 
+#  T=3630000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xcc4e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x3457 exchange_go = 0x0 
+# 
+#  T=3670000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x68a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xe551 exchange_go = 0x1 
+# 
+#  T=3710000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x84a5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc4bc exchange_go = 0x1 
+# 
+#  T=3750000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xede6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x6a0b exchange_go = 0x0 
+# 
+#  T=3790000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xfc96 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xa136 exchange_go = 0x0 
+# 
+#  T=3830000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc9b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xdee exchange_go = 0x1 
+# 
+#  T=3870000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xe4b5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x6746 exchange_go = 0x0 
+# 
+#  T=3910000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc843 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x8223 exchange_go = 0x1 
+# 
+#  T=3950000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7c72 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xea67 exchange_go = 0x1 
+# 
+#  T=3990000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5358 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x6fa7 exchange_go = 0x0 
+# 
+#  T=4030000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xba83 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0xf6c5 exchange_go = 0x1 
+# 
+#  T=4070000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x593 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0xc937 exchange_go = 0x0 
+# 
+#  T=4110000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xd346 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x91d2 exchange_go = 0x1 
+# 
+#  T=4150000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x241a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x307e exchange_go = 0x1 
+# 
+#  T=4190000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xb74a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x765b exchange_go = 0x1 
+# 
+#  T=4230000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xaf80 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x18de exchange_go = 0x0 
+# 
+#  T=4270000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x5872 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x22a6 exchange_go = 0x0 
+# 
+#  T=4310000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xdb9 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x9ae6 exchange_go = 0x1 
+# 
+#  T=4350000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x3340 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0xd484 exchange_go = 0x1 
+# 
+#  T=4390000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x9f13 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x9d42 exchange_go = 0x1 
+# 
+#  T=4430000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x215a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0xb5c3 exchange_go = 0x0 
+# 
+#  T=4470000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x98de cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0x507e exchange_go = 0x1 
+# 
+#  T=4510000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xd02c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xd4ce exchange_go = 0x0 
+# 
+#  T=4550000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xe8f8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x14e7 exchange_go = 0x0 
+# 
+#  T=4590000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x8ea4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x997b exchange_go = 0x1 
+# 
+#  T=4630000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb663 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x84ac exchange_go = 0x0 
+# 
+#  T=4670000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xd03e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0xf6 exchange_go = 0x0 
+# 
+#  T=4710000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x7818 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x8e17 exchange_go = 0x0 
+# 
+#  T=4750000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x8d23 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x5bf4 exchange_go = 0x0 
+# 
+#  T=4790000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa442 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0xa0ec exchange_go = 0x1 
+# 
+#  T=4830000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x37f6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x27d5 exchange_go = 0x1 
+# 
+#  T=4870000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x4322 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x1469 exchange_go = 0x1 
+# 
+#  T=4910000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xffd cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x5f1e exchange_go = 0x0 
+# 
+#  T=4950000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe6ce cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0xea7 exchange_go = 0x0 
+# 
+#  T=4990000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xe94e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0x9cd8 exchange_go = 0x0 
+# 
+#  T=5030000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x47b0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0xb44a exchange_go = 0x0 
+# 
+#  T=5070000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x5e55 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x82ab exchange_go = 0x1 
+# 
+#  T=5110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x855f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x93b9 exchange_go = 0x1 
+# 
+#  T=5150000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xa7a9 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xf236 exchange_go = 0x1 
+# 
+#  T=5190000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x94c1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x16f exchange_go = 0x0 
+# 
+#  T=5230000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xfba cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x2362 exchange_go = 0x0 
+# 
+#  T=5270000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x6ce1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0xfbdc exchange_go = 0x0 
+# 
+#  T=5310000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x7e33 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x81b exchange_go = 0x1 
+# 
+#  T=5350000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xfb3b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x3eb2 exchange_go = 0x0 
+# 
+#  T=5390000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x4062 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x26a9 exchange_go = 0x0 
+# 
+#  T=5430000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5d91 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xe031 exchange_go = 0x1 
+# 
+#  T=5470000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4c2b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x1bec exchange_go = 0x0 
+# 
+#  T=5510000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xad3e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0xd7dc exchange_go = 0x1 
+# 
+#  T=5550000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1293 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xcc84 exchange_go = 0x0 
+# 
+#  T=5590000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xa89c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0xd6df exchange_go = 0x1 
+# 
+#  T=5630000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x8274 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x17 exchange_amount = 0x4634 exchange_go = 0x1 
+# 
+#  T=5670000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x2d38 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0x1d3a exchange_go = 0x0 
+# 
+#  T=5710000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf8a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x47b exchange_go = 0x0 
+# 
+#  T=5750000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xfcd0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x345 exchange_go = 0x0 
+# 
+#  T=5790000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x319c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x7ddf exchange_go = 0x0 
+# 
+#  T=5830000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xd77f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x624a exchange_go = 0x1 
+# 
+#  T=5870000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xc7e9 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0x44e7 exchange_go = 0x1 
+# 
+#  T=5910000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x445f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0x17fa exchange_go = 0x1 
+# 
+#  T=5950000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x68b3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xc37a exchange_go = 0x0 
+# 
+#  T=5990000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x938e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x93d9 exchange_go = 0x0 
+# 
+#  T=6030000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8e9b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x63d5 exchange_go = 0x0 
+# 
+#  T=6070000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x49ea cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x2ba2 exchange_go = 0x1 
+# 
+#  T=6110000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x87f2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0x75f4 exchange_go = 0x0 
+# 
+#  T=6150000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x58db cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xa16e exchange_go = 0x0 
+# 
+#  T=6190000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x2cd1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x61bc exchange_go = 0x1 
+# 
+#  T=6230000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x83ea cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xc641 exchange_go = 0x0 
+# 
+#  T=6270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xed3a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0x573c exchange_go = 0x0 
+# 
+#  T=6310000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x9024 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0xd3ea exchange_go = 0x1 
+# 
+#  T=6350000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xd698 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x4330 exchange_go = 0x1 
+# 
+#  T=6390000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x429 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0xbc1c exchange_go = 0x0 
+# 
+#  T=6430000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x5f4f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xda55 exchange_go = 0x1 
+# 
+#  T=6470000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb4bc cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xf exchange_amount = 0x9288 exchange_go = 0x0 
+# 
+#  T=6510000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x9a6a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0xeec1 exchange_go = 0x0 
+# 
+#  T=6550000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc68 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x84cb exchange_go = 0x0 
+# 
+#  T=6590000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x3086 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0xf4a9 exchange_go = 0x0 
+# 
+#  T=6630000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x4e7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0x5bda exchange_go = 0x0 
+# 
+#  T=6670000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x8286 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xb408 exchange_go = 0x0 
+# 
+#  T=6710000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x2cd6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x3172 exchange_go = 0x1 
+# 
+#  T=6750000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x7b00 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xe5f4 exchange_go = 0x1 
+# 
+#  T=6790000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x2230 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xb269 exchange_go = 0x1 
+# 
+#  T=6830000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xca3e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x18d1 exchange_go = 0x0 
+# 
+#  T=6870000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc1e8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xe75f exchange_go = 0x1 
+# 
+#  T=6910000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xfcfb cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0xd05a exchange_go = 0x1 
+# 
+#  T=6950000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x8290 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x1424 exchange_go = 0x1 
+# 
+#  T=6990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xff97 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x7 exchange_amount = 0x3fe6 exchange_go = 0x0 
+# 
+#  T=7030000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x8a06 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x5531 exchange_go = 0x0 
+# 
+#  T=7070000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xbe1a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x5681 exchange_go = 0x0 
+# 
+#  T=7110000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x3e6a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x86bb exchange_go = 0x0 
+# 
+#  T=7150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1bac cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0xe826 exchange_go = 0x0 
+# 
+#  T=7190000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x43b2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xc060 exchange_go = 0x1 
+# 
+#  T=7230000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xafec cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1bdd exchange_go = 0x0 
+# 
+#  T=7270000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x6fe3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x25dc exchange_go = 0x0 
+# 
+#  T=7310000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa293 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0xa580 exchange_go = 0x0 
+# 
+#  T=7350000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x3c7d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x9cdf exchange_go = 0x0 
+# 
+#  T=7390000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x703c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x757e exchange_go = 0x1 
+# 
+#  T=7430000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x8783 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x1d06 exchange_go = 0x1 
+# 
+#  T=7470000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xb916 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xc370 exchange_go = 0x0 
+# 
+#  T=7510000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x3ca1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0x666 exchange_go = 0x1 
+# 
+#  T=7550000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1ac3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0xec53 exchange_go = 0x0 
+# 
+#  T=7590000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8281 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0x1f75 exchange_go = 0x0 
+# 
+#  T=7630000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x7ab2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0x5ee1 exchange_go = 0x0 
+# 
+#  T=7670000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xd070 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x5a05 exchange_go = 0x0 
+# 
+#  T=7710000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xd867 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0xcb72 exchange_go = 0x0 
+# 
+#  T=7750000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x4366 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0x56fb exchange_go = 0x0 
+# 
+#  T=7790000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x923e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0xd638 exchange_go = 0x1 
+# 
+#  T=7830000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc18f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x29c4 exchange_go = 0x0 
+# 
+#  T=7870000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6c34 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0xf685 exchange_go = 0x1 
+# 
+#  T=7910000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6ae2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xbd0e exchange_go = 0x0 
+# 
+#  T=7950000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x583d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x6258 exchange_go = 0x0 
+# 
+#  T=7990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x49e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x34c5 exchange_go = 0x0 
+# 
+#  T=8030000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x78f6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x2023 exchange_go = 0x1 
+# 
+#  T=8070000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa2a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0x7d18 exchange_go = 0x0 
+# 
+#  T=8110000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x313f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xdce6 exchange_go = 0x0 
+# 
+#  T=8150000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xa9ab cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xf34c exchange_go = 0x0 
+# 
+#  T=8190000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xd1a6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x22ea exchange_go = 0x0 
+# 
+#  T=8230000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x246e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0x46ea exchange_go = 0x0 
+# 
+#  T=8270000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xeb24 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x78b3 exchange_go = 0x1 
+# 
+#  T=8310000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x108b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xe09c exchange_go = 0x1 
+# 
+#  T=8350000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x1752 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xd39b exchange_go = 0x0 
+# 
+#  T=8390000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xda72 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xe exchange_amount = 0xab00 exchange_go = 0x0 
+# 
+#  T=8430000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3015 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x5e72 exchange_go = 0x1 
+# 
+#  T=8470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x4709 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x12d exchange_go = 0x0 
+# 
+#  T=8510000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7911 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x1367 exchange_go = 0x1 
+# 
+#  T=8550000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x140 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x8b45 exchange_go = 0x0 
+# 
+#  T=8590000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x68ae cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xf3d8 exchange_go = 0x1 
+# 
+#  T=8630000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xb66c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x8fdb exchange_go = 0x0 
+# 
+#  T=8670000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xb64 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0xc896 exchange_go = 0x1 
+# 
+#  T=8710000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x9169 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x2b74 exchange_go = 0x0 
+# 
+#  T=8750000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x3d8a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xe exchange_amount = 0x352c exchange_go = 0x0 
+# 
+#  T=8790000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xd4c2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0xa650 exchange_go = 0x1 
+# 
+#  T=8830000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xb84c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x408b exchange_go = 0x0 
+# 
+#  T=8870000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe988 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0xa27a exchange_go = 0x1 
+# 
+#  T=8910000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xd2b0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xe78b exchange_go = 0x1 
+# 
+#  T=8950000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x1d07 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0x947b exchange_go = 0x0 
+# 
+#  T=8990000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5a2c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xe7d0 exchange_go = 0x1 
+# 
+#  T=9030000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xfc76 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x64de exchange_go = 0x1 
+# 
+#  T=9070000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x9913 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0xf3c2 exchange_go = 0x0 
+# 
+#  T=9110000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xf11b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0xebf3 exchange_go = 0x1 
+# 
+#  T=9150000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xcbbf cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x890b exchange_go = 0x0 
+# 
+#  T=9190000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x724d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0xf87 exchange_go = 0x1 
+# 
+#  T=9230000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x57fb cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0xc3d5 exchange_go = 0x1 
+# 
+#  T=9270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x560a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x5549 exchange_go = 0x1 
+# 
+#  T=9310000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x8421 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0x1c95 exchange_go = 0x0 
+# 
+#  T=9350000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x9c0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x3dfe exchange_go = 0x0 
+# 
+#  T=9390000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x436d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0x68d8 exchange_go = 0x0 
+# 
+#  T=9430000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x82d4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x6e24 exchange_go = 0x0 
+# 
+#  T=9470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf27b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xf107 exchange_go = 0x1 
+# 
+#  T=9510000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xec61 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xdd2 exchange_go = 0x0 
+# 
+#  T=9550000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5b1e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x7574 exchange_go = 0x1 
+# 
+#  T=9590000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x73fd cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x14c6 exchange_go = 0x1 
+# 
+#  T=9630000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc001 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x7ae9 exchange_go = 0x0 
+# 
+#  T=9670000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd43a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x1d9 exchange_go = 0x0 
+# 
+#  T=9710000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xb33c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x3646 exchange_go = 0x1 
+# 
+#  T=9750000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x467d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x5606 exchange_go = 0x0 
+# 
+#  T=9790000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x36c3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0x9e23 exchange_go = 0x1 
+# 
+#  T=9830000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa3e6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x6234 exchange_go = 0x1 
+# 
+#  T=9870000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x180c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x17 exchange_amount = 0x40eb exchange_go = 0x1 
+# 
+#  T=9910000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xbbb cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0xfe10 exchange_go = 0x0 
+# 
+#  T=9950000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xfaf2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xe780 exchange_go = 0x0 
+# 
+#  T=9990000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8cbd cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x9dff exchange_go = 0x1 
+# 
+#  T=10030000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x556d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0xd547 exchange_go = 0x0 
+# 
+#  T=10070000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x9d4b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0xead exchange_go = 0x0 
+# 
+#  T=10110000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x7d77 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x4e49 exchange_go = 0x1 
+# 
+#  T=10150000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x3cb9 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0x9e81 exchange_go = 0x1 
+# 
+#  T=10190000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x77bd cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x4326 exchange_go = 0x1 
+# 
+#  T=10230000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd741 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0xd5ef exchange_go = 0x1 
+# 
+#  T=10270000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x261c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0xb1ec exchange_go = 0x1 
+# 
+#  T=10310000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x4f0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0xe5d1 exchange_go = 0x0 
+# 
+#  T=10350000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x6490 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2adc exchange_go = 0x0 
+# 
+#  T=10390000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8dfc cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xb087 exchange_go = 0x0 
+# 
+#  T=10430000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xbc23 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0x322e exchange_go = 0x1 
+# 
+#  T=10470000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5ad9 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x3 exchange_amount = 0xeb60 exchange_go = 0x0 
+# 
+#  T=10510000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x914d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0xb994 exchange_go = 0x0 
+# 
+#  T=10550000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb61c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xa213 exchange_go = 0x1 
+# 
+#  T=10590000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x3e0f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0xd5a8 exchange_go = 0x0 
+# 
+#  T=10630000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x446f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0x19c0 exchange_go = 0x0 
+# 
+#  T=10670000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x8cd3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x6e10 exchange_go = 0x0 
+# 
+#  T=10710000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x3b8a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x2e6e exchange_go = 0x1 
+# 
+#  T=10750000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x340f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0xbb17 exchange_go = 0x0 
+# 
+#  T=10790000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xae15 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1d exchange_amount = 0xa135 exchange_go = 0x1 
+# 
+#  T=10830000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x201f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x7bdf exchange_go = 0x1 
+# 
+#  T=10870000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x1ff1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x4 exchange_amount = 0xf7e exchange_go = 0x0 
+# 
+#  T=10910000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x5f85 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x4c53 exchange_go = 0x0 
+# 
+#  T=10950000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4dba cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0xa1a7 exchange_go = 0x1 
+# 
+#  T=10990000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x3a00 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xb21a exchange_go = 0x1 
+# 
+#  T=11030000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xa99b cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0xbfea exchange_go = 0x1 
+# 
+#  T=11070000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc0c8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x32db exchange_go = 0x0 
+# 
+#  T=11110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x9e2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0xcd95 exchange_go = 0x0 
+# 
+#  T=11150000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x117e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x8b7f exchange_go = 0x0 
+# 
+#  T=11190000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xb390 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xc46d exchange_go = 0x1 
+# 
+#  T=11230000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xc1bd cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0xd1e2 exchange_go = 0x0 
+# 
+#  T=11270000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x2629 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0xc3a9 exchange_go = 0x1 
+# 
+#  T=11310000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xcd31 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0xcd66 exchange_go = 0x1 
+# 
+#  T=11350000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x9aac cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x8738 exchange_go = 0x0 
+# 
+#  T=11390000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xf297 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x7967 exchange_go = 0x0 
+# 
+#  T=11430000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x2582 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x71bf exchange_go = 0x1 
+# 
+#  T=11470000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x856c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0x8593 exchange_go = 0x0 
+# 
+#  T=11510000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x619c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xffdb exchange_go = 0x0 
+# 
+#  T=11550000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xe9aa cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x5d7b exchange_go = 0x0 
+# 
+#  T=11590000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5226 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xea5 exchange_go = 0x0 
+# 
+#  T=11630000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xf2e9 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x56c8 exchange_go = 0x0 
+# 
+#  T=11670000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x51c9 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x2d85 exchange_go = 0x0 
+# 
+#  T=11710000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc3a6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0xf20b exchange_go = 0x0 
+# 
+#  T=11750000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa859 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xb9e1 exchange_go = 0x1 
+# 
+#  T=11790000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x5b63 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xf512 exchange_go = 0x0 
+# 
+#  T=11830000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf461 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0xdf28 exchange_go = 0x1 
+# 
+#  T=11870000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x6847 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0xfc55 exchange_go = 0x0 
+# 
+#  T=11910000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7140 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x4d2a exchange_go = 0x1 
+# 
+#  T=11950000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x34f3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0xba30 exchange_go = 0x0 
+# 
+#  T=11990000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x6458 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x69f4 exchange_go = 0x0 
+# 
+#  T=12030000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb166 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xe19d exchange_go = 0x1 
+# 
+#  T=12070000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x95d2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x533f exchange_go = 0x0 
+# 
+#  T=12110000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xc1e4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1d exchange_amount = 0xb812 exchange_go = 0x1 
+# 
+#  T=12150000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xc1ec cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x2161 exchange_go = 0x0 
+# 
+#  T=12190000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb648 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x5a6 exchange_go = 0x0 
+# 
+#  T=12230000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xd6dc cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0xba44 exchange_go = 0x0 
+# 
+#  T=12270000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x9ce7 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0x899f exchange_go = 0x1 
+# 
+#  T=12310000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x85d8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0x63f0 exchange_go = 0x0 
+# 
+#  T=12350000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x401c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xcafd exchange_go = 0x0 
+# 
+#  T=12390000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x20f6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0x71ee exchange_go = 0x1 
+# 
+#  T=12430000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x68cd cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x6fe1 exchange_go = 0x1 
+# 
+#  T=12470000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xf1e3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x3a8f exchange_go = 0x1 
+# 
+#  T=12510000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc9b1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0xc393 exchange_go = 0x1 
+# 
+#  T=12550000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xce22 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x18 exchange_amount = 0x9176 exchange_go = 0x0 
+# 
+#  T=12590000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x4ab4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0x61a0 exchange_go = 0x0 
+# 
+#  T=12630000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x8d35 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x62f9 exchange_go = 0x1 
+# 
+#  T=12670000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x3c88 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0x6ec4 exchange_go = 0x1 
+# 
+#  T=12710000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xcd64 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xc exchange_amount = 0x5ac4 exchange_go = 0x1 
+# 
+#  T=12750000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x93a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0xa2b3 exchange_go = 0x1 
+# 
+#  T=12790000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x8315 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xc57d exchange_go = 0x0 
+# 
+#  T=12830000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xcdfc cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0xc98d exchange_go = 0x0 
+# 
+#  T=12870000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x95bb cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0x3fe4 exchange_go = 0x1 
+# 
+#  T=12910000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x7170 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x3e6b exchange_go = 0x0 
+# 
+#  T=12950000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x97b4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x7794 exchange_go = 0x1 
+# 
+#  T=12990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x3c8e cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x6d77 exchange_go = 0x0 
+# 
+#  T=13030000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xe5d6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x10 exchange_amount = 0xd54e exchange_go = 0x0 
+# 
+#  T=13070000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x575d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x53f0 exchange_go = 0x0 
+# 
+#  T=13110000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xde26 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xb07e exchange_go = 0x1 
+# 
+#  T=13150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x703c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x740 exchange_go = 0x1 
+# 
+#  T=13190000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x8c46 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xad4d exchange_go = 0x0 
+# 
+#  T=13230000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x91a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x5eb5 exchange_go = 0x0 
+# 
+#  T=13270000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x48aa cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x735f exchange_go = 0x1 
+# 
+#  T=13310000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5955 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0xcd71 exchange_go = 0x0 
+# 
+#  T=13350000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xa8ee cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x1a54 exchange_go = 0x1 
+# 
+#  T=13390000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x41e1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0xb34d exchange_go = 0x0 
+# 
+#  T=13430000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x73f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1e exchange_amount = 0xee38 exchange_go = 0x0 
+# 
+#  T=13470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x7f90 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0x606 exchange_go = 0x0 
+# 
+#  T=13510000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xbd59 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0x14a4 exchange_go = 0x1 
+# 
+#  T=13550000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xfb5c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x912 exchange_go = 0x1 
+# 
+#  T=13590000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x126c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0xce05 exchange_go = 0x0 
+# 
+#  T=13630000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xffae cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0xe53e exchange_go = 0x1 
+# 
+#  T=13670000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xb7e1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xd94b exchange_go = 0x0 
+# 
+#  T=13710000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x6b94 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x11d0 exchange_go = 0x0 
+# 
+#  T=13750000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xc820 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0x5cc7 exchange_go = 0x1 
+# 
+#  T=13790000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xb3b2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0xb39b exchange_go = 0x1 
+# 
+#  T=13830000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x6440 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0x7d7 exchange_go = 0x0 
+# 
+#  T=13870000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x7b37 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0x3403 exchange_go = 0x0 
+# 
+#  T=13910000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x465d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0xf20f exchange_go = 0x0 
+# 
+#  T=13950000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xac3a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xf9ca exchange_go = 0x1 
+# 
+#  T=13990000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xeba3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xa53e exchange_go = 0x0 
+# 
+#  T=14030000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xa644 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0x38b0 exchange_go = 0x1 
+# 
+#  T=14070000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x7721 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xf511 exchange_go = 0x1 
+# 
+#  T=14110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xaac2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x1cc7 exchange_go = 0x1 
+# 
+#  T=14150000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xb2b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x437c exchange_go = 0x0 
+# 
+#  T=14190000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x2fb4 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xe7ce exchange_go = 0x0 
+# 
+#  T=14230000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xb788 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1d exchange_amount = 0x42e2 exchange_go = 0x0 
+# 
+#  T=14270000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd202 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xba74 exchange_go = 0x0 
+# 
+#  T=14310000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xaaa1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0x1abe exchange_go = 0x1 
+# 
+#  T=14350000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x1251 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0x134f exchange_go = 0x0 
+# 
+#  T=14390000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x84a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x2884 exchange_go = 0x0 
+# 
+#  T=14430000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xa703 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x9 exchange_amount = 0x8a1e exchange_go = 0x0 
+# 
+#  T=14470000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xbea2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xd exchange_amount = 0xefa0 exchange_go = 0x1 
+# 
+#  T=14510000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x5fbe cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x787f exchange_go = 0x0 
+# 
+#  T=14550000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xfc81 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0x6a24 exchange_go = 0x0 
+# 
+#  T=14590000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x2810 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xe084 exchange_go = 0x1 
+# 
+#  T=14630000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x67d1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x424f exchange_go = 0x1 
+# 
+#  T=14670000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x1814 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0x9d60 exchange_go = 0x0 
+# 
+#  T=14710000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x10d6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0x8538 exchange_go = 0x0 
+# 
+#  T=14750000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x5573 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xd32a exchange_go = 0x0 
+# 
+#  T=14790000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xadb3 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x1b98 exchange_go = 0x0 
+# 
+#  T=14830000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x4045 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0x842c exchange_go = 0x1 
+# 
+#  T=14870000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x58c5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0xaa44 exchange_go = 0x1 
+# 
+#  T=14910000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x2a91 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x196b exchange_go = 0x0 
+# 
+#  T=14950000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xcefa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xcde8 exchange_go = 0x1 
+# 
+#  T=14990000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x9ee0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0x36a2 exchange_go = 0x1 
+# 
+#  T=15030000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x1893 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0xd914 exchange_go = 0x1 
+# 
+#  T=15070000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xaa13 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x9835 exchange_go = 0x1 
+# 
+#  T=15110000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x8ab6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xbc5e exchange_go = 0x1 
+# 
+#  T=15150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xc734 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x361c exchange_go = 0x0 
+# 
+#  T=15190000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x1a64 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0xea2a exchange_go = 0x1 
+# 
+#  T=15230000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x3f88 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x8809 exchange_go = 0x1 
+# 
+#  T=15270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x4434 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x2dfd exchange_go = 0x0 
+# 
+#  T=15310000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x1416 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x52b7 exchange_go = 0x1 
+# 
+#  T=15350000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x11e6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0xeb43 exchange_go = 0x1 
+# 
+#  T=15390000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb129 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xc307 exchange_go = 0x0 
+# 
+#  T=15430000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x200 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0xf93a exchange_go = 0x0 
+# 
+#  T=15470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xf84d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x0 exchange_amount = 0x6d7d exchange_go = 0x1 
+# 
+#  T=15510000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x5696 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0xd988 exchange_go = 0x0 
+# 
+#  T=15550000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x9939 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x6 exchange_amount = 0x1b01 exchange_go = 0x0 
+# 
+#  T=15590000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf4c6 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xa exchange_amount = 0xf0c3 exchange_go = 0x0 
+# 
+#  T=15630000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7940 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0x6a22 exchange_go = 0x0 
+# 
+#  T=15670000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xacab cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x85f1 exchange_go = 0x1 
+# 
+#  T=15710000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb7f2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc899 exchange_go = 0x0 
+# 
+#  T=15750000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xc8a2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x13 exchange_amount = 0xa83 exchange_go = 0x0 
+# 
+#  T=15790000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x9a3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x2769 exchange_go = 0x1 
+# 
+#  T=15830000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x6b14 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xb exchange_amount = 0x8434 exchange_go = 0x0 
+# 
+#  T=15870000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1301 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xd21e exchange_go = 0x0 
+# 
+#  T=15910000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x8d0c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xcbbf exchange_go = 0x1 
+# 
+#  T=15950000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x39e7 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0xd7e2 exchange_go = 0x0 
+# 
+#  T=15990000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xe8b4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x16b6 exchange_go = 0x1 
+# 
+#  T=16030000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xd90f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xe exchange_amount = 0x37f0 exchange_go = 0x0 
+# 
+#  T=16070000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x14c7 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0xc270 exchange_go = 0x0 
+# 
+#  T=16110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x4e33 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xafea exchange_go = 0x1 
+# 
+#  T=16150000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xbc93 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0x8354 exchange_go = 0x0 
+# 
+#  T=16190000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x45b7 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x7 exchange_amount = 0xc6d3 exchange_go = 0x1 
+# 
+#  T=16230000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x8a0d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x918 exchange_go = 0x0 
+# 
+#  T=16270000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xdbe1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x11 exchange_amount = 0xbfe0 exchange_go = 0x1 
+# 
+#  T=16310000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xf6a1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xab97 exchange_go = 0x0 
+# 
+#  T=16350000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xed26 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0x1b3 exchange_go = 0x0 
+# 
+#  T=16390000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x96db cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x14 exchange_amount = 0x2f6d exchange_go = 0x1 
+# 
+#  T=16430000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x5705 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0x7e28 exchange_go = 0x0 
+# 
+#  T=16470000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xff93 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0xb7b6 exchange_go = 0x1 
+# 
+#  T=16510000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x16ef cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0x88cf exchange_go = 0x0 
+# 
+#  T=16550000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x4ccb cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x8 exchange_amount = 0x91c7 exchange_go = 0x0 
+# 
+#  T=16590000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x7cd1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x77e5 exchange_go = 0x1 
+# 
+#  T=16630000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x2d61 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x3593 exchange_go = 0x0 
+# 
+#  T=16670000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xac53 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x740b exchange_go = 0x1 
+# 
+#  T=16710000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xf69 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x5cae exchange_go = 0x0 
+# 
+#  T=16750000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x9e1a cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0x25f exchange_go = 0x1 
+# 
+#  T=16790000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1bfa cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xe exchange_amount = 0x584e exchange_go = 0x1 
+# 
+#  T=16830000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x8b8d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0x415f exchange_go = 0x1 
+# 
+#  T=16870000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xe0e0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x5338 exchange_go = 0x1 
+# 
+#  T=16910000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x2093 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x8 exchange_amount = 0x7f71 exchange_go = 0x1 
+# 
+#  T=16950000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x7f0f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0xb6e5 exchange_go = 0x0 
+# 
+#  T=16990000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x4dae cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0xfc03 exchange_go = 0x1 
+# 
+#  T=17030000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6f6c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x272c exchange_go = 0x1 
+# 
+#  T=17070000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x691b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0x3990 exchange_go = 0x0 
+# 
+#  T=17110000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x25c0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1f exchange_amount = 0xbf0a exchange_go = 0x0 
+# 
+#  T=17150000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x6b4f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x12 exchange_amount = 0x1f4c exchange_go = 0x1 
+# 
+#  T=17190000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xed2b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0xbd4d exchange_go = 0x0 
+# 
+#  T=17230000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xd831 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1d exchange_amount = 0x23a1 exchange_go = 0x1 
+# 
+#  T=17270000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xadba cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xfcd9 exchange_go = 0x0 
+# 
+#  T=17310000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xb804 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x10 exchange_amount = 0x0 exchange_go = 0x1 
+# 
+#  T=17350000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x5f02 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x2735 exchange_go = 0x0 
+# 
+#  T=17390000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x1e6f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x7 exchange_amount = 0x8067 exchange_go = 0x0 
+# 
+#  T=17430000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xe451 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x9bb3 exchange_go = 0x0 
+# 
+#  T=17470000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x50ad cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1a exchange_amount = 0xb071 exchange_go = 0x1 
+# 
+#  T=17510000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xf4a8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0xf174 exchange_go = 0x0 
+# 
+#  T=17550000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x3f02 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0xde14 exchange_go = 0x1 
+# 
+#  T=17590000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x35a0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0xcfdd exchange_go = 0x1 
+# 
+#  T=17630000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x5265 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0xf8ca exchange_go = 0x0 
+# 
+#  T=17670000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x37d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x9e2d exchange_go = 0x1 
+# 
+#  T=17710000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xfc54 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x874e exchange_go = 0x0 
+# 
+#  T=17750000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x7223 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0x3c14 exchange_go = 0x0 
+# 
+#  T=17790000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xa052 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x8a73 exchange_go = 0x1 
+# 
+#  T=17830000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x80e cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0x903b exchange_go = 0x0 
+# 
+#  T=17870000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xd1f6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x17 exchange_amount = 0xc032 exchange_go = 0x0 
+# 
+#  T=17910000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xa93a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xa exchange_amount = 0x939 exchange_go = 0x0 
+# 
+#  T=17950000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x4878 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0x33d6 exchange_go = 0x1 
+# 
+#  T=17990000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x2ea2 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x3 exchange_amount = 0xfa0d exchange_go = 0x0 
+# 
+#  T=18030000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xb7a2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0x3a50 exchange_go = 0x0 
+# 
+#  T=18070000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xf0e5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1 exchange_amount = 0x968b exchange_go = 0x1 
+# 
+#  T=18110000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x9e56 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x17 exchange_amount = 0xc054 exchange_go = 0x1 
+# 
+#  T=18150000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xd573 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x16 exchange_amount = 0x7dab exchange_go = 0x1 
+# 
+#  T=18190000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xee35 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1d exchange_amount = 0xf8ff exchange_go = 0x1 
+# 
+#  T=18230000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0xd36a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0xcf60 exchange_go = 0x0 
+# 
+#  T=18270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x3fa5 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xf exchange_amount = 0xb465 exchange_go = 0x1 
+# 
+#  T=18310000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x1218 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x44e4 exchange_go = 0x1 
+# 
+#  T=18350000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x8812 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x15 exchange_amount = 0x7a09 exchange_go = 0x0 
+# 
+#  T=18390000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xf8e3 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0xdcea exchange_go = 0x0 
+# 
+#  T=18430000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x764c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x9 exchange_amount = 0x52f5 exchange_go = 0x0 
+# 
+#  T=18470000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x5fd8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x14 exchange_amount = 0xb8b1 exchange_go = 0x0 
+# 
+#  T=18510000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0xd21d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x12 exchange_amount = 0x16fa exchange_go = 0x1 
+# 
+#  T=18550000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0xd10d cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xc exchange_amount = 0x5a62 exchange_go = 0x1 
+# 
+#  T=18590000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x65ee cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0xca18 exchange_go = 0x1 
+# 
+#  T=18630000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0xc3dd cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x1274 exchange_go = 0x0 
+# 
+#  T=18670000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0x1d84 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1a exchange_amount = 0x3381 exchange_go = 0x0 
+# 
+#  T=18710000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xaa43 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x5 exchange_amount = 0x5f40 exchange_go = 0x1 
+# 
+#  T=18750000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xff2d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xe exchange_amount = 0xb8db exchange_go = 0x0 
+# 
+#  T=18790000 [MONITOR] transaction information: cpu_client_id = 0x7 cpu_amount = 0xc852 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1c exchange_amount = 0x8435 exchange_go = 0x1 
+# 
+#  T=18830000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0xa14c cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x4fcd exchange_go = 0x0 
+# 
+#  T=18870000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x859 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x13 exchange_amount = 0x861a exchange_go = 0x1 
+# 
+#  T=18910000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x7cd0 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x2 exchange_amount = 0x38df exchange_go = 0x1 
+# 
+#  T=18950000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xce1a cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xe exchange_amount = 0x12cf exchange_go = 0x1 
+# 
+#  T=18990000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xb178 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x3347 exchange_go = 0x1 
+# 
+#  T=19030000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x88d8 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1b exchange_amount = 0x9f7b exchange_go = 0x0 
+# 
+#  T=19070000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x9f2 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x0 exchange_amount = 0x7dfd exchange_go = 0x1 
+# 
+#  T=19110000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x7bf0 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x2 exchange_amount = 0x6c35 exchange_go = 0x0 
+# 
+#  T=19150000 [MONITOR] transaction information: cpu_client_id = 0x6 cpu_amount = 0x6b35 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x18 exchange_amount = 0xad75 exchange_go = 0x1 
+# 
+#  T=19190000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x31e8 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x5 exchange_amount = 0x4427 exchange_go = 0x1 
+# 
+#  T=19230000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0xe45b cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1f exchange_amount = 0xe825 exchange_go = 0x0 
+# 
+#  T=19270000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x62c1 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x6987 exchange_go = 0x0 
+# 
+#  T=19310000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0xfbd1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1c exchange_amount = 0x1a32 exchange_go = 0x0 
+# 
+#  T=19350000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x88aa cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0x1848 exchange_go = 0x1 
+# 
+#  T=19390000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x696c cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x6 exchange_amount = 0x2cc exchange_go = 0x1 
+# 
+#  T=19430000 [MONITOR] transaction information: cpu_client_id = 0x8 cpu_amount = 0x1fb6 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x2185 exchange_go = 0x0 
+# 
+#  T=19470000 [MONITOR] transaction information: cpu_client_id = 0x3 cpu_amount = 0x739d cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x7 exchange_amount = 0x56d5 exchange_go = 0x0 
+# 
+#  T=19510000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0xebae cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0xd exchange_amount = 0x54c6 exchange_go = 0x1 
+# 
+#  T=19550000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x62e4 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x19 exchange_amount = 0xd54e exchange_go = 0x1 
+# 
+#  T=19590000 [MONITOR] transaction information: cpu_client_id = 0x1 cpu_amount = 0x31b1 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0x2902 exchange_go = 0x1 
+# 
+#  T=19630000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x21eb cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x4 exchange_amount = 0x8c7f exchange_go = 0x0 
+# 
+#  T=19670000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0x45d5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1e exchange_amount = 0xfee exchange_go = 0x1 
+# 
+#  T=19710000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x654f cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x1b exchange_amount = 0x25e1 exchange_go = 0x1 
+# 
+#  T=19750000 [MONITOR] transaction information: cpu_client_id = 0x2 cpu_amount = 0x9708 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0x6a4 exchange_go = 0x0 
+# 
+#  T=19790000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0x8c64 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x11 exchange_amount = 0x55a5 exchange_go = 0x0 
+# 
+#  T=19830000 [MONITOR] transaction information: cpu_client_id = 0x5 cpu_amount = 0xb326 cpu_new_max = 0x0 cpu_go = 0x1 exchange_client_id = 0x19 exchange_amount = 0x5cb exchange_go = 0x0 
+# 
+#  T=19870000 [MONITOR] transaction information: cpu_client_id = 0x0 cpu_amount = 0x5cb5 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x1 exchange_amount = 0xc8d0 exchange_go = 0x0 
+# 
+#  T=19910000 [MONITOR] transaction information: cpu_client_id = 0x4 cpu_amount = 0x190f cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0xb exchange_amount = 0xa923 exchange_go = 0x0 
+# 
+#  T=19950000 [MONITOR] transaction information: cpu_client_id = 0x9 cpu_amount = 0x6893 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x16 exchange_amount = 0x8a8c exchange_go = 0x0 
+# 
+#  T=19990000 [MONITOR] transaction information: cpu_client_id = 0xa cpu_amount = 0xf111 cpu_new_max = 0x1 cpu_go = 0x0 exchange_client_id = 0x15 exchange_amount = 0xf3ef exchange_go = 0x1 
+# T=19990000 [Generator] Done generation
 # Coverage_input = 100.00 %
 # Coverage_output = 100.00 %
 # ** Note: $stop    : mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv(92)
-#    Time: 2010 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
+#    Time: 20010 ns  Iteration: 0  Instance: /tb_top_UPDOWNSTREAM
 # Break in Module tb_top_UPDOWNSTREAM at mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 # Stopped at mem-model-testbench/unit_level/UPDOWNSTREAM/tb_top_UPDOWNSTREAM.sv line 92
 #  quit
-# End time: 15:39:59 on May 25,2022, Elapsed time: 0:00:01
+# End time: 12:20:23 on May 26,2022, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 8

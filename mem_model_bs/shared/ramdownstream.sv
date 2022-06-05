@@ -32,7 +32,7 @@ module dm_data_downstream(clk,
   always @(posedge(clk)) begin
     if (data_req.we) begin
       totalsent= totalsent+1;
-      $display("totalsent to downstream %0d.", totalsent);
+      // $display("totalsent to downstream %0d.", totalsent);
       data_mem[data_req.wrindex] <= data_write+data_mem[data_req.wrindex];
     end
   end

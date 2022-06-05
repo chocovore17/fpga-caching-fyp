@@ -6,7 +6,7 @@ interface updownstream_if (input logic clk, input logic slowclk);
     // inputs
     logic HRESETn;
     logic cpu_new_max;
-    logic [4:0] cpu_client_id;
+    logic [9:0] cpu_client_id;
     logic [15:0] cpu_amount;
     logic cpu_go;
     logic [4:0] exchange_client_id;
